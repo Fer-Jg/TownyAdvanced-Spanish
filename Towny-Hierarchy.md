@@ -21,11 +21,13 @@ Nomads are simply people who do not belong to a town. They come equipped with th
   Are people who have complete control over the town (except admin things). they were the people who originally
   created the town or have somehow inherited the Mayor role.
   (Nation) Residents:
-
-
   Are inhabitants of a town that's inside of a nation they can use the permissions given to then in the config.
+
+
   (Nation) Assistants & Helpers:
   Helpers can add towns to the nation Assistants can add the Helper rank add/remove towns and declare a ally/enemy
+  
+
   Kings:
   Are the owners of nations they can do anything that's in the plugin.yml for towny.command.nation.*
   Kings are also the Mayor of the capitol town
