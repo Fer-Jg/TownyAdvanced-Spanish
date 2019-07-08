@@ -13,7 +13,7 @@
 </ul>
 Towny makes use of Permission nodes to customize the Towny experience to different player-ranks. It does this via an external permission plugin but also natively via the Townyperms.yml file located in the townysettings folder.
 
-By default the townyperms.yml will have all the nodes given to the necessary players. You can customize it as you like. For more info on configuring townyperms.yml see the How Towny Works wikipage.
+<strong>By default the townyperms.yml will have all the nodes given to the necessary players.</strong> You can customize it as you like. For more info on configuring townyperms.yml see the How Towny Works wikipage.
 
 Since townyperms handles most of Towny's permission nodes the only ones you will probably have to add to your permission plugin's node file will be the nodes in the admin/moderator section found below.
 
