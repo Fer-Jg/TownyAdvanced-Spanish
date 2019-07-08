@@ -1,9 +1,9 @@
 ## Server Preparation
 1. Stop your server completely.
 2. Download any of the following:
-   * Latest Development Build from the [Official Towny Advanced Discord Server](https://discord.gg/gnpVs5m).
+   * Latest development build from the [Official Towny Advanced Discord Server](https://discord.gg/gnpVs5m).
      * Includes **Towny.jar**.
-   * Latest Release from the [website](http://towny.palmergames.com/category/towny-download/towny-release-download/).
+   * Latest release build from the [website](http://towny.palmergames.com/category/towny-download/towny-release-download/).
      * Includes **Towny.jar**, **TownyChat.jar**, and **TownyNameUpdater.jar**.
 3. Copy the contents to your _Plugins_ folder.
    * **Towny.jar** is required at all times
