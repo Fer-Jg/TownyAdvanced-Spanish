@@ -1,0 +1,502 @@
+<ul>
+	<li><a href="#/towny">/towny</a></li>
+	<li><a href="#/plot">/plot</a></li>
+	<li><a href="#/resident">/resident</a></li>
+	<li><a href="#/town">/town</a></li>
+	<li><a href="#/nation">/nation</a></li>
+	<li><a href="#/townyadmin">/townyadmin</a></li>
+	<li><a href="#/townyworld">/townyworld</a></li>
+	<li><a href="#Chat_Commands">Chat Commands</a></li>
+</ul>
+<ul>
+	<li>This list breaks each command down by word. Eg: /resident set perm {on/off}.</li>
+	<li>For resident commands, the add command would auto-match online players, while add+ requires exact spelling to choose offline players.</li>
+	<li>Just about every subcommand has it's own help menu. Use /resident set, or a similar cutoff, to show all the options for that command ingame. You can also use /resident set ?, you will probably need to use that in the case where a subcommand actually has a function by itself. Example: /town claim, and /town claim ? would show all it's subcommands.</li>
+	<li>The { } brackets are used to show variables, or what you need to fill in. The elipse ".." (or shortened elipse) is used to show that you can specify multiple things at once (like inviting 10 residents at once).</li>
+	<li>The {bleh/blah/bluh} is used to show that the input can be multiple words.</li>
+	<li>An empty bullet represents that the subcommand itself does something and will not show a help menu.</li>
+</ul>
+<h1><a name="Master_List"></a>Master List</h1>
+<h2><a name="/towny"></a>/towny</h2>
+<ul>
+	<li>/towny
+<ul>
+	<li>- Shows basic towny commands.</li>
+	<li>? - Shows more towny commands.</li>
+	<li>map - Shows the towny map.</li>
+	<li>prices - Shows taxes/costs associated with running a town.</li>
+	<li>time - Shows time until next new-day (tax/upkeep collection.)</li>
+	<li>top
+<ul>
+	<li>residents {all/town/nation} - Shows top residents.</li>
+	<li>land {all/resident/town} - Shows top land owners.</li>
+</ul>
+</li>
+	<li>spy - Admin command to spy on all chat channels</li>
+	<li>tree - Shows lots of stuff.</li>
+	<li>universe - Shows full towny stats, resident/town/nation/world counts as well as townblocks claimed.</li>
+	<li>v - Shows towny version.</li>
+	<li>war
+<ul>
+	<li>stats</li>
+	<li>scores</li>
+	<li>hud</li> - toggles on/off the war hud which gives a player information about plots during war time.
+	<li>participants {page #}</li> - a helpful list of who is involved in the war.
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a name="/plot"></a>/plot</h2>
+<ul>
+	<li>/plot
+<ul>
+	<li>- Shows the /plot commands.</li>
+	<li>claim - Resident command to personally claims a plot that are for sale.
+<ul>
+	<li>auto - Resident command to personally claim an area of plots that are for sale, around the player typing the command.</li>
+</ul>
+</li>
+	<li>unclaim - Resident command to unclaim personally owned plots.
+<ul>
+	<li>circle/rect - Resident command to unclaim personally owned plots in a circle or rectangle shape.
+<ul>
+	<li>{# (radius around current position)} - Radius of the area to unclaim.</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>{forsale/fs} - Set a plot for sale.
+<ul>
+	<li>circle/rect - Set a shape.
+<ul>
+	<li>{# (radius around current position)} - Radius of the area to set forsale.</li>
+</ul>
+</li>
+	<li>$$ - Cost of plot.
+<ul>
+	<li>circle/rect - Set a shape.
+<ul>
+	<li>{# (radius around current position)} - Radius of the area to set forsale.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>{notforsale/nfs} - Set a plot to not be for sale.
+<ul>
+	<li>circle/rect - Set a shape.
+<ul>
+	<li>{# (radius around current position)} - Radius of the area to set notforsale.</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>evict - Used to remove a plot from a plot owner, usually by the mayor or assistant.</li>
+	<li>perm - Shows the perm line of the plot in which the player stands.</li>
+	<li>perm hud - Toggles on/off the plot perm hud scoreboard which shows the perm line of the plot in which the player stands along with more useful plot info.</li>
+
+	<li>set
+<ul>
+	<li>reset - Sets a shop/embassy/arena/wilds plot back to a normal plot.</li>
+	<li>shop - Sets a plot to a shop plot.</li>
+	<li>embassy - Sets a plot to an embassy plot.</li>
+	<li>arena - Sets a plot to an arena plot.</li>
+	<li>wilds - Sets a plot to a wilds plot.</li>
+	<li>inn - Set a plot to an inn plot.</li>
+	<li>jail - Set a plot to an jail plot.</li>
+	<li>farm - Set a plot to a farm plot.</li>
+	<li>bank - Set a plot to a bank plot.<li>
+	<li>name - allows a mayor or plot-owner to rename plots they own, overwriting the ~Unowned message. Personal-plots display both the plot's given name and the name of the plot-owner.</li>
+	<li>perm
+<ul>
+	<li>{on/off} - Edits the perm line of the single plot in which the player is standing. <a href="http://code.google.com/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms" rel="nofollow">See here for details.</a></li>
+	<li>{resident/ally/outsider} {on/off}</li>
+	<li>{build/destroy/switch/itemuse} {on/off}</li>
+	<li>{resident/ally/outsider} {build/destroy/switch/itemuse} {on/off}</li>
+	<li>reset - Resets the plot in which you stand to the default perm line of the /town or /resident screen (depending on if the plot is owned personally or by the town.)</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>toggle
+<ul>
+	<li>fire - Turn on/off firespread in the plot in which you stand.</li>
+	<li>pvp - Turn on/off pvp in the plot in which you stand.</li>
+	<li>explosion - Turn on/off explosions in the plot in which you stand.</li>
+	<li>mob - Turn on/off hostile mobspawning in the plot in which you stand.</li>
+</ul>
+</li>
+	<li>clear - Command to remove list of block id's from a plot, used by a mayor on town-owned land, or by a plot-owner on their personal plots.</li>
+</ul>
+</li>
+</ul>
+<h2><a name="/resident"></a>/resident</h2>
+<ul>
+	<li>/resident
+<ul>
+	<li>- Shows a player their resident screen.</li>
+	<li>? - Shows /res commands available.</li>
+	<li>{resident} - Shows a player another player's resident screen.</li>
+	<li>friend
+<ul>
+	<li>add {resident} .. {resident} - Resident adds online player to their friends list.</li>
+	<li>add+ {resident} .. {resident} - Resident adds offline player to their friends list.</li>
+	<li>remove {resident} .. {resident} - Resident removes online player from their friends list.</li>
+	<li>remove+ {resident} .. {resident} - Resident removes offline player from their friends list.</li>
+	<li>clearlist - Removes all friends from a resident's friend list.</li>
+</ul>
+</li>
+	<li>list - Lists residents in towny's data folder who are online.</li>
+	<li>jail paybail - Allows a player to pay to get out of jail. Funds go to the town which owns the Jail.</li>
+	<li>spawn - If deny_bed_use: true and player has a current bed spawn, command will teleport player to their bed.</li>
+	<li>toggle
+<ul>
+	<li>map - Turns on map which refreshes when moving across plot borders.</li>
+	<li>townclaim - Turns on mode where /town claim is automatically used when moving across plot borders.</li>
+	<li>plotborder - Turns on smokey plot-border view. Border shows when players cross to different townblocks.</li>
+	<li>constantplotborder - Turns on smokey plot-border view. Border doesn't disappear.</li>
+	<li>spy - Admins can turn on chat-channel spying.</li>
+	<li>ignoreplots - Turns on/off plot notifications in town.</li>
+	<li>reset - This turns off all modes that are active.</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>set
+<ul>
+	<li>perm
+<ul>
+	<li>{on/off} - Edits the perm line on the resident screen. <a href="http://code.google.com/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms" rel="nofollow">See here for details.</a></li>
+	<li>{friend/ally/outsider} {on/off}</li>
+	<li>{build/destroy/switch/itemuse} {on/off}</li>
+	<li>{friend/ally/outsider} {build/destroy/switch/itemuse} {on/off}</li>
+	<li>reset - This takes the perm line seen in the /resident screen and applies it to all plots personally owned by the player typing it.</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>tax - Shows taxes a player pays.</li>
+</ul>
+<h2><a name="/town"></a>/town</h2>
+<ul>
+	<li>/town
+<ul>
+	<li>- Shows a player their town's town screen.</li>
+	<li>? - Shows /town commands available.</li>
+	<li>{town} - Shows a player another town's town screen.</li>
+	<li>here - Shows you the town screen of the town in which you stand.</li>
+	<li>leave - Leaves a town.</li>
+	<li>list {page #} - Lists towns.</li>
+	<li>online - Shows players in your town which are online.</li>
+	<li>plots {townname}  - Shows a helpful list of plots and their types/revenue which are owned by the town.</li>
+	<li>new {townname} - Creates a new town.</li>
+	<li>add {resident} .. {resident} - Mayor command to add residents to your town.</li>
+	<li>kick {resident} .. {resident} - Mayor command to remove residents from your town.</li>
+	<li>spawn - Teleports you to your town's spawn.</li>
+	<li>spawn {town} - Teleports you to another town's spawn.</li>
+	<li>claim - Mayor command to claim the townblock in which you stand for your town.
+<ul>
+	<li>outpost <#|{name}|{name:#} - Claims an outpost for your town. {name} uses the plot name. {name:#} is used when a plot name begins with a number.</li>
+	<li>{# (radius around current position)} - Claims an area of townblocks around you for your town.</li>
+	<li>auto - Claims as many townblocks around you as is possible given money in townbank and available townblocks.</li>
+</ul>
+</li>
+	<li>unclaim - Mayor command to unclaim the townblock in which you stand.
+<ul>
+	<li>all - Mayor command to unclaim all townblocks.</li>
+	<li>{# (radius around current position)} - Command to unclaim an area of townblocks around you.</li>
+	<li>outpost - Used to unclaim glitched outposts on MySQL Towny servers pre-0.92.0.0</li>
+</ul>
+</li>
+	<li>withdraw {$} - Removes money from town bank.</li>
+	<li>deposit {$} - Adds money from player to the town bank.</li>
+	<li>buy
+<ul>
+	<li>bonus {amount} - Buys available bonus townblocks.</li>
+</ul>
+</li>
+	<li>delete {town name} - Admin/Mayor command to delete a town from towny's data folder's files.</li>
+	<li>outlawlist {town} - Displays a list of outlaws for a town.</li>
+	<li>outlaw {add/remove} {name} - Adds or removes an outlaw from a town's outlaw list</li>
+	<li>outpost
+<ul>
+	<li>{# (where # equals the corresponding outpost's number)} - Teleports to an outpost.</li>
+	<li>{list} - lists your town's outposts.</li>
+</ul>
+</li>
+	<li>ranklist - Displays residents and their ranks.</li>
+	<li>rank {add|remove} {playername} {rankname} - Grants or removes a rank to a resident of the town.</li>
+	<li>reslist {townname} - See a FULL list of all residents in a town.</li>
+	<li>say {msg} - Broadcast a message to online town members.</li>
+	<li>set
+<ul>
+	<li>board {message} - Sets message seen by residents upon logging in.</li>
+	<li>mayor {resident} - Mayor command to give mayor status to another resident.</li>
+	<li>homeblock - Sets the homeblock and spawn of your town.</li>
+	<li>spawn - Sets the town spawn, must be done inside the homeblock.</li>
+	<li>spawncost - Set the cost of spawning to a public town. Doesn't affect town residents, nation members and nation-allies.</li>
+	<li>name {name} - Change your town's name.</li>
+	<li>outpost - Resets the outpost's spawn point to the player location. Must be used in an existing outpost plot.</li>
+	<li>jail - Resets a jail plot's spawn to current position within a jail plot.</li>
+	<li>perm	
+<ul>
+	<li>{on/off} - Edits the perm line on the town screen. <a href="http://code.google.com/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms" rel="nofollow">See here for details.</a></li>
+	<li>{resident/ally/outsider} {on/off}</li>
+	<li>{build/destroy/switch/itemuse} {on/off}</li>
+	<li>{resident/ally/outsider} {build/destroy/switch/itemuse} {on/off}</li>
+	<li>reset - This takes the perm line seen in the /town screen and applies it to all plots owned by the town.</li>
+</ul>
+</li>
+	<li>tag {upto4character} - Sets the town's tag, which is sometimes used on that chat line.
+<ul>
+	<li>clear - Clears the tag set for the town.</li>
+</ul>
+</li>
+	<li>taxes {$} - Sets taxes collected from each resident daily. Also sets percentage if taxpercent is toggled on.</li>
+	<li>plottax {$} - Set taxes collected from each resident daily, per plot that they own.</li>
+	<li>plotprice {$} - Sets default cost of plot for the town.</li>
+	<li>shopprice {$} - Sets default cost of a shopplot for the town.</li>
+	<li>shoptax {$} - Set taxes collected from each resident daily, per shopplot that they own.</li>
+	<li>embassyprice {$} - Sets default cost of a embassy plot for the town.</li>
+	<li>embassytax {$} - Set taxes collected from each resident daily, per embassy plot that they own.</li>
+</ul>
+</li>
+	<li>toggle
+<ul>
+	<li>explosion - Turn on/off explosions in town.</li>
+	<li>fire - Turn on/off firespread in town.</li>
+	<li>mobs - Turn on/off hostile mobspawning in town.</li>
+	<li>public - Turn on/off public /town spawning and the co-ordinates of the town's homeblock in the /town screen.</li>
+	<li>pvp - Turn on/off pvp in town.</li>
+	<li>taxpercent - Turn on/off taxing by percent/flatrate.</li>
+	<li>open - Turn on/off public joining to your town.</li>
+	<li>jail {number} {residentname} - Sends a resident of your town to the jail spawn number specified. Same command unjails a player.</li>
+</ul>
+</li>
+	<li>join {townname} - Command to join a town that doesn't require invites.</li>
+</ul>
+</li>
+</ul>
+<h2><a name="/nation"></a>/nation</h2>
+<ul>
+	<li>/nation
+<ul>
+	<li>- Shows a player their nation's nation screen.</li>
+	<li>? - Shows /nation commands.</li>
+	<li>list {page #} - Lists nations.</li>
+	<li>online - Shows players in your nation which are online.</li>
+	<li>{nation} - Shows a player the /nation screen of another nation.</li>
+	<li>leave - Mayor command to leave the nation they are a part of.</li>
+	<li>withdraw {$} - King command to remove money from the nation bank.</li>
+	<li>deposit {$} - King command to add money to the nation bank.</li>
+	<li>new
+<ul>
+	<li>{nationname} - Mayor command to create a nation.</li>
+	<li>{nationname} {capitaltown} - Admin command to create a new nation, set capitol.</li>
+</ul>
+</li>
+	<li>rank - Command to set assistant/custom ranks in the nation.</li>
+	<li>add {town} .. {town} - Invites/Adds a town to your nation.</li>
+	<li>kick {town} .. {town} - Removes a town from your nation.</li>
+	<li>delete {nation} - Deletes your nation.</li>
+	<li>ally
+<ul>
+	<li>add {nation} .. {nation} - Add a nation to your nation's ally list.</li>
+	<li>remove {nation} .. {nation} - Removes a nation from your nation's ally list.</li>
+</ul>
+</li>
+	<li>enemy
+<ul>
+	<li>add {nation} .. {nation} - Add a nation to your nation's enemy list.</li>
+	<li>remove {nation} .. {nation} - Removes a nation from your nation's enemy list.</li>
+</ul>
+</li>
+	<li>rank {add|remove} {playername} {rankname} - Grants or removes a rank to a resident of the nation.</li>
+	<li>say {msg} - Broadcast a message to online nation members.</li>
+	<li>set
+<ul>
+	<li>king {resident} - King command to change the king of the nation.</li>
+	<li>captial {town} - Sets the capitol and king of the nation.</li>
+	<li>board {message} - Sets message seen by residents upon logging in.</li>
+	<li>taxes {$} - Sets nationtax applied to the towns within the nation.</li>
+	<li>name {name} - Sets the nation's name.</li>
+	<li>spawn - Sets the nation spawn point.</li>
+	<li>spawncost - Sets the cost of public spawns to that nation's spawn point. No effect on members of the nation or nation-allies</li>
+	<li>title {name} {titlegoeshere} - King command to add a Title to a member of the nation.</li>
+	<li>surname {name} {surnamegoeshere} - King command to add a Suffix to a member of the nation.</li>
+	<li>tag {upto4character} - Sets the nation's tag, which is sometimes used on that chat line.
+<ul>
+	<li>clear - Clears the tag set for the nation.</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>toggle
+<ul>
+	<li>neutral - Sets whether your nation will pay daily to be neutral during towny war.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2><a name="/townyadmin"></a>/townyadmin</h2>
+<ul>
+	<li>/townyadmin
+<ul>
+	<li>- Shows Memory, Threads, War status, Health regen setting, Time, Whether daily-timer/taxes are on.</li>
+	<li>? - Shows /ta commands.</li>
+	<li>delete {playername} - Deletes a player's towny data.</li>
+	<li>resident {playername}
+<ul>
+	<li>{oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.</li>
+</ul>
+</li>
+	<li>town {townname}
+<ul>
+	<li>new [name] [mayor] - Admin command to create a town for the mayor where the command sender is standing.</li>
+	<li>add {resident} .. {resident} - Admin command to invite/add a resident to a town.</li>
+	<li>remove {resident} .. {resident} - Admin command to remove a resident from a town.</li>
+	<li>kick {resident} - Admin command to remove a resident from a town.</li>
+	<li>rename {newname} - Admin command to rename a town.</li>
+        <li>spawn - Admin command to spawn at at town spawn.</li>
+        <li>tpplot {world} {x} {z} - Teleports an admin to the Towny chunk coordinates seen in the /towny map command. Be careful with large numbers, you could be teleported farther than you think and end up generating chunks.</li>
+        <li>outpost # - Admin command to spawn at any towns outposts.</li>
+	<li>delete - Admin command to delete a town.</li>
+	<li>rank {add/remove} {name} {rank} - Admin command to give/remove a rank to a town member.</li>
+</ul>
+</li>
+	<li>nation {nationname}
+<ul>
+	<li>add {town} - Admin command to invite/add a town to a nation.</li>
+	<li>rename {newname} - Admin command to rename a nation.</li>
+	<li>delete - Admin command to delete a town.</li>
+</ul>
+</li>
+	<li>reset - resets the towny config.yml to its current default.</li>
+	<li>toggle
+<ul>
+	<li>war - Turn on/off towny war.</li>
+	<li>neutral - Turn on/off a nation's ability to declare neutrality.</li>
+	<li>npc {residentname} - Toggles a player's resident file to isNPC=true, this exempts the player from taxes/upkeep.</li>
+	<li>debug - Turns on/off debug mode.</li>
+	<li>devmode - Turns on/off special devmode for when towny's devs join your server to find a bug.</li>
+	<li>withdraw - Turns on/off town/nation's ability to withdraw money from their town/nation banks.</li>
+</ul>
+</li>
+	<li>set
+<ul>
+	<li>plot {town} - Sets a plot to a town.</li>
+	<ul>
+		<li>When in a town only a single plot can be transfered at one time. Does not require a town to have available townblocks to claim.</li>
+		<li>When in the wilderness two types of sub commands can be used to do area claims:
+		<ul>
+			<li>Does require a town to have available townblocks to claim.</li>
+			<li>Does obey proximity rules for claims between towns/homeblocks.</li>
+			<li>/ta set plot {town} {rect|circle} {radius}</li>
+			<li>/ta set plot {town} {rect|circle} auto</li>
+		</ul>
+	</ul>
+			
+	<li>title {name} {title} - A command for admins to be able to set a player's title.</li>
+	<li>surname {name} {surname} - A command for admins to be able to set a player's surname.</li>
+</ul>
+<ul>
+	<li>capital {townname} - A command for admins to be able to change a nations capital. Town to be set must already be a member of the nation.</li>
+</ul>
+<ul>
+	<li>mayor
+<ul>
+	<li>{town} {resident} - Admin command to set a resident as mayor of a town.</li>
+	<li>{town} npc - Admin command to set a town to have an npc mayor.</li>
+</ul>
+</li>
+</ul>
+</li>
+	<li>givebonus {town} {#} - Gives extra townblocks to a town.</li>
+	<li>reload - Reloads towny's config.yml.</li>
+	<li>backup - Creates a backup.</li>
+	<li>checkperm {player} {node} - Quick test of whether a player has a permission node.</li>
+	<li>newday - Causes a new day to happen, this does not stop the next new day from happening when it was already scheduled.</li>
+	<li>unclaim
+<ul>
+	<li>rect {radius} - Admin command to unclaim an area.</li>
+</ul>
+</li>
+	<li>purge {# as in days} - Deletes old residents.</li>
+</ul>
+</li>
+</ul>
+<h2><a name="/townyworld"></a>/townyworld</h2>
+<ul>
+	<li>/townyworld
+<ul>
+	<li>- Shows world settings for the world in which you stand.</li>
+	<li>? - Shows /tw commands.</li>
+	<li>list - Lists worlds.</li>
+	<li>{world} - Show settings for world.</li>
+	<li>toggle
+<ul>
+	<li>claimable - Turn on/off whether mayors can claim townblocks in the world.</li>
+	<li>usingtowny - Turn on/off whether towny is used in the world.</li>
+	<li>pvp - Turn on/off pvp in the world.</li>
+	<li>forcepvp - Turn on/off whether pvp is forced on in all towns in the world.</li>
+	<li>explosion - Turn on/off whether explosions are on in the wilderness/towns in the world.</li>
+	<li>forceexplosion - Force explosions on in that world.</li>
+	<li>fire - Turn on/off whether firespread is on in the wilderness/towns in the world.</li>
+	<li>townmobs - Turn on/off hostile mobspawning in towns in the world.</li>
+	<li>worldmobs - Turn on/off the mobs listed in the world mobs in the world.</li>
+	<li>revertunclaim - Turn on/off the revert on unclaim feature for that world.</li>
+	<li>revertexpl - Turn on/off the reverting explosions in the wilderness feature for that world.</li>
+</ul>
+</li>
+	<li>set
+<ul>
+	<li>wildname {name} - Sets name of the wilderness.</li>
+	<li>wildperm {perm} .. {perm} - Deprecated.</li>
+	<li>wildignore {id} .. {id} - Deprecated.</li>
+	<li>wildregen {Creeper,EnderCrystal,EnderDragon,Fireball,SmallFireball,LargeFireball,TNTPrimed,ExplosiveMinecart} - Sets what explosions are reverted in the wilderness.</li>
+	<li>usedefault - Deprecated.</li>
+</ul>
+</li>
+	<li>regen - Regenerates the MC chunk in which back to the seed.</li>
+	<li>undo - Undoes /tw regen.</li>
+</ul>
+</li>
+</ul>
+<h2><a name="Chat_Commands"></a>Chat Commands</h2>
+<ul>
+	<li>/townychat reload - Reloads chatconfig.yml and channels.yml</li>
+	<li>/townchat, /tc
+<ul>
+	<li>Put in from of text to speak with members of your town only, or without text afterwards to enter the channel.</li>
+</ul>
+</li>
+	<li>/nationchat, /nc
+<ul>
+	<li>Put in from of text to speak with members of your nation only, or without text afterwards to enter the channel.</li>
+</ul>
+</li>
+	<li>/global, /g
+<ul>
+	<li>Put in from of text to speak in globalchat, or without text afterwards to enter the channel.</li>
+</ul>
+</li>
+	<li>/res set mode reset
+<ul>
+	<li>Reset chat mode to default chat.</li>
+</ul>
+</li>
+	<li>/a - admin chat.</li>
+	<li>/m - moderator chat.</li>
+</ul>
+<ul>
+	<li>/channel leave|join {channel} - Channel leaving and joining.</li>
+	<li>/ch list - list what channels a player is currently listening to. Courtesy of Yaiyan.</li>
+	<li>/leave {channel} - Leaves a channel.</li>
+	<li>/join {channel} - Joins a channel.</li>
+	<li>/chmute {channel} {player} - Mutes a player in a channel.</li>
+	<li>/mutelist {channel} - Displays mute list for a channel.</li>
+	<li>/chunmute {channel} {player} - Unmutes a player in a channel.</li>
+</ul>
