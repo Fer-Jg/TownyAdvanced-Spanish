@@ -1,4 +1,4 @@
-## Contents
+## Towny
 - [**Home**](https://github.com/TownyAdvanced/Towny/wiki)
 
 ### Setup
