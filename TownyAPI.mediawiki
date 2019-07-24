@@ -1,7 +1,7 @@
 Using the Towny API in your plugins is quite simple. There are two versions of the API.
 <ol>
-1) The original API which ran from version 0 to 0.94.0.0
-2) The new API which is present in Towny 0.94.0.1 and onwards.</ol>
+<li>1) The original API which ran from version 0 to 0.94.0.0</li>
+<li>2) The new API which is present in Towny 0.94.0.1 and onwards.</li>
 </ol>
 The new API supports the old API calls although they will appear as deprecated. It is recommended that authors do switch the new API.
 
