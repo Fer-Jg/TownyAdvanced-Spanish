@@ -318,7 +318,7 @@
 	<li>set
 <ul>
 	<li>king {resident} - King command to change the king of the nation.</li>
-	<li>captial {town} - Sets the capitol and king of the nation.</li>
+	<li>capital {town} - Sets the capitol and king of the nation.</li>
 	<li>board {message} - Sets message seen by residents upon logging in.</li>
 	<li>taxes {$} - Sets nationtax applied to the towns within the nation.</li>
 	<li>name {name} - Sets the nation's name.</li>
