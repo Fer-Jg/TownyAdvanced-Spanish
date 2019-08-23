@@ -120,7 +120,11 @@ TownPreClaimEvent - Fired before a townblock is claimed by a town, can be cancel
 </ul>
 <a href="https://github.com/TownyAdvanced/Towny/tree/master/src/com/palmergames/bukkit/towny/event">For a full list of Events check out the github.</a>
 
+<h3>Of use to Shop Plugin developers:</h3>
+<ul>
+<li>Our <a href="https://github.com/TownyAdvanced/Towny/blob/master/src/com/palmergames/bukkit/towny/utils/ShopPlotUtil.java">ShopPlotUtil</a> provides easy-to-use tests to query if a player can make a shop at a location.</li></ul>
+
 <h3>Example plugins using the TownyAPI:</h3>
 <ul>
-<a href="https://github.com/TownyAdvanced/TownyFlight">TownyFlight</a>
+<li><a href="https://github.com/TownyAdvanced/TownyFlight">TownyFlight</a></li>
 </ul>
