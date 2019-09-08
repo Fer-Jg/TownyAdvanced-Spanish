@@ -121,7 +121,9 @@ The preventDamageCall will return True if Towny would stop the damage from happe
 
 ### Some useful events
 
-Events thrown by Towny can be imported here: import com.palmergames.bukkit.towny.event.*EventNameHere*
+Events thrown by Towny can be imported here: 
+
+    import com.palmergames.bukkit.towny.event.*EventNameHere*
 
 [For a full list of Events check out the github.](https://github.com/TownyAdvanced/Towny/tree/master/src/com/palmergames/bukkit/towny/event)
 
