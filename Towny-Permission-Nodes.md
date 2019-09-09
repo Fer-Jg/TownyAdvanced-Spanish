@@ -1,4 +1,4 @@
--   [Admin/Moderator Nodes](#Admin/Moderator_Nodes)
+-   [Admin/Moderator Nodes](#admin/moderator-nodes)
 -   [/Plot Nodes](#/Plot_Nodes)
 -   [/Resident Nodes](#/Resident_Nodes)
 -   [/Town Nodes](#/Town_Nodes)
