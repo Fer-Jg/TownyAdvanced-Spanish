@@ -246,6 +246,7 @@ towny.nation.spawn.`*` : Grants all Spawn travel nodes
 -   towny.command.nation.othernation
 -   towny.command.nation.say
 -   towny.command.nation.set.`*`
+    -   towny.command.nation.set.spawncost
     -   towny.command.nation.set.king
     -   towny.command.nation.set.capitol
     -   towny.command.nation.set.taxes
