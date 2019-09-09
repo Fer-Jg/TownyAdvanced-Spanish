@@ -1,5 +1,5 @@
 -   [Admin/Moderator Nodes](#adminmoderator-nodes)
--   [/Plot Nodes](#/Plot_Nodes)
+-   [/Plot Nodes](#/plo-nodes)
 -   [/Resident Nodes](#/Resident_Nodes)
 -   [/Town Nodes](#/Town_Nodes)
 -   [/Nation Nodes](#/Nation_Nodes)
