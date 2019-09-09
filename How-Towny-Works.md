@@ -1,9 +1,5 @@
-[]()How Towny Works
-===================
-
 Use this page to learn how Towny works, how various settings affect the gameplay, what you can do to customize Towny to your liking.
 
--   [How Towny Works](#how-towny-works)
 -   [The Hierarchy](#the-hierarchy)
     -   [Nomads](#nomads)
     -   [Residents](#residents)
