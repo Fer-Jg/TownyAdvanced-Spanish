@@ -1,14 +1,14 @@
 -   [Admin/Moderator Nodes](#adminmoderator-nodes)
 -   [/Plot Nodes](#plot-nodes)
 -   [/Resident Nodes](#resident-nodes)
--   [/Town Nodes](#/Town_Nodes)
--   [/Nation Nodes](#/Nation_Nodes)
--   [/Towny Nodes](#/Towny_Nodes)
--   [/Townyworld Nodes](#/Townyworld_Nodes)
--   [Chat Nodes](#Chat_Nodes)
--   [Wilderness Nodes](#Wilderness_Nodes)
--   [Miscellaneous Nodes](#Miscellaneous_Nodes)
--   [Info/Option Nodes](#Info/Option_Nodes)
+-   [/Town Nodes](#town-nodes)
+-   [/Nation Nodes](#nation-nodes)
+-   [/Towny Nodes](#towny-nodes)
+-   [/Townyworld Nodes](#townyworld-nodes)
+-   [Chat Nodes](#chat-nodes)
+-   [Wilderness Nodes](#wilderness-nodes)
+-   [Miscellaneous Nodes](#miscellaneous-nodes)
+-   [Info/Option Nodes](#infooption-nodes)
 
 Towny makes use of Permission nodes to customize the Towny experience to different player-ranks. It does this via an external permission plugin but also natively via the Townyperms.yml file located in the townysettings folder. **By default the townyperms.yml will have all the nodes given to the necessary players.** You can customize it as you like. For more info on configuring townyperms.yml see the How Towny Works wikipage. Since townyperms handles most of Towny's permission nodes the only ones you will probably have to add to your permission plugin's node file will be the nodes in the admin/moderator section found below. Using a permission plugin such as Group Manager or bPerms is highly recommended. If you do not use a permissions plugin make sure that Towny's config has using_permissions: false. (It is not recommended to not use a permissions plugin, there are some very useful parts of towny which cannot be customized without using a permissions plugin.
 
