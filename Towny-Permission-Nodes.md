@@ -1,6 +1,6 @@
 -   [Admin/Moderator Nodes](#adminmoderator-nodes)
--   [/Plot Nodes](#/plot-nodes)
--   [/Resident Nodes](#/Resident_Nodes)
+-   [/Plot Nodes](#plot-nodes)
+-   [/Resident Nodes](#resident-nodes)
 -   [/Town Nodes](#/Town_Nodes)
 -   [/Nation Nodes](#/Nation_Nodes)
 -   [/Towny Nodes](#/Towny_Nodes)
