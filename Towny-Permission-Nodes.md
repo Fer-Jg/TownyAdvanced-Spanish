@@ -141,86 +141,87 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
         -   towny.town.spawn.public : Ability to spawn to unaffilated public towns.
         -   towny.town.spawn.outpost : Ability to spawn to your own town's outposts. This is a child node of towny.town.spawn.town and must be negated if you do not want players to teleport to their outposts (ex in Groupmanager: - -towny.town.spawn.outpost)
 
-towny.command.town.`*`
+- towny.command.town.`*`
 
-towny.command.town.here
+    - towny.command.town.here
 
-towny.command.town.list
+    - towny.command.town.list
 
-towny.command.town.new : Required to create a town.
+    - towny.command.town.new : Required to create a town.
 
-towny.command.town.leave
+    - towny.command.town.leave
 
-towny.command.town.withdraw
+    - towny.command.town.withdraw
 
-towny.command.town.deposit
+    - towny.command.town.deposit
 
-towny.command.town.rank.`*`
+    - towny.command.town.rank.`*`
 
-towny.command.town.reslist
+    - towny.command.town.reslist
 
-towny.command.town.outlaw : Allows outlawing players in your town.
+    - towny.command.town.outlaw : Allows outlawing players in your town.
 
-towny.command.town.outpost.list : Child node of towny.town.spawn.town
+    - towny.command.town.outpost.list : Child node of towny.town.spawn.town
 
-towny.command.town.set.`*`
+    - towny.command.town.set.`*`
 
--   towny.command.town.set.board
--   towny.command.town.set.mayor
--   towny.command.town.set.homeblock
--   towny.command.town.set.spawn
--   towny.command.town.set.outpost
--   towny.command.town.set.perm
--   towny.command.town.set.taxes
--   towny.command.town.set.plottax
--   towny.command.town.set.shoptax
--   towny.command.town.set.embassytax
--   towny.command.town.set.plotprice
--   towny.command.town.set.shopprice
--   towny.command.town.set.embassyprice
--   towny.command.town.set.name : player can rename their town
--   towny.command.town.set.tag
+        -   towny.command.town.set.board
+        -   towny.command.town.set.mayor
+        -   towny.command.town.set.homeblock
+        -   towny.command.town.set.spawn
+        -   towny.command.town.set.spawncost
+        -   towny.command.town.set.outpost
+        -   towny.command.town.set.perm
+        -   towny.command.town.set.taxes
+        -   towny.command.town.set.plottax
+        -   towny.command.town.set.shoptax
+        -   towny.command.town.set.embassytax
+        -   towny.command.town.set.plotprice
+        -   towny.command.town.set.shopprice
+        -   towny.command.town.set.embassyprice
+        -   towny.command.town.set.name : player can rename their town
+        -   towny.command.town.set.tag
 
-towny.command.town.buy
+    - towny.command.town.buy
 
-towny.command.town.othertown
+    - towny.command.town.othertown
 
-towny.command.town.plots : Use of the /town {name} plots
+    - towny.command.town.plots : Use of the /town {name} plots
 
-towny.command.town.say
+    - towny.command.town.say
 
-towny.command.town.toggle.`*` : User has access to all town toggle commands (if a mayor or assistant, residents can toggle on their personal land.)
+    - towny.command.town.toggle.`*` : User has access to all town toggle commands (if a mayor or assistant, residents can toggle on their personal land.)
 
--   towny.command.town.toggle.pvp
--   towny.command.town.toggle.public
--   towny.command.town.toggle.explosion
--   towny.command.town.toggle.fire
--   towny.command.town.toggle.mobs
--   towny.command.town.toggle.taxpercent
--   towny.command.town.toggle.open
--   towny.command.town.toggle.jail
+        -   towny.command.town.toggle.pvp
+        -   towny.command.town.toggle.public
+        -   towny.command.town.toggle.explosion
+        -   towny.command.town.toggle.fire
+        -   towny.command.town.toggle.mobs
+        -   towny.command.town.toggle.taxpercent
+        -   towny.command.town.toggle.open
+        -   towny.command.town.toggle.jail
 
-towny.command.town.mayor
+    - towny.command.town.mayor
 
-towny.command.town.delete : player can delete their town
+    - towny.command.town.delete : player can delete their town
 
-towny.command.town.join : a player can join an open town
+    - towny.command.town.join : a player can join an open town
 
-towny.command.town.add : player can add a player to their town.
+    - towny.command.town.add : player can add a player to their town.
 
-towny.command.town.kick :player can kick a player from their town.
+    - towny.command.town.kick :player can kick a player from their town.
 
-towny.command.town.claim.`*`
+    - towny.command.town.claim.`*`
 
--   towny.command.town.claim.town : User is able to expand his town with /town claim (used when world is set as unclaimable in /townyworld)
--   towny.command.town.claim.outpost : to allow/block claiming of outposts via permissions. (Will still require outposts to be enabled in the config.)
--   towny.command.town.claim.town.multiple : to allow/block claiming of multiple plots using /town claim auto, /town claim rect, etc. Not given by default, you will have to add this to the mayor group in the townyperms.yml if you'd like to allow your mayors to do this.
+        -   towny.command.town.claim.town : User is able to expand his town with /town claim (used when world is set as unclaimable in /townyworld)
+        -   towny.command.town.claim.outpost : to allow/block claiming of outposts via permissions. (Will still require outposts to be enabled in the config.)
+        -   towny.command.town.claim.town.multiple : to allow/block claiming of multiple plots using /town claim auto, /town claim rect, etc. Not given by default, you will have to add this to the mayor group in the townyperms.yml if you'd like to allow your mayors to do this.
 
-towny.command.town.unclaim : player is able to unclaim town land.
+    - towny.command.town.unclaim : player is able to unclaim town land.
 
--   towny.command.town.unclaim.all
+        -   towny.command.town.unclaim.all
 
-towny.command.town.online
+    - towny.command.town.online
 
 []()/Nation Nodes
 -----------------
