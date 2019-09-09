@@ -1,5 +1,15 @@
--   [Getting started with Towny and your IDE](#getting-started-with-towny-and-your-ide)
--   [
+ * [Getting started with Towny and your IDE](#getting-started-with-towny-and-your-ide)
+ * [Common API uses](#common-api-uses)
+    * [Checking if a player is in the wilderness](#checking-if-a-player-is-in-the-wilderness) 
+    * [Checking if a player is in their own town](#checking-if-a-player-is-in-their-own-town) 
+    * [Getting a Resident from a player](#getting-a-resident-from-a-player) 
+    * [Getting a Town](#getting-a-town) 
+    * [Getting a Nation](#getting-a-nation)
+    * [Checking if Towny would prevent PVP damage](#checking-if-towny-would-prevent-pvp-damage)
+ * [Some useful events](#some-useful-events)
+ * [Of use to Shop Plugin developers](#of-use-to-shop-plugin-developers)
+ * [Example plugins using the TownyAPI](#example-plugins-using-the-townyapi)
+
 Using the Towny API in your plugins is quite simple. There are two versions of the API.
 
 1.  The original API which ran from version 0 to 0.94.0.0
@@ -7,8 +17,7 @@ Using the Towny API in your plugins is quite simple. There are two versions of t
 
 The new API supports the old API calls although they will appear as deprecated. It is recommended that authors do switch to the new API.
 
-Getting started with Towny and your IDE
----------------------------------------
+## Getting started with Towny and your IDE
 
 The builds of Towny beyond version 0.93.0.3 are available on Maven, the repo for which is: 
 
@@ -28,8 +37,7 @@ Note again that the API changed after 0.94.0.2 and your version number should be
 ```
     import com.palmergames.bukkit.towny.TownyAPI;
 ```
-Common API uses
----------------
+## Common API uses
 
 ### Checking if a player is in the wilderness
 
@@ -121,7 +129,7 @@ A common use of the API in magic/combat/rpg plugins is needing to know if Towny 
 
 The preventDamageCall will return True if Towny would stop the damage from happening.
 
-### Some useful events
+## Some useful events
 
 Events thrown by Towny can be imported here: 
 
@@ -129,11 +137,11 @@ Events thrown by Towny can be imported here:
 
 [For a full list of Events check out the github.](https://github.com/TownyAdvanced/Towny/tree/master/src/com/palmergames/bukkit/towny/event)
 
-### Of use to Shop Plugin developers:
+## Of use to Shop Plugin developers:
 
 -   Our [ShopPlotUtil](https://github.com/TownyAdvanced/Towny/blob/master/src/com/palmergames/bukkit/towny/utils/ShopPlotUtil.java) provides easy-to-use tests to query if a player can make a shop at a location.
 
-### Example plugins using the TownyAPI:
+## Example plugins using the TownyAPI:
 
 -   [TownyFlight](https://github.com/TownyAdvanced/TownyFlight)
 
