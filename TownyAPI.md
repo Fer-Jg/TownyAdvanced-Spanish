@@ -1,3 +1,5 @@
+-   [Getting started with Towny and your IDE](#getting-started-with-towny-and-your-ide)
+-   [
 Using the Towny API in your plugins is quite simple. There are two versions of the API.
 
 1.  The original API which ran from version 0 to 0.94.0.0
