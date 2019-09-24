@@ -262,6 +262,7 @@ towny.nation.spawn.`*` : Grants all Spawn travel nodes
 -   towny.command.nation.online
 -   towny.command.nation.add
 -   towny.command.nation.kick
+-   towny.command.nation.spawn
 
 []()/Towny Nodes
 ----------------
