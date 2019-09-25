@@ -19,20 +19,25 @@ The new API supports the old API calls although they will appear as deprecated. 
 
 ## Getting started with Towny and your IDE
 
-The builds of Towny beyond version 0.93.0.3 are available on Maven, the repo for which is: 
+The builds of Towny beyond version 0.94.0.12 are available on Maven, the repo for which is: 
 
 ```
-        <repository>
-            <id>articdive-repo</id>
-            <url>https://nexus.articdive.de/repository/maven-releases</url>
-        </repository>                                                 
-        <dependency>
-            <groupId>com.palmergames</groupId>
-            <artifactId>Towny</artifactId>
-            <version>0.94.0.5</version>
-            <scope>provided</scope>
-        </dependency>
+  <repositories>
+    <repository>
+      <id>github-Towny</id>
+      <url>https://maven.pkg.github.com/TownyAdvanced/Towny</url>
+    </repository>   
+  </repositories>
+  <dependencies>                    
+    <dependency>
+      <groupId>com.palmergames.bukkit.towny</groupId>
+      <artifactId>Towny</artifactId>
+      <version>0.94.0.12</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>  
 ```
+
 Note again that the API changed after 0.94.0.2 and your version number should be set for that or newer. Once it is added you can put Towny into your plugin.yml's depend or softdepend list (depending on whether your plugin needs Towny present to function all of the time, or if you want to support Towny features when present.) Lastly you will need to add the following to your pre's import section:
 ```
     import com.palmergames.bukkit.towny.TownyAPI;
