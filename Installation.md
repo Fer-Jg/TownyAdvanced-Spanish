@@ -12,7 +12,7 @@
      * Adding town/nation/world to chat
      * Adding chat channels
    * **TownyNameUpdater.jar** is required if you want to keep Towny residents' names updated if they change their Minecraft name.
-   * [**Vault.jar**](https://www.spigotmc.org/resources/vault.34315/) (separate download) is required if you use an economy plugin other than _[iConomy 5.0.1](http://towny.palmergames.com/iconomy-5-05/)_.
+   * [**Vault.jar**](https://www.spigotmc.org/resources/vault.34315/) (separate download) is required if you use an economy plugin.
 4. Start your server.
 5. Stop your server.
 
