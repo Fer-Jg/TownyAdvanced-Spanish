@@ -12,3 +12,4 @@
 ### Reference
 - [**Commands**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
 - [**Permission Nodes**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Permission-Nodes)
+- [**Config.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml)
