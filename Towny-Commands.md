@@ -7,12 +7,17 @@
 -   [/townyworld](#townyworld)
 -   [Chat Commands](#chat-commands)
 
--   This list breaks each command down by word. Eg: /resident set perm {on/off}.
--   For resident commands, the add command would auto-match online players, while add+ requires exact spelling to choose offline players.
--   Just about every subcommand has it's own help menu. Use /resident set, or a similar cutoff, to show all the options for that command ingame. You can also use /resident set ?, you will probably need to use that in the case where a subcommand actually has a function by itself. Example: /town claim, and /town claim ? would show all it's subcommands.
--   The { } brackets are used to show variables, or what you need to fill in. The elipse ".." (or shortened elipse) is used to show that you can specify multiple things at once (like inviting 10 residents at once).
--   The {bleh/blah/bluh} is used to show that the input can be multiple words.
--   An empty bullet represents that the subcommand itself does something and will not show a help menu.
+> This list breaks each command down by word. Eg: /resident set perm {on/off}.
+
+> For resident commands, the add command would auto-match online players, while add+ requires exact spelling to choose offline players.
+
+> Just about every subcommand has it's own help menu. Use /resident set, or a similar cutoff, to show all the options for that command ingame. You can also use /resident set ?, you will probably need to use that in the case where a subcommand actually has a function by itself. Example: /town claim, and /town claim ? would show all it's subcommands.
+
+> The { } brackets are used to show variables, or what you need to fill in. The elipse ".." (or shortened elipse) is used to show that you can specify multiple things at once (like inviting 10 residents at once).
+
+> The {bleh/blah/bluh} is used to show that the input can be multiple words.
+
+> An empty bullet represents that the subcommand itself does something and will not show a help menu.
 
 []()/towny
 ----------
