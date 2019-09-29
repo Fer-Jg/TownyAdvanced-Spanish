@@ -1,13 +1,11 @@
--   [/towny](#/towny)
--   [/plot](#/plot)
--   [/resident](#/resident)
--   [/town](#/town)
--   [/nation](#/nation)
--   [/townyadmin](#/townyadmin)
--   [/townyworld](#/townyworld)
--   [Chat Commands](#Chat_Commands)
-
-<!-- -->
+-   [/towny](#towny)
+-   [/plot](#plot)
+-   [/resident](#resident)
+-   [/town](#town)
+-   [/nation](#nation)
+-   [/townyadmin](#townyadmin)
+-   [/townyworld](#townyworld)
+-   [Chat Commands](#chat-commands)
 
 -   This list breaks each command down by word. Eg: /resident set perm {on/off}.
 -   For resident commands, the add command would auto-match online players, while add+ requires exact spelling to choose offline players.
@@ -15,9 +13,6 @@
 -   The { } brackets are used to show variables, or what you need to fill in. The elipse ".." (or shortened elipse) is used to show that you can specify multiple things at once (like inviting 10 residents at once).
 -   The {bleh/blah/bluh} is used to show that the input can be multiple words.
 -   An empty bullet represents that the subcommand itself does something and will not show a help menu.
-
-[]()Master List
-===============
 
 []()/towny
 ----------
@@ -73,9 +68,9 @@
         -   jail - Set a plot to an jail plot.
         -   farm - Set a plot to a farm plot.
         -   bank - Set a plot to a bank plot.
-        -   -   name - allows a mayor or plot-owner to rename plots they own, overwriting the ~Unowned message. Personal-plots display both the plot's given name and the name of the plot-owner.
+        -   name - allows a mayor or plot-owner to rename plots they own, overwriting the ~Unowned message. Personal-plots display both the plot's given name and the name of the plot-owner.
         -   perm
-            -   {on/off} - Edits the perm line of the single plot in which the player is standing. [See here for details.](http://code.google.com/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms)
+            -   {on/off} - Edits the perm line of the single plot in which the player is standing. [See here for details.](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms)
             -   {resident/ally/outsider} {on/off}
             -   {build/destroy/switch/itemuse} {on/off}
             -   {resident/ally/outsider} {build/destroy/switch/itemuse} {on/off}
@@ -114,7 +109,7 @@
         -   reset - This turns off all modes that are active.
 -   set
     -   perm
-        -   {on/off} - Edits the perm line on the resident screen. [See here for details.](http://code.google.com/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms)
+        -   {on/off} - Edits the perm line on the resident screen. [See here for details.](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms)
         -   {friend/ally/outsider} {on/off}
         -   {build/destroy/switch/itemuse} {on/off}
         -   {friend/ally/outsider} {build/destroy/switch/itemuse} {on/off}
@@ -170,7 +165,7 @@
         -   outpost - Resets the outpost's spawn point to the player location. Must be used in an existing outpost plot.
         -   jail - Resets a jail plot's spawn to current position within a jail plot.
         -   perm
-            -   {on/off} - Edits the perm line on the town screen. [See here for details.](http://code.google.com/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms)
+            -   {on/off} - Edits the perm line on the town screen. [See here for details.](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms)
             -   {resident/ally/outsider} {on/off}
             -   {build/destroy/switch/itemuse} {on/off}
             -   {resident/ally/outsider} {build/destroy/switch/itemuse} {on/off}
@@ -240,86 +235,64 @@
 []()/townyadmin
 ---------------
 
-/townyadmin
+- /townyadmin
 
-- Shows Memory, Threads, War status, Health regen setting, Time, Whether daily-timer/taxes are on.
+  - Shows Memory, Threads, War status, Health regen setting, Time, Whether daily-timer/taxes are on.
+  - ? - Shows /ta commands.
+  - delete {playername} - Deletes a player's towny data.
+  - resident 
+    -   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
 
-? - Shows /ta commands.
+  - town {townname}
+    -   new [name] [mayor] - Admin command to create a town for the mayor where the command sender is standing.
+    -   add {resident} .. {resident} - Admin command to invite/add a resident to a town.
+    -   remove {resident} .. {resident} - Admin command to remove a resident from a town.
+    -   kick {resident} - Admin command to remove a resident from a town.
+    -   rename {newname} - Admin command to rename a town.
+    -   spawn - Admin command to spawn at at town spawn.
+    -   tpplot {world} {x} {z} - Teleports an admin to the Towny chunk coordinates seen in the /towny map command. Be careful with large numbers, you could be teleported farther than you think and end up generating chunks.
+    -   outpost # - Admin command to spawn at any towns outposts.
+    -   delete - Admin command to delete a town.
+    -   rank {add/remove} {name} {rank} - Admin command to give/remove a rank to a town member.
 
-delete {playername} - Deletes a player's towny data.
+  - nation {nationname}
+    -   add {town} - Admin command to invite/add a town to a nation.
+    -   rename {newname} - Admin command to rename a nation.
+    -   delete - Admin command to delete a town.
 
-resident {playername}
+  - reset - resets the towny config.yml to its current default.
 
--   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
+  - toggle
+    -   war - Turn on/off towny war.
+    -   neutral - Turn on/off a nation's ability to declare neutrality.
+    -   npc {residentname} - Toggles a player's resident file to isNPC=true, this exempts the player from taxes/upkeep.
+    -   debug - Turns on/off debug mode.
+    -   devmode - Turns on/off special devmode for when towny's devs join your server to find a bug.
+    -   withdraw - Turns on/off town/nation's ability to withdraw money from their town/nation banks.
 
-town {townname}
+  - set
+    - plot {town} - Sets a plot to a town.
+        -   When in a town only a single plot can be transfered at one time. Does not require a town to have available townblocks to claim.
+        -   When in the wilderness two types of sub commands can be used to do area claims:
+        -   Does require a town to have available townblocks to claim.
+        -   Does obey proximity rules for claims between towns/homeblocks.
+        -   /ta set plot {town} {rect|circle} {radius}
+        -   /ta set plot {town} {rect|circle} auto
+    - title {name} {title} - A command for admins to be able to set a player's title.
+    - surname {name} {surname} - A command for admins to be able to set a player's surname.
+    -   capital {townname} - A command for admins to be able to change a nations capital. Town to be set must already be a member of the nation.
+    -   mayor
+        -   {town} {resident} - Admin command to set a resident as mayor of a town.
+        -   {town} npc - Admin command to set a town to have an npc mayor.
 
--   new [name] [mayor] - Admin command to create a town for the mayor where the command sender is standing.
--   add {resident} .. {resident} - Admin command to invite/add a resident to a town.
--   remove {resident} .. {resident} - Admin command to remove a resident from a town.
--   kick {resident} - Admin command to remove a resident from a town.
--   rename {newname} - Admin command to rename a town.
--   spawn - Admin command to spawn at at town spawn.
--   tpplot {world} {x} {z} - Teleports an admin to the Towny chunk coordinates seen in the /towny map command. Be careful with large numbers, you could be teleported farther than you think and end up generating chunks.
--   outpost # - Admin command to spawn at any towns outposts.
--   delete - Admin command to delete a town.
--   rank {add/remove} {name} {rank} - Admin command to give/remove a rank to a town member.
-
-nation {nationname}
-
--   add {town} - Admin command to invite/add a town to a nation.
--   rename {newname} - Admin command to rename a nation.
--   delete - Admin command to delete a town.
-
-reset - resets the towny config.yml to its current default.
-
-toggle
-
--   war - Turn on/off towny war.
--   neutral - Turn on/off a nation's ability to declare neutrality.
--   npc {residentname} - Toggles a player's resident file to isNPC=true, this exempts the player from taxes/upkeep.
--   debug - Turns on/off debug mode.
--   devmode - Turns on/off special devmode for when towny's devs join your server to find a bug.
--   withdraw - Turns on/off town/nation's ability to withdraw money from their town/nation banks.
-
-set
-
-plot {town} - Sets a plot to a town.
-
--   When in a town only a single plot can be transfered at one time. Does not require a town to have available townblocks to claim.
--   When in the wilderness two types of sub commands can be used to do area claims:
-    -   Does require a town to have available townblocks to claim.
-    -   Does obey proximity rules for claims between towns/homeblocks.
-    -   /ta set plot {town} {rect|circle} {radius}
-    -   /ta set plot {town} {rect|circle} auto
-
-title {name} {title} - A command for admins to be able to set a player's title.
-
-surname {name} {surname} - A command for admins to be able to set a player's surname.
-
--   capital {townname} - A command for admins to be able to change a nations capital. Town to be set must already be a member of the nation.
-
-<!-- -->
-
--   mayor
-    -   {town} {resident} - Admin command to set a resident as mayor of a town.
-    -   {town} npc - Admin command to set a town to have an npc mayor.
-
-givebonus {town} {#} - Gives extra townblocks to a town.
-
-reload - Reloads towny's config.yml.
-
-backup - Creates a backup.
-
-checkperm {player} {node} - Quick test of whether a player has a permission node.
-
-newday - Causes a new day to happen, this does not stop the next new day from happening when it was already scheduled.
-
-unclaim
-
--   rect {radius} - Admin command to unclaim an area.
-
-purge {# as in days} - Deletes old residents.
+  - givebonus {town} {#} - Gives extra townblocks to a town.
+  - reload - Reloads towny's config.yml.
+  - backup - Creates a backup.
+  - checkperm {player} {node} - Quick test of whether a player has a permission node.
+  - newday - Causes a new day to happen, this does not stop the next new day from happening when it was already scheduled.
+  - unclaim
+    -   rect {radius} - Admin command to unclaim an area.
+  - purge {# as in days} - Deletes old residents.
 
 []()/townyworld
 ---------------
