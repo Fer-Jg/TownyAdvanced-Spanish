@@ -13,3 +13,6 @@
 - [**Commands**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
 - [**Permission Nodes**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Permission-Nodes)
 - [**Config.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml)
+
+### Misc
+- [**Plugins using the Towny API**](https://github.com/TownyAdvanced/Towny/wiki/Plugins-using-the-Towny-API)
