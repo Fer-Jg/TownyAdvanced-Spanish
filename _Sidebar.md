@@ -6,8 +6,8 @@
 ### Setup
 - [**Installation**](https://github.com/TownyAdvanced/Towny/wiki/Installation)
   - [Server Preparation](https://github.com/TownyAdvanced/Towny/wiki/Installation#server-preparation)
-  - [Bypass Version Check](https://github.com/TownyAdvanced/Towny/wiki/Installation#bypass-craftbukkit-version-check-optional)
-  - [Configuration](https://github.com/TownyAdvanced/Towny/wiki/Installation#configuring-existing-worlds)
+  - [Important Things to Note](https://github.com/TownyAdvanced/Towny/wiki/Installation/_edit#important-things-to-note)
+- [**Updating Towny**](https://github.com/TownyAdvanced/Towny/wiki/Updating-Towny)
 
 ### Reference
 - [**Commands**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
