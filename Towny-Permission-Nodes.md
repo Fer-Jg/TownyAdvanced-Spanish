@@ -1,4 +1,3 @@
-# Permission Nodes
 -   [Admin/Moderator Nodes](#adminmoderator-nodes)
 -   [/Plot Nodes](#plot-nodes)
 -   [/Resident Nodes](#resident-nodes)
