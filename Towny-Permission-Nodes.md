@@ -1,3 +1,4 @@
+# Permission Nodes
 -   [Admin/Moderator Nodes](#adminmoderator-nodes)
 -   [/Plot Nodes](#plot-nodes)
 -   [/Resident Nodes](#resident-nodes)
@@ -10,27 +11,26 @@
 -   [Miscellaneous Nodes](#miscellaneous-nodes)
 -   [Info/Option Nodes](#infooption-nodes)
 
-Towny makes use of Permission nodes to customize the Towny experience to different player-ranks. It does this via an external permission plugin but also natively via the Townyperms.yml file located in the townysettings folder. **By default the townyperms.yml will have all the nodes given to the necessary players.** You can customize it as you like. For more info on configuring townyperms.yml see the How Towny Works wikipage. Since townyperms handles most of Towny's permission nodes the only ones you will probably have to add to your permission plugin's node file will be the nodes in the admin/moderator section found below. Using a permission plugin such as Group Manager or bPerms is highly recommended. If you do not use a permissions plugin make sure that Towny's config has using_permissions: false. (It is not recommended to not use a permissions plugin, there are some very useful parts of towny which cannot be customized without using a permissions plugin.
+Towny has many permission nodes with which you can customize your server and it's separate worlds. By default Towny has already given out the correct permission nodes for a standard install in the townyperms.yml. Towny will read nodes from the townyperms.yml always, but it will also read permission nodes given by your (optional) permission plugin ie, GroupManager, LuckPerms. **Some admins make the mistake of placing Towny permission nodes into their permission plugin.** The only permission nodes you must give in your permission plugin is `towny.admin.*` to your admin group(s).
 
-[]()Permission Nodes
-====================
+The only other permission node that isn't already given out is `towny.wild.*`. Giving this node will grant full build/destroy/switch/itemuse rights to players in the wilderness. You must decide if you want to give this out, and how:
 
-[]()Admin/Moderator Nodes
--------------------------
+* One option is to put it in the nomad section of the townyperms.yml file, which will enable all players server-wide to use the wilderness.
+* The other option is to give it in your permission plugin, to whichever rank you want to use the wilderness.
 
--   towny.admin: User is able to use /townyadmin, as well as the ability to build/destroy anywhere. User can also ablme to make towns or nations when set to admin only.
+## Admin/Moderator Nodes
+
+-   towny.admin: User is able to use /townyadmin, as well as the ability to build/destroy anywhere.
 -   towny.admin.nation_zone : Made so that mods who dont have towny.admin can bypass the nation zone protection. Child node of towny.admin.
 
-<!-- -->
-
--   towny.command.townyadmin.`*`
-    -   towny.command.townyadmin.set.`*`
+-   towny.command.townyadmin.*
+    -   towny.command.townyadmin.set.*
         -   towny.command.townyadmin.set.mayor
         -   towny.command.townyadmin.set.plot - For mods who don't have the full towny.admin permission node but are able to change plots to other towns.
         -   towny.command.townyadmin.set.capital
         -   towny.command.townyadmin.set.title
         -   towny.command.townyadmin.set.surname
-    -   towny.command.townyadmin.town.`*` - Allows a player to use '/ta town add/kick'
+    -   towny.command.townyadmin.town.* - Allows a player to use '/ta town add/kick'
         -   towny.command.townyadmin.town.new
         -   towny.command.townyadmin.town.add
         -   towny.command.townyadmin.town.kick
@@ -38,11 +38,11 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
         -   towny.command.townyadmin.town.rename
         -   towny.command.townyadmin.town.spawn
             -   towny.command.townyadmin.town.spawn.freecharge
-    -   towny.command.townyadmin.nation.`*` - Allows a player to use '/ta nation add/kick'
+    -   towny.command.townyadmin.nation.* - Allows a player to use '/ta nation add/kick'
         -   towny.command.townyadmin.nation.add
         -   towny.command.townyadmin.nation.delete
         -   towny.command.townyadmin.nation.rename
-    -   towny.command.townyadmin.toggle.`*` - Allows use of '/ta toggle ...'
+    -   towny.command.townyadmin.toggle.* - Allows use of '/ta toggle ...'
         -   towny.command.townyadmin.toggle.war
         -   towny.command.townyadmin.toggle.neutral
         -   towny.command.townyadmin.toggle.npc
@@ -59,29 +59,31 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
     -   towny.command.townyadmin.unclaim - Unclaims the plot you are standing in.
     -   towny.command.townyadmin.resident.delete - Deletes a specific resident '/ta res delete {name}'
 
-<!-- -->
+-   towny.claimed.* : User can build/destroy/switch/item_use in all towns. **This node should be given to moderator ranks only in most cases.**
+    > This node should only be given to server staff/moderators/admins. It should not be put into the townyperms.yml
+    -   towny.claimed.alltown.*
+        -   towny.claimed.alltown.build.* : User can build in all towns.
+        -   towny.claimed.alltown.destroy.* : User can destroy in all towns.
+        -   towny.claimed.alltown.switch.* : User can switch in all towns.
+        -   towny.claimed.alltown.item_use.* : User can use use items in all towns.
+    > This node can be given to the Assistant-type rank in townyperms.yml and they will be able to build/destroy over the entire town.
+    -   towny.claimed.owntown.*
+        -   towny.claimed.owntown.build.* : User can build in their town.
+        -   towny.claimed.owntown.destroy.* : User can destroy in their town.
+        -   towny.claimed.owntown.switch.* : User can switch in their town.
+        -   towny.claimed.owntown.item_use.* : User can use items in their town.
+        
+    > This node can be given to the Assistant-type rank in townyperms.yml and they will be able to build/destroy over town-owned plots and not player owned plots.
+    -   towny.claimed.townowned.* : User is able to edit specified/all block types in their town's owned plots (Town only, not resident owned).    
+        -   towny.claimed.townowned.build.* : User can build in all town-owned plots.
+        -   towny.claimed.townowned.destroy.* : User can destroy in all town-owned plots.
+        -   towny.claimed.townowned.switch.* : User can switch in all town-owned plots.
+        -   towny.claimed.townowned.item_use.* : User can use items in all town-owned plots.
 
--   towny.claimed.`*` : User can build/destroy/switch/item_use in all towns. **These should be given to moderator ranks only in most cases.**
-    -   towny.claimed.owntown.`*`
-        -   towny.claimed.owntown.build.`*` : User can build in their town.
-        -   towny.claimed.owntown.destroy.`*` : User can destroy in their town.
-        -   towny.claimed.owntown.switch.`*` : User can switch in their town.
-        -   towny.claimed.owntown.item_use.`*` : User can use items in their town.
-    -   towny.claimed.alltown.`*`
-        -   towny.claimed.alltown.build.`*` : User can build in all towns.
-        -   towny.claimed.alltown.destroy.`*` : User can destroy in all towns.
-        -   towny.claimed.alltown.switch.`*` : User can switch in all towns.
-        -   towny.claimed.alltown.item_use.`*` : User can use use items in all towns.
-    -   towny.claimed.townowned.`*` : User is able to edit specified/all block types in their town's owned plots (Town only, not resident owned).
-        -   towny.claimed.townowned.build.`*` : User can build in all town-owned plots.
-        -   towny.claimed.townowned.destroy.`*` : User can destroy in all town-owned plots.
-        -   towny.claimed.townowned.switch.`*` : User can switch in all town-owned plots.
-        -   towny.claimed.townowned.item_use.`*` : User can use items in all town-owned plots.
+## /Plot Nodes
 
-[]()/Plot Nodes
----------------
 
--   towny.command.plot.`*`
+-   towny.command.plot.*
     -   towny.command.plot.asmayor - For town plot management, grant this to any ranks you want to have the ability to:
         -   reclaim plots from players for the town.
         -   Toggle perms and plot settings on any plot in the town.
@@ -93,12 +95,12 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
     -   towny.command.plot.forsale
     -   towny.command.plot.evict
     -   towny.command.plot.perm
-    -   towny.command.plot.toggle.`*`
+    -   towny.command.plot.toggle.*
         -   towny.command.plot.toggle.pvp
         -   towny.command.plot.toggle.explosion
         -   towny.command.plot.toggle.fire
         -   towny.command.plot.toggle.mobs
-    -   towny.command.plot.set.`*`
+    -   towny.command.plot.set.*
         -   towny.command.plot.set.perm
         -   towny.command.plot.set.reset
         -   towny.command.plot.set.shop
@@ -110,61 +112,47 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
         -   towny.command.plot.set.spleef
     -   towny.command.plot.clear
 
-[]()/Resident Nodes
--------------------
+## /Resident Nodes
 
--   towny.command.resident.`*`
+-   towny.command.resident.*
     -   towny.command.resident.list
     -   towny.command.resident.tax
     -   towny.command.resident.jail
     -   towny.command.resident.otherresident
-    -   towny.command.resident.set.`*`
+    -   towny.command.resident.set.*
         -   towny.command.resident.set.perm
         -   towny.command.resident.set.mode
     -   towny.command.resident.spawn
-    -   towny.command.resident.toggle.`*`
+    -   towny.command.resident.toggle.*
         -   towny.command.resident.toggle.pvp
         -   towny.command.resident.toggle.explosion
         -   towny.command.resident.toggle.fire
         -   towny.command.resident.toggle.mobs
     -   towny.command.resident.friend
 
-[]()/Town Nodes
----------------
+## /Town Nodes
 
--   towny.town.`*` : User has access to all .town permission nodes.
+-   towny.town.* : User has access to all .town permission nodes.
     -   towny.town.resident : User is able to join a town.
-    -   towny.town.spawn.`*` : Grants all Spawn travel nodes
+    -   towny.town.spawn.* : Grants all Spawn travel nodes
         -   towny.town.spawn.town : Ability to spawn to your own town.
         -   towny.town.spawn.nation : Ability to spawn to other towns in your nation.
         -   towny.town.spawn.ally : Ability to spawn to towns in nations allied with yours.
         -   towny.town.spawn.public : Ability to spawn to unaffilated public towns.
         -   towny.town.spawn.outpost : Ability to spawn to your own town's outposts. This is a child node of towny.town.spawn.town and must be negated if you do not want players to teleport to their outposts (ex in Groupmanager: - -towny.town.spawn.outpost)
 
-- towny.command.town.`*`
-
+- towny.command.town.*
     - towny.command.town.here
-
     - towny.command.town.list
-
     - towny.command.town.new : Required to create a town.
-
     - towny.command.town.leave
-
     - towny.command.town.withdraw
-
     - towny.command.town.deposit
-
-    - towny.command.town.rank.`*`
-
+    - towny.command.town.rank.*
     - towny.command.town.reslist
-
     - towny.command.town.outlaw : Allows outlawing players in your town.
-
     - towny.command.town.outpost.list : Child node of towny.town.spawn.town
-
-    - towny.command.town.set.`*`
-
+    - towny.command.town.set.*
         -   towny.command.town.set.board
         -   towny.command.town.set.mayor
         -   towny.command.town.set.homeblock
@@ -181,17 +169,11 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
         -   towny.command.town.set.embassyprice
         -   towny.command.town.set.name : player can rename their town
         -   towny.command.town.set.tag
-
     - towny.command.town.buy
-
     - towny.command.town.othertown
-
     - towny.command.town.plots : Use of the /town {name} plots
-
     - towny.command.town.say
-
-    - towny.command.town.toggle.`*` : User has access to all town toggle commands (if a mayor or assistant, residents can toggle on their personal land.)
-
+    - towny.command.town.toggle.* : User has access to all town toggle commands (if a mayor or assistant, residents can toggle on their personal land.)
         -   towny.command.town.toggle.pvp
         -   towny.command.town.toggle.public
         -   towny.command.town.toggle.explosion
@@ -200,74 +182,58 @@ Towny makes use of Permission nodes to customize the Towny experience to differe
         -   towny.command.town.toggle.taxpercent
         -   towny.command.town.toggle.open
         -   towny.command.town.toggle.jail
-
     - towny.command.town.mayor
-
     - towny.command.town.delete : player can delete their town
-
     - towny.command.town.join : a player can join an open town
-
     - towny.command.town.add : player can add a player to their town.
-
     - towny.command.town.kick :player can kick a player from their town.
-
-    - towny.command.town.claim.`*`
-
+    - towny.command.town.claim.*
         -   towny.command.town.claim.town : User is able to expand his town with /town claim (used when world is set as unclaimable in /townyworld)
         -   towny.command.town.claim.outpost : to allow/block claiming of outposts via permissions. (Will still require outposts to be enabled in the config.)
         -   towny.command.town.claim.town.multiple : to allow/block claiming of multiple plots using /town claim auto, /town claim rect, etc. Not given by default, you will have to add this to the mayor group in the townyperms.yml if you'd like to allow your mayors to do this.
-
     - towny.command.town.unclaim : player is able to unclaim town land.
-
         -   towny.command.town.unclaim.all
-
     - towny.command.town.online
 
-[]()/Nation Nodes
------------------
+## /Nation Nodes
 
-towny.command.nation.`*`
+- towny.nation.spawn.* : Grants all Spawn travel nodes
+	-   towny.nation.spawn.nation: Ability to spawn to your own nation.
+	-   towny.nation.spawn.ally : Ability to spawn to nations allied with yours.
+	-   towny.nation.spawn.public : Ability to spawn to unaffilated public nations.
 
-towny.nation.spawn.`*` : Grants all Spawn travel nodes
+- towny.command.nation.*
+	-   towny.command.nation.list
+	-   towny.command.nation.new
+	-   towny.command.nation.leave
+	-   towny.command.nation.withdraw
+	-   towny.command.nation.deposit
+	-   towny.command.nation.rank.*
+	-   towny.command.nation.king
+	-   towny.command.nation.othernation
+	-   towny.command.nation.say
+	-   towny.command.nation.set.*
+	    -   towny.command.nation.set.spawncost
+	    -   towny.command.nation.set.king
+	    -   towny.command.nation.set.capitol
+	    -   towny.command.nation.set.taxes
+	    -   towny.command.nation.set.name
+	    -   towny.command.nation.set.title
+	    -   towny.command.nation.set.surname
+	    -   towny.command.nation.set.tag
+	-   towny.command.nation.toggle.*
+	    -   towny.command.nation.toggle.neutral
+	-   towny.command.nation.ally
+	-   towny.command.nation.enemy
+	-   towny.command.nation.delete
+	-   towny.command.nation.online
+	-   towny.command.nation.add
+	-   towny.command.nation.kick
+	-   towny.command.nation.spawn
 
--   towny.nation.spawn.nation: Ability to spawn to your own nation.
--   towny.nation.spawn.ally : Ability to spawn to nations allied with yours.
--   towny.nation.spawn.public : Ability to spawn to unaffilated public nations.
+## /Towny Nodes
 
-<!-- -->
-
--   towny.command.nation.list
--   towny.command.nation.new
--   towny.command.nation.leave
--   towny.command.nation.withdraw
--   towny.command.nation.deposit
--   towny.command.nation.rank.`*`
--   towny.command.nation.king
--   towny.command.nation.othernation
--   towny.command.nation.say
--   towny.command.nation.set.`*`
-    -   towny.command.nation.set.spawncost
-    -   towny.command.nation.set.king
-    -   towny.command.nation.set.capitol
-    -   towny.command.nation.set.taxes
-    -   towny.command.nation.set.name
-    -   towny.command.nation.set.title
-    -   towny.command.nation.set.surname
-    -   towny.command.nation.set.tag
--   towny.command.nation.toggle.`*`
-    -   towny.command.nation.toggle.neutral
--   towny.command.nation.ally
--   towny.command.nation.enemy
--   towny.command.nation.delete
--   towny.command.nation.online
--   towny.command.nation.add
--   towny.command.nation.kick
--   towny.command.nation.spawn
-
-[]()/Towny Nodes
-----------------
-
--   towny.command.towny.`*`
+-   towny.command.towny.*
     -   towny.command.towny.map
     -   towny.command.towny.prices
     -   towny.command.towny.top
@@ -278,13 +244,12 @@ towny.nation.spawn.`*` : Grants all Spawn travel nodes
     -   towny.command.towny.war
     -   towny.command.towny.spy
 
-[]()/Townyworld Nodes
----------------------
+## /Townyworld Nodes
 
--   towny.command.townyworld.`*`
+-   towny.command.townyworld.*
     -   towny.command.townyworld.list
     -   towny.command.townyworld.set
-    -   towny.command.townyworld.toggle.`*`
+    -   towny.command.townyworld.toggle.*
         -   towny.command.townyworld.toggle.claimable
         -   towny.command.townyworld.toggle.usingtowny
         -   towny.command.townyworld.toggle.pvp
@@ -300,8 +265,7 @@ towny.nation.spawn.`*` : Grants all Spawn travel nodes
     -   towny.command.townyworld.regen
     -   towny.command.townyworld.undo
 
-[]()Chat Nodes
---------------
+## Chat Nodes
 
 -   towny.chat.general : Allows a player to use the globalchat channel
 -   towny.chat.town : Allows a player to use townchat
@@ -311,57 +275,54 @@ towny.nation.spawn.`*` : Grants all Spawn travel nodes
 -   towny.chat.local : Allows a player to use localchat channel
 -   towny.chat.spy : Allows a player to see all chat in all channels
 
-<!-- -->
-
 -   towny.chat.join.{channelname} : Allows a player to /join {channelname}
 -   towny.chat.leave.{channelname} : Allows a player to /leave {channelname}
-
-<!-- -->
 
 -   townychat.mod.mute : Allows a moderator to /chmute {channel} {player}, muting another player in a channel.
 -   townychat.mod.unmute: Allows a moderator to /chunmute {channel} {player}, un-muting another player in a channel.
 
-[]()Wilderness Nodes
---------------------
+## Wilderness Nodes
 
--   towny.wild.`*`
-    -   towny.wild.build.`*`
-    -   towny.wild.destroy.`*`
-    -   towny.wild.switch.`*`
-    -   towny.wild.item_use.`*`
-        -   towny.wild.build.{block id}
-        -   towny.wild.destroy.{block id}
-        -   towny.wild.switch.{block id}
-        -   towny.wild.itemuse.{block id}
+-   towny.wild.*
+    -   towny.wild.build.*
+    -   towny.wild.destroy.*
+    -   towny.wild.switch.*
+    -   towny.wild.item_use.*
+        -   towny.wild.build.{materialname}
+        -   towny.wild.destroy.{materialname}
+        -   towny.wild.switch.{materialname}
+        -   towny.wild.itemuse.{materialname}
 
-[]()Miscellaneous Nodes
------------------------
+## Miscellaneous Nodes
 
-towny.cheat.bypass : User is allowed to fly, use WorldEdit[?](/a/eclipselabs.org/p/towny/w/edit/WorldEdit)'s compass.
+- towny.outlaw.jailer : Required to cause otlaws killed in your town to be sent to your jail. Given to mayors, assistants and sheriffs by default.
 
-towny.outlaw.jailer : Required to cause outlaws killed in your town to be sent to your jail. Given to mayors, assistants and sheriffs by default.
+- towny.tax_exempt - Grant this permisison to any rank you do not want to pay taxes. ** ONLY works in TownyPerms **. Will not work in external permission plugins.
 
-towny.town.{townname}:
+- towny.town.{townname}:
 
-Players who are in towns now receive a permission node, towny.town.{townname}.
+  Players who are in towns now receive a permission node, towny.town.{townname}.
 
--   This can be useful for server operators who want to test if a player has a permission node to make sure they are part of a town.
--   Examples could include an NPC that required a specific permission node to interact with.
+  -   This can be useful for server operators who want to test if a player has a permission node to make sure they are part of a town.
+  -   Examples could include an NPC that required a specific permission node to interact with.
 
-<!-- -->
+-   TownyPerms feature: town/nation placeholder nodes
+    -   You can now add placeholder permission nodes into Townyperms.
+    -   Will not work for nomads with no town.
+    -   For example: adding stargate.network.{townname} to the default Town section in the townyperms.yml will assign the permission node stargate.network.england, to all the online members of the town England.
+    -   use {townname} for towns, and {nationname} in your nation section.
 
--   For superperms users only:
-    -   prefix.prefixhere
-    -   suffix.suffixhere
-        -   Used for the towny chat configuration's {permprefix} and {permsuffix} when using a permission plugin without prefix: and suffix: sections.
-    -   towny_maxplots.x {with x being a number eg towny_maxplots.2}
+- For servers who's Permission Plugin doesn't support info/option nodes:
+  -   prefix.prefixhere
+  -   suffix.suffixhere
+      -   Used for the towny chat configuration's {permprefix} and {permsuffix} when using a permission plugin without prefix: and suffix: sections.
+  -   towny_maxplots.x {with x being a number eg towny_maxplots.2}
+  -   towny_extraplots.x {with x being a number eg towny_extraplots.2}
+  -   towny_maxoutposts.x {with x being a number eg towny_maxoutposts.2}
 
-<!-- -->
 
--   towny.tax_exempt - Grant this permisison to any rank you do not want to pay taxes. ** ONLY works in TownyPerms **. Will not work in external permission plugins.
 
-[]()Info/Option Nodes
-=====================
+## Info/Option Nodes
 
 > This is similar to a permission node as it is added to your permission nodes file(s). Added to the info: section of Groupmanagers' groups or the options: section of PEX's groups.
 
@@ -369,8 +330,6 @@ Players who are in towns now receive a permission node, towny.town.{townname}.
     -   towny_default_modes: 'map,townclaim,plotborder,global,local,town,nation,mod,admin'
         -   sets the default modes on residents, found in the /res set mode command stub.
         -   puts players into a townychat chatchannel when they join the server.
-
-<!-- -->
 
 -   towny_maxoutposts: {number}
 
@@ -416,11 +375,4 @@ town_extraplots: {number}
 -   Used to give players who have the town_maplots permission node, but who are also a mayor or assistant.
 -   Giving these extra plots, allows them to claim their maxplot amount plus the extra plot amount
 
-<!-- -->
-
--   TownyPerms feature: town/nation placeholder nodes
-    -   You can now add placeholder permission nodes into Townyperms.
-    -   Will not work for nomads with no town.
-    -   For example: adding stargate.network.{townname} to the default Town section in the townyperms.yml will assign the permission node stargate.network.england, to all the online members of the town England.
-    -   use {townname} for towns, and {nationname} in your nation section.
 
