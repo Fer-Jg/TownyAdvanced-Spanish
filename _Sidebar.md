@@ -1,6 +1,7 @@
 ## Towny Advanced
 - [**Home**](https://github.com/TownyAdvanced/Towny/wiki)
 - [**How Towny Works**](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works) Comprehensive guide for admins & players.
+- [**Troubleshooting**](https://github.com/TownyAdvanced/Towny/wiki/Troubleshooting)
 - [**TownyAPI**](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI) Guide for plugin developers.
 
 ### Setup
