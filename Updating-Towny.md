@@ -5,7 +5,7 @@ Here are instructions for performing a Towny Upgrade from a previous version:
 1. Stop your server completely.
 2. Backup your entire server!
 3. Download Towny_Advanced.zip and extract the .jar files into your plugins folder.
-4. Read the changelog to see what's new. 
+4. Read the [changelog](https://github.com/TownyAdvanced/Towny/blob/master/resources/ChangeLog.txt) to see what's new. 
     * The changelogs will detail things you must change manually.
     * All other config changes (new settings) be added automatically.
       * Towny's config will automatically add most new settings with their default settings.
