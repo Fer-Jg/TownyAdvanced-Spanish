@@ -1,5 +1,3 @@
-
-# Introduction
 This page lists common problems and their solutions.
 - [Admin-solvable Problems](https://github.com/TownyAdvanced/Towny/wiki/_new#admin-solvable-problems)
   - [Towny locked in safe mode](https://github.com/TownyAdvanced/Towny/wiki/_new#towny-locked-in-safe-mode)
