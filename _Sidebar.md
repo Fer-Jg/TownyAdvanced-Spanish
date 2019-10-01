@@ -6,9 +6,7 @@
 
 ### Setup
 - [**Installation**](https://github.com/TownyAdvanced/Towny/wiki/Installation)
-  - [Server Preparation](https://github.com/TownyAdvanced/Towny/wiki/Installation#server-preparation)
-  - [Important Things to Note](https://github.com/TownyAdvanced/Towny/wiki/Installation/_edit#important-things-to-note)
-- [**Updating Towny**](https://github.com/TownyAdvanced/Towny/wiki/Updating-Towny)
+- [**Updating Towny**](https://github.com/TownyAdvanced/Towny/wiki/Updating-Towny) 
 
 ### Reference
 - [**Commands**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
