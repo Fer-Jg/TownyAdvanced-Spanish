@@ -53,12 +53,12 @@ Use this page to learn how Towny works, how various settings affect the gameplay
 []()Nomads
 ----------
 
-Nomads are simply players who are not part of any town. They are landless and their permission nodes are configurable via [TownyPerms](http://towny.palmergames.com/towny-townyperms-yml/).yml. Nomads can purchase Embassy plots if they have been given towny.command.plot.claim in the Townyperms.yml
+Nomads are simply players who are not part of any town. They are landless and their permission nodes are configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. Nomads can purchase Embassy plots if they have been given towny.command.plot.claim in the Townyperms.yml
 
 []()Residents
 -------------
 
-Every person who joins your server can become a resident (by default they are given the towny.town.resident permission node in townyperms.yml's nomad section.) Residents have their own [command](http://towny.palmergames.com/towny/towny-commands/) `/resident` which used by itself outputs a Resident Screen, displaying Money, Town, Plots owned and Friends. Residents can join towns or choose to start a town of their own. Residents can also be put into one town automatically when they join the server for the first time by setting `default_town_name: ''` in the [config.yml](http://towny.palmergames.com/towny-config-yml/). Residents who join towns can claim plots that the Mayor of the town has set for sale. When a resident owns 1 or more plots, they will see a new line on their Resident Screen, showing plots owned and a perm line showing the [plot perms](/a/eclipselabs.org/p/towny/wiki/HowTownyWorks#Towny_Perms) given on all plots that resident owns. Residents have their permission nodes configurable via [TownyPerms](http://towny.palmergames.com/towny-townyperms-yml/).yml.
+Every person who joins your server can become a resident (by default they are given the towny.town.resident permission node in townyperms.yml's nomad section.) Residents have their own [command](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) `/resident` which used by itself outputs a Resident Screen, displaying Money, Town, Plots owned and Friends. Residents can join towns or choose to start a town of their own. Residents can also be put into one town automatically when they join the server for the first time by setting `default_town_name: ''` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml). Residents who join towns can claim plots that the Mayor of the town has set for sale. When a resident owns 1 or more plots, they will see a new line on their Resident Screen, showing plots owned and a perm line showing the [plot perms](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms) given on all plots that resident owns. Residents have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml.
 
 []()Towns
 ---------
@@ -68,7 +68,7 @@ A town is a collection of residents (or just one resident) with one resident as 
 []()Mayors
 ----------
 
-Mayors run towns and with the help of their assistants, manage a town and its residents. Mayors have their permission nodes configurable via [TownyPerms](http://towny.palmergames.com/towny-townyperms-yml/).yml. Mayors can decide which ranks their residents fall into, in their town. This can be a Town Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Mayors can see the available ranks using '/town ranklist' command. Players are ranked using `/town rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse town-roles such as bankers, builders, inviters for the mayor to choose for their trusted residents. It is not possible to run two towns unless you are also an admin. An admin can do the following to manage two or more towns:
+Mayors run towns and with the help of their assistants, manage a town and its residents. Mayors have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. Mayors can decide which ranks their residents fall into, in their town. This can be a Town Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Mayors can see the available ranks using '/town ranklist' command. Players are ranked using `/town rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse town-roles such as bankers, builders, inviters for the mayor to choose for their trusted residents. It is not possible to run two towns unless you are also an admin. An admin can do the following to manage two or more towns:
 
 ``` {.prettyprint}
 Example: Admin Bob
@@ -98,7 +98,7 @@ A nation is a collection of towns (or just one town) with one town as the capita
 []()Kings
 ---------
 
-Kings lead Nations and are the mayor of the capital city. Kings have their permission nodes configurable via [TownyPerms](http://towny.palmergames.com/towny-townyperms-yml/).yml. Kings can decide which ranks their residents fall into, in their nation. This can be a Nation Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Kings can see the available ranks using `/nation ranklist` command. Players are ranked using `/nation rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse nation-roles such as bankers, inviters for the king to choose for their trusted residents. Kings have the ability to set titles (prefixes) and surnames (postfixes) to the residents of the towns they have in their nation. This is done with:
+Kings lead Nations and are the mayor of the capital city. Kings have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. Kings can decide which ranks their residents fall into, in their nation. This can be a Nation Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Kings can see the available ranks using `/nation ranklist` command. Players are ranked using `/nation rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse nation-roles such as bankers, inviters for the king to choose for their trusted residents. Kings have the ability to set titles (prefixes) and surnames (postfixes) to the residents of the towns they have in their nation. This is done with:
 
 -   /nation set title {name} titlegoeshere
 -   /nation set surname {name} surnamegoeshere
@@ -108,7 +108,7 @@ Typing the commands with nothing after the player's name resets the title or sur
 []()Configuring Townyperms.yml and the Roles of the Ranks Within
 ----------------------------------------------------------------
 
-As of Towny 0.82.0.0 Towny has a permission configuration file, [TownyPerms](http://towny.palmergames.com/towny-townyperms-yml/).yml, located in the towny\settings\ folder. This system pushes permissions directly to Bukkit and works along side all other perms plugins. It allows you to define sets of permissions based upon a players status (nomad/resident/mayor/king). You can also assign additional permissions based upon any assigned town/nation ranks (assistant/vip etc). This system is not limited to Towny permission nodes. You can assign any permissions for any plugins in its groups. This file allows admins to decide what each player-rank can do. Some ranks are assigned automatically:
+As of Towny 0.82.0.0 Towny has a permission configuration file, [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml, located in the towny\settings\ folder. This system pushes permissions directly to Bukkit and works along side all other perms plugins. It allows you to define sets of permissions based upon a players status (nomad/resident/mayor/king). You can also assign additional permissions based upon any assigned town/nation ranks (assistant/vip etc). This system is not limited to Towny permission nodes. You can assign any permissions for any plugins in its groups. This file allows admins to decide what each player-rank can do. Some ranks are assigned automatically:
 
 -   Players without towns are Nomads.
 -   Players in towns are Residents.
@@ -128,7 +128,7 @@ A resident of a town can see the ranks within their town using `/town ranklist`.
 []()Configuring Mayor and King Titles, Town and Nation Names
 ------------------------------------------------------------
 
-Towny gives you the ability to customize the naming scheme applied to Mayors, Kings, Towns, Capital Cities and Nations. This is done with two sections in the [config.yml](http://towny.palmergames.com/towny-config-yml/) town_level:
+Towny gives you the ability to customize the naming scheme applied to Mayors, Kings, Towns, Capital Cities and Nations. This is done with two sections in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) town_level:
 
 -   The basic layout of the townLevel lines are as follows:
 
@@ -239,11 +239,11 @@ Towny provides a server admin a hands-off approach to block-protection. Block pr
 
 ### []()Town Block Size
 
-You change the townblock size in [config.yml](http://towny.palmergames.com/towny-config-yml/) at `town_block_size: 16`. **Changing this value is suggested only when you first install Towny.** Doing so after entering data will shift things unwantedly. Using smaller value will allow higher precision, at the cost of more work setting up. Also, extremely small values will render the caching system used by Towny useless. Each cell is (town_block_size x town_block_size x 256) in size, with 256 being from bedrock to clouds.
+You change the townblock size in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `town_block_size: 16`. **Changing this value is suggested only when you first install Towny.** Doing so after entering data will shift things unwantedly. Using smaller value will allow higher precision, at the cost of more work setting up. Also, extremely small values will render the caching system used by Towny useless. Each cell is (town_block_size x town_block_size x 256) in size, with 256 being from bedrock to clouds.
 
 ### []()Setting How Many Towny Blocks A Town Receives
 
-You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](http://towny.palmergames.com/towny-config-yml/) More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
+You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
 
 ### []()Buying Townblocks
 
@@ -325,9 +325,9 @@ Bank plots are designated with `/plot set bank` Bank plots can be used to limit 
 []()Outposts
 ------------
 
-Normally townblocks are claimed around the home block, always connected to the town. To claim a townblock out in the wilderness, a mayor or assistant must claim an outpost. In order for players to claim outposts, the config must be set to `allow_outposts: true` and players require towny.town.claim.outpost in their permission node group. The outpost list can be viewed by using `/town outpost list` command. An admin can configure how many outposts a player can claim, this is set in your permissions plugin's info/option/meta node section using the towny_maxoutposts: {number} info node. [See here.](http://towny.palmergames.com/towny/towny-permission-nodes/) Alternatively, as of 0.93.0.0, you can use the TownLevels and NationLevel's maxoutpost values to give larger towns more outposts to claim, and bonus outposts to towns in nations. This requires enabling the feature in the config.yml at `global_town_settings.limit_outposts_using_town_and_nation_levels`.
+Normally townblocks are claimed around the home block, always connected to the town. To claim a townblock out in the wilderness, a mayor or assistant must claim an outpost. In order for players to claim outposts, the config must be set to `allow_outposts: true` and players require towny.town.claim.outpost in their permission node group. The outpost list can be viewed by using `/town outpost list` command. An admin can configure how many outposts a player can claim, this is set in your permissions plugin's info/option/meta node section using the towny_maxoutposts: {number} info node. [See here.](https://github.com/TownyAdvanced/Towny/wiki/Towny-Permission-Nodes) Alternatively, as of 0.93.0.0, you can use the TownLevels and NationLevel's maxoutpost values to give larger towns more outposts to claim, and bonus outposts to towns in nations. This requires enabling the feature in the config.yml at `global_town_settings.limit_outposts_using_town_and_nation_levels`.
 
-An admin can also set a number of residents required by a town before they can claim outposts, using the `minimum_amount_of_residents_in_town_for_outpost` setting. By default there is no resident requirement. Outposts cannot be claimed too close to other home blocks, just like when a mayor starts a town they cannot be too close. The exact number is set in the [config.yml](http://towny.palmergames.com/towny-config-yml/) at `min_distance_from_town_homeblock: 5`. In the default setting an outpost cannot be claimed within 5 townblocks of any other homeblock. You can also configure how close an outpost can get to any other town's plots using `town.min_distance_for_outpost_from_plot`. You can also set the cost of claiming an outpost in the config.yml at `price_outpost: 500.0`. Outposts can be teleported to, mayors set the spawn point of the outpost when they claim it or using '/town set outpost'. Players teleport to the outpost using '/town outpost x|name|name:x'
+An admin can also set a number of residents required by a town before they can claim outposts, using the `minimum_amount_of_residents_in_town_for_outpost` setting. By default there is no resident requirement. Outposts cannot be claimed too close to other home blocks, just like when a mayor starts a town they cannot be too close. The exact number is set in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `min_distance_from_town_homeblock: 5`. In the default setting an outpost cannot be claimed within 5 townblocks of any other homeblock. You can also configure how close an outpost can get to any other town's plots using `town.min_distance_for_outpost_from_plot`. You can also set the cost of claiming an outpost in the config.yml at `price_outpost: 500.0`. Outposts can be teleported to, mayors set the spawn point of the outpost when they claim it or using '/town set outpost'. Players teleport to the outpost using '/town outpost x|name|name:x'
 
 -   with x being a number 1 - however many outposts the town has
 -   where name is the plot name of the outpost (seen in /t outpost list)
@@ -336,7 +336,7 @@ An admin can also set a number of residents required by a town before they can c
 []()Selling Land
 ----------------
 
-Land is sold by Mayors to Residents that are a part of their town. `using_economy: true` must be set in [config.yml](http://towny.palmergames.com/towny-config-yml/) in order for costs to be applied. Mayors have a command used in game to set the cost of all the plots that are set for sale hence-forth.
+Land is sold by Mayors to Residents that are a part of their town. `using_economy: true` must be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in order for costs to be applied. Mayors have a command used in game to set the cost of all the plots that are set for sale hence-forth.
 
 -   `/town set plotprice {$} `
     -   This sets the cost of newly-set-for-sale plots, already set-for-sale plots keep their costs. If it is not set, the plots will cost $0 by default.
@@ -480,17 +480,17 @@ Each permission-type has 3 perm-groups to which the pemissions can be set for, t
 -   Outsiders
     -   Players who are not part of your town or nation or nation's allies.
 
-[All commands are found on the Wiki's Commands page.](http://towny.palmergames.com/towny/towny-commands/)
+[All commands are found on the Wiki's Commands page.](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
 
 ### []()Setting perms in-game with commands
 
-Setting perms for your town's public land or your personal plots is easy! There are two distinct levels of protection provided by towns. First are the town blocks, protected because they are part of a town and not owned by anyone. When you enter one of these plots from the wilderness or an owned plot the notification will show "~ Unowned". Mayors are able to set the permission for unowned plots using the the `/town set perm` command. A full list of commands is on the [commands](http://towny.palmergames.com/towny/towny-commands/) page, here are some examples:
+Setting perms for your town's public land or your personal plots is easy! There are two distinct levels of protection provided by towns. First are the town blocks, protected because they are part of a town and not owned by anyone. When you enter one of these plots from the wilderness or an owned plot the notification will show "~ Unowned". Mayors are able to set the permission for unowned plots using the the `/town set perm` command. A full list of commands is on the [commands](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) page, here are some examples:
 
 -   /town set perm {on/off} - This turns on or off all permissions for all perm-types and all perm-groups.
 -   /town set perm ally {on/off} - This turns on or off all perm-types and for the town's allies (Towns in their nation, nations to which their nation is allied with.)
 -   /town set perm resident build {on/off} - This turns on or off all permissions for building done by residents of the town.
 
-Second are the town blocks owned personally by a resident of a town. A resident is able to set the permission for unowned plots using the the `/resident set perm` command. A full list of commands is on the [commands](http://towny.palmergames.com/towny/towny-commands/) page, here are some examples:
+Second are the town blocks owned personally by a resident of a town. A resident is able to set the permission for unowned plots using the the `/resident set perm` command. A full list of commands is on the [commands](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) page, here are some examples:
 
 -   /resident set perm {on/off} - This turns on or off all permissions for all perm-types and all perm-groups.
 -   /resident set perm friend {on/off} - This turns on or off all permissions for the resident's friend list.
@@ -584,11 +584,11 @@ Plots can have their pvp status controlled individually with this in-game comman
 []()Taxes and Upkeep
 --------------------
 
-Taxes and Upkeep are two seperate functions with to different results. `using_iconomy: true` must be set in [config.yml](http://towny.palmergames.com/towny-config-yml/) in order for Taxes and Upkeep to be applied. Taxes and Upkeep are charged at the same time, each 'Towny Day' or each time an admin type /townyadmin newday. The time of a 'Towny Day' can be set in [config.yml](http://towny.palmergames.com/towny-config-yml/) at `day_interval: 1d` and by default is 24 real-life hours. Any one can check how long until the next day starts by using /towny time.
+Taxes and Upkeep are two seperate functions with to different results. `using_iconomy: true` must be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in order for Taxes and Upkeep to be applied. Taxes and Upkeep are charged at the same time, each 'Towny Day' or each time an admin type /townyadmin newday. The time of a 'Towny Day' can be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `day_interval: 1d` and by default is 24 real-life hours. Any one can check how long until the next day starts by using /towny time.
 
 ### []()Taxes
 
-Taxes are collected on the town level from residents and on the nation level from towns. The [config.yml](http://towny.palmergames.com/towny-config-yml/) has an entry to turn taxation on or off at `daily_taxes: true` Any player can check the taxes which apply to them with the ingame command /res tax Town mayors can use two commands to set their taxrates.
+Taxes are collected on the town level from residents and on the nation level from towns. The [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) has an entry to turn taxation on or off at `daily_taxes: true` Any player can check the taxes which apply to them with the ingame command /res tax Town mayors can use two commands to set their taxrates.
 
 -   /town set taxes {$}
     -   This can be either a flat rate (ex: 10) or a percentage.
@@ -620,14 +620,14 @@ A new option added to post-0.78.0.0 versions of Towny allows you to pay players 
 
 ### []()Upkeep
 
-Upkeep collection can be set on towns and on nations seperately. Upkeep money is taken from townbanks and nationbanks and removed from the game. You can set the upkeep amounts to negative numbers to pay towns and nations instead of charging them. Upkeep is used by a server admin to remove inactive towns and nations from the server. Setting the upkeep to a negative number gives the town or nation-banks that amount each new day. Upkeep is set in [config.yml](http://towny.palmergames.com/towny-config-yml/) with two flags:
+Upkeep collection can be set on towns and on nations seperately. Upkeep money is taken from townbanks and nationbanks and removed from the game. You can set the upkeep amounts to negative numbers to pay towns and nations instead of charging them. Upkeep is used by a server admin to remove inactive towns and nations from the server. Setting the upkeep to a negative number gives the town or nation-banks that amount each new day. Upkeep is set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) with two flags:
 
 -   `price_nation_upkeep: 100.0`
     -   The server's daily charge on each nation. If a nation fails to pay this upkeep, all of it's member towns are kicked and the Nation is removed.
 -   `price_town_upkeep: 10.0`
     -   The server's daily charge on each town. If a town fails to pay this upkeep, all of it's residents are kicked and the town is removed.
 
-Upkeep can be modified in the [config.yml](http://towny.palmergames.com/towny-config-yml/) to affect different-sized towns differently. There are two ways to calculate the upkeep using the upkeep modifier found in the townLevel and nationLevel lines. By default the townLevel and nationLevel lines use the resident-count to determine upkeep via the upkeep modifier. The other option is to base it off plot-count rather than resident count. If you would like to set it based on plot-count set `town_plotbased_upkeep:true` in your config.yml. More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
+Upkeep can be modified in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) to affect different-sized towns differently. There are two ways to calculate the upkeep using the upkeep modifier found in the townLevel and nationLevel lines. By default the townLevel and nationLevel lines use the resident-count to determine upkeep via the upkeep modifier. The other option is to base it off plot-count rather than resident count. If you would like to set it based on plot-count set `town_plotbased_upkeep:true` in your config.yml. More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
 
 []()Town and Nation Banks
 -------------------------
@@ -653,8 +653,8 @@ If you want Towny’s variables in chat, or the town/nation channels, you must d
 
 To use Towny and another Chat plugin follow these instructions:
 
--   Go into the Towny [ChatConfig](http://towny.palmergames.com/towny-chatconfig-yml/).yml and locate: `modify_chat.enable:` and be sure to set it to true like this: `modify_chat.enable: 'true'`
--   Now add Towny’s chat variables to your chat plugins config. The variables can be found in the comments of the [ChatConfig](http://towny.palmergames.com/towny-chatconfig-yml/).yml
+-   Go into the Towny [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml and locate: `modify_chat.enable:` and be sure to set it to true like this: `modify_chat.enable: 'true'`
+-   Now add Towny’s chat variables to your chat plugins config. The variables can be found in the comments of the [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml
 -   Make sure that no players have the towny.chat.general node or they'll be talking in the towny channel and not your other chat plugins default chat channel. You might need to negate the permission node for your admins if they have the `'*'` in their permission nodes.
 
 Examples:
@@ -670,13 +670,13 @@ Examples:
 
 To use Towny as your sole chat plugin follow these instructions:
 
--   Go into the Towny [ChatConfig](http://towny.palmergames.com/towny-chatconfig-yml/).yml and locate: `modify_chat.enable:` and be sure to set it to true like this: `modify_chat.enable: 'true'`
+-   Go into the Towny [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml and locate: `modify_chat.enable:` and be sure to set it to true like this: `modify_chat.enable: 'true'`
 -   Configure the chat lines using the information found in the section below.
 
 []()Chatconfig.yml
 ------------------
 
-The first config file for Towny's chat is the [ChatConfig](http://towny.palmergames.com/towny-chatconfig-yml/).yml found at \plugins\towny\settings\[ChatConfig](http://towny.palmergames.com/towny-chatconfig-yml/).yml
+The first config file for Towny's chat is the [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml found at \plugins\towny\settings\[ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml
 
 ### []()Towny chat formats
 
@@ -743,7 +743,7 @@ Chat Channels are set in Channels.yml found at \plugins\towny\settings\Channels.
 -   /res set mode reset
     -   Reset chat mode to default chat.
 
-The tags for each channel can be set, these are used in the [ChatConfig](http://towny.palmergames.com/towny-chatconfig-yml/).yml for {channelTag}. Permission nodes for each channel can be set. Ranges for each channel can be set:
+The tags for each channel can be set, these are used in the [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml for {channelTag}. Permission nodes for each channel can be set. Ranges for each channel can be set:
 
 -   -1 = no limits
 -   0 = same world only
@@ -828,7 +828,21 @@ There are two distinct towny war modes. Flag war is no longer supported or recei
 []()/ta toggle war (Event War)
 ------------------------------
 
-Towny war is activated by a server admin using `/townyadmin toggle war`, there is a configurable 30 second countdown and then War begins. Using_economy must be set to true in the config.yml for an event war to begin. During war Nations fight each other. Towns without a nation are not included, cannot score points and cannot have their townblocks griefed. The config has the option `towns_are_neutral: 'true'` if you would like nation-less towns to still be able to fight and be attacked (but still not score points.) Nations can also pay a daily Neutrality cost to avoid taking part in a war. The cost of neutrality is set in the [config.yml](http://towny.palmergames.com/towny-config-yml/) using `price_nation_neutrality: 100.0`. In this example, a nation would pay 100 dollars from its nationbank each 'Towny Day'. Useful during war is the '/towny war hud' which will make a scoreboard appear for the player, which details points and properties of the townblock they are standing in. Also useful is the '/towny war participants {page #}' command. It shows a list of towns and their nation who are in the war event.The list highlights enemies, allies and capital towns. While war is in effect, each competing town has a health points property attached to it. Normal townblocks have an HP of 60 while Home Blocks have 120 points by default. This can be changed in the config. A townblock loses HP by enemy-nation residents standing within the townblock. When a townblock has lost all HP and fallen the town which the attacker belongs to gains one townblock and points to their War Score. When a townblock is under attack, fireworks appear above. Red for damage, red creeperhead for a won townblock, and green when a townblock is being healed by a defender. Fireworks can be turned off in the config at war.event.plots.firework_on_attacked. As of Towny 0.92.0.0 when players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at `jail.is_jailing_attacking_enemies: 'false'`. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war. War allows for a great deal of customizability when it comes to griefing. The config's `WarzoneBlockPermissions EditableMaterials` section can be used for Event war as of Towny 0.92.0.0. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: tnt,fence,ladder,wood_door,iron_door,fire. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. `explosions_regen_blocks: 'true'` will determine whether the explosion-griefing is permanent. If you would like to bybass the WarzoneBlockPermissions fine-grained approach and allow anyone to do anything during war you can set the the config's `war.event.allow_block_griefing` option to true. By default, only townblocks on the edge of the wilderness can be attacked first, this is optional in the config. A Town can be knocked out of a war when their Home Block falls or if their Mayor is killed. A Nation can be knocked out of a war if its capital city is knocked out of the war, or if the King is killed. Points in war given for the following:
+Towny war is activated by a server admin using `/townyadmin toggle war`, there is a configurable 30 second countdown and then War begins. Using_economy must be set to true in the config.yml for an event war to begin. During war Nations fight each other. Towns without a nation are not included, cannot score points and cannot have their townblocks griefed. The config has the option `towns_are_neutral: 'true'` if you would like nation-less towns to still be able to fight and be attacked (but still not score points.) Nations can also pay a daily Neutrality cost to avoid taking part in a war. The cost of neutrality is set in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) using `price_nation_neutrality: 100.0`. In this example, a nation would pay 100 dollars from its nationbank each 'Towny Day'. 
+
+Useful during war is the '/towny war hud' which will make a scoreboard appear for the player, which details points and properties of the townblock they are standing in. 
+
+Also useful is the '/towny war participants {page #}' command. It shows a list of towns and their nation who are in the war event.The list highlights enemies, allies and capital towns. While war is in effect, each competing town has a health points property attached to it. 
+
+Normal townblocks have an HP of 60 while Home Blocks have 120 points by default. This can be changed in the config. A townblock loses HP by enemy-nation residents standing within the townblock. When a townblock has lost all HP and fallen the town which the attacker belongs to gains one townblock and points to their War Score. When a townblock is under attack, fireworks appear above. Red for damage, red creeperhead for a won townblock, and green when a townblock is being healed by a defender. Fireworks can be turned off in the config at war.event.plots.firework_on_attacked. 
+
+As of Towny 0.92.0.0 when players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at `jail.is_jailing_attacking_enemies: 'false'`. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war. 
+
+War allows for a great deal of customizability when it comes to griefing. The config's `WarzoneBlockPermissions EditableMaterials` section can be used for Event war as of Towny 0.92.0.0. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: tnt,fence,ladder,wood_door,iron_door,fire. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. `explosions_regen_blocks: 'true'` will determine whether the explosion-griefing is permanent. 
+
+If you would like to bybass the WarzoneBlockPermissions fine-grained approach and allow anyone to do anything during war you can set the the config's `war.event.allow_block_griefing` option to true. By default, only townblocks on the edge of the wilderness can be attacked first, this is optional in the config. 
+
+A Town can be knocked out of a war when their Home Block falls or if their Mayor is killed. A Nation can be knocked out of a war if its capital city is knocked out of the war, or if the King is killed. Points in war given for the following:
 
 -   A enemy killed: 1
 -   A townblock stolen: 1
