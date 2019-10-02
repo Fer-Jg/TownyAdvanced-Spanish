@@ -8,6 +8,10 @@
 - [**Installation**](https://github.com/TownyAdvanced/Towny/wiki/Installation)
 - [**Updating Towny**](https://github.com/TownyAdvanced/Towny/wiki/Updating-Towny) 
 
+### Changelogs
+- [**Towny Changelog**](https://raw.githubusercontent.com/TownyAdvanced/Towny/master/resources/ChangeLog.txt)
+- [**TownyChat Changelog**](https://raw.githubusercontent.com/TownyAdvanced/TownyChat/master/resources/changelog.txt)
+
 ### Reference
 - [**Commands**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
 - [**Permission Nodes**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Permission-Nodes)
