@@ -1,9 +1,9 @@
 This page lists common problems and their solutions.
-- [Admin-solvable Problems](https://github.com/TownyAdvanced/Towny/wiki/_new#admin-solvable-problems)
-  - [Towny locked in safe mode](https://github.com/TownyAdvanced/Towny/wiki/_new#towny-locked-in-safe-mode)
-  - [Multiple Prefixes Seen on the Chatline](https://github.com/TownyAdvanced/Towny/wiki/_new#multiple-prefixes-seen-on-the-chatline)
-- [Player-solvable Problems](https://github.com/TownyAdvanced/Towny/wiki/_new#player-solvable-problems)
-  - [Residents can build/destroy in town plots they do not own](https://github.com/TownyAdvanced/Towny/wiki/_new#residents-can-builddestroy-in-town-plots-they-do-not-own)
+- [Admin-solvable Problems](https://github.com/TownyAdvanced/Towny/wiki/Troubleshooting#admin-solvable-problems)
+  - [Towny locked in safe mode](https://github.com/TownyAdvanced/Towny/wiki/Troubleshooting#towny-locked-in-safe-mode)
+  - [Multiple Prefixes Seen on the Chatline](https://github.com/TownyAdvanced/Towny/wiki/Troubleshooting#multiple-prefixes-seen-on-the-chatline)
+- [Player-solvable Problems](https://github.com/TownyAdvanced/Towny/wiki/_Troubleshooting#player-solvable-problems)
+  - [Residents can build/destroy in town plots they do not own](https://github.com/TownyAdvanced/Towny/wiki/Troubleshooting#residents-can-builddestroy-in-town-plots-they-do-not-own)
 
 # Admin-solvable Problems
 
