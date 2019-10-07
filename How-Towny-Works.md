@@ -58,19 +58,27 @@ Nomads are simply players who are not part of any town. They are landless and th
 []()Residents
 -------------
 
-Every person who joins your server can become a resident (by default they are given the towny.town.resident permission node in townyperms.yml's nomad section.) Residents have their own [command](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) `/resident` which used by itself outputs a Resident Screen, displaying Money, Town, Plots owned and Friends. Residents can join towns or choose to start a town of their own. Residents can also be put into one town automatically when they join the server for the first time by setting `default_town_name: ''` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml). Residents who join towns can claim plots that the Mayor of the town has set for sale. When a resident owns 1 or more plots, they will see a new line on their Resident Screen, showing plots owned and a perm line showing the [plot perms](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms) given on all plots that resident owns. Residents have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml.
+Every person who joins your server can become a resident (by default they are given the towny.town.resident permission node in townyperms.yml's nomad section.) Residents have their own [command](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) `/resident` which used by itself outputs a Resident Screen, displaying Money, Town, Plots owned and Friends. Residents can join towns or choose to start a town of their own. 
+
+Residents can also be put into one town automatically when they join the server for the first time by setting `default_town_name: ''` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml). Residents who join towns can claim plots that the Mayor of the town has set for sale. When a resident owns 1 or more plots, they will see a new line on their Resident Screen, showing plots owned and a perm line showing the [plot perms](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms) given on all plots that resident owns. Residents have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml.
 
 []()Towns
 ---------
 
-A town is a collection of residents (or just one resident) with one resident as the mayor. A town also has a bank which the mayor can withdraw from. A mayor can also have assistants who have the same powers as him/herself. Towns can have taxes that will be taken at the end of each day interval. Towns usually grow outwards from their home block, the townblock the mayor stood in during town creation. Townblocks need to be claimed beside other townblocks, unless the mayor claims an outpost in the wilderness. Towns can be limited to a number of residents using the config option `global_town_settings.max_residents_per_town`, by default this is not limited. All of the towns on a server can be seen in a list using `/town list`.
+A town is a collection of residents (or just one resident) with one resident as the mayor. A town also has a bank which the mayor can withdraw from. A mayor can also have assistants who have the same powers as him/herself. Towns can have taxes that will be taken at the end of each day interval. 
+
+Towns usually grow outwards from their home block, the townblock the mayor stood in during town creation. Townblocks need to be claimed beside other townblocks, unless the mayor claims an outpost in the wilderness. Towns can be limited to a number of residents using the config option `global_town_settings.max_residents_per_town`, by default this is not limited. All of the towns on a server can be seen in a list using `/town list`.
 
 []()Mayors
 ----------
 
-Mayors run towns and with the help of their assistants, manage a town and its residents. Mayors have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. Mayors can decide which ranks their residents fall into, in their town. This can be a Town Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Mayors can see the available ranks using '/town ranklist' command. Players are ranked using `/town rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse town-roles such as bankers, builders, inviters for the mayor to choose for their trusted residents. It is not possible to run two towns unless you are also an admin. An admin can do the following to manage two or more towns:
+Mayors run towns and with the help of their assistants, manage a town and its residents. Mayors have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. 
 
-``` {.prettyprint}
+Mayors can decide which ranks their residents fall into, in their town. This can be a Town Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Mayors can see the available ranks using '/town ranklist' command. Players are ranked using `/town rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse town-roles such as bankers, builders, inviters for the mayor to choose for their trusted residents. 
+
+It is not possible to run two towns unless you are also an admin. An admin can do the following to manage two or more towns:
+
+```
 Example: Admin Bob
 Admin Bob wants to have a server-town, and his own town. Bob would start by creating his Server Town and setting up taxes, plotprices, permissions. This sort of town should not give residents, allies or outsiders permissions in the Server Town.
 Bob can give himself more townblocks using the /ta givebonus {townname} {#} command.
@@ -83,12 +91,32 @@ Bob can also add the NPC town into a nation using /ta nation {nation} add {town}
 []()Outlaws
 -----------
 
-As of Towny 0.92.0.0, towns (typically mayors by default, but possibly other town ranks,) can set a list of Outlaws. Outlaws are set using '/own outlaw [add/remove] [name]' and the command requires the towny.command.town.outlaw permission node. Outlaws can be any player and do not have to be in a town or nation. If the newly-minted outlaw is a member of your town they will be kicked. Towns that have themselves set to Open-status (anyone can join using the '/town join' command,) can use the outlaw list to prevent these players from joining their town freely. Players that enter into a town where they are considered to be an outlaw will see a warning-title-message informing them. If a player is online and they are made into an Outlaw they will see a message in chat. Outlaws can be jailed if they die in the town where they are considered to be an outlaw. This requires the `jail.is_jailing_attacking_outlaws` option in the Towny config.yml to be set to true. It also requires the person who's done the killing to have the towny.outlaw.jailer permission node. It also requires the town to own at least one jail plot. By default only Mayors, Assistants and Sheriff ranks have the towny.outlaw.jailer permission node. A town member can view their town's outlaw list using `/town outlawlist`. Anyone can view any town's outlawlist using `/town outlawlist {townname}>/tt>  `
+As of Towny 0.92.0.0, towns (typically mayors by default, but possibly other town ranks,) can set a list of Outlaws. Outlaws are set using '/own outlaw [add/remove] [name]' and the command requires the towny.command.town.outlaw permission node. Outlaws can be any player and do not have to be in a town or nation. 
+
+If the newly-minted outlaw is a member of your town they will be kicked. Towns that have themselves set to Open-status (anyone can join using the '/town join' command,) can use the outlaw list to prevent these players from joining their town freely. 
+
+Players that enter into a town where they are considered to be an outlaw will see a warning-title-message informing them. If a player is online and they are made into an Outlaw they will see a message in chat. 
+
+Outlaws can be jailed if they die in the town where they are considered to be an outlaw. This requires the `jail.is_jailing_attacking_outlaws` option in the Towny config.yml to be set to true. It also requires the person who's done the killing to have the towny.outlaw.jailer permission node. It also requires the town to own at least one jail plot. By default only Mayors, Assistants and Sheriff ranks have the towny.outlaw.jailer permission node. 
+
+A town member can view their town's outlaw list using `/town outlawlist`. Anyone can view any town's outlawlist using `/town outlawlist {townname}>/tt>  `
 
 []()Nations
 -----------
 
-A nation is a collection of towns (or just one town) with one town as the capital. The mayor of that capital is the king. A nation can join the war event, as well as ally other nations. A nation also has it's own bank. It can also tax the towns that belong to it. Nations can also have a spawn reached using `/nation spawn` which if the nation is considered 'Public' can be reached by nearly any non-enemy players. The nation spawn can be restricted to the capital in the config.yml at `global_nation_settings.capital_spawn` otherwise the spawn point can be anywhere in the nation. Two nations can decide to join in an alliance, which allows them to be protected from friendly fire, help on each others plots (if the plot's perm line allows allies,) and to help each other in war. As of 0.91.0.0, you may restrict nation alliances to be 2-way only. So that Nation A cannot consider Nation B an ally unless the Nation B also considers Nation A an ally. You may turn this setting on in the config: war.disallow_one_way_alliance, which defaults to false. Also, as of 0.91.0.0, you may restrict who can create, join and maintain a nation by requiring a minimum number of residents. See the Global Town Settings section of the config.yml. As of 0.92.0.0, you may set a maximum distance between the nation capital and towns which are allowed to join the nation. See the Global Town Settings section of the config.yml. As of 0.93.0.0, nations can grant a NationZone which surrounds the towns which are members. This is enabled at `global_nation_settings.nationzone.enable` in the config.yml. NationZones are just like normal wilderness except the only players which can modify the area are members of the nation. This can be useful to prevent greifing near to towns who have a nation. NationZones can be increased in size by increasing the population of the nation using the NationLevels in the config.yml, you can optionally make the capital town have a larger NationZone. NationZones can be disabled during war time in the config.yml at `global_nation_settings.nationzone.war_disables`. Nations can grant many perks to their towns which can increase as the nation population increases, these include:
+A nation is a collection of towns (or just one town) with one town as the capital. The mayor of that capital is the king. A nation can join the war event, as well as ally other nations. A nation also has it's own bank. It can also tax the towns that belong to it. 
+
+Nations can also have a spawn reached using `/nation spawn` which if the nation is considered 'Public' can be reached by nearly any non-enemy players. The nation spawn can be restricted to the capital in the config.yml at `global_nation_settings.capital_spawn` otherwise the spawn point can be anywhere in the nation. 
+
+Two nations can decide to join in an alliance, which allows them to be protected from friendly fire, help on each others plots (if the plot's perm line allows allies,) and to help each other in war. As of 0.91.0.0, you may restrict nation alliances to be 2-way only. So that Nation A cannot consider Nation B an ally unless the Nation B also considers Nation A an ally. You may turn this setting on in the config: war.disallow_one_way_alliance, which defaults to false. 
+
+Also, as of 0.91.0.0, you may restrict who can create, join and maintain a nation by requiring a minimum number of residents. See the Global Town Settings section of the config.yml. 
+
+As of 0.92.0.0, you may set a maximum distance between the nation capital and towns which are allowed to join the nation. See the Global Town Settings section of the config.yml. 
+
+As of 0.93.0.0, nations can grant a NationZone which surrounds the towns which are members. This is enabled at `global_nation_settings.nationzone.enable` in the config.yml. NationZones are just like normal wilderness except the only players which can modify the area are members of the nation. This can be useful to prevent greifing near to towns who have a nation. NationZones can be increased in size by increasing the population of the nation using the NationLevels in the config.yml, you can optionally make the capital town have a larger NationZone. NationZones can be disabled during war time in the config.yml at `global_nation_settings.nationzone.war_disables`. 
+
+Nations can grant many perks to their towns which can increase as the nation population increases, these include:
 
 -   Bonus townblocks to be claimed.
 -   Cheaper town upkeep costs.
@@ -98,7 +126,9 @@ A nation is a collection of towns (or just one town) with one town as the capita
 []()Kings
 ---------
 
-Kings lead Nations and are the mayor of the capital city. Kings have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. Kings can decide which ranks their residents fall into, in their nation. This can be a Nation Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Kings can see the available ranks using `/nation ranklist` command. Players are ranked using `/nation rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse nation-roles such as bankers, inviters for the king to choose for their trusted residents. Kings have the ability to set titles (prefixes) and surnames (postfixes) to the residents of the towns they have in their nation. This is done with:
+Kings lead Nations and are the mayor of the capital city. Kings have their permission nodes configurable via [TownyPerms](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml).yml. Kings can decide which ranks their residents fall into, in their nation. This can be a Nation Assistant or any other custom ranks created by the server admin in the townyperms.yml file. Kings can see the available ranks using `/nation ranklist` command. Players are ranked using `/nation rank {add|remove} {playername} {rankname}`. A player can have more than one rank assigned, allowing admins to create diverse nation-roles such as bankers, inviters for the king to choose for their trusted residents. 
+
+Kings have the ability to set titles (prefixes) and surnames (postfixes) to the residents of the towns they have in their nation. This is done with:
 
 -   /nation set title {name} titlegoeshere
 -   /nation set surname {name} surnamegoeshere
@@ -132,7 +162,7 @@ Towny gives you the ability to customize the naming scheme applied to Mayors, Ki
 
 -   The basic layout of the townLevel lines are as follows:
 
-``` {.prettyprint}
+```
     -   upkeepModifier: 1.0
         namePostfix: ' (Settlement)'
         mayorPrefix: 'Hermit '
@@ -162,15 +192,13 @@ These are read as follows:
 -   numresidents: 1 - This is how many residents a town needs to have in order to attain the prefixes/postfixes of the townlevel.
 -   townOutpostLimit: 1 - This is how many outposts a Town can claim,
 
-<!-- -->
-
 -   The two levels above are for towns of 1 and 2 residents. When a town is created the mayor's new town has (Settlement) added to the end of his townname and he is given the prefix of Hermit. When the mayor gets a second resident his town becomes Townname (Hamlet) and he receives the prefix of Chief.
 
 nation_level:
 
 -   The basic layout of the nationLevel lines are as follows:
 
-``` {.prettyprint}
+```
         -   capitalPostfix: ''
             upkeepModifier: 1.0
             namePostfix: ' (Nation)'
