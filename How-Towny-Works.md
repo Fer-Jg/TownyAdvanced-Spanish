@@ -247,7 +247,7 @@ You can change how many town blocks a town gets to claim. This is done in two pl
 
 ### []()Buying Townblocks
 
-Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a maximum limit on how many townblocks a town can buy in the config.yml at `max_purchased_blocks: '0'`. The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. Using this feature, mayors can grow their town without needing new residents.
+Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a maximum limit on how many townblocks a town can buy in the config.yml at `max_purchased_blocks: '0'`. The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. The price can be configured to increase with each purchase using the `price_purchased_bonus_townblock_increase: '1.0'` config setting. Using this feature, mayors can grow their town without needing new residents.
 
 []()Plot Types
 --------------
