@@ -269,6 +269,18 @@ Towny provides a server admin a hands-off approach to block-protection. Block pr
 
 You change the townblock size in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `town_block_size: 16`. **Changing this value is suggested only when you first install Towny.** Doing so after entering data will shift things unwantedly. Using smaller value will allow higher precision, at the cost of more work setting up. Also, extremely small values will render the caching system used by Towny useless. Each cell is (town_block_size x town_block_size x 256) in size, with 256 being from bedrock to clouds.
 
+### []()Claiming Townblocks
+
+Towns' residents can claim townblocks for the town as long as they have the right permission nodes. By default this is restricted to Mayors and people with the Assistant rank. The player uses `/town claim` or `/town claim #` or `/town claim rect|circ #' or '/town claim auto' to claim townblocks for their town. 
+
+- /town claim - will claim one plot, where the player is standing.
+- /town claim # - will claim a square with a radius equal to the given #.
+- /town claim rect # - will claim a square with a radius equal to the given #.
+- /town claim circ # - will claim a circle with a radius equal to the given #.
+- /town claim auto - will claim all possible townblocks in a square shape.
+
+Using the `/town` command will list how many townblocks are available to be claimed. 
+
 ### []()Setting How Many Towny Blocks A Town Receives
 
 You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
@@ -296,7 +308,7 @@ Arena plots are designated with `/plot set arena.` PVP is on all the time in are
 
 ### []()Embassy Plots
 
-Embassy plots are designated with `/plot set embassy` A mayor can use /town set embassyprice {$$} to set how much embassy plots are sold at by default. This can be overriden when a mayor puts the actual plot up for sale with /plot forsale {$$}. A mayor can also charge an additional embassytax with /town set embassytax {$$}. This tax is charged in addition to the normal plottax. An embassy plot can be bought by any player, whether they are in a town or not. The townblock remains owned by the host-town and a mayor from the host-town can take the plot from the owner at any time. Embassy plots can also be changed into shop plots, allowing for larger shop towns, where many different towns' players can set up shops. When a player leaves a town they do not lose ownership of their plots if those plots are set to be Embassy plots.
+Embassy plots are designated with `/plot set embassy` A mayor can use /town set embassyprice {$$} to set how much embassy plots are sold at by default. This can be overriden when a mayor puts the actual plot up for sale with /plot forsale {$$}. A mayor can also charge an additional embassytax with /town set embassytax {$$}. This tax is charged in addition to the normal plottax. An embassy plot can be bought by any player, whether they are in a town or not, as long as they have the `towny.command.plot.claim` permission node. The townblock remains owned by the host-town and a mayor from the host-town can take the plot from the owner at any time. Embassy plots can also be changed into shop plots, allowing for larger shop towns, where many different towns' players can set up shops. When a player leaves a town they do not lose ownership of their plots if those plots are set to be Embassy plots.
 
 ### []()Wilds Plots
 
