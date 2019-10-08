@@ -628,11 +628,11 @@ Plots can have their pvp status controlled individually with this in-game comman
 []()Taxes and Upkeep
 --------------------
 
-Taxes and Upkeep are two seperate functions with to different results. `using_iconomy: true` must be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in order for Taxes and Upkeep to be applied. Taxes and Upkeep are charged at the same time, each 'Towny Day' or each time an admin type /townyadmin newday. The time of a 'Towny Day' can be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `day_interval: 1d` and by default is 24 real-life hours. Any one can check how long until the next day starts by using /towny time.
+Taxes and Upkeep are two separate functions with to different results. `using_economy: true` must be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in order for Taxes and Upkeep to be applied. Taxes and Upkeep are charged at the same time, each 'Towny Day' or each time an admin type `/townyadmin newday`. The time of a 'Towny Day' can be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `day_interval: 1d` and by default is 24 real-life hours. Any one can check how long until the next day starts by using /towny time.
 
 ### []()Taxes
 
-Taxes are collected on the town level from residents and on the nation level from towns. The [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) has an entry to turn taxation on or off at `daily_taxes: true` Any player can check the taxes which apply to them with the ingame command /res tax Town mayors can use two commands to set their taxrates.
+Taxes are collected on the town level from residents and on the nation level from towns. The [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) has an entry to turn taxation on or off at `daily_taxes: true` Any player can check the taxes which apply to them with the in-game command /res tax Town mayors can use two commands to set their tax-rates.
 
 -   /town set taxes {$}
     -   This can be either a flat rate (ex: 10) or a percentage.
@@ -664,7 +664,7 @@ A new option added to post-0.78.0.0 versions of Towny allows you to pay players 
 
 ### []()Upkeep
 
-Upkeep collection can be set on towns and on nations seperately. Upkeep money is taken from townbanks and nationbanks and removed from the game. You can set the upkeep amounts to negative numbers to pay towns and nations instead of charging them. Upkeep is used by a server admin to remove inactive towns and nations from the server. Setting the upkeep to a negative number gives the town or nation-banks that amount each new day. Upkeep is set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) with two flags:
+Upkeep collection can be set on towns and on nations separately. Upkeep money is taken from townbanks and nationbanks and removed from the game. You can set the upkeep amounts to negative numbers to pay towns and nations instead of charging them. Upkeep is used by a server admin to remove inactive towns and nations from the server. Setting the upkeep to a negative number gives the town or nation-banks that amount each new day. Upkeep is set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) with two flags:
 
 -   `price_nation_upkeep: 100.0`
     -   The server's daily charge on each nation. If a nation fails to pay this upkeep, all of it's member towns are kicked and the Nation is removed.
@@ -681,7 +681,7 @@ Towns and Nations both have banks, to which any resident can deposit money but o
 -   Admins can set a cap on a town/nation banks at town_bank_cap and nation_bank_cap in the config.yml.
 -   Admins can use '/ta toggle withdraw' to prevent mayors and kings from removing money from their bank.
 
-As of Towny 0.82.0.0 and onwards the cap on banks is a hard cap and does not allow any money to be added to the town/nation banks if it would put the bank over the limit. This does not remove money from town/nation banks which are already over the limit.
+As of Towny 0.82.0.0 and on-wards the cap on banks is a hard cap and does not allow any money to be added to the town/nation banks if it would put the bank over the limit. This does not remove money from town/nation banks which are already over the limit.
 
 ------------------------------------------------------------------------
 
@@ -726,7 +726,7 @@ The first config file for Towny's chat is the [ChatConfig](https://github.com/To
 
 These are the pieces which can be used to make the Channel_format lines.
 
-``` {.prettyprint}
+```
   {worldname} - Displays the world the player is currently in.
   
   {town} - Displays town name if a member of a town.
@@ -770,7 +770,7 @@ Message spam control is set at spam_time: 0.5 The channel_formats section determ
 []()Chat Channels
 -----------------
 
-Chat Channels are set in Channels.yml found at \plugins\towny\settings\Channels.yml There are six chat channels by default in Towny, although an admin can create as many chat channels as they'd like in Channels.yml Channels.yml allows you to set commands for joining and using each channel:
+Chat Channels are set in Channels.yml found at \plugins\towny\settings\Channels.yml There are six chat channels by default in Towny, although an admin can create as many chat channels as they'd like in Channels.yml. Channels.yml allows you to set commands for joining and using each channel:
 
 -   /g
     -   Put in from of text to speak in general/global chat, or without text afterwards to enter the channel.
@@ -797,7 +797,7 @@ The tags for each channel can be set, these are used in the [ChatConfig](https:/
 
 Using the info|option|meta nodes provided by GroupManger, PEX and bPermissions it is possible to put users into chat channels upon joining the server. In the same section as prefix: and suffix: add a node towny_default_modes: '' Possible channels are general, town, nation, admin, mod and local. Example in group manager:
 
-``` {.prettyprint}
+```
                 groups:
                   Default:
                     default: true
@@ -837,7 +837,7 @@ Kings of nations can use two commands to change the displayed chat names of thei
 []()Spying on chat channels
 ---------------------------
 
-Admins can spy on all chat channels by using the command /towny spy or /res set mode spy. Any player can be given the ability to spy by being given the permission node towny.chat.spy
+Admins can spy on all chat channels by using the command `/towny spy` or `/res set mode spy`. Any player can be given the ability to spy by being given the permission node towny.chat.spy
 
 ------------------------------------------------------------------------
 
@@ -849,7 +849,7 @@ Towny has mutliworld support. Each world has a datafile located at /plugins/town
 []()World Toggles
 -----------------
 
-Towny can be turned off in a world in-game. While standing in a world type /townyworld toggle usingtowny. Other toggles:
+Towny can be turned off in a world in-game. While standing in a world type `/townyworld toggle usingtowny`. Other toggles:
 
 -   claimable - Whether townblocks can be claimed by mayors in this world.
 -   pvp - Whether PVP is on in the world.
@@ -867,7 +867,7 @@ Towny can be turned off in a world in-game. While standing in a world type /town
 []()Towny War
 =============
 
-There are two distinct towny war modes. Flag war is no longer supported or receiving updates.
+There are two distinct Towny war modes. Flag war is no longer supported or receiving updates.
 
 []()/ta toggle war (Event War)
 ------------------------------
