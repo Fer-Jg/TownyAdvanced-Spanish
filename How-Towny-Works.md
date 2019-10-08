@@ -271,7 +271,7 @@ You change the townblock size in [config.yml](https://github.com/TownyAdvanced/T
 
 ### []()Claiming Townblocks
 
-Towns' residents can claim townblocks for the town as long as they have the right permission nodes. By default this is restricted to Mayors and people with the Assistant rank. The player uses `/town claim` or `/town claim #` or `/town claim rect|circ #' or '/town claim auto' to claim townblocks for their town. 
+Towns' residents can claim townblocks for the town as long as they have the right permission nodes. By default this is restricted to Mayors and people with the Assistant rank. The player uses `/town claim` or `/town claim #` or `/town claim rect|circ #` or `/town claim auto` to claim townblocks for their town. 
 
 - /town claim - will claim one plot, where the player is standing.
 - /town claim # - will claim a square with a radius equal to the given #.
@@ -281,7 +281,7 @@ Towns' residents can claim townblocks for the town as long as they have the righ
 
 Using the `/town` command will list how many townblocks are available to be claimed. 
 
-### []()Setting How Many Towny Blocks A Town Receives
+### []()Setting How Many Town Blocks A Town Receives
 
 You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
 
@@ -300,7 +300,7 @@ These plots do not need any specific command to be designated. They are put up f
 
 ### []()Shop Plots
 
-Shop plots are designated with `/plot set shop` A mayor can use /town set shopprice {$$} to set how much shop plots are sold at by default. This can be overriden when a mayor puts the actual plot up for sale with /plot forsale {$$}. A mayor can also charge an additional shoptax with /town set shoptax {$$}. This tax is charged in addition to the normal plottax.
+Shop plots are designated with `/plot set shop` A mayor can use `/town set shopprice {$$}` to set how much shop plots are sold at by default. This can be overridden when a mayor puts the actual plot up for sale with `/plot forsale {$$}`. A mayor can also charge an additional shoptax with `/town set shoptax {$$}`. This tax is charged in addition to the normal plottax.
 
 ### []()Arena Plots
 
@@ -308,7 +308,7 @@ Arena plots are designated with `/plot set arena.` PVP is on all the time in are
 
 ### []()Embassy Plots
 
-Embassy plots are designated with `/plot set embassy` A mayor can use /town set embassyprice {$$} to set how much embassy plots are sold at by default. This can be overriden when a mayor puts the actual plot up for sale with /plot forsale {$$}. A mayor can also charge an additional embassytax with /town set embassytax {$$}. This tax is charged in addition to the normal plottax. An embassy plot can be bought by any player, whether they are in a town or not, as long as they have the `towny.command.plot.claim` permission node. The townblock remains owned by the host-town and a mayor from the host-town can take the plot from the owner at any time. Embassy plots can also be changed into shop plots, allowing for larger shop towns, where many different towns' players can set up shops. When a player leaves a town they do not lose ownership of their plots if those plots are set to be Embassy plots.
+Embassy plots are designated with `/plot set embassy`. A mayor can use /town set embassyprice {$$} to set how much embassy plots are sold at by default. This can be overriden when a mayor puts the actual plot up for sale with /plot forsale {$$}. A mayor can also charge an additional embassytax with /town set embassytax {$$}. This tax is charged in addition to the normal plottax. An embassy plot can be bought by any player, whether they are in a town or not, as long as they have the `towny.command.plot.claim` permission node. The townblock remains owned by the host-town and a mayor from the host-town can take the plot from the owner at any time. Embassy plots can also be changed into shop plots, allowing for larger shop towns, where many different towns' players can set up shops. When a player leaves a town they do not lose ownership of their plots if those plots are set to be Embassy plots.
 
 ### []()Wilds Plots
 
@@ -327,26 +327,24 @@ You can also set allies or outsiders perms if you want non-town-members to use t
 
 ### []()Inn Plots
 
-Inn plots are designated with `/plot set inn` An Inn plot allows anyone to use a bed to set their '/res spawn' and spawn on death. The Inn plot will still deny a player who is in a nation declared as an enemy by your nation. For them to function deny_bed_use: 'true' must be set in the config.yml
+Inn plots are designated with `/plot set inn` An Inn plot allows anyone to use a bed to set their '/res spawn' and spawn on death. The Inn plot will still deny a player who is in a nation declared as an enemy by your nation. For them to function `deny_bed_use: 'true'` must be set in the config.yml
 
 ### []()Jail Plots
 
 Jail plots are designated with `/plot set jail`
 
 Players can become jailed if:
-
 -   The player's mayor/sheriffs send them to jail.
 -   An attacker who attacks a town which considers him an Enemy (Nation-relationship) dies in that Town. He is sent to the first available Jail plot of the defending town.
+-   An attacker who attacks a town which considers him an Outlaw dies in that Town by a player with the towny.outlaw.jailer permission node. He is sent to the first available Jail plot of the defending town. In the config `jail.is_jailing_attacking_outlaws` must be true.
 
 Jailed players become unjailed if:
-
 -   they leave their town and become a nomad,
 -   the mayor/sheriff unjails them,
 -   the player pays a bail amount to the town which jailed them, (using: /resident jail paybail)
 -   they manage to escape the jail plot and the town and get into Wilderness.
 
-<!-- -->
-
+In addition:
 -   Jailed players cannot teleport.
 -   Jailed players cannot use Ender Pearls unless enabled in the config.
 -   Jailed players who die are sent back to their prescribed jail plot.
@@ -356,7 +354,13 @@ Jailed players become unjailed if:
 
 ### []()Farm Plots
 
-Farm plots are designated with `/plot set farm` A Farm plot players to only build/destroy blocks designated in the Towny Config.yml at global_town_settings.farm_plot_allow_blocks. By default this list includes "LONG_GRASS, DOUBLE_PLANT, YELLOW_FLOWER, RED_ROSE, PUMPKIN_STEM, MELON_STEM, BEETROOT_BLOCK, CARROT, POTATO, CROPS, MELON_BLOCK, PUMPKIN". Who can build/destroy these blocks is still determined by the plot's perm line seen in the /plot perm screen. This means that if B=rao, anyone can plant/place the allowed blocks in the plot. If the B=r-- then only town residents can plant/place the allowed blocks. If admins want, they can add SOIL to the allowed blocks list, which will allow anyone allowed via the perm line to also make soil with a hoe. By default SOIL is not included and only admins/mayors/assistants will be able to create soil with a hoe. Towny already protects soil from being stomped into grass, so soil will only return to dirt if it is not irrigated. Farm plots also allow town residents to kill animals in the plot. The list of animals is set in the config at global_town_settings.farm_animals. By default this list includes "PIG,COW,CHICKEN,SHEEP,MOOSHROOM".
+Farm plots are designated with `/plot set farm` A Farm plot players to only build/destroy blocks designated in the Towny Config.yml at `global_town_settings.farm_plot_allow_blocks`. By default this list includes "LONG_GRASS, DOUBLE_PLANT, YELLOW_FLOWER, RED_ROSE, PUMPKIN_STEM, MELON_STEM, BEETROOT_BLOCK, CARROT, POTATO, CROPS, MELON_BLOCK, PUMPKIN". 
+
+Who can build/destroy these blocks is still determined by the plot's perm line seen in the /plot perm screen. This means that if B=rao, anyone can plant/place the allowed blocks in the plot. If the B=r-- then only town residents can plant/place the allowed blocks. 
+
+If admins want, they can add SOIL to the allowed blocks list, which will allow anyone allowed via the perm line to also make soil with a hoe. By default SOIL is not included and only admins/mayors/assistants will be able to create soil with a hoe. Towny already protects soil from being stomped into grass, so soil will only return to dirt if it is not irrigated. 
+
+Farm plots also allow player to kill animals in the plot. In order to kill the configured animals list the player must be able to break wheat blocks on the plot. The list of animals is set in the config at global_town_settings.farm_animals. By default this list includes "PIG,COW,CHICKEN,SHEEP,MOOSHROOM".
 
 ### []()Bank Plots
 
