@@ -29,6 +29,10 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.command.townyadmin.set.capital
         -   towny.command.townyadmin.set.title
         -   towny.command.townyadmin.set.surname
+    -   towny.command.townyadmin.plot.*
+        -   towny.command.townyadmin.plot.claim
+    -   towny.command.townyadmin.resident.*
+        -   towny.command.townyadmin.resident.friend
     -   towny.command.townyadmin.town.* - Allows a player to use '/ta town add/kick'
         -   towny.command.townyadmin.town.new
         -   towny.command.townyadmin.town.add
@@ -211,6 +215,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	-   towny.command.nation.king
 	-   towny.command.nation.othernation
 	-   towny.command.nation.say
+	-   towny.command.nation.join
 	-   towny.command.nation.set.*
 	    -   towny.command.nation.set.spawncost
 	    -   towny.command.nation.set.king
@@ -222,6 +227,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	    -   towny.command.nation.set.tag
 	-   towny.command.nation.toggle.*
 	    -   towny.command.nation.toggle.neutral
+	    -   towny.command.nation.toggle.open
 	-   towny.command.nation.ally
 	-   towny.command.nation.enemy
 	-   towny.command.nation.delete
@@ -229,6 +235,9 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	-   towny.command.nation.add
 	-   towny.command.nation.kick
 	-   towny.command.nation.spawn
+	-   towny.command.nation.townlist
+        -   towny.command.nation.allylist
+        -   towny.command.nation.enemylist
 
 ## /Towny Nodes
 
@@ -297,6 +306,8 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 - towny.outlaw.jailer : Required to cause otlaws killed in your town to be sent to your jail. Given to mayors, assistants and sheriffs by default.
 
 - towny.tax_exempt - Grant this permisison to any rank you do not want to pay taxes. ** ONLY works in TownyPerms **. Will not work in external permission plugins.
+
+- towny.bypass_death_costs - Stops a player from paying the death costs.
 
 - towny.town.{townname}:
 
