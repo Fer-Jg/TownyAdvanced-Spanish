@@ -1,9 +1,10 @@
 ```
+ 
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.56
+  version: '0.57'
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.56
+  last_run_version: '0.57'
  
 ############################################################
 # +------------------------------------------------------+ #
@@ -90,6 +91,7 @@ colour:
   king: '&6'
   mayor: '&b'
   resident: '&f'
+  nomad: '&f'
  
 modify_chat:
   # This is used for when you don't have another plugin to format chat.
