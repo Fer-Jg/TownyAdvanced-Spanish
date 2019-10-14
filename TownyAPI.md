@@ -13,7 +13,7 @@
 Using the Towny API in your plugins is quite simple. There are two versions of the API.
 
 1.  The original API which ran from version 0 to 0.94.0.0 (see old Javadoc [here](http://towny.palmergames.com/javadoc/towny-bukkit/))
-2.  The new API which is present in Towny 0.94.0.1 and onwards.
+2.  The new API which is present in Towny 0.94.0.1 and onwards (see new Javadoc [here](https://townyadvanced.github.io/Towny/)
 
 The new API supports the old API calls although they will appear as deprecated. It is recommended that authors do switch to the new API.
 
