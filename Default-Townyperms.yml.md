@@ -25,6 +25,9 @@ nomad:
     - towny.command.town.list
     - towny.command.plot.perm
     - towny.command.nation.list
+    - towny.command.nation.townlist  
+    - towny.command.nation.allylist
+    - towny.command.nation.enemylist
     - towny.town.resident
     - towny.town.spawn.public
     - towny.chat.general
@@ -55,19 +58,11 @@ towns:
         - towny.claimed.owntown.*
         - towny.command.nation.new
         - towny.outlaw.jailer
+        - towny.command.nation.join
 
     ranks:
         # Ranks contain additional permissions residents will be
         # granted if they are assigned that specific rank.
-        co-mayor:
-            - towny.command.town.*
-            - towny.claimed.townowned.switch.*
-            - towny.claimed.townowned.build.*
-            - towny.claimed.townowned.destroy.*
-            - towny.claimed.townowned.item_use.*
-            - towny.command.town.rank.trusted
-            - towny.cheat.bypass
-            - factionwars.leader
         assistant:
             - towny.tax_exempt
             - towny.command.town.claim.*
@@ -76,18 +71,15 @@ towns:
             - towny.command.town.toggle.public
             - towny.claimed.owntown.switch.*
             # assistants are able to grant VIP and helper rank
-            - towny.command.town.rank.trusted
+            - towny.command.town.rank.vip
+            - towny.command.town.rank.helper
             - towny.outlaw.jailer
-            - towny.cheat.bypass
+        helper:
             - towny.claimed.townowned.switch.*
-            - towny.claimed.townowned.build.*
-            - towny.claimed.townowned.destroy.*
-            - towny.claimed.townowned.item_use.*
-        trusted:
-            - towny.claimed.townowned.switch.*
-            - towny.claimed.townowned.build.*
-            - towny.claimed.townowned.destroy.*
-            - towny.claimed.townowned.item_use.*
+        donator:
+            # Currently only an example rank holder with no extra permissions
+        vip:
+            # Currently only an example rank holder with no extra permissions
         # Sheriff rank is able to jail other town members.
         sheriff:
             - towny.command.town.toggle.jail
@@ -104,6 +96,7 @@ nations:
         - towny.nation.spawn.ally
         - towny.town.spawn.nation
         - towny.chat.nation
+
     king:
         # Kings get these permissions in addition to the default set.
         - towny.command.nation.*
@@ -116,4 +109,5 @@ nations:
             - towny.command.nation.enemy
         helper:
             - towny.command.nation.add
+
 ```
