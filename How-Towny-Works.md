@@ -93,7 +93,7 @@ Bob can also add the NPC town into a nation using /ta nation {nation} add {town}
 
 As of Towny 0.92.0.0, towns (typically mayors by default, but possibly other town ranks,) can set a list of Outlaws. Outlaws are set using '/own outlaw [add/remove] [name]' and the command requires the towny.command.town.outlaw permission node. Outlaws can be any player and do not have to be in a town or nation. 
 
-If the newly-minted outlaw is a member of your town they will be kicked. Towns that have themselves set to Open-status (anyone can join using the '/town join' command,) can use the outlaw list to prevent these players from joining their town freely. 
+If the newly-minted outlaw is a member of your town they will be kicked. Towns that have themselves set to Open-status (anyone can join using the '/town join' command,) can use the outlaw list to prevent these players from joining their town freely. Players cannot spawn to public towns which consider them outlaws.
 
 Players that enter into a town where they are considered to be an outlaw will see a warning-title-message informing them. If a player is online and they are made into an Outlaw they will see a message in chat. 
 
@@ -281,13 +281,17 @@ Towns' residents can claim townblocks for the town as long as they have the righ
 
 Using the `/town` command will list how many townblocks are available to be claimed. 
 
+As of 0.95.0.0 you may set a refund amount for unclaiming townblocks at `economy.new_expand.price_claim_townblock_refund`, it is not recommended that this be set at or higher than the cost to claim a townblock.
+
+As of 0.95.0.0 you may make the cost of claiming townblocks increase at `economy.new_expand.price_claim_townblock_increase`. When set to 1 this is deactivated. 1.3 means +30% to every bonus claim block cost. Cost increase can be seen in `/towny prices` output.
+
 ### []()Setting How Many Town Blocks A Town Receives
 
 You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
 
 ### []()Buying Townblocks
 
-Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a maximum limit on how many townblocks a town can buy in the config.yml at `max_purchased_blocks: '0'`. The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. The price can be configured to increase with each purchase using the `price_purchased_bonus_townblock_increase: '1.0'` config setting. Using this feature, mayors can grow their town without needing new residents.
+Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a maximum limit on how many townblocks a town can buy in the config.yml at `max_purchased_blocks: '0'`. The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. The price can be configured to increase with each purchase using the `price_purchased_bonus_townblock_increase: '1.0'` config setting. Using this feature, mayors can grow their town without needing new residents. Increasing costs can be seen in `/town buy bonus` output.
 
 []()Plot Types
 --------------
@@ -351,6 +355,7 @@ In addition:
 -   Jailed players do not give monetary payouts when they are killed.
 -   Jailed players show their jailed status in the /res [playername] screen, along with the town they are jailed in.
 -   It is suggested you make a new town rank in the townyperms.yml called Sheriff, and give that rank the towny.command.town.toggle.jail node. Newly generated townyperms.yml files will contain this rank by default.
+-   There is a list in the config at `jail.blacklisted_commands` where you can set a list of commands which jailed players cannot use.
 
 ### []()Farm Plots
 
@@ -421,7 +426,7 @@ When a town plot is unclaimed (by a player or through upkeep) block IDs matching
 -   Disabling this feature is done in the towny\data\worlds\worldname.txt @ `usingPlotManagementdelete=false`
 -   Disabling this feature for new worlds is done in the config at new_world_settings.plot_management.block_delete.enabled
 
-You can configure the list of blockIDs to be removed on a per-world basis.
+You can configure the list of Material names to be removed on a per-world basis.
 
 -   The blockIDs listed in the towny\data\worlds\worldname.txt @ `plotManagementDeleteIds=` will be removed from the townblock.
 -   Defaults for new worlds are set in the config at new_world_settings.plot_management.block_delete.unclaim_delete
@@ -433,9 +438,9 @@ A feature available only to Town Mayors on public town land: /plot clear. This c
 -   Disabling this feature is done in the in the towny\data\worlds\worldname.txt @ `usingPlotManagementMayorDelete=false`
 -   Disabling this feature for new worlds is done in the config at new_world_settings.plot_management.mayor_plotblock_delete.enabled
 
-You configure the list of blockIDs to be removed when this command is used.
+You configure the list of Material names to be removed when this command is used.
 
--   The list of blockIDs is listed in the towny\data\worlds\worldname.txt @ `plotManagementMayorDelete=WALL_SIGN,SIGN_POST`
+-   The list of blockIDs is listed in the towny\data\worlds\worldname.txt @ `plotManagementMayorDelete=ACACIA_SIGN,BIRCH_SIGN,DARK_OAK_SIGN,JUNGLE_SIGN,OAK_SIGN,SPRUCE_SIGN,ACACIA_WALL_SIGN,BIRCH_WALL_SIGN,DARK_OAK_WALL_SIGN,JUNGLE_WALL_SIGN,OAK_WALL_SIGN,SPRUCE_WALL_SIGN`
 -   Defaults for new worlds are set in the config.yml at new_world_settings.plot_management.mayor_plotblock_delete.mayor_plot_delete
 
 As of Towny 0.79.1.0, players can use this command within plots they personally own.
@@ -578,6 +583,8 @@ New in Towny Advanced (0.72+) are three new protection types, anti-explosion and
 
 Explosion protection stops all explosions. This stops TNT, TNT cannons and creeper explosions. Firespread protection stops all fires from spreading, including lava, lightning and lighters. Piston-protection allows pistons to operate between similarly owned townblocks or wild areas.
 
+As of 0.95.0.0 Animal Luring (drawing animals' attention using their preferred food,) is controlled in the following fashion: In town-owned plots and in the wilderness, luring is not stopped. In personally-owned resident plots, the player must be able to break dirt in the plot to lure an animal.
+
 ------------------------------------------------------------------------
 
 []()How Towny Controls PVP Combat
@@ -612,6 +619,8 @@ Towns pvp settings are controlled using this in-game command
 
 -   /town toggle pvp
     -   This toggles pvp on and off town-wide.
+    
+Additionally, admins have `/ta town {townname} toggle forcepvp` which will set a town's secret AdminEnabledPVP setting to true or false.
 
 ### []()Plot PVP Settings
 
@@ -673,6 +682,10 @@ Upkeep collection can be set on towns and on nations separately. Upkeep money is
 
 Upkeep can be modified in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) to affect different-sized towns differently. There are two ways to calculate the upkeep using the upkeep modifier found in the townLevel and nationLevel lines. By default the townLevel and nationLevel lines use the resident-count to determine upkeep via the upkeep modifier. The other option is to base it off plot-count rather than resident count. If you would like to set it based on plot-count set `town_plotbased_upkeep:true` in your config.yml. More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
 
+As of 0.95.0.0 you may now charge nations upkeep per-town at `economy.daily_taxes.nation_pertown_upkeep`. Uses total number of towns in the nation to determine upkeep instead of nation level (Number of Residents), calculated by (number of towns in nation X price_nation_upkeep). If `economy.daily_taxes.nation_pertown_upkeep_affected_by_nation_level_modifier` is true, the nation levels upkeep modifier will have an affect.
+
+As of 0.95.0.0 you may now penalize towns which have claimed more townblocks than they are allowed. By setting `economy.daily_taxes.price_town_overclaimed_upkeep_penalty` to true and putting an amount at `economy.daily_taxes.price_town_overclaimed_upkeep_penalty` towns will be charged this amount per townblock they are overclaimed by, in addition to their normal upkeep.
+
 []()Town and Nation Banks
 -------------------------
 
@@ -687,6 +700,32 @@ As of Towny 0.82.0.0 and on-wards the cap on banks is a hard cap and does not al
 
 []()Chat
 ========
+
+[]()PlaceHolderAPI Support
+--------------------------
+
+As of 0.95.0.0 Towny natively supports PlaceholderAPI, and provides you with the following placeholders:
+
+- %townyadvanced_town% - displays town name (if they have one.)
+- %townyadvanced_town_formatted% - displays long-form town name (if they have one.)
+- %townyadvanced_nation% - displays nation name (if they have one.)
+- %townyadvanced_nation_formatted% - displays long-form nation name (if they have one.)
+- %townyadvanced_town_balance% - displays town bank value.
+- %townyadvanced_nation_balance% - displays nation bank value.
+- %townyadvanced_town_tag% - displays town tag (if they have one.)
+- %townyadvanced_town_tag_override% - displays town tag (if they have one,) or the full town name.
+- %townyadvanced_nation_tag% - displays nation tag (if they have one.)
+- %townyadvanced_nation_tag_override% - displays nation tag (if they have one,) or the full nation name.
+- %townyadvanced_towny_tag% - displays town and nation tags.
+- %townyadvanced_towny_tag_override% - displays town and nation tags if they exist, falling back to names if they don't.
+- %townyadvanced_towny_tag_formatted% - displays town and nation tags if they exist, falling back to long-form names if they don't.
+- %townyadvanced_title% - displays king-granted title.
+- %townyadvanced_surname% - displays king-granted surname.
+- %townyadvanced_towny_name_prefix% - displays mayor and king prefix.
+- %townyadvanced_towny_name_postfix% - displays mayor and king postfix.
+- %townyadvanced_towny_prefix% - displays title if it exists, falls back to mayor and king prefixes.
+- %townyadvanced_towny_postfix% - displays surname if it exists, falls back to mayor and king postfixes.
+- %townyadvanced_towny_colour% - used to show colours before nomads, residents, mayors and kings. (Set in the config.yml.)
 
 []()Townychat.jar
 -----------------
