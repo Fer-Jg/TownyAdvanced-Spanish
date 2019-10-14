@@ -101,6 +101,7 @@
         -   remove {resident} .. {resident} - Resident removes online player from their friends list.
         -   remove+ {resident} .. {resident} - Resident removes offline player from their friends list.
         -   clearlist - Removes all friends from a resident's friend list.
+        -   list - Returns a list of your friends.
     -   list - Lists residents in towny's data folder who are online.
     -   jail paybail - Allows a player to pay to get out of jail. Funds go to the town which owns the Jail.
     -   spawn - If deny_bed_use: true and player has a current bed spawn, command will teleport player to their bed.
@@ -130,7 +131,13 @@
     -   {town} - Shows a player another town's town screen.
     -   here - Shows you the town screen of the town in which you stand.
     -   leave - Leaves a town.
-    -   list {page #} - Lists towns.
+    -   list
+        - by name {page #} - order alpabetically.
+        - by resident {page #} - order by town with most residents.
+        - by balance {page #} - order by town with the highest nation bank balance.
+        - by townblocks {page #} - order towns by how many townblocks they have claimed.
+        - by online {page #} - order by how many players are online at that moment.
+        - by open {page #} - lists only open towns, in order of most residents to least residents.
     -   online - Shows players in your town which are online.
     -   plots {townname} - Shows a helpful list of plots and their types/revenue which are owned by the town.
     -   new {townname} - Creates a new town.
@@ -201,7 +208,13 @@
 -   /nation
     -   - Shows a player their nation's nation screen.
     -   ? - Shows /nation commands.
-    -   list {page #} - Lists nations.
+    -   list 
+        - by name {page #} - order alpabetically.
+        - by resident {page #} - order by nation with most residents across all towns.
+        - by balance {page #} - order by nation with the highest nation bank balance.
+        - by towns {page #} - order by nation with the most towns.
+        - by townblocks {page #} - order nations by how many townblocks their towns have collectively claimed.
+        - by online {page #} - order by how many players are online at that moment.
     -   online - Shows players in your nation which are online.
     -   {nation} - Shows a player the /nation screen of another nation.
     -   leave - Mayor command to leave the nation they are a part of.
@@ -236,6 +249,23 @@
             -   clear - Clears the tag set for the nation.
     -   toggle
         -   neutral - Sets whether your nation will pay daily to be neutral during towny war.
+        -   open - Sets the nation to be open, so that any town can join without an invite.
+    -   join {nation}
+        - Used by a town mayor to join an open nation.
+    -   merge {nationname}
+        -   Requests the given nation to merge into your nation.
+        -   Can only be used by the nation king, and requires the king of the other nation to be online to accept the merger.
+        -   The soon-to-be-ex-king will receive a confirmation message asking if they will accept the dissolution of their nation.
+        -   If accepted the towns of the nation transfer to the remaining nation. The nation's bank money is also transferred.
+    -   townlist (nation)
+        -   (nation) is optional, to show townlist of a nation you aren't a part of.
+        -   lists all towns in a nation.
+    -   allylist (nation)
+        -   (nation) is optional, to show allylist of a nation you aren't a part of.
+        -   lists all allies of a nation.
+    - enemylist (nation)
+        -   (nation) is optional, to show enemylist of a nation you aren't a part of.
+        -   lists all enemies of a nation.
 
 []()/townyadmin
 ---------------
@@ -245,9 +275,11 @@
   - Shows Memory, Threads, War status, Health regen setting, Time, Whether daily-timer/taxes are on.
   - ? - Shows /ta commands.
   - delete {playername} - Deletes a player's towny data.
+  - plot
+    - claim {playername} - Admin command to claim a plot for another player. Area must be a part of a town.
   - resident 
     -   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
-
+    -   {residentname} friend [add|remove|clear|list] - Allows admins to manipulate a resident's friends list.
   - town {townname}
     -   new [name] [mayor] - Admin command to create a town for the mayor where the command sender is standing.
     -   add {resident} .. {resident} - Admin command to invite/add a resident to a town.
@@ -259,11 +291,18 @@
     -   outpost # - Admin command to spawn at any towns outposts.
     -   delete - Admin command to delete a town.
     -   rank {add/remove} {name} {rank} - Admin command to give/remove a rank to a town member.
+    -   toggle [any /t toggle command]... - Use a town's toggles for them.
+        - forcepvp - Set the town's AdminEnabledPVP setting to true or false.
+    -   set [any /t set command]... - Use a town's set command for them.
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
     -   rename {newname} - Admin command to rename a nation.
     -   delete - Admin command to delete a town.
+    -   toggle [any /n toggle command]... - Use a nation's toggles for them.
+    -   set [any /n set command]... - Use a nation's set command for them.
+    -   {oldnation} merge {newnation}
+        - Command to forcefully merge the oldnation into the newnation.
 
   - reset - resets the towny config.yml to its current default.
 
@@ -297,7 +336,8 @@
   - newday - Causes a new day to happen, this does not stop the next new day from happening when it was already scheduled.
   - unclaim
     -   rect {radius} - Admin command to unclaim an area.
-  - purge {# as in days} - Deletes old residents.
+  - purge {# as in days} (townless) - Deletes old residents.
+    - Optional townless flag will limit purge to only residents who are not part of a town.
 
 []()/townyworld
 ---------------
