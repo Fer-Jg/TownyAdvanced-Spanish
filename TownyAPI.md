@@ -25,7 +25,7 @@ The builds of Towny beyond version 0.94.0.12 are available on Maven, the repo fo
   <repositories>
     <repository>
       <id>github-Towny</id>
-      <url>https://maven.pkg.github.com/TownyAdvanced/Towny</url>
+      <url>https://maven.pkg.github.com/TownyAdvanced/Towny/packages</url>
     </repository>   
   </repositories>
   <dependencies>                    
