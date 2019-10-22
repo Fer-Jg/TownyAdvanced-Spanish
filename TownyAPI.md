@@ -32,7 +32,7 @@ The builds of Towny beyond version 0.94.0.12 are available on Maven, the repo fo
     <dependency>
       <groupId>com.palmergames.bukkit.towny</groupId>
       <artifactId>Towny</artifactId>
-      <version>0.94.0.12</version>
+      <version>0.95.0.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>  
