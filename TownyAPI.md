@@ -5,6 +5,7 @@
     * [Getting a Resident from a player](#getting-a-resident-from-a-player) 
     * [Getting a Town](#getting-a-town) 
     * [Getting a Nation](#getting-a-nation)
+    * [### Checking if a player can build/destroy somewhere](#checking-if-a-player-can-build-destroy-somewhere)
     * [Checking if Towny would prevent PVP damage](#checking-if-towny-would-prevent-pvp-damage)
  * [Some useful events](#some-useful-events)
  * [Of use to Shop Plugin developers](#of-use-to-shop-plugin-developers)
@@ -114,6 +115,12 @@ Getting a town can be much like what you've seen already:
         Nation nation = TownyAPI.getInstance().getDataSource().getNation(resident.getTown().getNation());
 
 You can skip the .hasNation() checks if you want to surround your code with a Try/Catch block.
+
+### Checking if a player can build/destroy somewhere
+
+Using the PlayerCacheUtil you can easily test if a player can perform either of the four ActionTypes found in Towny (Build, Destroy, Switch, Item_use.)
+
+    boolean bBuild = PlayerCacheUtil.getCachePermission(player, block.getLocation(), block.getType(), TownyPermission.ActionType.BUILD);
 
 ### Checking if Towny would prevent PVP damage
 
