@@ -91,7 +91,7 @@ Bob can also add the NPC town into a nation using /ta nation {nation} add {town}
 []()Outlaws
 -----------
 
-As of Towny 0.92.0.0, towns (typically mayors by default, but possibly other town ranks,) can set a list of Outlaws. Outlaws are set using '/own outlaw [add/remove] [name]' and the command requires the towny.command.town.outlaw permission node. Outlaws can be any player and do not have to be in a town or nation. 
+As of Towny 0.92.0.0, towns (typically mayors by default, but possibly other town ranks,) can set a list of Outlaws. Outlaws are set using '/town outlaw [add/remove] [name]' and the command requires the towny.command.town.outlaw permission node. Outlaws can be any player and do not have to be in a town or nation. 
 
 If the newly-minted outlaw is a member of your town they will be kicked. Towns that have themselves set to Open-status (anyone can join using the '/town join' command,) can use the outlaw list to prevent these players from joining their town freely. Players cannot spawn to public towns which consider them outlaws.
 
