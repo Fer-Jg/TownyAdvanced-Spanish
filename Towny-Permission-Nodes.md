@@ -299,7 +299,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.wild.build.{materialname}
         -   towny.wild.destroy.{materialname}
         -   towny.wild.switch.{materialname}
-        -   towny.wild.itemuse.{materialname}
+        -   towny.wild.item_use.{materialname}
 
 ## Miscellaneous Nodes
 
