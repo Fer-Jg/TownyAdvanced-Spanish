@@ -21,6 +21,7 @@ The new API supports the old API calls although they will appear as deprecated. 
 ## Getting started with Towny and your IDE
 
 The builds of Towny beyond version 0.94.0.12 are available on Maven.
+
 Developers may use the following after [setting up their github token as shown here.](https://help.github.com/en/articles/configuring-apache-maven-for-use-with-github-package-registry#authenticating-to-github-package-registry)
 
 ```
