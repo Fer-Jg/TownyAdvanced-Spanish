@@ -289,6 +289,16 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 -   townychat.mod.mute : Allows a moderator to /chmute {channel} {player}, muting another player in a channel.
 -   townychat.mod.unmute: Allows a moderator to /chunmute {channel} {player}, un-muting another player in a channel.
 
+-   townychat.chat.color: Allows players to use colors to format chat messages.
+-   townychat.chat.format.*: Allows the use of all chat format modifiers like bold, italics.
+    - Child nodes:
+    - townychat.chat.format.bold
+    - townychat.chat.format.italic
+    - townychat.chat.format.magic
+    - townychat.chat.format.underline
+    - townychat.chat.format.strike
+-   townychat.chat.format.reset: Allows the use of &r to reset chat formatting.
+
 ## Wilderness Nodes
 
 -   towny.wild.*
