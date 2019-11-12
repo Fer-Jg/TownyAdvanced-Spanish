@@ -9,6 +9,7 @@
     * [Checking if Towny would prevent PVP damage](#checking-if-towny-would-prevent-pvp-damage)
  * [Some useful events](#some-useful-events)
  * [Of use to Shop Plugin developers](#of-use-to-shop-plugin-developers)
+ * [Working with Town and TownBlock MetaData](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI#working-with-town-and-townblock-metadata)
  * [Example plugins using the TownyAPI](#example-plugins-using-the-townyapi)
 
 Using the Towny API in your plugins is quite simple. There are two versions of the API.
@@ -35,7 +36,7 @@ Developers may use the following after [setting up their github token as shown h
     <dependency>
       <groupId>com.palmergames.bukkit.towny</groupId>
       <artifactId>Towny</artifactId>
-      <version>0.95.0.0</version>
+      <version>0.95.1.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>  
