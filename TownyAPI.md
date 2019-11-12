@@ -155,6 +155,11 @@ Events thrown by Towny can be imported here:
 
 -   Our [ShopPlotUtil](https://github.com/TownyAdvanced/Towny/blob/master/src/com/palmergames/bukkit/towny/utils/ShopPlotUtil.java) provides easy-to-use tests to query if a player can make a shop at a location.
 
+## Working with Town and TownBlock MetaData
+
+Visit [this](https://github.com/TownyAdvanced/Towny/wiki/Configuring-Metadata-in-Towns-and-Townblocks) page for instructions on manipulating MetaData Towny can save for you.
+
+
 ## Example plugins using the TownyAPI:
 
 -   [TownyFlight](https://github.com/TownyAdvanced/TownyFlight)
