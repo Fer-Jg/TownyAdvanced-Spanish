@@ -1,14 +1,14 @@
-The Towny API has a list of properties already hooked to towns and town blocks that are editable by towny plugin developers. While a lot of these are useful in the context of Towny, developers may want to store other custom data within towns or town blocks. This is the purpose of metadata.
+The Towny API has a list of properties already hooked to towns and townblocks that are editable by Towny plugin developers. While a lot of these are useful in the context of Towny, as an independent plugin developer, you may want to store other custom data within towns or townblocks. This is the purpose of metadata.
 
-### Why use Metadata as opposed to storing data within plugin?
+### Why use Metadata as opposed to storing data within your plugin?
 * Data not stored in the Towny plugin is decentralized which makes it hard for other devs to see and manipulate your stored data, this is especially problematic if another plugin depends on data from the plugin you are developing. Towny metadata is centralized thus allowing for easy access via documentation, and key-names.
 * If your plugin requires external data on towns/townblocks, developing a backend to deal with it, can be cumbersome and time intensive.
-* Metadata allows for essentially custom fields in Towns and Townblocks like the ones already included, such as pvp setting or town size.
+* Metadata allows for custom fields in Towns and Townblocks like the ones already included, ie: pvp, explosions, residents.
 
 ### How to use the Metadata within the TownyAPI
 The API uses a data field system for storing metadata.
 
-### Anatomy of Data Fields
+#### Anatomy of Data Fields
 - `CustomDataField`
   - `IntegerDataField`
   - `StringDataField`
@@ -17,14 +17,14 @@ The API uses a data field system for storing metadata.
 
 Each of the data field hold a specific type of data that can be properly deserialized when towny loads.
 
-### Registering custom data with your plugin.
+#### Registering custom data with your plugin.
 
 1) Make sure that your plugin depends on Towny, you can do this by adding this to your plugin.yml:
      ```
      depends:
        - Towny
      ```
-2) Add Towny as a dependency to Maven [as described here](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI#getting-started-with-towny-and-your-ide)
+2) Add Towny as a dependency to Maven [as described here.](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI#getting-started-with-towny-and-your-ide)
 3) Register data field in `onLoad()` function:
 ```
 public class Main extends JavaPlugin {
@@ -55,7 +55,7 @@ public class Main extends JavaPlugin {
 }
 ```
      
-### Attaching metadata to Towns and Town blocks
+#### Attaching metadata to Towns and Town blocks
      // For townblock objects
      townblock.addMetaData(myCustomIntegerField);
 
@@ -65,7 +65,7 @@ public class Main extends JavaPlugin {
 Alternatively, if you want your metadata available to all towns by default you could loop through all of the objects on initialization and add the custom data.
 
 
-### Retrieving and modifying custom data fields
+#### Retrieving and modifying custom data fields
 ```
 public void manipulateData(TownBlock townBlock) {
         IntegerDataField myField = null;
