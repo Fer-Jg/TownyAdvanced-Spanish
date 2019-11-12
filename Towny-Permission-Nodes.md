@@ -172,6 +172,8 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.command.town.set.embassyprice
         -   towny.command.town.set.name : player can rename their town
         -   towny.command.town.set.tag
+        -   towny.command.town.set.title
+        -   towny.command.town.set.surname
     - towny.command.town.buy
     - towny.command.town.othertown
     - towny.command.town.plots : Use of the /town {name} plots
@@ -211,6 +213,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	-   towny.command.nation.leave
 	-   towny.command.nation.withdraw
 	-   towny.command.nation.deposit
+	-   towny.command.nation.deposit.other
 	-   towny.command.nation.rank.*
 	-   towny.command.nation.king
 	-   towny.command.nation.othernation
