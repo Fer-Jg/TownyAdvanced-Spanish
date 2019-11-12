@@ -69,6 +69,8 @@ A town is a collection of residents (or just one resident) with one resident as 
 
 Towns usually grow outwards from their home block, the townblock the mayor stood in during town creation. Townblocks need to be claimed beside other townblocks, unless the mayor claims an outpost in the wilderness. Towns can be limited to a number of residents using the config option `global_town_settings.max_residents_per_town`, by default this is not limited. All of the towns on a server can be seen in a list using `/town list`.
 
+As of Towny 0.95.1.0 it is possible to store MetaData on a town, see [here](https://github.com/TownyAdvanced/Towny/wiki/Configuring-Metadata-in-Towns-and-Townblocks) for details.
+
 []()Mayors
 ----------
 
@@ -87,6 +89,11 @@ Then Bob leaves Server Town and creates his own town. Using the /townyadmin set 
 Bob doesn't have to leave his town to add players to the Server Town though! He can use /townyadmin town {townname} add {playername}  to add players to the Server Town or set default_town_name: 'Server_Town' in config.yml.
 Bob can also add the NPC town into a nation using /ta nation {nation} add {town}.
 ```
+
+As of Towny 0.95.1.0 mayors have the ability to set titles (prefixes) and surnames (postfixes) to the residents of their town. This is done with:
+
+-   /town set title {name} titlegoeshere
+-   /town set surname {name} surnamegoeshere
 
 []()Outlaws
 -----------
@@ -265,6 +272,8 @@ There are two ways to join towns, the first is by being invited by a Mayor or a 
 
 Towny provides a server admin a hands-off approach to block-protection. Block protection is broken down into plots of land, called townblocks, which by default are 16x16x256 (the full height of the world.) Townblocks are claimed by town mayors who can then sell/give individual plots to their town's residents.
 
+As of Towny 0.95.1.0 it is possible to store MetaData on a townblock, see [here](https://github.com/TownyAdvanced/Towny/wiki/Configuring-Metadata-in-Towns-and-Townblocks) for details.
+
 ### []()Town Block Size
 
 You change the townblock size in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `town_block_size: 16`. **Changing this value is suggested only when you first install Towny.** Doing so after entering data will shift things unwantedly. Using smaller value will allow higher precision, at the cost of more work setting up. Also, extremely small values will render the caching system used by Towny useless. Each cell is (town_block_size x town_block_size x 256) in size, with 256 being from bedrock to clouds.
@@ -296,7 +305,9 @@ Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a max
 []()Plot Types
 --------------
 
-Players can use `/town plots {townname}` to view the counts of various plot types in a town. Towny post-0.75 has added plot types besides the default. This is to give mayors more control over their towns. As of now there are:
+Players can use `/town plots {townname}` to view the counts of various plot types in a town. Towny post-0.75 has added plot types besides the default. This is to give mayors more control over their towns. 
+
+As of Towny 0.95.1.0 there is a configurable cost to setting plot types. The plot types are as follows:
 
 ### []()Default Plots
 
@@ -361,7 +372,7 @@ In addition:
 
 Farm plots are designated with `/plot set farm` A Farm plot players to only build/destroy blocks designated in the Towny Config.yml at `global_town_settings.farm_plot_allow_blocks`. By default this list includes "LONG_GRASS, DOUBLE_PLANT, YELLOW_FLOWER, RED_ROSE, PUMPKIN_STEM, MELON_STEM, BEETROOT_BLOCK, CARROT, POTATO, CROPS, MELON_BLOCK, PUMPKIN". 
 
-Who can build/destroy these blocks is still determined by the plot's perm line seen in the /plot perm screen. This means that if B=rao, anyone can plant/place the allowed blocks in the plot. If the B=r-- then only town residents can plant/place the allowed blocks. 
+Who can build/destroy these blocks is still determined by the plot's perm line seen in the /plot perm screen. This means that if B=rnao, anyone can plant/place the allowed blocks in the plot. If the B=r--- then only town residents can plant/place the allowed blocks. 
 
 If admins want, they can add SOIL to the allowed blocks list, which will allow anyone allowed via the perm line to also make soil with a hoe. By default SOIL is not included and only admins/mayors/assistants will be able to create soil with a hoe. Towny already protects soil from being stomped into grass, so soil will only return to dirt if it is not irrigated. 
 
@@ -470,6 +481,8 @@ Towny's genius is the way it lets players protect themselves. An admin doesn't n
 
 There are 4 permission-type values, which can be set for personal plots and for town plots as well (town permissions can be set by the mayor and affect plots who are not owned by any player.) The basic command for this is either `/resident set perm` or `/town set perm` followed by the proper flags for each permission. Available in Towny 0.77.0.0 and onward are per-plot permissions. Plots start with the default settings for plot perms (be it a resident-owned or town-owned plot,) but the owner of the plots can set different perms to different plots. To view a plots perm type `/plot perm` and to set a plots' perms use `/plot set perm`. Default permissions are viewable by typing either `/resident` for personal plot perms or by typing `/town` for town permissions.
 
+As of Towny 0.95.1.0 there is an added Perm Group for plots, personally-owned plots have a Town group & town-owned plots have a Nation group.
+
 ### []()Perm-Types
 
 The 4 permission-types available are Build, Destroy, Switch and Itemuse.
@@ -520,12 +533,11 @@ The 4 permission-types available are Build, Destroy, Switch and Itemuse.
 
 ### []()Perm-Groups
 
-Each permission-type has 3 perm-groups to which the pemissions can be set for, these are displayed on your `/resident` perm line as FAO and stand for Friend, Ally, Outsider. For residents the Friend group consists of a player's friend list. For towns the perm line reads RAO, with R representing Residents (players in that town) and mayors need to use `/t set perm resident blah on/off` instead of `/t set perm friend blah on/off` The other groups are:
+Each permission-type has 4 perm-groups to which the pemissions can be set for, these are displayed on your `/resident` perm line as FTAO and stand for Friend, Town, Ally, Outsider. For residents the Friend group consists of a player's friend list; Town consists of townmembers. For towns the perm line reads RNAO, with R representing Residents (players in that town); Nation representing residents of towns in your nation. Mayors need to use `/t set perm resident blah on/off` instead of `/t set perm friend blah on/off` The other groups are:
 
 -   Ally
-    -   Players from your town,
-    -   other towns in your nation,
-    -   and nations your nation is allied with.
+    -   On personally-owned plots allies consist of players in your nation and players in your nation's allies.
+    -   On town-owed plots it is players in your nation's allies.
 -   Outsiders
     -   Players who are not part of your town or nation or nation's allies.
 
@@ -536,21 +548,21 @@ Each permission-type has 3 perm-groups to which the pemissions can be set for, t
 Setting perms for your town's public land or your personal plots is easy! There are two distinct levels of protection provided by towns. First are the town blocks, protected because they are part of a town and not owned by anyone. When you enter one of these plots from the wilderness or an owned plot the notification will show "~ Unowned". Mayors are able to set the permission for unowned plots using the the `/town set perm` command. A full list of commands is on the [commands](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) page, here are some examples:
 
 -   /town set perm {on/off} - This turns on or off all permissions for all perm-types and all perm-groups.
--   /town set perm ally {on/off} - This turns on or off all perm-types and for the town's allies (Towns in their nation, nations to which their nation is allied with.)
+-   /town set perm ally {on/off} - This turns on or off all perm-types and for the town's allies (Nations to which their nation is allied with.)
 -   /town set perm resident build {on/off} - This turns on or off all permissions for building done by residents of the town.
 
 Second are the town blocks owned personally by a resident of a town. A resident is able to set the permission for unowned plots using the the `/resident set perm` command. A full list of commands is on the [commands](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) page, here are some examples:
 
 -   /resident set perm {on/off} - This turns on or off all permissions for all perm-types and all perm-groups.
 -   /resident set perm friend {on/off} - This turns on or off all permissions for the resident's friend list.
--   /resident set perm ally {on/off} - This turns on or off all permissions for all perm-types to the resident's ally list. This consists of the resident's fellow townmembers, their nation's fellow towns and their nation's allied nations.
+-   /resident set perm ally {on/off} - This turns on or off all permissions for all perm-types to the resident's ally list. This consists of the nation's fellow towns and their nation's allied nations.
 -   /resident set perm outsider switch {on/off} - This turns on or off permissions for switch use by outsiders.
 
 Lastly, don't forget those are just the defaults for plots, any owned plot can be set with it's own individual perms:
 
 -   /plot set perm {on/off} - This turns on or off all permissions for all perm-types and all perm-groups on the plot which is being stood in.
 -   /plot set perm friend {on/off} - This turns on or off all permissions for the resident's friend list on the plot which is being stood in.
--   /plot set perm ally {on/off} - This turns on or off all permissions for all perm-types to the resident's ally list. This consists of the resident's fellow townmembers, their nation's fellow towns and their nation's allied nations. This affects the plot which is being stood in.
+-   /plot set perm ally {on/off} - This turns on or off all permissions for all perm-types to the resident's ally list. This consists of the nation's fellow towns and their nation's allied nations. This affects the plot which is being stood in.
 -   /plot set perm outsider switch {on/off} - This turns on or off permissions for switch use by outsiders on the plot which is being stood in.
 
 Mayors can changed the protection of their town with the following commands:
@@ -584,6 +596,8 @@ New in Towny Advanced (0.72+) are three new protection types, anti-explosion and
 Explosion protection stops all explosions. This stops TNT, TNT cannons and creeper explosions. Firespread protection stops all fires from spreading, including lava, lightning and lighters. Piston-protection allows pistons to operate between similarly owned townblocks or wild areas.
 
 As of 0.95.0.0 Animal Luring (drawing animals' attention using their preferred food,) is controlled in the following fashion: In town-owned plots and in the wilderness, luring is not stopped. In personally-owned resident plots, the player must be able to break dirt in the plot to lure an animal.
+
+As of 0.95.1.0 Villagers are protected from evil-doers.
 
 ------------------------------------------------------------------------
 
@@ -726,6 +740,20 @@ As of 0.95.0.0 Towny natively supports PlaceholderAPI, and provides you with the
 - %townyadvanced_towny_prefix% - displays title if it exists, falls back to mayor and king prefixes.
 - %townyadvanced_towny_postfix% - displays surname if it exists, falls back to mayor and king postfixes.
 - %townyadvanced_towny_colour% - used to show colours before nomads, residents, mayors and kings. (Set in the config.yml.)
+- %townyadvanced_town_residents_amount% - number of residents in a town.
+- %townyadvanced_town_residents_online% - number of residents in a town that are currently online.
+- %townyadvanced_town_townblocks_used% - number of townblocks claimed by a resident's town.
+- %townyadvanced_town_townblocks_bought% - number of townblocks bought by a resident's town.
+- %townyadvanced_town_townblocks_bonus% - number of bonus blocks given to a resident's town.
+- %townyadvanced_town_townblocks_maximum% - number of townblocks a town has available to claim.
+- %townyadvanced_town_townblocks_natural_maximum% - number of townblocks a town has available to claim, not counting bonus/bought townblocks.
+- %townyadvanced_town_mayor% - a resident's town's mayor's name.
+- %townyadvanced_nation_king% - a resident's nation's king's name.
+- %townyadvanced_resident_friends_amount% - number of friends a resident has.
+- %townyadvanced_nation_residents_amount% - number of residents in a resident's nation.
+- %townyadvanced_nation_residents_online% - number of residents in a resident's nation that are currently online.
+- %townyadvanced_nation_capital% - name of a resident's nation's capital.
+
 
 []()Townychat.jar
 -----------------
@@ -819,6 +847,8 @@ Chat Channels are set in Channels.yml found at \plugins\towny\settings\Channels.
     -   Put in from of text to speak with members of your town only, or without text afterwards to enter the channel.
 -   /nc
     -   Put in from of text to speak with members of your nation only, or without text afterwards to enter the channel.
+-   /ac
+    -   Put in from of text to speak with all members of your nation as well as any member of a nation you are allied with, or without text afterwards to enter the channel.
 -   /a or /admin
     -   Put in from of text to speak in adminchat, or without text afterwards to enter the channel.
 -   /m or /mod
@@ -920,6 +950,8 @@ Also useful is the '/towny war participants {page #}' command. It shows a list o
 Normal townblocks have an HP of 60 while Home Blocks have 120 points by default. This can be changed in the config. A townblock loses HP by enemy-nation residents standing within the townblock. When a townblock has lost all HP and fallen the town which the attacker belongs to gains one townblock and points to their War Score. When a townblock is under attack, fireworks appear above. Red for damage, red creeperhead for a won townblock, and green when a townblock is being healed by a defender. Fireworks can be turned off in the config at war.event.plots.firework_on_attacked. 
 
 As of Towny 0.92.0.0 when players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at `jail.is_jailing_attacking_enemies: 'false'`. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war. 
+
+As of Towny 0.95.1.0 you can make it so Townblocks which are conquered in war are transfered over permanently to the victor, set `war.event.winner_takes_ownership_of_townblocks` to true in your config to make towns lose townblocks.
 
 War allows for a great deal of customizability when it comes to griefing. The config's `WarzoneBlockPermissions EditableMaterials` section can be used for Event war as of Towny 0.92.0.0. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: tnt,fence,ladder,wood_door,iron_door,fire. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. `explosions_regen_blocks: 'true'` will determine whether the explosion-griefing is permanent. 
 
