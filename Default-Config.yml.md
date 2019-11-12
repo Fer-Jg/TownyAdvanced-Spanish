@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.95.0.0
+  version: 0.95.1.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.95.0.0
+  last_run_version: 0.95.1.0
 # The language file you wish to use
 language: english.yml
  
@@ -427,6 +427,10 @@ global_town_settings:
   # Maximum amount that a town can set their plot, embassy, shop, etc plots' prices to.
   # Setting this higher can be dangerous if you use Towny in a mysql database. Large numbers can become shortened to scientific notation. 
   maximum_plot_price_cost: '1000000.0'
+  # If set to true, the /town screen will display the xyz coordinate for a town's spawn rather than the homeblock's Towny coords.
+  display_xyz_instead_of_towny_coords: 'false'
+  # If set to true the /town list command will list randomly, rather than by whichever comparator is used, hiding resident counts.
+  display_town_list_randomly: 'false'
  
  
   ############################################################
@@ -570,13 +574,14 @@ filters_colour_chat:
     name_filter_regex: '[ /]'
     name_check_regex: ^[a-zA-Z0-9._\[\]-]*$
     string_check_regex: ^[a-zA-Z0-9 \s._\[\]\#\?\!\@\$\%\^\&\*\-\,\*\(\)\{\}]*$
-    name_remove_regex: '[^a-zA-Z0-9._\[\]-]'
+    name_remove_regex: '[^a-zA-Z0-9\&._\[\]-]'
  
   modify_chat:
     # Maximum length of Town and Nation names.
     max_name_length: '20'
     # Maximum length of titles and surnames.
     max_title_length: '10'
+ 
   # See How Towny Works wikipage for list of PAPI placeholders.
   # https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works
   papi_chat_formatting:
@@ -759,6 +764,11 @@ default_perm_flags:
       destroy: 'true'
       item_use: 'true'
       switch: 'true'
+    town:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
     ally:
       build: 'false'
       destroy: 'false'
@@ -790,6 +800,11 @@ default_perm_flags:
       destroy: 'true'
       item_use: 'true'
       switch: 'true'
+    nation:
+      build: 'false'
+      destroy: 'false'
+      item_use: 'false'
+      switch: 'false'
     ally:
       build: 'false'
       destroy: 'false'
@@ -841,6 +856,9 @@ invite_system:
     town: '10'
     # How many requests can one nation have from other nations for an alliance.
     nation: '10'
+  # When set above 0, the maximum distance a player can be from a town's spawn in order to receive an invite.
+  # Use this setting to require players to be near or inside a town before they can be invited.
+  maximum_distance_from_town_spawn: '0'
  
  
   ############################################################
@@ -989,6 +1007,8 @@ economy:
     town_plotbased_upkeep: 'false'
     # If set to true, the plot-based-upkeep system will be modified by the Town Levels' upkeep modifiers.
     town_plotbased_upkeep_affected_by_town_level_modifier: 'false'
+    # If set to any amount over zero, if a town's plot-based upkeep totals less than this value, the town will pay the minimum instead.
+    town_plotbased_upkeep_minimum_amount: '0.0'
     # The server's daily charge on a town which has claimed more townblocks than it is allowed.
     price_town_overclaimed_upkeep_penalty: '0.0'
     # Uses total number of plots that the town is overclaimed by, to determine the price_town_overclaimed_upkeep_penalty cost.
@@ -998,6 +1018,24 @@ economy:
     # any funds the town gains via upkeep at a new day
     # will be shared out between the plot owners.
     use_plot_payments: 'false'
+ 
+  plot_type_costs:
+    # Cost to use /plot set shop to change a normal plot to a shop plot.
+    set_commercial: '0.0'
+    # Cost to use /plot set arena to change a normal plot to a arena plot.
+    set_arena: '0.0'
+    # Cost to use /plot set embassy to change a normal plot to a embassy plot.
+    set_embassy: '0.0'
+    # Cost to use /plot set wilds to change a normal plot to a wilds plot.
+    set_wilds: '0.0'
+    # Cost to use /plot set inn to change a normal plot to a inn plot.
+    set_inn: '0.0'
+    # Cost to use /plot set jail to change a normal plot to a jail plot.
+    set_jail: '0.0'
+    # Cost to use /plot set farm to change a normal plot to a farm plot.
+    set_farm: '0.0'
+    # Cost to use /plot set bank to change a normal plot to a bank plot.
+    set_bank: '0.0'
  
  
   ############################################################
@@ -1021,8 +1059,12 @@ jail:
   bail:
     #If true players can pay a bail amount to be unjailed.
     is_allowing_bail: 'false'
-    #Amount that bail costs.
+    #Amount that bail costs for normal residents/nomads.
     bail_amount: '10'
+    #Amount that bail costs for Town mayors.
+    bail_amount_mayor: '10'
+    #Amount that bail costs for Nation kings.
+    bail_amount_king: '10'
   # Commands which a jailed player cannot use.
   blacklisted_commands: home,spawn,teleport,tp,tpa,tphere,tpahere,back,dback,ptp,jump,kill,warp,suicide
  
@@ -1050,7 +1092,7 @@ war:
   #This setting allows you disable the ability for a nation to pay to remain neutral during a war.
   nation_can_be_neutral: 'true'
   #By setting this to true, nations will receive a prompt for alliances and alliances will show on both nations.
-  disallow_one_way_alliance: 'false'
+  disallow_one_way_alliance: 'true'
  
  
   ############################################################
@@ -1127,6 +1169,9 @@ war:
     # If set to true when a town drops an enemy townblock's HP to 0, the attacking town gains a bonus townblock,
     # and the losing town gains a negative (-1) bonus townblock.
     costs_townblocks: 'false'
+    # If set to true when a town drops an enemy townblock's HP to 0, the attacking town takes full control of the townblock.
+    # One available (bonus) claim is given to the victorious town, one available (bonus) claim is removed from the losing town.
+    winner_takes_ownership_of_townblocks: 'false'
  
     points:
       points_townblock: '1'
