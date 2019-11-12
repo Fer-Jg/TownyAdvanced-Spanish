@@ -1,10 +1,11 @@
 ```
  
+ 
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: '0.57'
+  version: '0.62'
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: '0.57'
+  last_run_version: '0.62'
  
 ############################################################
 # +------------------------------------------------------+ #
@@ -76,6 +77,8 @@ channel_formats:
   town: '{channelTag} {townycolor}{permprefix}{townyprefix}{playername}{townypostfix}{permsuffix}&f:{msgcolour} {msg}'
   # NATION channel types.
   nation: '{channelTag} {towntagoverride}{townycolor}{permprefix}{townyprefix}{playername}{townypostfix}{permsuffix}&f:{msgcolour} {msg}'
+  # ALLIANCE channel types.
+  alliance: '{channelTag} {towntagoverride}{townycolor}{permprefix}{townyprefix}{playername}{townypostfix}{permsuffix}&f:{msgcolour} {msg}'
   # DEFAULT channel types.
   default: '{channelTag} {permprefix}{playername}{permsuffix}&f:{msgcolour} {msg}'
  
@@ -107,5 +110,8 @@ modify_chat:
   alone_message: 'false'
   # This allows you to set your alone message.
   alone_message_string: No one in range can hear you or you are alone in this channel.
+ 
+# If true players will see [Towny] Modes set: general when they log in.
+display_modes_set_on_join: 'true'
 
 ```
