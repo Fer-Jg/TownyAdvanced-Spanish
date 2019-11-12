@@ -73,6 +73,7 @@
         -   jail - Set a plot to an jail plot.
         -   farm - Set a plot to a farm plot.
         -   bank - Set a plot to a bank plot.
+        -   outpost - Set a plot to an outpost plot, costs the same as /t claim outpost.
         -   name - allows a mayor or plot-owner to rename plots they own, overwriting the ~Unowned message. Personal-plots display both the plot's given name and the name of the plot-owner.
         -   perm
             -   {on/off} - Edits the perm line of the single plot in which the player is standing. [See here for details.](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms)
@@ -191,6 +192,9 @@
         -   shoptax {$} - Set taxes collected from each resident daily, per shopplot that they own.
         -   embassyprice {$} - Sets default cost of a embassy plot for the town.
         -   embassytax {$} - Set taxes collected from each resident daily, per embassy plot that they own.
+        -   title {name} {titlegoeshere} - Mayor command to add a Title to a member of the town.
+        -   surname {name} {surnamegoeshere} - Mayor command to add a Suffix to a member of the town.
+
     -   toggle
         -   explosion - Turn on/off explosions in town.
         -   fire - Turn on/off firespread in town.
@@ -200,6 +204,7 @@
         -   taxpercent - Turn on/off taxing by percent/flatrate.
         -   open - Turn on/off public joining to your town.
         -   jail {number} {residentname} - Sends a resident of your town to the jail spawn number specified. Same command unjails a player.
+        -   jail {number} {residentname} {days} - Sends a resident of your town to the jail spawn number specified, for the number of Towny days specified.
     -   join {townname} - Command to join a town that doesn't require invites.
 
 []()/nation
@@ -220,6 +225,7 @@
     -   leave - Mayor command to leave the nation they are a part of.
     -   withdraw {$} - King command to remove money from the nation bank.
     -   deposit {$} - King command to add money to the nation bank.
+    -   deposit {$} {townname} - King command to add money to the bank of a town who is in the nation.
     -   new
         -   {nationname} - Mayor command to create a nation.
         -   {nationname} {capitaltown} - Admin command to create a new nation, set capitol.
@@ -277,6 +283,9 @@
   - delete {playername} - Deletes a player's towny data.
   - plot
     - claim {playername} - Admin command to claim a plot for another player. Area must be a part of a town.
+    - meta - used to view a plot's metadata.
+        - set [key] [value] - Sets a metadata.
+        - [add|remove] [key] - Adds or removes a metadata.
   - resident 
     -   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
     -   {residentname} friend [add|remove|clear|list] - Allows admins to manipulate a resident's friends list.
@@ -294,6 +303,10 @@
     -   toggle [any /t toggle command]... - Use a town's toggles for them.
         - forcepvp - Set the town's AdminEnabledPVP setting to true or false.
     -   set [any /t set command]... - Use a town's set command for them.
+    -   meta - used to view a town's metadata.
+        - set [key] [value] - Sets a metadata.
+        - [add|remove] [key] - Adds or removes a metadata.
+        
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
@@ -338,6 +351,11 @@
     -   rect {radius} - Admin command to unclaim an area.
   - purge {# as in days} (townless) - Deletes old residents.
     - Optional townless flag will limit purge to only residents who are not part of a town.
+  - mysqldump
+    - When your config has save & load set to mysql you can use this command to dump the mysql database to flatfile.
+  - database [save|load]
+    - Saves or loads the database.
+
 
 []()/townyworld
 ---------------
