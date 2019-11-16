@@ -29,7 +29,7 @@ Developers may use the following after [setting up their github token as shown h
   <repositories>
     <repository>
       <id>github-Towny</id>
-      <url>https://maven.pkg.github.com/TownyAdvanced/Towny/packages</url>
+      <url>https://maven.pkg.github.com/TownyAdvanced/Towny</url>
     </repository>   
   </repositories>
   <dependencies>                    
