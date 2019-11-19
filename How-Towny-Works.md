@@ -30,6 +30,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Taxes and Upkeep](#taxes-and-upkeep)
     -   [Town and Nation Banks](#town-and-nation-banks)
 -   [Chat](#chat)
+    -   [PlaceholderAPI Support](#placeholderapi-support)
     -   [Townychat.jar](#townychatjar)
     -   [Chatconfig.yml](#chatconfigyml)
     -   [Chat Channels](#chat_channels)
