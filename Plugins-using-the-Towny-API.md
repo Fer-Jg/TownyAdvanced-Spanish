@@ -25,3 +25,8 @@ The following plugins have used the Towny API to use their features according to
 **[RPG Leveled Mobs](https://www.spigotmc.org/resources/rpg-leveled-mobs.71301/)** - A plugin that adds RPG-style leveling to monsters, by iomatix.
 
 **[HuntPlayer](https://www.spigotmc.org/resources/huntplayer.71789/)** - A plugin that reveals some information about another player. Towny plot information can be included. Good for PVP servers, by LlmDl.
+
+## Plugins using Metadata
+
+**[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
+uses towny metadata to limit or prevent growth in towns.
