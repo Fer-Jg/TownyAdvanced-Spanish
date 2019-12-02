@@ -5,6 +5,9 @@ The Towny API has a list of properties already hooked to towns and townblocks th
 * If your plugin requires external data on towns/townblocks, developing a backend to deal with it, can be cumbersome and time intensive.
 * Metadata allows for custom fields in Towns and Townblocks like the ones already included, ie: pvp, explosions, residents.
 
+### Example plugins using Metadata
+Check out [Plugins using Metadata](https://github.com/TownyAdvanced/Towny/wiki/Plugins-using-the-Towny-API#plugins-using-metadata)
+
 ### How to use the Metadata within the TownyAPI
 The API uses a data field system for storing metadata.
 
