@@ -719,41 +719,7 @@ As of Towny 0.82.0.0 and on-wards the cap on banks is a hard cap and does not al
 []()PlaceHolderAPI Support
 --------------------------
 
-As of 0.95.0.0 Towny natively supports PlaceholderAPI, and provides you with the following placeholders:
-
-- %townyadvanced_town% - displays town name (if they have one.)
-- %townyadvanced_town_formatted% - displays long-form town name (if they have one.)
-- %townyadvanced_nation% - displays nation name (if they have one.)
-- %townyadvanced_nation_formatted% - displays long-form nation name (if they have one.)
-- %townyadvanced_town_balance% - displays town bank value.
-- %townyadvanced_nation_balance% - displays nation bank value.
-- %townyadvanced_town_tag% - displays town tag (if they have one.)
-- %townyadvanced_town_tag_override% - displays town tag (if they have one,) or the full town name.
-- %townyadvanced_nation_tag% - displays nation tag (if they have one.)
-- %townyadvanced_nation_tag_override% - displays nation tag (if they have one,) or the full nation name.
-- %townyadvanced_towny_tag% - displays town and nation tags.
-- %townyadvanced_towny_tag_override% - displays town and nation tags if they exist, falling back to names if they don't.
-- %townyadvanced_towny_tag_formatted% - displays town and nation tags if they exist, falling back to long-form names if they don't.
-- %townyadvanced_title% - displays king-granted title.
-- %townyadvanced_surname% - displays king-granted surname.
-- %townyadvanced_towny_name_prefix% - displays mayor and king prefix.
-- %townyadvanced_towny_name_postfix% - displays mayor and king postfix.
-- %townyadvanced_towny_prefix% - displays title if it exists, falls back to mayor and king prefixes.
-- %townyadvanced_towny_postfix% - displays surname if it exists, falls back to mayor and king postfixes.
-- %townyadvanced_towny_colour% - used to show colours before nomads, residents, mayors and kings. (Set in the config.yml.)
-- %townyadvanced_town_residents_amount% - number of residents in a town.
-- %townyadvanced_town_residents_online% - number of residents in a town that are currently online.
-- %townyadvanced_town_townblocks_used% - number of townblocks claimed by a resident's town.
-- %townyadvanced_town_townblocks_bought% - number of townblocks bought by a resident's town.
-- %townyadvanced_town_townblocks_bonus% - number of bonus blocks given to a resident's town.
-- %townyadvanced_town_townblocks_maximum% - number of townblocks a town has available to claim.
-- %townyadvanced_town_townblocks_natural_maximum% - number of townblocks a town has available to claim, not counting bonus/bought townblocks.
-- %townyadvanced_town_mayor% - a resident's town's mayor's name.
-- %townyadvanced_nation_king% - a resident's nation's king's name.
-- %townyadvanced_resident_friends_amount% - number of friends a resident has.
-- %townyadvanced_nation_residents_amount% - number of residents in a resident's nation.
-- %townyadvanced_nation_residents_online% - number of residents in a resident's nation that are currently online.
-- %townyadvanced_nation_capital% - name of a resident's nation's capital.
+PlaceholderAPI placeholders that Towny provides are link on [this wiki page](https://github.com/TownyAdvanced/Towny/wiki/Placeholders).
 
 
 []()Townychat.jar
