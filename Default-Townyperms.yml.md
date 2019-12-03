@@ -31,7 +31,8 @@ nomad:
     - towny.town.resident
     - towny.town.spawn.public
     - towny.chat.general
-    
+    - towny.command.towny.war.hud
+
 # This section of permissions covers players who are members of a town.
 towns:
     default:
@@ -59,6 +60,7 @@ towns:
         - towny.command.nation.new
         - towny.outlaw.jailer
         - towny.command.nation.join
+        - towny.command.nation.leave
 
     ranks:
         # Ranks contain additional permissions residents will be
