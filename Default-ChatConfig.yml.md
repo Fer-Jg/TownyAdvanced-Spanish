@@ -1,11 +1,10 @@
 ```
- 
- 
+  
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: '0.62'
+  version: '0.63'
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: '0.62'
+  last_run_version: '0.63'
  
 ############################################################
 # +------------------------------------------------------+ #
@@ -65,9 +64,6 @@ version:
 # Bold = &l, Italics = &o, Underlined = &n,
 # Magic = &k, Strike = &m, Reset = &r
 chatconfigcomments: ''
- 
-# Spam_time set the minimum time between messages to be flagged as spam
-spam_time: '0.5'
  
 channel_formats:
   # This is the format which will be used for GLOBAL chat/channels.
