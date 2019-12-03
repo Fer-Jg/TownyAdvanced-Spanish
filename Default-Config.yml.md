@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.95.1.0
+  version: 0.95.2.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.95.1.0
+  last_run_version: 0.95.2.0
 # The language file you wish to use
 language: english.yml
  
@@ -16,7 +16,7 @@ language: english.yml
 #  Possible permission nodes
 #
 #    for a full list of permission nodes visit: 
-#    http://palmergames.com/towny/towny-permission-nodes/ 
+#    https://github.com/TownyAdvanced/Towny/wiki/Towny-Permission-Nodes 
 permissions: ''
  
 ############################################################
@@ -31,6 +31,7 @@ levels:
   - numResidents: 0
     namePostfix: ' Ruins'
     mayorPrefix: 'Spirit '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 1
@@ -39,6 +40,7 @@ levels:
   - numResidents: 1
     namePostfix: ' (Settlement)'
     mayorPrefix: 'Hermit '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 16
@@ -47,6 +49,7 @@ levels:
   - numResidents: 2
     namePostfix: ' (Hamlet)'
     mayorPrefix: 'Chief '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 32
@@ -55,6 +58,7 @@ levels:
   - numResidents: 6
     namePostfix: ' (Village)'
     mayorPrefix: 'Baron Von '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 96
@@ -63,6 +67,7 @@ levels:
   - numResidents: 10
     namePostfix: ' (Town)'
     mayorPrefix: 'Viscount '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 160
@@ -71,6 +76,7 @@ levels:
   - numResidents: 14
     namePostfix: ' (Large Town)'
     mayorPrefix: 'Count Von '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 224
@@ -79,6 +85,7 @@ levels:
   - numResidents: 20
     namePostfix: ' (City)'
     mayorPrefix: 'Earl '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 320
@@ -87,6 +94,7 @@ levels:
   - numResidents: 24
     namePostfix: ' (Large City)'
     mayorPrefix: 'Duke '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 384
@@ -95,6 +103,7 @@ levels:
   - numResidents: 28
     namePostfix: ' (Metropolis)'
     mayorPrefix: 'Lord '
+    townBlockBuyBonusLimit: 0
     namePrefix: ''
     mayorPostfix: ''
     townBlockLimit: 448
@@ -202,7 +211,10 @@ town:
     # Do not forget to set the default_tax to more than 0 or new towns will still begin with a tax of zero.
     minimumtax: '0.0'
   # Limits the maximum amount of bonus blocks a town can buy.
+  # This setting does nothing when town.max_purchased_blocks_uses_town_levels is set to true.
   max_purchased_blocks: '0'
+  # When set to true, the town_level section of the config determines the maximum number of bonus blocks a town can purchase.
+  max_purchased_blocks_uses_town_levels: 'true'
   # maximum number of plots any single resident can own
   max_plots_per_resident: '100'
   # maximum number used in /town claim/unclaim # commands.
@@ -260,6 +272,8 @@ new_world_settings:
     world_pvp: 'true'
     # force_pvp_on is a global flag and overrides any towns flag setting
     force_pvp_on: 'false'
+    # If set to false the world will not be included in war events.
+    war_allowed: 'true'
  
   mobs:
     # world_monsters_on is a global flag setting per world.
@@ -379,6 +393,12 @@ global_town_settings:
   is_nation_ally_spawning_requiring_public_status: 'false'
   # If non zero it delays any spawn request by x seconds.
   teleport_warmup_time: '0'
+  # Number of seconds that must pass before a player can use /t spawn or /res spawn.
+  spawn_cooldown_time: '30'
+  # Number of seconds that must pass before pvp can be toggled by a town.
+  # Applies to residents of the town using /res toggle pvp, as well as
+  # plots having their PVP toggled using /plot toggle pvp.
+  pvp_cooldown_time: '30'
   # Respawn the player at his town spawn point when he/she dies
   town_respawn: 'false'
   # Town respawn only happens when the player dies in the same world as the town's spawn point.
@@ -404,7 +424,7 @@ global_town_settings:
   # List of blocks which can be modified on farm plots, as long as player is also allowed in the plot's '/plot perm' line.
   # Not included by default but some servers add GRASS_BLOCK,FARMLAND,DIRT to their list.
   farm_plot_allow_blocks: BAMBOO,BAMBOO_SAPLING,JUNGLE_LOG,JUNGLE_SAPLING,JUNGLE_LEAVES,OAK_LOG,OAK_SAPLING,OAK_LEAVES,BIRCH_LOG,BIRCH_SAPLING,BIRCH_LEAVES,ACACIA_LOG,ACACIA_SAPLING,ACACIA_LEAVES,DARK_OAK_LOG,DARK_OAK_SAPLING,DARK_OAK_LEAVES,SPRUCE_LOG,SPRUCE_SAPLING,SPRUCE_LEAVES,BEETROOTS,COCOA,CHORUS_PLANT,CHORUS_FLOWER,SWEET_BERRY_BUSH,KELP,SEAGRASS,TALL_SEAGRASS,GRASS,TALL_GRASS,FERN,LARGE_FERN,CARROTS,WHEAT,POTATOES,PUMPKIN,PUMPKIN_STEM,ATTACHED_PUMPKIN_STEM,NETHER_WART,COCOA,VINE,MELON,MELON_STEM,ATTACHED_MELON_STEM,SUGAR_CANE,CACTUS,ALLIUM,AZURE_BLUET,BLUE_ORCHID,CORNFLOWER,DANDELION,LILAC,LILY_OF_THE_VALLEY,ORANGE_TULIP,OXEYE_DAISY,PEONY,PINK_TULIP,POPPY,RED_TULIP,ROSE_BUSH,SUNFLOWER,WHITE_TULIP,WITHER_ROSE
-  # List of animals which can be kiled on farm plots by town residents.
+  # List of animals which can be killed on farm plots by town residents.
   farm_animals: PIG,COW,CHICKEN,SHEEP,MOOSHROOM
   # The maximum number of residents that can be joined to a town. Setting to 0 disables this feature.
   max_residents_per_town: '0'
@@ -461,6 +481,10 @@ global_nation_settings:
  
     # When set to true, nation zones are disabled during the the Towny war types.
     war_disables: 'true'
+ 
+    # When set to true, players will receive a notification when they enter into a nationzone.
+    # Set to false by default because, like the nationzone feature, it will generate more load on servers.
+    show_notifications: 'false'
   # If Towny should show players the nationboard when they login.
   display_board_onlogin: 'true'
   # If enabled, only allow the nation spawn to be set in the capital city.
@@ -582,8 +606,8 @@ filters_colour_chat:
     # Maximum length of titles and surnames.
     max_title_length: '10'
  
-  # See How Towny Works wikipage for list of PAPI placeholders.
-  # https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works
+  # See the Placeholders wiki page for list of PAPI placeholders.
+  # https://github.com/TownyAdvanced/Towny/wiki/Placeholders
   papi_chat_formatting:
     # When using PlaceholderAPI, and a tag would show both nation and town, this will determine how they are formatted.
     both: '&f[&6%n&f|&b%t&f] '
@@ -622,7 +646,7 @@ protection:
   # Items which can be blocked or enabled via town/plot flags
   # 25 - noteblock
   # 54 - chest ...etc
-  switch_ids: JUKEBOX,NOTE_BLOCK,BEACON,CHEST,TRAPPED_CHEST,FURNACE,DISPENSER,HOPPER,DROPPER,LEVER,COMPARATOR,REPEATER,STONE_PRESSURE_PLATE,ACACIA_PRESSURE_PLATE,BIRCH_PRESSURE_PLATE,DARK_OAK_PRESSURE_PLATE,JUNGLE_PRESSURE_PLATE,OAK_PRESSURE_PLATE,SPRUCE_PRESSURE_PLATE,HEAVY_WEIGHTED_PRESSURE_PLATE,LIGHT_WEIGHTED_PRESSURE_PLATE,STONE_BUTTON,ACACIA_BUTTON,BIRCH_BUTTON,DARK_OAK_BUTTON,JUNGLE_BUTTON,OAK_BUTTON,SPRUCE_BUTTON,ACACIA_DOOR,BIRCH_DOOR,DARK_OAK_DOOR,JUNGLE_DOOR,OAK_DOOR,SPRUCE_DOOR,ACACIA_FENCE_GATE,BIRCH_FENCE_GATE,DARK_OAK_FENCE_GATE,OAK_FENCE_GATE,JUNGLE_FENCE_GATE,SPRUCE_FENCE_GATE,ACACIA_TRAPDOOR,BIRCH_TRAPDOOR,DARK_OAK_TRAPDOOR,JUNGLE_TRAPDOOR,OAK_TRAPDOOR,SPRUCE_TRAPDOOR,MINECART,COMMAND_BLOCK_MINECART,CHEST_MINECART,FURNACE_MINECART,HOPPER_MINECART,TNT_MINECART,SHULKER_BOX,WHITE_SHULKER_BOX,ORANGE_SHULKER_BOX,MAGENTA_SHULKER_BOX,LIGHT_BLUE_SHULKER_BOX,LIGHT_GRAY_SHULKER_BOX,YELLOW_SHULKER_BOX,LIME_SHULKER_BOX,PINK_SHULKER_BOX,GRAY_SHULKER_BOX,CYAN_SHULKER_BOX,PURPLE_SHULKER_BOX,BLUE_SHULKER_BOX,BROWN_SHULKER_BOX,GREEN_SHULKER_BOX,RED_SHULKER_BOX,BLACK_SHULKER_BOX,CARROT_STICK,DAYLIGHT_DETECTOR,STONECUTTER,SMITHING_TABLE,FLETCHING_TABLE,SMOKER,LOOM,LECTERN,GRINDSTONE,COMPOSTER,CARTOGRAPHY_TABLE,BLAST_FURNACE,BELL,BARREL,DRAGON_EGG,ITEM_FRAME,POTTED_ACACIA_SAPLING,POTTED_ALLIUM,POTTED_AZURE_BLUET,POTTED_BAMBOO,POTTED_BIRCH_SAPLING,POTTED_BLUE_ORCHID,POTTED_BROWN_MUSHROOM,POTTED_CACTUS,POTTED_CORNFLOWER,POTTED_DANDELION,POTTED_DARK_OAK_SAPLING,POTTED_DEAD_BUSH,POTTED_FERN,POTTED_JUNGLE_SAPLING,POTTED_LILY_OF_THE_VALLEY,POTTED_OAK_SAPLING,POTTED_ORANGE_TULIP,POTTED_OXEYE_DAISY,POTTED_PINK_TULIP,POTTED_POPPY,POTTED_RED_MUSHROOM,POTTED_RED_TULIP,POTTED_SPRUCE_SAPLING,POTTED_WHITE_TULIP,POTTED_WITHER_ROSE,BARREL
+  switch_ids: JUKEBOX,NOTE_BLOCK,BEACON,CHEST,TRAPPED_CHEST,FURNACE,DISPENSER,HOPPER,DROPPER,LEVER,COMPARATOR,REPEATER,STONE_PRESSURE_PLATE,ACACIA_PRESSURE_PLATE,BIRCH_PRESSURE_PLATE,DARK_OAK_PRESSURE_PLATE,JUNGLE_PRESSURE_PLATE,OAK_PRESSURE_PLATE,SPRUCE_PRESSURE_PLATE,HEAVY_WEIGHTED_PRESSURE_PLATE,LIGHT_WEIGHTED_PRESSURE_PLATE,STONE_BUTTON,ACACIA_BUTTON,BIRCH_BUTTON,DARK_OAK_BUTTON,JUNGLE_BUTTON,OAK_BUTTON,SPRUCE_BUTTON,ACACIA_DOOR,BIRCH_DOOR,DARK_OAK_DOOR,JUNGLE_DOOR,OAK_DOOR,SPRUCE_DOOR,ACACIA_FENCE_GATE,BIRCH_FENCE_GATE,DARK_OAK_FENCE_GATE,OAK_FENCE_GATE,JUNGLE_FENCE_GATE,SPRUCE_FENCE_GATE,ACACIA_TRAPDOOR,BIRCH_TRAPDOOR,DARK_OAK_TRAPDOOR,JUNGLE_TRAPDOOR,OAK_TRAPDOOR,SPRUCE_TRAPDOOR,MINECART,COMMAND_BLOCK_MINECART,CHEST_MINECART,FURNACE_MINECART,HOPPER_MINECART,TNT_MINECART,SHULKER_BOX,WHITE_SHULKER_BOX,ORANGE_SHULKER_BOX,MAGENTA_SHULKER_BOX,LIGHT_BLUE_SHULKER_BOX,LIGHT_GRAY_SHULKER_BOX,YELLOW_SHULKER_BOX,LIME_SHULKER_BOX,PINK_SHULKER_BOX,GRAY_SHULKER_BOX,CYAN_SHULKER_BOX,PURPLE_SHULKER_BOX,BLUE_SHULKER_BOX,BROWN_SHULKER_BOX,GREEN_SHULKER_BOX,RED_SHULKER_BOX,BLACK_SHULKER_BOX,CARROT_STICK,DAYLIGHT_DETECTOR,STONECUTTER,SMITHING_TABLE,FLETCHING_TABLE,SMOKER,LOOM,LECTERN,GRINDSTONE,COMPOSTER,CARTOGRAPHY_TABLE,BLAST_FURNACE,BELL,BARREL,DRAGON_EGG,ITEM_FRAME,POTTED_ACACIA_SAPLING,POTTED_ALLIUM,POTTED_AZURE_BLUET,POTTED_BAMBOO,POTTED_BIRCH_SAPLING,POTTED_BLUE_ORCHID,POTTED_BROWN_MUSHROOM,POTTED_CACTUS,POTTED_CORNFLOWER,POTTED_DANDELION,POTTED_DARK_OAK_SAPLING,POTTED_DEAD_BUSH,POTTED_FERN,POTTED_JUNGLE_SAPLING,POTTED_LILY_OF_THE_VALLEY,POTTED_OAK_SAPLING,POTTED_ORANGE_TULIP,POTTED_OXEYE_DAISY,POTTED_PINK_TULIP,POTTED_POPPY,POTTED_RED_MUSHROOM,POTTED_RED_TULIP,POTTED_SPRUCE_SAPLING,POTTED_WHITE_TULIP,POTTED_WITHER_ROSE,BARREL,BREWING_STAND
  
   # permitted entities https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/LivingEntity.html
   # Animals, Chicken, Cow, Creature, Creeper, Flying, Ghast, Giant, Monster, Pig, 
@@ -934,7 +958,7 @@ economy:
     # How much every additionally claimed townblock increases in cost. Set to 1 to deactivate this. 1.3 means +30% to every bonus claim block cost.
     price_claim_townblock_increase: '1.0'
     # The amount refunded to a town when they unclaim a townblock.
-    # Warning: do not set this higher than the cose to claim a townblock.
+    # Warning: do not set this higher than the cost to claim a townblock.
     # It is advised that you do not set this to the same price as claiming either, otherwise towns will get around using outposts to claim far away.
     price_claim_townblock_refund: '0.0'
     # How much it costs a player to buy extra blocks.
@@ -962,13 +986,13 @@ economy:
     # Maximum amount of money allowed in town bank
     # Use 0 for no limit
     town_bank_cap: '0.0'
-    # Set to true to allow withdrawls from town banks
-    town_allow_withdrawls: 'true'
+    # Set to true to allow withdrawals from town banks
+    town_allow_withdrawals: 'true'
     # Maximum amount of money allowed in nation bank
     # Use 0 for no limit
     nation_bank_cap: '0.0'
-    # Set to true to allow withdrawls from nation banks
-    nation_allow_withdrawls: 'true'
+    # Set to true to allow withdrawals from nation banks
+    nation_allow_withdrawals: 'true'
     # When set to true, players can only use their town withdraw/deposit commands while inside of their own town.
     # Likewise, nation banks can only be withdrawn/deposited to while in the capital city.
     disallow_bank_actions_outside_town: 'false'
@@ -1184,10 +1208,12 @@ war:
  
   ############################################################
   # +------------------------------------------------------+ #
-  # |                   Flag war settings                  | #
+  # |                   Flag War Settings                  | #
   # |                                                      | #
-  # |               Separate from Event War                | #
-  # |                 Unsupported / Buggy                  | #
+  # |               [Separate from Event War]              | #
+  # |           --------------------------------           | #
+  # |        DEPRECATED: Minimally Supported Through       | #
+  # |             3rd Party Contributions Only             | #
   # +------------------------------------------------------+ #
   ############################################################
  
@@ -1202,9 +1228,12 @@ war:
     min_players_online_in_nation: '3'
     max_active_flags_per_player: '1'
     flag:
+      # This setting modifies the time between a war flag's Material shift. Accepts `s`(seconds) and `m`(minutes).
+      # Currently, you would multiply this times 10 to get the total time a flag should be in play.
+      # (It can also be set to `h` and `d` - but ain't nobody got time fo' that.)
       waiting_time: 1m
       # This is the block a player must place to trigger the attack event.
-      base_block: fence
+      base_block: oak_fence
       # This is the block a player must place to trigger the attack event.
       light_block: torch
     beacon:
@@ -1217,6 +1246,18 @@ war:
         max: '64'
       draw: 'true'
       wireframe_block: glowstone
+    # While true, prevent players from performing certain actions while their town
+    # has an active enemy war flag placed.
+    prevent_interaction_while_flagged: 'true'
+    # While true, prevent players from performing certain actions while a town in their nation
+    # has an active enemy war flag placed.
+    prevent_nation_interaction_while_flagged: 'true'
+    # This is how much time that must pass after a town in a nation has been flagged
+    # before certain actions can be performed, measured in milliseconds.
+    time_to_wait_after_flagged: '600000'
+    # If set to true, when a war flag finishes it's countdown successfully, the attacking town takes full control of the townblock.
+    # Setting this to 'False' will result only in monetary exchanges.
+    flag_takes_ownership_of_townblocks: 'true'
   ############################################################
   # +------------------------------------------------------+ #
   # |              Warzone Block Permissions               | #
@@ -1226,11 +1267,11 @@ war:
   ############################################################
  
   warzone:
-    # List of materaials that can be modified in a warzone.
+    # List of materials that can be modified in a warzone.
     # '*' = Allow all materials.
     # Prepend a '-' in front of a material to remove it. Used in conjunction with when you use '*'.
     # Eg: '*,-chest,-furnace'
-    editable_materials: tnt,fence,ladder,wood_door,iron_door,fire
+    editable_materials: tnt,oak_fence,birch_fence,spruce_fence,jungle_fence,dark_oak_fence,acacia_fence,ladder,oak_door,birch_door,spruce_door,jungle_door,dark_oak_door,acacia_fence,iron_door,fire
     item_use: 'true'
     switch: 'true'
     # Add '-fire' to editable materials for complete protection when setting is false. This prevents fire to be created and spread.
