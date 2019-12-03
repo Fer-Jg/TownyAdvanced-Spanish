@@ -2,7 +2,7 @@ Since Towny Version 0.94.0.18, Towny has provided some PlaceholderAPI support wi
 
 ## Available Tags:
 
-_Introduced in v0.94.0.18 (0.95.0.0)_
+_Introduced as of v0.95.0.0_
 - `%townyadvanced_town%` - Displays town name (if they have one.)
 - `%townyadvanced_town_formatted%` - Displays long-form town name (if they have one.)
 - `%townyadvanced_nation%` - Displays nation name (if they have one.)
@@ -24,7 +24,7 @@ _Introduced in v0.94.0.18 (0.95.0.0)_
 - `%townyadvanced_towny_postfix%` - Displays surname if it exists, falls back to mayor and king postfixes.
 - `%townyadvanced_towny_colour%` - Used to show colours before nomads, residents, mayors and kings. (Set in the config.yml.)  
 
-_Introduced in v0.95.0.1_
+_Introduced as of v0.95.1.0_
 - `%townyadvanced_town_residents_amount%` - Number of residents in a town.
 - `%townyadvanced_town_residents_online%` - Number of residents in a town that are currently online.
 - `%townyadvanced_town_townblocks_used%` - Number of townblocks claimed by a resident's town.
@@ -39,10 +39,8 @@ _Introduced in v0.95.0.1_
 - `%townyadvanced_nation_residents_online%` - Number of residents in a resident's nation that are currently online.
 - `%townyadvanced_nation_capital%` - Name of a resident's nation's capital.
 
-_Introduced in v0.95.1.3_
+_Introduced as of v0.95.2.0_
 - `%townyadvanced_daily_town_upkeep%` - Shows town's upkeep cost.
 - `%townyadvanced_daily_nation_upkeep%` - Shows nation's upkeep cost.
-
-_Introduced in v0.95.1.8_
 - `%townyadvanced_has_town%` - Returns true or false whether the resident has a town.
 - `%townyadvanced_has_nation%` - Returns true or false whether the resident has a nation.
