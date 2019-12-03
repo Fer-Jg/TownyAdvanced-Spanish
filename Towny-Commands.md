@@ -377,6 +377,7 @@
         -   worldmobs - Turn on/off the mobs listed in the world mobs in the world.
         -   revertunclaim - Turn on/off the revert on unclaim feature for that world.
         -   revertexpl - Turn on/off the reverting explosions in the wilderness feature for that world.
+        -   warallowed - Turn on/off whether EventWar affects the world.
     -   set
         -   wildname {name} - Sets name of the wilderness.
         -   wildperm {perm} .. {perm} - Deprecated.
