@@ -297,7 +297,7 @@ As of 0.95.0.0 you may make the cost of claiming townblocks increase at `economy
 
 ### []()Setting How Many Town Blocks A Town Receives
 
-You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) More information on the townLevel line and how to configure it is [here.](#Configuring_Mayor_and_King_Titles,_Town_and_Nation_Names)
+You can change how many town blocks a town gets to claim. This is done in two places. Towny checks first in the config.yml at ` town_block_ratio: 8 ` and by default gives a town 8 townblocks per resident. You can override this by setting ` town_block_ratio: 0 ` and using the townLevel section of the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) More information on the townLevel line and how to configure it is [here.](#configuring-mayor-and-king-titles-town-and-nation-names)
 
 ### []()Buying Townblocks
 
