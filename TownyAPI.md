@@ -25,10 +25,23 @@ The builds of Towny beyond version 0.94.0.12 are available on Maven.
 
 Developers may use the following after [setting up their github token as shown here.](https://help.github.com/en/articles/configuring-apache-maven-for-use-with-github-package-registry#authenticating-to-github-package-registry)
 
+To elaborate on the above link in your settings.xml file you must have the following in your <servers></servers> section:
+```
+  <servers>
+    <server>
+      <id>github-towny</id>
+      <username>YourGithubUsernameHere</username>
+      <password>YourAccessTokenHere</password>
+    </server>
+  </servers>
+```
+It is critical that the above server <id> matches the below repository <id> value.
+
+After you've configured your settings.xml file above you may enter the text below into your pom.xml file:
 ```
   <repositories>
     <repository>
-      <id>github-Towny</id>
+      <id>github-towny</id>
       <url>https://maven.pkg.github.com/TownyAdvanced/Towny</url>
     </repository>   
   </repositories>
@@ -36,7 +49,7 @@ Developers may use the following after [setting up their github token as shown h
     <dependency>
       <groupId>com.palmergames.bukkit.towny</groupId>
       <artifactId>Towny</artifactId>
-      <version>0.95.1.0</version>
+      <version>0.95.2.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>  
