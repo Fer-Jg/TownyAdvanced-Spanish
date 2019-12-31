@@ -15,6 +15,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Joining Towns](#joining-yowns)
 -   [Plot System of Land Ownership](#plot-system-of-land-ownership)
     -   [Town Blocks](#town-blocks)
+    -   [Plot Groups](#plot-groups)
     -   [Plot Types](#plot-types)
     -   [Outposts](#outposts)
     -   [Selling Land](#selling-land)
@@ -302,6 +303,10 @@ You can change how many town blocks a town gets to claim. This is done in two pl
 ### []()Buying Townblocks
 
 Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a maximum limit on how many townblocks a town can buy in the config.yml at `max_purchased_blocks: '0'`. The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. The price can be configured to increase with each purchase using the `price_purchased_bonus_townblock_increase: '1.0'` config setting. Using this feature, mayors can grow their town without needing new residents. Increasing costs can be seen in `/town buy bonus` output.
+
+[]()Plot Groups
+---------------
+Plots can be grouped together into _plot groups_. This allows plots to be sold/bought and manipulated as if it were one Plot. To create a group a player must have the proper permissions to operate on it. The player then stands in the plot and executes: `/plot group add {group_name}`, Towny will add the plot you're standing in, into a group if it exists, or create a new one if a group with that name doesn't exist. Simply repeat the command `/plot group add {same_group_as_above}` while standing in other plots to add those plots to the group. Most of the other commands used to manipulate plots are the same with one exception, instead of starting with the prefix `/plot`, plot group operations start with the `/plot group` prefix. For example to set a property for sale you do `/plot fs 10000`, but for a plot group named highlands you would do `/plot group fs 10000`. Perms, types and others follow this convention.
 
 []()Plot Types
 --------------
