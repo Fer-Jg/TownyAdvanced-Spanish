@@ -964,7 +964,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 
 ### []()H2
 
--   Download [h2.jar](http://mirror.nexua.org/Dependencies/h2.jar) and place it in the lib folder in your server's root folder.
+-   Download [h2.jar](http://palmergames.com/file-repo/libs/h2.jar) and place it in the lib folder in your server's root folder.
 -   Read below for conversion instructions.
 
 ### []()sqlite
