@@ -172,33 +172,36 @@ Towny gives you the ability to customize the naming scheme applied to Mayors, Ki
 -   The basic layout of the townLevel lines are as follows:
 
 ```
-    -   upkeepModifier: 1.0
-        namePostfix: ' (Settlement)'
-        mayorPrefix: 'Hermit '
-        mayorPostfix: ''
-        townBlockLimit: 16
-        namePrefix: ''
-        numresidents: 1
-        townOutpostLimit: 1
-    -   upkeepModifier: 1.0
-        namePostfix: ' (Hamlet)'
-        mayorPrefix: 'Chief '
-        mayorPostfix: ''
-        townBlockLimit: 32
-        namePrefix: ''
-        numResidents: 2
-        townOutpostLimit: 2
+  - numResidents: 1
+    namePostfix: ' (Settlement)'
+    mayorPrefix: 'Hermit '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    townBlockLimit: 16
+    upkeepModifier: 1.0
+    townOutpostLimit: 0
+  - numResidents: 2
+    namePostfix: ' (Hamlet)'
+    mayorPrefix: 'Chief '
+    townBlockBuyBonusLimit: 0
+    namePrefix: ''
+    mayorPostfix: ''
+    townBlockLimit: 32
+    upkeepModifier: 1.0
+    townOutpostLimit: 1
 ```
 
 These are read as follows:
 
--   upkeepModifier: 1.0 - Use a higher multiplier to increase the upkeep as towns get more residents (unless you use `town_plotbased_upkeep:true` in which case it is based off of plot-count rather than resident-count. Unless you've also got `town_plotbased_upkeep_affected_by_town_level_modifier:true` )
+-   numresidents: 1 - This is how many residents a town needs to have in order to attain the prefixes/postfixes of the townlevel.
 -   namePostfix: ' (Settlement)' - This is added to the end of the town name.
 -   mayorPrefix: 'Hermit ' - This is added to the front of the mayor's name.
+-   townBlockBuyBonusLimit: 0 - This is the maximum number of plots which the town can buy using /town buy bonus. Requires `town.max_purchased_blocks_uses_town_levels` setting to be true.
+-   namePrefix: '' - This is added to the front of the town name.
 -   mayorPostfix: '' - This is added to the end of the mayor's name.
 -   townBlockLimit: 16 - This decides how many townblocks a town gets, it is only used if town_block_ratio: '0' is set in the config.yml.
--   namePrefix: '' - This is added to the front of the town name.
--   numresidents: 1 - This is how many residents a town needs to have in order to attain the prefixes/postfixes of the townlevel.
+-   upkeepModifier: 1.0 - Use a higher multiplier to increase the upkeep as towns get more residents (unless you use `town_plotbased_upkeep:true` in which case it is based off of plot-count rather than resident-count. Unless you've also got `town_plotbased_upkeep_affected_by_town_level_modifier:true` )
 -   townOutpostLimit: 1 - This is how many outposts a Town can claim,
 
 -   The two levels above are for towns of 1 and 2 residents. When a town is created the mayor's new town has (Settlement) added to the end of his townname and he is given the prefix of Hermit. When the mayor gets a second resident his town becomes Townname (Hamlet) and he receives the prefix of Chief.
