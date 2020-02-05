@@ -26,6 +26,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[HuntPlayer](https://www.spigotmc.org/resources/huntplayer.71789/)** - A plugin that reveals some information about another player. Towny plot information can be included. Good for PVP servers, by LlmDl.
 
+**[TownyMarket](https://www.spigotmc.org/resources/townymarket-sell-and-buy-towny.71786/)** - A plugin that allows mayors to put their Towns up for sale on their server, by Dzirt.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
