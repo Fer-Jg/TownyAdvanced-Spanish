@@ -33,8 +33,15 @@ To elaborate on the above link in your settings.xml file you must have the follo
       <username>YourGithubUsernameHere</username>
       <password>YourAccessTokenHere</password>
     </server>
+    <server>
+      <id>github-tne</id>
+      <username>YourGithubUsernameHere</username>
+      <password>YourAccessTokenHere</password>
+    </server>
   </servers>
 ```
+The github-tne entry is only required if you're building Towny from the source using Maven, it is not required if you just want to use Towny in your own plugin.
+
 It is critical that the above server <id> matches the below repository <id> value.
 
 After you've configured your settings.xml file above you may enter the text below into your pom.xml file:
