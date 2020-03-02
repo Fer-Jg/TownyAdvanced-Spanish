@@ -29,7 +29,7 @@ Each of the data field hold a specific type of data that can be properly deseria
      ```
 2) Add Towny as a dependency to Maven [as described here.](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI#getting-started-with-towny-and-your-ide)
 3) Register data field in `onLoad()` function:
-```
+```java
 public class Main extends JavaPlugin {
 
     private File blockFile = new File(getDataFolder(), "blockvalues.yml");
@@ -59,17 +59,19 @@ public class Main extends JavaPlugin {
 ```
      
 #### Attaching metadata to Towns and Town blocks
-     // For townblock objects
-     townblock.addMetaData(myCustomIntegerField);
+```java
+// For townblock objects
+townblock.addMetaData(myCustomIntegerField);
 
-     // For town objects
-     town.addMetaData(myCustomIntegerField);
+// For town objects
+town.addMetaData(myCustomIntegerField);
+```
 
 Alternatively, if you want your metadata available to all towns by default you could loop through all of the objects on initialization and add the custom data.
 
 
 #### Retrieving and modifying custom data fields
-```
+```java
 public void manipulateData(TownBlock townBlock) {
         IntegerDataField myField = null;
 
@@ -90,7 +92,7 @@ public void manipulateData(TownBlock townBlock) {
 With that you should be able to edit, add and change metadata.
 
 Full Example File:
-```
+```java
 public class Main extends JavaPlugin {
 
     private File blockFile = new File(getDataFolder(), "blockvalues.yml");
