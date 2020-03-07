@@ -25,6 +25,8 @@ The builds of Towny beyond version 0.94.0.12 are available on Maven.
 
 Developers may use the following after [setting up their github token as shown here.](https://help.github.com/en/articles/configuring-apache-maven-for-use-with-github-package-registry#authenticating-to-github-package-registry)
 
+If you are only wanting to add Towny to your existing plugin's pom.xml you will need to give your token `read:packages, write:packages` access.
+
 To elaborate on the above link in your settings.xml file you must have the following in your <servers></servers> section:
 ```yml
   <servers>
