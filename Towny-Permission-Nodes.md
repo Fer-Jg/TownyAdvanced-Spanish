@@ -23,6 +23,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 -   towny.admin.nation_zone : Made so that mods who dont have towny.admin can bypass the nation zone protection. Child node of towny.admin.
 
 -   towny.command.townyadmin.*
+    -   towny.command.townyadmin
     -   towny.command.townyadmin.set.*
         -   towny.command.townyadmin.set.mayor
         -   towny.command.townyadmin.set.plot - For mods who don't have the full towny.admin permission node but are able to change plots to other towns.
@@ -42,6 +43,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.command.townyadmin.town.spawn
             -   towny.command.townyadmin.town.spawn.freecharge
     -   towny.command.townyadmin.nation.* - Allows a player to use '/ta nation add/kick'
+        -   towny.command.townyadmin.nation.new
         -   towny.command.townyadmin.nation.add
         -   towny.command.townyadmin.nation.delete
         -   towny.command.townyadmin.nation.rename
@@ -147,6 +149,12 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 - towny.command.town.*
     - towny.command.town.here
     - towny.command.town.list
+        - towny.command.town.list.residents
+        - towny.command.town.list.open
+        - towny.command.town.list.balance
+        - towny.command.town.list.name
+        - towny.command.town.list.townblocks
+        - towny.command.town.list.online
     - towny.command.town.new : Required to create a town.
     - towny.command.town.leave
     - towny.command.town.withdraw
@@ -199,6 +207,17 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
     - towny.command.town.unclaim : player is able to unclaim town land.
         -   towny.command.town.unclaim.all
     - towny.command.town.online
+    - towny.command.town.invite.*
+        -   towny.command.town.invite.manage.* : User can manage invites.
+            -   towny.command.town.add : User can add residents to towns.
+                -   towny.command.town.invite.add 
+            -   towny.command.town.invite.accept
+            -   towny.command.town.invite.deny
+        -   towny.command.town.invite.sent : User can see sent invites from their town.
+        -   towny.command.town.invite.received : User can see received invites for their town.
+        -   towny.command.town.invite : User can see invite help page.
+        
+        
 
 ## /Nation Nodes
 
@@ -209,6 +228,13 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 
 - towny.command.nation.*
 	-   towny.command.nation.list
+	    -   towny.command.nation.list.residents
+	    -   towny.command.nation.list.towns
+	    -   towny.command.nation.list.open
+	    -   towny.command.nation.list.balance
+	    -   towny.command.nation.list.name
+	    -   towny.command.nation.list.townblocks
+	    -   towny.command.nation.list.online
 	-   towny.command.nation.new
 	-   towny.command.nation.leave
 	-   towny.command.nation.withdraw
@@ -221,6 +247,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	-   towny.command.nation.join
 	-   towny.command.nation.set.*
 	    -   towny.command.nation.set.spawncost
+	    -   towny.command.nation.set.spawn
 	    -   towny.command.nation.set.king
 	    -   towny.command.nation.set.capitol
 	    -   towny.command.nation.set.taxes
@@ -231,7 +258,25 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	-   towny.command.nation.toggle.*
 	    -   towny.command.nation.toggle.neutral
 	    -   towny.command.nation.toggle.open
-	-   towny.command.nation.ally
+	    -   towny.command.nation.toggle.public
+	-   towny.command.nation.invite.*
+	    -   towny.command.nation.invite.manage.* : Ability to manage nation town invites.
+	        -   towny.command.nation.add : User can add towns to nations.
+	            -   towny.command.nation.invite.add
+	        -   towny.command.nation.invite.accept
+	        -   towny.command.nation.invite.deny
+	    -   towny.command.nation.invite.sent : User can see sent invites from their nation.
+	    -   towny.command.nation.invite.received : User can see received invites for their nation.
+	    -   towny.command.nation.invite : User can see invite help page.
+	-   towny.command.nation.ally.*
+	    -   towny.command.nation.ally.manage.* : Ability to manage nation ally invites.
+	        -   towny.command.nation.ally.add
+	        -   towny.command.nation.ally.remove
+	        -   towny.command.nation.ally.accept
+	        -   towny.command.nation.ally.deny
+	    -   towny.command.nation.ally.sent : User can see the sent ally invites for their nation.
+	    -   towny.command.nation.ally.received : User can see the received ally invites for their nation.
+	    -   towny.command.nation.ally : User can see the ally help page.
 	-   towny.command.nation.enemy
 	-   towny.command.nation.delete
 	-   towny.command.nation.online
