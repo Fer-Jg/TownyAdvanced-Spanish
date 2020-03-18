@@ -2,7 +2,8 @@
  * [Common API uses](#common-api-uses)
     * [Checking if a player is in the wilderness](#checking-if-a-player-is-in-the-wilderness) 
     * [Checking if a player is in their own town](#checking-if-a-player-is-in-their-own-town) 
-    * [Getting a Resident from a player](#getting-a-resident-from-a-player) 
+    * [Getting a Resident from a Player](#getting-a-resident-from-a-player) 
+    * [Getting a Player from a Resident](#getting-a-player-from-a-resident) 
     * [Getting a Town](#getting-a-town) 
     * [Getting a Nation](#getting-a-nation)
     * [Checking if a player can build/destroy somewhere](#checking-if-a-player-can-builddestroy-somewhere)
@@ -102,13 +103,20 @@ import com.palmergames.bukkit.towny.exceptions.NotRegisteredException;
 
 You've probably want to know how to get the resident so that you can use the above code, so here it is:
 
-### Getting a Resident from a player
+### Getting a Resident from a Player
 
 Most of the time getting the resident object of a player is something you'll need quite often. Here is how you do it:
 ```java
 import com.palmergames.bukkit.towny.object.Resident;
 
 Resident resident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
+```
+
+### Getting a Player from a Resident
+
+If you have a Resident object and you want to get the Bukkit Player object it is done this way;
+```
+Player player = Bukkit.getServer().getPlayer(resident.getName());
 ```
 
 ### Getting a Town
