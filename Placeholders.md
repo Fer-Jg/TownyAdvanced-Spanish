@@ -44,3 +44,6 @@ _Introduced as of v0.95.2.0_
 - `%townyadvanced_daily_nation_upkeep%` - Shows nation's upkeep cost.
 - `%townyadvanced_has_town%` - Returns true or false whether the resident has a town.
 - `%townyadvanced_has_nation%` - Returns true or false whether the resident has a nation.
+
+_Introduced as of v0.96.0.0_
+- `%townyadvanced_nation_tag_town_formatted%` - Shows the nation tag and the full town name. If nation tag is not set, only the town name is shown.
