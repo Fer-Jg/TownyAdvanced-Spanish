@@ -10,6 +10,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Kings](#kings)
     -   [Configuring Townyperms.yml and the Roles of the Ranks Within](#configuring-townypermsyml-and-the-roles-of-the-ranks-within)
     -   [Configuring Mayor and King Titles, Town and Nation Names](#configuring-mayor-and-king-titles-town-and-nation-names)
+    -   [Configuring town_level and nation_level](#configuring-town_level-and-nation_level)
 -   [How Towns Grow](#how-towns-grow)
     -   [Starting a Town](#starting-a-town)
     -   [Joining Towns](#joining-yowns)
@@ -108,7 +109,7 @@ Players that enter into a town where they are considered to be an outlaw will se
 
 Outlaws can be jailed if they die in the town where they are considered to be an outlaw. This requires the `jail.is_jailing_attacking_outlaws` option in the Towny config.yml to be set to true. It also requires the person who's done the killing to have the towny.outlaw.jailer permission node. It also requires the town to own at least one jail plot. By default only Mayors, Assistants and Sheriff ranks have the towny.outlaw.jailer permission node. 
 
-A town member can view their town's outlaw list using `/town outlawlist`. Anyone can view any town's outlawlist using `/town outlawlist {townname}>/tt>  `
+A town member can view their town's outlaw list using `/town outlawlist`. Anyone can view any town's outlawlist using `/town outlawlist {townname}`
 
 []()Nations
 -----------
@@ -167,7 +168,12 @@ A resident of a town can see the ranks within their town using `/town ranklist`.
 []()Configuring Mayor and King Titles, Town and Nation Names
 ------------------------------------------------------------
 
-Towny gives you the ability to customize the naming scheme applied to Mayors, Kings, Towns, Capital Cities and Nations. This is done with two sections in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) town_level:
+Towny gives you the ability to customize the naming scheme applied to Mayors, Kings, Towns, Capital Cities and Nations. This is done with two sections in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) 
+
+[]()Configuring town_level and nation_level
+------------------------------------------------------------
+
+#### town_level:
 
 -   The basic layout of the townLevel lines are as follows:
 
@@ -206,7 +212,7 @@ These are read as follows:
 
 -   The two levels above are for towns of 1 and 2 residents. When a town is created the mayor's new town has (Settlement) added to the end of his townname and he is given the prefix of Hermit. When the mayor gets a second resident his town becomes Townname (Hamlet) and he receives the prefix of Chief.
 
-nation_level:
+#### nation_level:
 
 -   The basic layout of the nationLevel lines are as follows:
 
@@ -305,7 +311,12 @@ You can change how many town blocks a town gets to claim. This is done in two pl
 
 ### []()Buying Townblocks
 
-Mayors can buy townblocks using /town buy bonus {amount}. An admin can set a maximum limit on how many townblocks a town can buy in the config.yml at `max_purchased_blocks: '0'`. The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. The price can be configured to increase with each purchase using the `price_purchased_bonus_townblock_increase: '1.0'` config setting. Using this feature, mayors can grow their town without needing new residents. Increasing costs can be seen in `/town buy bonus` output.
+Mayors can buy townblocks using /town buy bonus {amount}. There are two methods you can limit how many townblocks can be purchased by a town:
+
+1. If `town.max_purchased_blocks_uses_town_levels` is set to false: the max is set in the config.yml at `max_purchased_blocks: '0'`.
+2. If `town.max_purchased_blocks_uses_town_levels` is set to true: the max is dictated via the town_level's townBlockBuyBonusLimit setting, allowing towns with more residents to purchase more townblocks.
+
+The price of a bought townblock is also set in the config.yml at `price_purchased_bonus_townblock: '25.0'`. The price can be configured to increase with each purchase using the `price_purchased_bonus_townblock_increase: '1.0'` config setting. Using this feature, mayors can grow their town without needing new residents. Increasing costs can be seen in `/town buy bonus` output.
 
 []()Plot Groups
 ---------------
@@ -927,6 +938,8 @@ Normal townblocks have an HP of 60 while Home Blocks have 120 points by default.
 As of Towny 0.92.0.0 when players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at `jail.is_jailing_attacking_enemies: 'false'`. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war. 
 
 As of Towny 0.95.1.0 you can make it so Townblocks which are conquered in war are transfered over permanently to the victor, set `war.event.winner_takes_ownership_of_townblocks` to true in your config to make towns lose townblocks.
+
+As of Towny 0.96.0.0 you can make it so that conquered Towns are removed from their Nation and placed under the control of the conquering Nation, using the `war.event.winner_takes_ownership_of_town` setting. The losing town will enter a conquered state and be unable to leave the nation until the conquered time has passed. A town's conqueredDays will decrease each Towny new day. The number of days a town remains conquered is set in the config at `war.event.conquer_time` and defaults to 7 days.
 
 War allows for a great deal of customizability when it comes to griefing. The config's `WarzoneBlockPermissions EditableMaterials` section can be used for Event war as of Towny 0.92.0.0. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: tnt,fence,ladder,wood_door,iron_door,fire. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. `explosions_regen_blocks: 'true'` will determine whether the explosion-griefing is permanent. 
 
