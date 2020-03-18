@@ -88,6 +88,15 @@
         -   explosion - Turn on/off explosions in the plot in which you stand.
         -   mob - Turn on/off hostile mobspawning in the plot in which you stand.
     -   clear - Command to remove list of block id's from a plot, used by a mayor on town-owned land, or by a plot-owner on their personal plots.
+    -   group
+        -   add|new|create {groupname} - Creates a plot group where a player is standing, also adds plots to an existing group.
+        -   remove - Removes the plot stood in from its plot group.
+        -   rename {newname} - Renames a plot group.
+        -   set {plottype} - Sets the group to a specified plot type. Not able to be used for Jail plots.
+        -   set perm ... - Used to set the perm line of the group you are standing in. See above section for /plot set perm for remainder of commands.
+        -   toggle ... - Used to toggle plot settings. See above section for /plot set toggle for remainder of commands.
+        -   forsale|fs {price} - Set the group for sale at the set price.
+        -   notforsale|nfs - Set the group not for sale.
 
 []()/resident
 -------------
@@ -228,7 +237,6 @@
     -   deposit {$} {townname} - King command to add money to the bank of a town who is in the nation.
     -   new
         -   {nationname} - Mayor command to create a nation.
-        -   {nationname} {capitaltown} - Admin command to create a new nation, set capitol.
     -   rank - Command to set assistant/custom ranks in the nation.
     -   add {town} .. {town} - Invites/Adds a town to your nation.
     -   kick {town} .. {town} - Removes a town from your nation.
@@ -281,6 +289,7 @@
   - Shows Memory, Threads, War status, Health regen setting, Time, Whether daily-timer/taxes are on.
   - ? - Shows /ta commands.
   - delete {playername} - Deletes a player's towny data.
+  - tpplot {world} {x} {z} - Teleports an admin to the Towny chunk coordinates seen in the /towny map command. Be careful with large numbers, you could be teleported farther than you think and end up generating chunks.
   - plot
     - claim {playername} - Admin command to claim a plot for another player. Area must be a part of a town.
     - meta - used to view a plot's metadata.
@@ -289,14 +298,16 @@
   - resident 
     -   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
     -   {residentname} friend [add|remove|clear|list] - Allows admins to manipulate a resident's friends list.
+    
+  - town new {townname} {mayor} - Admin command to create a town for the mayor where the command sender is standing, does not charge money.
+  - nation new {nationname} {capital} - Admin command to create a nation for the capital town, does not charge money.
+
   - town {townname}
-    -   new [name] [mayor] - Admin command to create a town for the mayor where the command sender is standing.
     -   add {resident} .. {resident} - Admin command to invite/add a resident to a town.
     -   remove {resident} .. {resident} - Admin command to remove a resident from a town.
     -   kick {resident} - Admin command to remove a resident from a town.
     -   rename {newname} - Admin command to rename a town.
-    -   spawn - Admin command to spawn at at town spawn.
-    -   tpplot {world} {x} {z} - Teleports an admin to the Towny chunk coordinates seen in the /towny map command. Be careful with large numbers, you could be teleported farther than you think and end up generating chunks.
+    -   spawn - Admin command to spawn at at town spawn.    
     -   outpost # - Admin command to spawn at any towns outposts.
     -   delete - Admin command to delete a town.
     -   rank {add/remove} {name} {rank} - Admin command to give/remove a rank to a town member.
@@ -306,7 +317,6 @@
     -   meta - used to view a town's metadata.
         - set [key] [value] - Sets a metadata.
         - [add|remove] [key] - Adds or removes a metadata.
-        
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
