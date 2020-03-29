@@ -298,6 +298,7 @@
   - resident 
     -   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
     -   {residentname} friend [add|remove|clear|list] - Allows admins to manipulate a resident's friends list.
+    -   {residentname} unjail - Admin command to unjail any resident.
     
   - town new {townname} {mayor} - Admin command to create a town for the mayor where the command sender is standing, does not charge money.
   - nation new {nationname} {capital} - Admin command to create a nation for the capital town, does not charge money.
