@@ -304,7 +304,8 @@
   - nation new {nationname} {capital} - Admin command to create a nation for the capital town, does not charge money.
 
   - town {townname}
-    -   add {resident} .. {resident} - Admin command to invite/add a resident to a town.
+    -   add {resident} .. {resident} - Admin command to forcibly add a player to a town.
+    -   invite {resident} - Admin command to send a town invite to a player.
     -   remove {resident} .. {resident} - Admin command to remove a resident from a town.
     -   kick {resident} - Admin command to remove a resident from a town.
     -   rename {newname} - Admin command to rename a town.
