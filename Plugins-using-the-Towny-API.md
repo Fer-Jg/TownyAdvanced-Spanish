@@ -28,6 +28,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[TownyMarket](https://www.spigotmc.org/resources/townymarket-sell-and-buy-towny.71786/)** - A plugin that allows mayors to put their Towns up for sale on their server, by Dzirt.
 
+**[TownyLocations](https://www.spigotmc.org/resources/townylocations.76778/)** - A plugin that allows a player to view the plots of another player, and teleport to them if they have permission.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
