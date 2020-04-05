@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.96.0.0
+  version: 0.96.1.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.96.0.0
+  last_run_version: 0.96.1.0
 # The language file you wish to use
 language: english.yml
  
@@ -596,9 +596,9 @@ filters_colour_chat:
   # Regex fields used in validating inputs.
   regex:
     name_filter_regex: '[ /]'
-    name_check_regex: ^[a-zA-Z0-9._\[\]-]*$
+    name_check_regex: ^[\P{M}\p{M}*+a-zA-Z0-9._\[\]-]*$
     string_check_regex: ^[a-zA-Z0-9 \s._\[\]\#\?\!\@\$\%\^\&\*\-\,\*\(\)\{\}]*$
-    name_remove_regex: '[^a-zA-Z0-9\&._\[\]-]'
+    name_remove_regex: '[^\P{M}\p{M}*+a-zA-Z0-9\&._\[\]-]'
  
   modify_chat:
     # Maximum length of Town and Nation names.
@@ -770,6 +770,8 @@ notification:
   # On servers using craftbukkit.jar the notifications will always appear in the chat.
   # When set to false the notifications will appear in the chat rather than the action bar.
   notifications_appear_in_action_bar: 'true'
+  # This settings set the duration the actionbar (The text above the inventory bar) lasts in seconds
+  notification_actionbar_duration: '15'
  
  
  
