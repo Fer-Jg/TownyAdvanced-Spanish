@@ -83,15 +83,21 @@ Mayors can decide which ranks their residents fall into, in their town. This can
 
 It is not possible to run two towns unless you are also an admin. An admin can do the following to manage two or more towns:
 
-```
-Example: Admin Bob
-Admin Bob wants to have a server-town, and his own town. Bob would start by creating his Server Town and setting up taxes, plotprices, permissions. This sort of town should not give residents, allies or outsiders permissions in the Server Town.
-Bob can give himself more townblocks using the /ta givebonus {townname} {#} command.
-When Bob finished making his town the way he wants he uses /townyadmin set mayor {townname} npc to place a fake 'npc' resident as mayor of the Server Town.
-Then Bob leaves Server Town and creates his own town. Using the /townyadmin set mayor {townname} npc command Bob can flip back and forth between towns.
-Bob doesn't have to leave his town to add players to the Server Town though! He can use /townyadmin town {townname} add {playername}  to add players to the Server Town or set default_town_name: 'Server_Town' in config.yml.
-Bob can also add the NPC town into a nation using /ta nation {nation} add {town}.
-```
+
+>Example: Admin Bob / How to create NPC Towns.
+
+>Admin Bob wants to have a server-town, and his own town. Bob would start by creating his Server Town and setting up taxes, plotprices, permissions. This sort of town should not give residents, allies or outsiders permissions in the Server Town.
+>
+>Bob can give himself more townblocks using the /ta givebonus {townname} {#} command.
+>
+>When Bob is finished making his town the way he wants he uses /townyadmin set mayor {townname} npc to place a fake 'npc' resident as mayor of the Server Town. This is usually enough to protect the Spawn areas of most servers.
+>
+>Then Bob leaves Server Town and creates his own town. Using the /townyadmin set mayor {townname} npc command Bob can flip back and forth between towns.
+>
+>Bob doesn't have to leave his town to add players to the Server Town though! He can use /townyadmin town {townname} add {playername}  to add players to the Server Town or set default_town_name: 'Server_Town' in the config.yml.
+>
+>Bob can also add the NPC town into a nation using /ta nation {nation} add {town}.
+
 
 As of Towny 0.95.1.0 mayors have the ability to set titles (prefixes) and surnames (postfixes) to the residents of their town. This is done with:
 
