@@ -59,7 +59,7 @@ After you've configured your settings.xml file above you may enter the text belo
     <dependency>
       <groupId>com.palmergames.bukkit.towny</groupId>
       <artifactId>Towny</artifactId>
-      <version>0.95.2.0</version>
+      <version>0.96.1.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>  
