@@ -1,5 +1,7 @@
 Since Towny Version 0.94.0.18, Towny has provided some PlaceholderAPI support without needing an extension from the PAPI eCloud. Use of these placeholders requires PlaceholderAPI to be installed to be functional. Towny can not be configured to use placeholders at this time, though TownyChat can. 
 
+If you are unable to run at minimum Towny 0.94.0.18, you can download the [old PAPI Towny Expansion](https://api.extendedclip.com/expansions/towny/) instead. 
+
 ## Available Tags:
 
 _Introduced as of v0.95.0.0_
