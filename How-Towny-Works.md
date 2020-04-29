@@ -674,6 +674,8 @@ Plots can have their pvp status controlled individually with this in-game comman
 []()Money
 =========
 
+If you do not want Towny to have anything to do with money you can set `using_economy: false` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and no taxes/upkeep will occur, and no claiming or town/nation creation will cost money.
+
 []()Taxes and Upkeep
 --------------------
 
