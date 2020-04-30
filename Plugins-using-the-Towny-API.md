@@ -14,13 +14,15 @@ The following plugins have used the Towny API to use their features according to
 
 **[Trails](http://dev.bukkit.org/bukkit-plugins/trails/)** - Trails is a great RPG plugin that works on the premise that, in the real world, walking wears down trails and paths from dirt to stone, eventually. It can be limited to only affect the Towny wilderness. 
 
-**[GChat](http://www.spigotmc.org/resources/gchat-free-towny-version.6291/)** - A JSON style chat to use with the Towny Advanced Plugin. This plugin uses JSON formatting to provide a nice, clean looking chat but hold the characteristics of being able to still display information. This is a lightweight plugin built to work with and only with Towny Advanced, replacing the need for TownyChat.jar. 
+**[GChat](http://www.spigotmc.org/resources/gchat-free-towny-version.6291/)** - A JSON style chat to use with the Towny Advanced Plugin. This plugin uses JSON formatting to provide a nice, clean looking chat but hold the characteristics of being able to still display information. This is a lightweight plugin built to work with and only with Towny Advanced, replacing the need for TownyChat.jar.
 
 **[TownyGUI](https://www.spigotmc.org/resources/townygui.35745/)** - A FREE GUI plugin for Towny's commands, check it out! 
 
 **[TownyFlight](https://www.spigotmc.org/resources/townyflight.50360/)** - A Free Flight plugin, by LlmDl. 
 
 **[Towny-TNE](https://www.spigotmc.org/resources/towny-tne.71240/)** - A plugin made to bring Towny location awareness to The New Economy features, by LlmDl. 
+
+**[DiscordTownyLink](https://www.spigotmc.org/resources/discordtownylink.78179/)** - A plugin made to easily create per-town roles and channels for discord, by Coco10203.
 
 **[RPG Leveled Mobs](https://www.spigotmc.org/resources/rpg-leveled-mobs.71301/)** - A plugin that adds RPG-style leveling to monsters, by iomatix.
 
