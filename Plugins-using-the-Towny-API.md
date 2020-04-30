@@ -32,6 +32,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[TownyLocations](https://www.spigotmc.org/resources/townylocations.76778/)** - A plugin that allows a player to view the plots of another player, and teleport to them if they have permission.
 
+**[DiscordTownyLink](https://www.spigotmc.org/resources/discordtownylink.78179/)** - A plugin that can add a player to a town's role on discord, by coco10203.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
