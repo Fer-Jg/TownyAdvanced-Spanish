@@ -22,8 +22,6 @@ The following plugins have used the Towny API to use their features according to
 
 **[Towny-TNE](https://www.spigotmc.org/resources/towny-tne.71240/)** - A plugin made to bring Towny location awareness to The New Economy features, by LlmDl. 
 
-**[DiscordTownyLink](https://www.spigotmc.org/resources/discordtownylink.78179/)** - A plugin made to easily create per-town roles and channels for discord, by Coco10203.
-
 **[RPG Leveled Mobs](https://www.spigotmc.org/resources/rpg-leveled-mobs.71301/)** - A plugin that adds RPG-style leveling to monsters, by iomatix.
 
 **[HuntPlayer](https://www.spigotmc.org/resources/huntplayer.71789/)** - A plugin that reveals some information about another player. Towny plot information can be included. Good for PVP servers, by LlmDl.
@@ -32,7 +30,7 @@ The following plugins have used the Towny API to use their features according to
 
 **[TownyLocations](https://www.spigotmc.org/resources/townylocations.76778/)** - A plugin that allows a player to view the plots of another player, and teleport to them if they have permission.
 
-**[DiscordTownyLink](https://www.spigotmc.org/resources/discordtownylink.78179/)** - A plugin that can add a player to a town's role on discord, by coco10203.
+**[DiscordTownyLink](https://www.spigotmc.org/resources/discordtownylink.78179/)** - A plugin that can add a player to a town's role on discord, by Coco10203.
 
 ## Plugins using Metadata
 
