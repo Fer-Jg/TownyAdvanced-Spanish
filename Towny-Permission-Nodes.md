@@ -100,6 +100,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
     -   towny.command.plot.forsale
     -   towny.command.plot.evict
     -   towny.command.plot.perm
+        - towny.command.plot.perm.hud
     -   towny.command.plot.toggle.*
         -   towny.command.plot.toggle.pvp
         -   towny.command.plot.toggle.explosion
