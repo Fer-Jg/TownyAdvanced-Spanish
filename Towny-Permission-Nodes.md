@@ -8,7 +8,7 @@
 -   [Chat Nodes](#chat-nodes)
 -   [Wilderness Nodes](#wilderness-nodes)
 -   [Miscellaneous Nodes](#miscellaneous-nodes)
--   [Info/Option Nodes](#infooption-nodes)
+-   [Info/Option/Meta Nodes](#infooptionmeta-nodes)
 
 Towny has many permission nodes with which you can customize your server and it's separate worlds. By default Towny has already given out the correct permission nodes for a standard install in the townyperms.yml. Towny will read nodes from the townyperms.yml always, but it will also read permission nodes given by your (optional) permission plugin ie, GroupManager, LuckPerms. **Some admins make the mistake of placing Towny permission nodes into their permission plugin.** The only permission nodes you must give in your permission plugin is `towny.admin.*` to your admin group(s).
 
@@ -391,7 +391,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 
 
 
-## Info/Option Nodes
+## Info/Option/Meta Nodes
 
 > This is similar to a permission node as it is added to your permission nodes file(s). Added to the info: section of Groupmanagers' groups or the options: section of PEX's groups.
 
