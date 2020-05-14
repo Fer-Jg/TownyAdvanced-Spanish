@@ -393,7 +393,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 
 ## Info/Option/Meta Nodes
 
-> This is similar to a permission node as it is added to your permission nodes file(s). Added to the info: section of Groupmanagers' groups or the options: section of PEX's groups.
+> This is similar to a permission node as it is added to your permission nodes file(s). Added to the info: section of Groupmanagers' groups or the options: section of PEX's groups. They are called meta nodes in LuckPerms.
 
 -   Setting default chat channels/modes on join to the server.
     -   towny_default_modes: 'map,townclaim,plotborder,global,local,town,nation,mod,admin'
