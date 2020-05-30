@@ -27,7 +27,7 @@ The builds of Towny beyond version 0.94.0.12 are available on Maven.
 As of 0.96.1.11 Towny can be accessed via the [jitpack.io repo](https://jitpack.io/#TownyAdvanced/Towny).
 
 You may enter the text below into your pom.xml file:
-```
+```xml
   <repositories>
 	<repository>
 	    <id>jitpack.io</id>
