@@ -24,6 +24,29 @@ The new API supports the old API calls although they will appear as deprecated. 
 
 The builds of Towny beyond version 0.94.0.12 are available on Maven.
 
+As of 0.96.1.11 Towny can be accessed via the [jitpack.io repo](https://jitpack.io/#TownyAdvanced/Towny).
+
+You may enter the text below into your pom.xml file:
+```
+  <repositories>
+	<repository>
+	    <id>jitpack.io</id>
+	    <url>https://jitpack.io</url>
+	</repository>
+  </repositories>
+  <dependencies>                    
+	<dependency>
+	    <groupId>com.github.TownyAdvanced</groupId>
+	    <artifactId>Towny</artifactId>
+	    <version>0.96.1.11</version>
+	</dependency>
+  </dependencies>  
+```
+
+<details>
+<summary>For versions before 0.96.1.11 you will have to use the Github Packages which has a fair bit more setup required:</summary>
+
+___
 Developers may use the following after [setting up their github token as shown here.](https://help.github.com/en/articles/configuring-apache-maven-for-use-with-github-package-registry#authenticating-to-github-package-registry)
 
 If you are only wanting to add Towny to your existing plugin's pom.xml you will need to give your token `read:packages, write:packages` access.
@@ -64,6 +87,10 @@ After you've configured your settings.xml file above you may enter the text belo
     </dependency>
   </dependencies>  
 ```
+___
+</details>
+
+
 
 Note again that the API changed after 0.94.0.2 and your version number should be set for that or newer. Once it is added you can put Towny into your plugin.yml's depend or softdepend list (depending on whether your plugin needs Towny present to function all of the time, or if you want to support Towny features when present.) Lastly you will need to add the following to your pre's import section:
 ```java
