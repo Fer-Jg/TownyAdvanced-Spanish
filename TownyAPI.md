@@ -90,6 +90,11 @@ After you've configured your settings.xml file above you may enter the text belo
 ___
 </details>
 
+Note again that the API changed after 0.94.0.2 and your version number should be set for that or newer. Once it is added you can put Towny into your plugin.yml's depend or softdepend list (depending on whether your plugin needs Towny present to function all of the time, or if you want to support Towny features when present.) Lastly you will need to add the following to your pre's import section:
+```java
+import com.palmergames.bukkit.towny.TownyAPI;
+```
+
 ## Downloading Sources and Documentation
 Docs and sources are helpful as they provide context to the many objects in Towny's API. Here's how you can download them in your IDE:
 
@@ -98,10 +103,7 @@ Press shift twice to access the hot menu, and type "download", click the option 
 
 <img width="699" alt="Screen Shot 2020-06-02 at 2 10 41 PM" src="https://user-images.githubusercontent.com/11075493/83555034-ad451400-a4db-11ea-830b-00aa9d5a3170.png">
 
-Note again that the API changed after 0.94.0.2 and your version number should be set for that or newer. Once it is added you can put Towny into your plugin.yml's depend or softdepend list (depending on whether your plugin needs Towny present to function all of the time, or if you want to support Towny features when present.) Lastly you will need to add the following to your pre's import section:
-```java
-import com.palmergames.bukkit.towny.TownyAPI;
-```
+___
 ## Common API uses
 
 ### Checking if a player is in the wilderness
