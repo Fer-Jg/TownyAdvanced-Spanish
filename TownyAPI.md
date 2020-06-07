@@ -52,7 +52,7 @@ Developers may use the following after [setting up their github token as shown h
 If you are only wanting to add Towny to your existing plugin's pom.xml you will need to give your token `read:packages, write:packages` access.
 
 To elaborate on the above link in your settings.xml file you must have the following in your <servers></servers> section:
-```yml
+```xml
   <servers>
     <server>
       <id>github-towny</id>
@@ -71,7 +71,7 @@ The github-tne entry is only required if you're building Towny from the source u
 It is critical that the above server <id> matches the below repository <id> value.
 
 After you've configured your settings.xml file above you may enter the text below into your pom.xml file:
-```yml
+```xml
   <repositories>
     <repository>
       <id>github-towny</id>
