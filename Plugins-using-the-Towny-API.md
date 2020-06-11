@@ -1,5 +1,7 @@
 The following plugins have used the Towny API to use their features according to the Towny plugin. 
 
+**[TownyWars](https://www.spigotmc.org/resources/townywars.80038/)** - A simple arcade war plugin for Towny.
+
 **[Lockette](http://www.palmergames.com/file-repo/Lockette/1.7.12/)** - Towny can remove the locks which are placed in plots using /plot clear. 
 
 **[ChestShop](https://www.spigotmc.org/resources/chestshop.51856/)** - Limit creation of chest shops to Towny shop plots. Requires [ChestShop-Towny.](https://github.com/TownyAdvanced/ChestShop-towny/releases) 
