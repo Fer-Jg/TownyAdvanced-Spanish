@@ -34,6 +34,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[DiscordTownyLink](https://www.spigotmc.org/resources/discordtownylink.78179/)** - A plugin that can add a player to a town's role on discord, by Coco10203.
 
+**[CropClick](https://www.spigotmc.org/resources/cropclick.69480/)** - A plugin that lets players click crops and receive the drops. CropClick uses Towny to allow/deny players to click crops, by BakuPlayz.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
