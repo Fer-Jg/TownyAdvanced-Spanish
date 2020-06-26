@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.96.1.0
+  version: 0.96.2.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.96.1.0
+  last_run_version: 0.96.2.0
 # The language file you wish to use
 language: english.yml
  
@@ -206,7 +206,7 @@ town:
     # Default amount for town's plottax costs.
     plot_tax: '0.0'
     # Default status of new town's taxpercentage. True means that the default_tax is treated as a percentage instead of a fixed amount.
-    taxpercentage: 'false'
+    taxpercentage: 'true'
     # A required minimum tax amount for the default_tax, will not change any towns which already have a tax set.
     # Do not forget to set the default_tax to more than 0 or new towns will still begin with a tax of zero.
     minimumtax: '0.0'
@@ -225,11 +225,17 @@ town:
   # Maximum number of towns allowed on the server.
   town_limit: '3000'
  
+  # If true, the below settings: min_plot_distance_from_town_plot and min_distance_from_town_homeblock
+  # will be ignored for towns that are in the same nation. Setting to false will keep all towns separated the same.
+  min_distances_ignored_for_towns_in_same_nation: 'true'
+ 
   # Minimum number of plots any towns plot must be from the next town's own plots.
+  # Does not affect towns which are in the same nation.
   # This will prevent town encasement to a certain degree.
   min_plot_distance_from_town_plot: '5'
  
   # Minimum number of plots any towns home plot must be from the next town.
+  # Does not affect towns which are in the same nation.
   # This will prevent someone founding a town right on your doorstep
   min_distance_from_town_homeblock: '5'
  
@@ -393,8 +399,14 @@ global_town_settings:
   is_nation_ally_spawning_requiring_public_status: 'false'
   # If non zero it delays any spawn request by x seconds.
   teleport_warmup_time: '0'
+  # When set to true, if players are currently in a spawn warmup, moving will cancel their spawn.
+  movement_cancels_spawn_warmup: 'false'
+  # When set to true, if players are damaged in any way while in a spawn warmup, their spawning will be cancelled.
+  damage_cancels_spawn_warmup: 'false'
   # Number of seconds that must pass before a player can use /t spawn or /res spawn.
   spawn_cooldown_time: '30'
+  # Decides whether confirmations should appear if you spawn to an area with an associated cost.
+  spawn_warnings: 'true'
   # Number of seconds that must pass before pvp can be toggled by a town.
   # Applies to residents of the town using /res toggle pvp, as well as
   # plots having their PVP toggled using /plot toggle pvp.
@@ -409,6 +421,10 @@ global_town_settings:
   # Enables the [~Home] message.
   # If false it will make it harder for enemies to find the home block during a war
   show_town_notifications: 'true'
+  # When set above zero this is the largest number of residents a town can support before they join/create a nation.
+  # Do not set this value to an amount less than the required_number_residents_join_nation below.
+  # Do not set this value to an amount less than the required_number_residents_create_nation below.
+  maximum_number_residents_without_nation: '0'
   # The required number of residents in a town to join a nation
   # If the number is 0, towns will not require a certain amount of residents to join a nation
   required_number_residents_join_nation: '0'
@@ -434,6 +450,7 @@ global_town_settings:
   # When active this feature can cause a bit of lag when the /t toggle pvp command is used, depending on how many players are online.
   outsiders_prevent_pvp_toggle: 'false'
   # If set to true, when a world has forcepvp set to true, homeblocks of towns will not be affected and have PVP set to off.
+  # Does not have any effect when Event War is active.
   homeblocks_prevent_forcepvp: 'false'
   # The amount of residents a town needs to claim an outpost,
   # Setting this value to 0, means a town can claim outposts no matter how many residents
@@ -512,6 +529,9 @@ global_nation_settings:
     public: 'false'
     # If set to true, any newly made nation will have open status and any town may join without an invite.
     open: 'false'
+  # This setting determines the list of allowed nation map colors.
+  # The color codes are in hex format.
+  allowed_map_colors: aqua:00ffff, azure:f0ffff, beige:f5f5dc, black:000000, blue:0000ff, brown:a52a2a, cyan:00ffff, darkblue:00008b, darkcyan:008b8b, darkgrey:a9a9a9, darkgreen:006400, darkkhaki:bdb76b, darkmagenta:8b008b, darkolivegreen:556b2f, darkorange:ff8c00, darkorchid:9932cc, darkred:8b0000, darksalmon:e9967a, darkviolet:9400d3, fuchsia:ff00ff, gold:ffd700, green:008000, indigo:4b0082, khaki:f0e68c, lightblue:add8e6, lightcyan:e0ffff, lightgreen:90ee90, lightgrey:d3d3d3, lightpink:ffb6c1, lightyellow:ffffe0, lime:00ff00, magenta:ff00ff, maroon:800000, navy:000080, olive:808000, orange:ffa500, pink:ffc0cb, purple:800080, violet:800080, red:ff0000, silver:c0c0c0, white:ffffff, yellow:ffff00
  
  
   ############################################################
@@ -566,6 +586,8 @@ plugin:
     # The time each "day", when taxes will be collected.
     # MUST be less than day_interval. Default is 12h (midday).
     new_day_time: 12h
+    # Whether towns with no claimed townblocks should be deleted when the new day is run.
+    delete_0_plot_towns: 'false'
  
   # Lots of messages to tell you what's going on in the server with time taken for events.
   debug_mode: 'false'
@@ -595,10 +617,10 @@ filters_colour_chat:
   npc_prefix: NPC
   # Regex fields used in validating inputs.
   regex:
-    name_filter_regex: '[ /]'
-    name_check_regex: ^[\P{M}\p{M}*+a-zA-Z0-9._\[\]-]*$
+    name_filter_regex: '[\\\/]'
+    name_check_regex: ^[\p{L}a-zA-Z0-9._\[\]-]*$
     string_check_regex: ^[a-zA-Z0-9 \s._\[\]\#\?\!\@\$\%\^\&\*\-\,\*\(\)\{\}]*$
-    name_remove_regex: '[^\P{M}\p{M}*+a-zA-Z0-9\&._\[\]-]'
+    name_remove_regex: '[^\P{M}a-zA-Z0-9\&._\[\]-]'
  
   modify_chat:
     # Maximum length of Town and Nation names.
@@ -641,12 +663,12 @@ protection:
   # 368 - ender pearl
   # 374 - glass bottle
   # 385 - fire charge
-  item_use_ids: BONE_MEAL,FLINT_AND_STEEL,BUCKET,WATER_BUCKET,LAVA_BUCKET,MINECART,STORAGE_MINECART,INK_SACK,SHEARS,ENDER_PEARL,GLASS_BOTTLE,FIREBALL,ARMOR_STAND,SKULL_ITEM,BIRCH_BOAT,ACACIA_BOAT,DARK_OAK_BOAT,JUNGLE_BOAT,OAK_BOAT,SPRUCE_BOAT,END_CRYSTAL,POWERED_MINECART,COMMAND_MINECART,EXPLOSIVE_MINECART,HOPPER_MINECART,CHORUS_FRUIT,BLACK_DYE,BLUE_DYE,BROWN_DYE,CYAN_DYE,GRAY_DYE,GREEN_DYE,LIGHT_BLUE_DYE,LIGHT_GRAY_DYE,LIME_DYE,MAGENTA_DYE,ORANGE_DYE,PINK_DYE,PURPLE_DYE,RED_DYE,WHITE_DYE,YELLOW_DYE
+  item_use_ids: BONE_MEAL,FLINT_AND_STEEL,BUCKET,WATER_BUCKET,LAVA_BUCKET,MINECART,STORAGE_MINECART,INK_SACK,SHEARS,ENDER_PEARL,GLASS_BOTTLE,FIREBALL,ARMOR_STAND,SKULL_ITEM,BIRCH_BOAT,ACACIA_BOAT,DARK_OAK_BOAT,JUNGLE_BOAT,OAK_BOAT,SPRUCE_BOAT,END_CRYSTAL,POWERED_MINECART,COMMAND_MINECART,EXPLOSIVE_MINECART,HOPPER_MINECART,CHORUS_FRUIT,BLACK_DYE,BLUE_DYE,BROWN_DYE,CYAN_DYE,GRAY_DYE,GREEN_DYE,LIGHT_BLUE_DYE,LIGHT_GRAY_DYE,LIME_DYE,MAGENTA_DYE,ORANGE_DYE,PINK_DYE,PURPLE_DYE,RED_DYE,WHITE_DYE,YELLOW_DYE,DIAMOND_AXE,GOLDEN_AXE,IRON_AXE,WOODEN_AXE,STONE_AXE
  
   # Items which can be blocked or enabled via town/plot flags
   # 25 - noteblock
   # 54 - chest ...etc
-  switch_ids: JUKEBOX,NOTE_BLOCK,BEACON,CHEST,TRAPPED_CHEST,FURNACE,DISPENSER,HOPPER,DROPPER,LEVER,COMPARATOR,REPEATER,STONE_PRESSURE_PLATE,ACACIA_PRESSURE_PLATE,BIRCH_PRESSURE_PLATE,DARK_OAK_PRESSURE_PLATE,JUNGLE_PRESSURE_PLATE,OAK_PRESSURE_PLATE,SPRUCE_PRESSURE_PLATE,HEAVY_WEIGHTED_PRESSURE_PLATE,LIGHT_WEIGHTED_PRESSURE_PLATE,STONE_BUTTON,ACACIA_BUTTON,BIRCH_BUTTON,DARK_OAK_BUTTON,JUNGLE_BUTTON,OAK_BUTTON,SPRUCE_BUTTON,ACACIA_DOOR,BIRCH_DOOR,DARK_OAK_DOOR,JUNGLE_DOOR,OAK_DOOR,SPRUCE_DOOR,ACACIA_FENCE_GATE,BIRCH_FENCE_GATE,DARK_OAK_FENCE_GATE,OAK_FENCE_GATE,JUNGLE_FENCE_GATE,SPRUCE_FENCE_GATE,ACACIA_TRAPDOOR,BIRCH_TRAPDOOR,DARK_OAK_TRAPDOOR,JUNGLE_TRAPDOOR,OAK_TRAPDOOR,SPRUCE_TRAPDOOR,MINECART,COMMAND_BLOCK_MINECART,CHEST_MINECART,FURNACE_MINECART,HOPPER_MINECART,TNT_MINECART,SHULKER_BOX,WHITE_SHULKER_BOX,ORANGE_SHULKER_BOX,MAGENTA_SHULKER_BOX,LIGHT_BLUE_SHULKER_BOX,LIGHT_GRAY_SHULKER_BOX,YELLOW_SHULKER_BOX,LIME_SHULKER_BOX,PINK_SHULKER_BOX,GRAY_SHULKER_BOX,CYAN_SHULKER_BOX,PURPLE_SHULKER_BOX,BLUE_SHULKER_BOX,BROWN_SHULKER_BOX,GREEN_SHULKER_BOX,RED_SHULKER_BOX,BLACK_SHULKER_BOX,CARROT_STICK,DAYLIGHT_DETECTOR,STONECUTTER,SMITHING_TABLE,FLETCHING_TABLE,SMOKER,LOOM,GRINDSTONE,COMPOSTER,CARTOGRAPHY_TABLE,BLAST_FURNACE,BELL,BARREL,DRAGON_EGG,ITEM_FRAME,POTTED_ACACIA_SAPLING,POTTED_ALLIUM,POTTED_AZURE_BLUET,POTTED_BAMBOO,POTTED_BIRCH_SAPLING,POTTED_BLUE_ORCHID,POTTED_BROWN_MUSHROOM,POTTED_CACTUS,POTTED_CORNFLOWER,POTTED_DANDELION,POTTED_DARK_OAK_SAPLING,POTTED_DEAD_BUSH,POTTED_FERN,POTTED_JUNGLE_SAPLING,POTTED_LILY_OF_THE_VALLEY,POTTED_OAK_SAPLING,POTTED_ORANGE_TULIP,POTTED_OXEYE_DAISY,POTTED_PINK_TULIP,POTTED_POPPY,POTTED_RED_MUSHROOM,POTTED_RED_TULIP,POTTED_SPRUCE_SAPLING,POTTED_WHITE_TULIP,POTTED_WITHER_ROSE,BARREL,BREWING_STAND
+  switch_ids: JUKEBOX,NOTE_BLOCK,BEACON,CHEST,TRAPPED_CHEST,FURNACE,DISPENSER,HOPPER,DROPPER,LEVER,COMPARATOR,REPEATER,STONE_PRESSURE_PLATE,ACACIA_PRESSURE_PLATE,BIRCH_PRESSURE_PLATE,DARK_OAK_PRESSURE_PLATE,JUNGLE_PRESSURE_PLATE,OAK_PRESSURE_PLATE,SPRUCE_PRESSURE_PLATE,HEAVY_WEIGHTED_PRESSURE_PLATE,LIGHT_WEIGHTED_PRESSURE_PLATE,STONE_BUTTON,ACACIA_BUTTON,BIRCH_BUTTON,DARK_OAK_BUTTON,JUNGLE_BUTTON,OAK_BUTTON,SPRUCE_BUTTON,ACACIA_DOOR,BIRCH_DOOR,DARK_OAK_DOOR,JUNGLE_DOOR,OAK_DOOR,SPRUCE_DOOR,ACACIA_FENCE_GATE,BIRCH_FENCE_GATE,DARK_OAK_FENCE_GATE,OAK_FENCE_GATE,JUNGLE_FENCE_GATE,SPRUCE_FENCE_GATE,ACACIA_TRAPDOOR,BIRCH_TRAPDOOR,DARK_OAK_TRAPDOOR,JUNGLE_TRAPDOOR,OAK_TRAPDOOR,SPRUCE_TRAPDOOR,MINECART,COMMAND_BLOCK_MINECART,CHEST_MINECART,FURNACE_MINECART,HOPPER_MINECART,TNT_MINECART,SHULKER_BOX,WHITE_SHULKER_BOX,ORANGE_SHULKER_BOX,MAGENTA_SHULKER_BOX,LIGHT_BLUE_SHULKER_BOX,LIGHT_GRAY_SHULKER_BOX,YELLOW_SHULKER_BOX,LIME_SHULKER_BOX,PINK_SHULKER_BOX,GRAY_SHULKER_BOX,CYAN_SHULKER_BOX,PURPLE_SHULKER_BOX,BLUE_SHULKER_BOX,BROWN_SHULKER_BOX,GREEN_SHULKER_BOX,RED_SHULKER_BOX,BLACK_SHULKER_BOX,CARROT_STICK,DAYLIGHT_DETECTOR,STONECUTTER,SMITHING_TABLE,FLETCHING_TABLE,SMOKER,LOOM,GRINDSTONE,COMPOSTER,CARTOGRAPHY_TABLE,BLAST_FURNACE,BELL,BARREL,DRAGON_EGG,ITEM_FRAME,POTTED_ACACIA_SAPLING,POTTED_ALLIUM,POTTED_AZURE_BLUET,POTTED_BAMBOO,POTTED_BIRCH_SAPLING,POTTED_BLUE_ORCHID,POTTED_BROWN_MUSHROOM,POTTED_CACTUS,POTTED_CORNFLOWER,POTTED_DANDELION,POTTED_DARK_OAK_SAPLING,POTTED_DEAD_BUSH,POTTED_FERN,POTTED_JUNGLE_SAPLING,POTTED_LILY_OF_THE_VALLEY,POTTED_OAK_SAPLING,POTTED_ORANGE_TULIP,POTTED_OXEYE_DAISY,POTTED_PINK_TULIP,POTTED_POPPY,POTTED_RED_MUSHROOM,POTTED_RED_TULIP,POTTED_SPRUCE_SAPLING,POTTED_WHITE_TULIP,POTTED_WITHER_ROSE,BARREL,BREWING_STAND,LEAD,SWEET_BERRY_BUSH
  
   # permitted entities https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/entity/LivingEntity.html
   # Animals, Chicken, Cow, Creature, Creeper, Flying, Ghast, Giant, Monster, Pig, 
@@ -940,13 +962,13 @@ economy:
   nation_rename_cost: '0'
  
   spawn_travel:
-    # Cost to use /town spawn
+    # Cost to use /town spawn.
     price_town_spawn_travel: '0.0'
     # Cost to use '/town spawn [town]' to another town in your nation.
     price_town_nation_spawn_travel: '5.0'
     # Cost to use '/town spawn [town]' to another town in a nation that is allied with your nation.
     price_town_ally_spawn_travel: '10.0'
-    # Cost to use /town spawn [town]
+    # Maximum cost to use /town spawn [town] that mayors can set using /t set spawncost.
     # This is paid to the town you goto.
     price_town_public_spawn_travel: '10.0'
     # When set to true, any cost paid by a player to use any variant of '/town spawn' will be paid to the town bank.
@@ -1021,10 +1043,16 @@ economy:
     # if a resident can't pay his town tax then he is kicked from the town.
     # if a town or nation fails to pay it's upkeep it is deleted.
     enabled: 'true'
-    # Maximum tax amount allowed when using flat taxes
-    max_tax_amount: '1000.0'
-    # maximum tax percentage allowed when taxing by percentages
-    max_tax_percent: '25'
+    # Maximum tax amount allowed for townblocks sold to players.
+    max_plot_tax_amount: '1000.0'
+    # Maximum tax amount allowed for towns when using flat taxes.
+    max_town_tax_amount: '1000.0'
+    # Maximum tax amount allowed for nations when using flat taxes.
+    max_nation_tax_amount: '1000.0'
+    # Maximum tax percentage allowed when taxing by percentages for towns.
+    max_town_tax_percent: '25'
+    # The maximum amount of money that can be taken from a balance when using a percent tax, this is the default for all new towns.
+    max_town_tax_percent_amount: '10000'
     # The server's daily charge on each nation. If a nation fails to pay this upkeep
     # all of it's member town are kicked and the Nation is removed.
     price_nation_upkeep: '100.0'
@@ -1182,6 +1210,7 @@ war:
       firework_on_attacked: 'true'
  
     # If true and the monarch/king dies the nation is removed from the war.
+    # Also removes a town from the war event when the mayor dies.
     remove_on_monarch_death: 'false'
     # If enabled players will be able to break/place any blocks in enemy plots during a war.
     # This setting SHOULD NOT BE USED unless you want the most chaotic war possible.
