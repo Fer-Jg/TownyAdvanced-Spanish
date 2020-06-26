@@ -49,3 +49,8 @@ _Introduced as of v0.95.2.0_
 
 _Introduced as of v0.96.0.0_
 - `%townyadvanced_nation_tag_town_formatted%` - Shows the nation tag and the full town name. If nation tag is not set, only the town name is shown.
+
+_Introduced as of v0.96.2.0_
+- `%townyadvanced_town_ranks%` - Displays either Mayor, or the various town ranks a player has or nothing if they have none.
+- `%townyadvanced_nation_ranks%` - Displays either King, or the various nation ranks a player has or nothing if they have none.
+- `%townyadvanced_player_status%` - Displays Nomad, Resident, Mayor or King, depending on what position the player is in.
