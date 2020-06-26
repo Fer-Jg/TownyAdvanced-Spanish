@@ -132,6 +132,8 @@ As of 0.92.0.0, you may set a maximum distance between the nation capital and to
 
 As of 0.93.0.0, nations can grant a NationZone which surrounds the towns which are members. This is enabled at `global_nation_settings.nationzone.enable` in the config.yml. NationZones are just like normal wilderness except the only players which can modify the area are members of the nation. This can be useful to prevent greifing near to towns who have a nation. NationZones can be increased in size by increasing the population of the nation using the NationLevels in the config.yml, you can optionally make the capital town have a larger NationZone. NationZones can be disabled during war time in the config.yml at `global_nation_settings.nationzone.war_disables`. 
 
+As of 0.96.2.0 you can configure a maximum number of residents per-town if they do not have a nation, at `global_town_settings.maximum_number_residents_without_nation`. When set above 0 towns will have to form nations to add more residents.
+
 Nations can grant many perks to their towns which can increase as the nation population increases, these include:
 
 -   Bonus townblocks to be claimed.
@@ -625,6 +627,8 @@ As of 0.95.0.0 Animal Luring (drawing animals' attention using their preferred f
 
 As of 0.95.1.0 Villagers are protected from evil-doers.
 
+As of 0.96.2.0 Lighting Nether Portals will now require a player to place Portal Blocks. This means that servers who want players to be able to make nether portals to a world where they do not grant towny.wild permissions will be able to build a portal. The node required to build a portal that would connect into the wilderness would be towny.wild.build.NETHER_PORTAL. This means servers that do not grant wild permissions do not have to give towny.wild.build.OBSIDIAN, which would mean players could place obsidian anywhere in the wild.
+
 ------------------------------------------------------------------------
 
 []()How Towny Controls PVP Combat
@@ -691,19 +695,24 @@ Taxes are collected on the town level from residents and on the nation level fro
         -   Flatrate:
             -   This charges each resident of a town the same amount. Setting it to 10 would charge each resident each 'Towny Day'.
             -   If a resident can't pay his town tax when using flatrate taxation then he is kicked from the town.
+            -   This has a maximum amount which can be set in the config at `economy.daily_taxes.max_town_tax_amount`.
         -   Percentage:
             -   This charges a player a percentage of their money. If a player has no money left, he pays no taxes and is not kicked from the town.
+            -   A maximum amount taken by the taxpercent can be configured per-town using /town set taxpercentcap {$}.
+            -   This has a maximum amount which can be set in the config at `economy.daily_taxes.max_town_tax_percent`.
 -   /town set plottax {$}
     -   This charges each resident of a town for each plot they own. Setting it to 10 would charge Miner Steve 40 dollars if he owned 4 plots.
     -   If a resident can't pay his plot tax he loses his plot.
+    -   This has a maximum amount which can be set in the config at `economy.daily_taxes.max_plot_tax_amount`.
 
 Nation leaders can use one command to set a tax on their towns.
 
 -   /nation set taxes {$}
     -   This charges each town that is a member of the nation. Setting it to 100 would charge each town's townbank 100 each 'Towny Day'.
     -   If a town can't pay it's tax then it is kicked from the nation.
+    -   This has a maximum amount which can be set in the config at `economy.daily_taxes.max_nation_tax_amount`.
 
-Admins can set options in the config.yml for controlling maximum/minimum tax amounts on towns. There is max_tax_amount which defaults to 1000 and max_tax_percent which defaults to 25%. Which one is used depends on how the town is taxing, a flat rate or by percentage. `town.default_taxes.minimumtax` sets the minimum tax required when mayors use the '/t set taxes' command. There are also settings for default taxes in new towns, which can set default plottax, embassy taxes, shop taxes.
+Admins can set options in the config.yml for controlling maximum/minimum tax amounts on towns. The above max_town|nation|plot_tax_amount options default to 1000 and max_town_tax_percent which defaults to 25%. Which one is used depends on how the town is taxing, a flat rate or by percentage. `town.default_taxes.minimumtax` sets the minimum tax required when mayors use the '/t set taxes' command. There are also settings for default taxes in new towns, which can set default plottax, embassy taxes, shop taxes.
 
 #### []()How to pay landowners
 
