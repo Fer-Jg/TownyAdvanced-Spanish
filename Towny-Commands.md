@@ -195,6 +195,7 @@
         -   tag {upto4character} - Sets the town's tag, which is sometimes used on that chat line.
             -   clear - Clears the tag set for the town.
         -   taxes {$} - Sets taxes collected from each resident daily. Also sets percentage if taxpercent is toggled on.
+        -   taxpercentcap {$} - The maximum amount that can be taken when taxpercent is enabled.
         -   plottax {$} - Set taxes collected from each resident daily, per plot that they own.
         -   plotprice {$} - Sets default cost of plot for the town.
         -   shopprice {$} - Sets default cost of a shopplot for the town.
@@ -261,6 +262,7 @@
         -   surname {name} {surnamegoeshere} - King command to add a Suffix to a member of the nation.
         -   tag {upto4character} - Sets the nation's tag, which is sometimes used on that chat line.
             -   clear - Clears the tag set for the nation.
+        -   mapcolor {color} - Sets the colour seen on the dynmap-towny webpage.
     -   toggle
         -   neutral - Sets whether your nation will pay daily to be neutral during towny war.
         -   open - Sets the nation to be open, so that any town can join without an invite.
@@ -319,6 +321,8 @@
     -   meta - used to view a town's metadata.
         - set [key] [value] - Sets a metadata.
         - [add|remove] [key] - Adds or removes a metadata.
+    -   outlaw [add|remove] [name] - Admin command to add/remove outlaws from a town.
+    -   leavenation - Admin command to make a town leave their nation.
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
@@ -328,6 +332,7 @@
     -   set [any /n set command]... - Use a nation's set command for them.
     -   {oldnation} merge {newnation}
         - Command to forcefully merge the oldnation into the newnation.
+    -   kick [towns...] - Admin command to remove towns from a nation.
 
   - reset - resets the towny config.yml to its current default.
 
@@ -355,7 +360,13 @@
         -   {town} npc - Admin command to set a town to have an npc mayor.
 
   - givebonus {town} {#} - Gives extra townblocks to a town.
-  - reload - Reloads towny's config.yml.
+  - depositall {amount} - Deposits given amount to all town and nation banks.
+  - reload 
+    - all - Reloads everything.
+    - database - Reloads the database.
+    - perms - Reload the townyperms.yml.
+    - config - Reloads the config.yml.
+    - lang - Reloads the language file.    
   - backup - Creates a backup.
   - checkperm {player} {node} - Quick test of whether a player has a permission node.
   - newday - Causes a new day to happen, this does not stop the next new day from happening when it was already scheduled.
