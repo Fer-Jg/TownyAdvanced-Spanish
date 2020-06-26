@@ -40,7 +40,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.command.townyadmin.town.kick
         -   towny.command.townyadmin.town.delete
         -   towny.command.townyadmin.town.rename
-        -   towny.command.townyadmin.town.spawn
+        -   towny.admin.spawn
             -   towny.command.townyadmin.town.spawn.freecharge
     -   towny.command.townyadmin.nation.* - Allows a player to use '/ta nation add/kick'
         -   towny.command.townyadmin.nation.new
@@ -117,6 +117,14 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.command.plot.set.jail
         -   towny.command.plot.set.spleef
     -   towny.command.plot.clear
+    -   towny.command.plot.group.*
+        - towny.command.plot.group.add
+        - towny.command.plot.group.remove
+        - towny.command.plot.group.rename
+        - towny.command.plot.group.set
+        - towny.command.plot.group.toggle
+        - towny.command.plot.group.forsale
+        - towny.command.plot.group.notforsale
 
 ## /Resident Nodes
 
@@ -181,6 +189,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
         -   towny.command.town.set.embassyprice
         -   towny.command.town.set.name : player can rename their town
         -   towny.command.town.set.tag
+        -   towny.command.town.set.taxpercentcap
         -   towny.command.town.set.title
         -   towny.command.town.set.surname
     - towny.command.town.buy
@@ -256,6 +265,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	    -   towny.command.nation.set.title
 	    -   towny.command.nation.set.surname
 	    -   towny.command.nation.set.tag
+	    -   towny.command.nation.set.mapcolor
 	-   towny.command.nation.toggle.*
 	    -   towny.command.nation.toggle.neutral
 	    -   towny.command.nation.toggle.open
