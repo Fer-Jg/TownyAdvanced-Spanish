@@ -38,7 +38,7 @@ You may enter the text below into your pom.xml file:
 	<dependency>
 	    <groupId>com.github.TownyAdvanced</groupId>
 	    <artifactId>Towny</artifactId>
-	    <version>0.96.1.11</version>
+	    <version>0.96.2.0</version>
 	    <scope>provided</scope>
 	</dependency>
   </dependencies>  
