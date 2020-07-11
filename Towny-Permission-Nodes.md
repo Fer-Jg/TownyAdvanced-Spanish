@@ -309,6 +309,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
     -   towny.command.towny.universe
     -   towny.command.towny.version
     -   towny.command.towny.war
+    -   towny.command.towny.war.hud
     -   towny.command.towny.spy
 
 ## /Townyworld Nodes
