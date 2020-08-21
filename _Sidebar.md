@@ -1,5 +1,6 @@
 ## Towny Advanced
 - [**Home**](https://github.com/TownyAdvanced/Towny/wiki)
+- [**FAQ**](https://github.com/TownyAdvanced/Towny/wiki/Frequently-Asked-Questions)
 - [**How Towny Works**](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works) - Comprehensive guide for admins & players.
 - [**Video Tutorials**](https://townyadvanced.github.io/tutorials.html) - Watch and learn with Major Graft.
 - [**TownyAPI**](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI) - Guide for plugin developers.
