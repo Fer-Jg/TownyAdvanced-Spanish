@@ -36,6 +36,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[CropClick](https://www.spigotmc.org/resources/cropclick.69480/)** - A plugin that lets players click crops and receive the drops. CropClick uses Towny to allow/deny players to click crops, by BakuPlayz.
 
+**[TownyMenu](https://www.spigotmc.org/resources/towny-menu.83443/)** - Towny Menu is a simple plugin that is designed to be an addon to the popular plugin, Towny. With Towny Menu, you will no longer need to type long and rudimentary commands to manage towns and plots. Everything from town permissions, taxes, resident rankings, to plot prices and types can now all be managed from a simple, intuitive, and optimized menu.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
