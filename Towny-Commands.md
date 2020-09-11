@@ -5,6 +5,7 @@
 -   [/nation](#nation)
 -   [/townyadmin](#townyadmin)
 -   [/townyworld](#townyworld)
+-   [/invite](#invite)
 -   [Chat Commands](#chat-commands)
 
 > This list breaks each command down by word. Eg: /resident set perm {on/off}.
@@ -153,6 +154,12 @@
     -   new {townname} - Creates a new town.
     -   add {resident} .. {resident} - Mayor command to add residents to your town.
     -   kick {resident} .. {resident} - Mayor command to remove residents from your town.
+    -   invite - Show a list of players who've been sent invites to your town.
+        -   sent - Show a list of players who've been sent invites to your town.
+        -   received - Show a list of invites your town has received from nations.
+        -   accept {nationname} - Accept an invite to join a nation.
+        -   deny {nationname} - Deny an invite to join a nation.
+        -   {playername} - Send an invite to a player to join your town.
     -   spawn - Teleports you to your town's spawn.
     -   spawn {town} - Teleports you to another town's spawn.
     -   claim - Mayor command to claim the townblock in which you stand for your town.
@@ -242,9 +249,17 @@
     -   add {town} .. {town} - Invites/Adds a town to your nation.
     -   kick {town} .. {town} - Removes a town from your nation.
     -   delete {nation} - Deletes your nation.
-    -   ally
+    -   invite - Show a list of invites sent.
+        -   help - Show a list of invites sent.
+        -   sent - Show a list of invites sent.
+        -   {town} - Invites a town to a nation.
+    -   ally - Show a list of nation alliance invites sent.
         -   add {nation} .. {nation} - Add a nation to your nation's ally list.
         -   remove {nation} .. {nation} - Removes a nation from your nation's ally list.
+        -   accept {nationname} - Accepts an invitation to ally from another nation.
+        -   deny {nationname} - Denies an invitation to ally from another nation.
+        -   sent - Show a list of nation alliance invites sent.
+        -   received - Show a list of nation alliance invites received.
     -   enemy
         -   add {nation} .. {nation} - Add a nation to your nation's enemy list.
         -   remove {nation} .. {nation} - Removes a nation from your nation's enemy list.
@@ -409,6 +424,17 @@
         -   usedefault - Deprecated.
     -   regen - Regenerates the MC chunk in which back to the seed.
     -   undo - Undoes /tw regen.
+
+[]()/invite
+-----------------
+
+- /invite 
+  -  - Shows subcommands.
+  - ?|help  - Shows subcommands.
+  - list  - Shows a list of invites you have received from towns.
+  - accept {town}  - Accepts an invite to join a town.
+  - deny {town}  - Denies an invite to join a town.
+
 
 []()Chat Commands
 -----------------
