@@ -34,7 +34,7 @@ You may enter the text below into your pom.xml file:
 	    <url>https://jitpack.io</url>
 	</repository>
   </repositories>
-  <dependencies>                    
+  <dependencies>
 	<dependency>
 	    <groupId>com.github.TownyAdvanced</groupId>
 	    <artifactId>Towny</artifactId>
