@@ -28,7 +28,7 @@ Read the steps here carefully and you'll save yourself a lot of head-scratching 
 
 ## Configuring Existing Worlds
 Towny has a config section called Default New World Settings. When you started the server it took the default Default Settings and applied it to all your existing worlds. This includes the revert-on-unclaim and explosion-revert settings for each world. You must configure your worlds' settings. _Many admins wonder why the revert-on-unclaim feature is rolling back towns when they cannot pay their upkeep and fall to ruin, when they've turned the revert-on-unclaim off in the config; **it is because they skipped this step of the installation.**_
-1. Navigate to the newly-created _plugins/Towny/Data/Worlds_ folder.
+1. Navigate to the newly-created _plugins/Towny/data/worlds_ folder.
 2. Open each **worldname.txt**.
 3. Edit each file accordingly.
 
