@@ -357,7 +357,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
     - townychat.chat.format.bold
     - townychat.chat.format.italic
     - townychat.chat.format.magic
-    - townychat.chat.format.underline
+    - townychat.chat.format.underlined
     - townychat.chat.format.strike
 -   townychat.chat.format.reset: Allows the use of &r to reset chat formatting. Defaults to everyone.
 
