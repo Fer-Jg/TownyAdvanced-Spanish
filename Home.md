@@ -11,7 +11,7 @@ The gods of the land (admins) have the ability to start and end wartime mode. Du
 ---
 
 ### Why Towny?
-One of Towny's strongest points is the ability for a server admin to configure Towny to their liking and then let the players make their decisions from there. There's no selection-wands, no players claiming odd-shaped regions to troll other players. Players can go at it alone or they can ally into complex groupings. Players can do their own claiming, customize their protections in-game, kill, spawn, teleport, etc. all according to how the server admin has configured Towny. 
+One of Towny's strongest points is the ability for a server admin to configure Towny to their liking and then let the players make their decisions from there. There's no selection-wands, no players claiming odd-shaped regions to troll other players. Players can go it alone or they can ally into complex groupings. Players can do their own claiming, customize their protections in-game, kill, spawn, teleport, etc. all according to how the server admin has configured Towny. 
 
 ---
 
