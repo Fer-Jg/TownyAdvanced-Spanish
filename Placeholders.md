@@ -2,6 +2,8 @@ Since Towny Version 0.94.0.18, Towny has provided some PlaceholderAPI support wi
 
 If you are unable to run at minimum Towny 0.94.0.18, you can download the [old PAPI Towny Expansion](https://api.extendedclip.com/expansions/towny/) instead. 
 
+You are able to format some of the Placeholder's appearances via the Towny [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml)'s papi_chat_formatting section. (Ex: removing the []'s, or changing colours.)
+
 ## Available Tags:
 
 _Introduced as of v0.95.0.0_
