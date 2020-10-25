@@ -28,10 +28,13 @@ The easier of the two methods is to use one of Towny's self-made backups. Backup
 This is for experienced users only. Manually editing the Towny data should only be done in extreme cases where backups are too old to revert to or do not exist at all.
 
 1. Stop your server.
-2. Navigate to the plugins\towny folder.
+2. Navigate to the plugins\towny\ folder.
 3. Copy your data folder to somewhere safe and rename it to databackup. This is so that if you do not properly edit the data folder you have something to fall back on.
 4. In your config.yml set debug_mode: true.
 5. Start your server up, open your server.log and find the Towny portion.
+
+**Note: Most of the instructions below are for Towny versions older than 0.96.3.0.**
+>In 0.96.3.0 and onwards the relationships between Towns and Nations, and Residents and Towns, are more disconnected with Residents storing their Town, and Towns storing their Nation. Because of this Towny will self-correct any incorrect data. If you are using an older version of Towny the tips below could be helpful in solving a safemode experience.
 
 There can be 4 types of things wrong with the data. Usually there is something in a file that names something not found in the rest of the files. ie: A townname.txt that lists a resident that is not found in the residents.txt, or a worldname.txt that lists a town not found in the towns.txt.
 
