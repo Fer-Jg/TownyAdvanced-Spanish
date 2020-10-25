@@ -185,7 +185,9 @@
     -   reslist {townname} - See a FULL list of all residents in a town.
     -   say {msg} - Broadcast a message to online town members.
     -   set
-        -   board {message} - Sets message seen by residents upon logging in.
+        -   board 
+            - {message} - Sets message seen by residents upon logging in.
+            - none - Sets an empty board which will not be seen on login or in the /town status screen.
         -   mayor {resident} - Mayor command to give mayor status to another resident.
         -   homeblock - Sets the homeblock and spawn of your town.
         -   spawn - Sets the town spawn, must be done inside the homeblock.
@@ -268,7 +270,9 @@
     -   set
         -   king {resident} - King command to change the king of the nation.
         -   capital {town} - Sets the capitol and king of the nation.
-        -   board {message} - Sets message seen by residents upon logging in.
+        -   board 
+            - {message} - Sets message seen by residents upon logging in.
+            - none - Sets an empty board which will not be seen on login or in the /nation status screen.
         -   taxes {$} - Sets nationtax applied to the towns within the nation.
         -   name {name} - Sets the nation's name.
         -   spawn - Sets the nation spawn point.
@@ -408,13 +412,15 @@
         -   usingtowny - Turn on/off whether towny is used in the world.
         -   pvp - Turn on/off pvp in the world.
         -   forcepvp - Turn on/off whether pvp is forced on in all towns in the world.
+        -   friendlyfire - Turn on/off whether town/nation/allied members can hurt each other.
         -   explosion - Turn on/off whether explosions are on in the wilderness/towns in the world.
         -   forceexplosion - Force explosions on in that world.
         -   fire - Turn on/off whether firespread is on in the wilderness/towns in the world.
         -   townmobs - Turn on/off hostile mobspawning in towns in the world.
         -   worldmobs - Turn on/off the mobs listed in the world mobs in the world.
         -   revertunclaim - Turn on/off the revert on unclaim feature for that world.
-        -   revertexpl - Turn on/off the reverting explosions in the wilderness feature for that world.
+        -   revertentityexpl - Turn on/off the reverting of explosions by entities in the wilderness feature for that world.
+        -   revertblockexpl - Turn on/off the reverting of explosions by blocks in the wilderness feature for that world.
         -   warallowed - Turn on/off whether EventWar affects the world.
     -   set
         -   wildname {name} - Sets name of the wilderness.
