@@ -38,7 +38,7 @@ You may enter the text below into your pom.xml file:
 	<dependency>
 	    <groupId>com.github.TownyAdvanced</groupId>
 	    <artifactId>Towny</artifactId>
-	    <version>0.96.2.0</version>
+	    <version>0.96.3.0</version>
 	    <scope>provided</scope>
 	</dependency>
   </dependencies>  
@@ -83,7 +83,7 @@ After you've configured your settings.xml file above you may enter the text belo
     <dependency>
       <groupId>com.palmergames.bukkit.towny</groupId>
       <artifactId>Towny</artifactId>
-      <version>0.96.1.0</version>
+      <version>0.96.3.0</version>
       <scope>provided</scope>
     </dependency>
   </dependencies>  
@@ -151,7 +151,7 @@ Resident resident = TownyAPI.getInstance().getDataSource().getResident(player.ge
 ### Getting a Player from a Resident
 
 If you have a Resident object and you want to get the Bukkit Player object it is done this way;
-```
+```java
 Player player = Bukkit.getServer().getPlayer(resident.getName());
 ```
 
