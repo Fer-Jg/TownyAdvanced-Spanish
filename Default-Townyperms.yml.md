@@ -1,5 +1,4 @@
-```
-# This file contains custom permission sets which will be assigned to your players
+```# This file contains custom permission sets which will be assigned to your players
 # depending on their current status.
 #
 # This is all managed by towny and pushed directly to CraftBukkits SuperPerms.
