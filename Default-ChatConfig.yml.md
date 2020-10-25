@@ -2,9 +2,9 @@
  
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: '0.71'
+  version: '0.81'
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: '0.71'
+  last_run_version: '0.81'
  
 ############################################################
 # +------------------------------------------------------+ #
@@ -63,6 +63,13 @@ version:
 # -------------
 # Bold = &l, Italics = &o, Underlined = &n,
 # Magic = &k, Strike = &m, Reset = &r
+#
+# Hex Chat Coloring
+# -----------------
+# Valid formats: 
+# #RRGGBB
+# &#RRGGBB
+# {#RRGGBB}
 chatconfigcomments: ''
  
 channel_formats:
