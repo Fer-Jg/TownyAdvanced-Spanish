@@ -416,6 +416,7 @@
         -   explosion - Turn on/off whether explosions are on in the wilderness/towns in the world.
         -   forceexplosion - Force explosions on in that world.
         -   fire - Turn on/off whether firespread is on in the wilderness/towns in the world.
+        -   forcefire - Force firespread on in that world.
         -   townmobs - Turn on/off hostile mobspawning in towns in the world.
         -   worldmobs - Turn on/off the mobs listed in the world mobs in the world.
         -   revertunclaim - Turn on/off the revert on unclaim feature for that world.
