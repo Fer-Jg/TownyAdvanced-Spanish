@@ -436,7 +436,7 @@ Farm plots are designated with `/plot set farm`. A Farm plot players to only bui
 
 Who can build/destroy these blocks is still determined by the plot's perm line seen in the `/plot perm` screen. This means that if B=rnao, anyone can plant/place the allowed blocks in the plot. If the B=r--- then only town residents can plant/place the allowed blocks. 
 
-If admins want, they can add SOIL to the allowed blocks list, which will allow anyone allowed via the perm line to also make soil with a hoe. By default SOIL is not included and only admins/mayors/assistants will be able to create soil with a hoe. Towny already protects soil from being stomped into grass, so soil will only return to dirt if it is not irrigated. 
+If admins want, they can add FARMLAND to the allowed blocks list, which will allow anyone allowed via the perm line to also make farmland with a hoe. By default FARMLAND is not included and only admins/mayors/assistants will be able to create farmland with a hoe. Towny already protects farmland from being stomped into grass, so farmland will only return to dirt if it is not irrigated. 
 
 Farm plots also allow player to kill animals in the plot. In order to kill the configured animals list the player must be able to break wheat blocks on the plot. The list of animals is set in the config at `global_town_settings.farm_animals`. By default this list includes `PIG,COW,CHICKEN,SHEEP,MOOSHROOM`.
 
