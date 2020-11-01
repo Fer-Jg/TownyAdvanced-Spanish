@@ -14,16 +14,11 @@ Q: Which economy plugins do you recommend Towny?
 
 A: You have lots of options
 
->Complex:
->
->  - **[TheNewEconomy](https://www.spigotmc.org/resources/the-new-economy.7805/)**  
->  - **[HyperConomy](https://www.spigotmc.org/resources/hyperconomy-1-13-2.65028/)**
->
->Simple:
->
->  - **[HellConomy](https://www.spigotmc.org/resources/hellconomy.67355/)**
->  - **[iConomy5](https://github.com/iconomy5legacy/iConomy "May not receive future updates")**
-
-> Just about every economy plugin will work. You will still need either Vault or Reserve for Towny to be able to communicate with your economy plugin of choice.
->
->Plugins known to not work: aConomy, EssentialsEconomy.
+>  - Complex:
+>    - **[TheNewEconomy](https://www.spigotmc.org/resources/the-new-economy.7805/)**  
+>    - **[HyperConomy](https://www.spigotmc.org/resources/hyperconomy-1-13-2.65028/)**
+>  - Simple:
+>    - **[HellConomy](https://www.spigotmc.org/resources/hellconomy.67355/)**
+>    - **[iConomy5](https://github.com/iconomy5legacy/iConomy "May not receive future updates")**
+>  - Just about every economy plugin will work. You will still need either Vault or Reserve for Towny to be able to communicate with your economy plugin of choice.
+>  - Plugins known to not work: aConomy, EssentialsEconomy.
