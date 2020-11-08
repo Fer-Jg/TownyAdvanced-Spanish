@@ -146,6 +146,8 @@ Nations can grant many perks to their towns which can increase as the nation pop
 -   Larger surrounding NationZones.
 -   An increased outpost limit.
 
+[![Click here for Major Graft's Towns & Nations Video](https://img.youtube.com/vi/A8DD8050SUI/0.jpg)](https://www.youtube.com/watch?v=A8DD8050SUI)
+
 []()Kings
 ---------
 
@@ -444,6 +446,8 @@ Farm plots also allow player to kill animals in the plot. In order to kill the c
 
 Bank plots are designated with `/plot set bank`. Bank plots can be used to limit town and nation bank depositing/withdrawing. By default this setting is off but can be turned on at `bank.is_banking_limited_to_bank_plots ` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) Bank plots are more useful for other plugins which would want to limit their banking features to within Towny bank plots.
 
+[![Click here for Major Graft's Video about Plot Types](https://img.youtube.com/vi/7nB8kUDkV-AI/0.jpg)](https://www.youtube.com/watch?v=7nB8kUDkV-A)
+
 []()Outposts
 ------------
 
@@ -689,6 +693,8 @@ Explosion and fire toggles are overridden by a mayor's town toggles. The precedi
 -   `/res set perm reset` - Propagates the perm line in `/res` to ALL plots owned by that resident.
 -   `/town set perm reset` - Propagates the perm line in `/town` to ALL town-owned plots owned by that town.
 -   These commands also affect the `/town toggle` and `/plot toggle` settings.
+
+[![Click here for Major Graft's Plot Permission Video](https://img.youtube.com/vi/wvshFTv3l6A/0.jpg)](https://www.youtube.com/watch?v=wvshFTv3l6A)
 
 []()Protection Additions Found in Towny Advanced
 ------------------------------------------------
