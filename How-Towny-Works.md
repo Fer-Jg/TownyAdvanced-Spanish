@@ -446,7 +446,7 @@ Farm plots also allow player to kill animals in the plot. In order to kill the c
 
 Bank plots are designated with `/plot set bank`. Bank plots can be used to limit town and nation bank depositing/withdrawing. By default this setting is off but can be turned on at `bank.is_banking_limited_to_bank_plots ` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) Bank plots are more useful for other plugins which would want to limit their banking features to within Towny bank plots.
 
-[![Click here for Major Graft's Video about Plot Types](https://img.youtube.com/vi/7nB8kUDkV-AI/0.jpg)](https://www.youtube.com/watch?v=7nB8kUDkV-A)
+[![Click here for Major Graft's Video about Plot Types](https://img.youtube.com/vi/7nB8kUDkV-A/0.jpg)](https://www.youtube.com/watch?v=7nB8kUDkV-A)
 
 []()Outposts
 ------------
