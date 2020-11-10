@@ -98,7 +98,7 @@ public void manipulateData(TownBlock townBlock) {
         // Make sure that the datafield is an integer data field which is what 'idf' is.
         if (cdf instanceof IntegerDataField) {
             // Cast the data field to an integer data field.
-            IntegerDatafield myfield = (IntegerDataField) cdf;
+            IntegerDataField myfield = (IntegerDataField) cdf;
             // Set the value
             myfield.setValue(10);
         }
