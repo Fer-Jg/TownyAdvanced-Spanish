@@ -46,7 +46,7 @@ public class Plugin extends JavaPlugin {
     private static String keyname = "plugin_intfield"; // This key must be unique to your plugin.
     private static int defaultVal = 0; // This is the default value your data field will have whenever its added to an object.
     private static String label = "Super Duper Int Field"; // Label that will be displayed when the towny object's status is shown.
-    private static IntegerDataField myCustomIntegerField = new IntegerDataField(keyname, defaultVal);
+    private static IntegerDataField myCustomIntegerField = new IntegerDataField(keyname, defaultVal, label);
 
     // Called when the plugin first loads.
     @Override
