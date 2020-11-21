@@ -36,7 +36,7 @@
 - [**Commands**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
 - [**Permission Nodes**](https://github.com/TownyAdvanced/Towny/wiki/Towny-Permission-Nodes)
 - [**Placeholders (PAPI)**](https://github.com/TownyAdvanced/Towny/wiki/Placeholders)
-- **Configs**
+- [**Configs**](https://github.com/TownyAdvanced/Towny/wiki/Config-Files)
   - [**Config.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml)
   - [**Townyperms.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml)
   - [**ChatConfig.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml)
