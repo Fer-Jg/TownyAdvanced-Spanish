@@ -270,6 +270,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	    -   towny.command.nation.set.surname
 	    -   towny.command.nation.set.tag
 	    -   towny.command.nation.set.mapcolor
+	    -   towny.command.nation.set.board
 	-   towny.command.nation.toggle.*
 	    -   towny.command.nation.toggle.neutral
 	    -   towny.command.nation.toggle.open
