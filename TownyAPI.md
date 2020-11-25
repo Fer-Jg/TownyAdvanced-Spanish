@@ -9,6 +9,7 @@
     * [Checking if a player can build/destroy somewhere](#checking-if-a-player-can-builddestroy-somewhere)
     * [Checking if Towny would prevent PVP damage](#checking-if-towny-would-prevent-pvp-damage)
  * [Some useful events](#some-useful-events)
+ * [Towny Action Events](#towny-action-events)
  * [Of use to Shop Plugin developers](#of-use-to-shop-plugin-developers)
  * [Working with Town and TownBlock MetaData](https://github.com/TownyAdvanced/Towny/wiki/TownyAPI#working-with-town-and-townblock-metadata)
  * [Example plugins using the TownyAPI](#example-plugins-using-the-townyapi)
@@ -219,6 +220,41 @@ Events thrown by Towny can be imported here:
 import com.palmergames.bukkit.towny.event.*EventNameHere*
 ```
 [For a full list of Events check out the github.](https://github.com/TownyAdvanced/Towny/tree/master/src/com/palmergames/bukkit/towny/event)
+
+## Towny Action Events
+
+[Towny's action events](https://javadoc.jitpack.io/com/github/TownyAdvanced/Towny/0.96.4.0/javadoc/com/palmergames/bukkit/towny/event/actions/package-summary.html) are events that Towny throws when something is decided via the Towny plot permissions. When someone builds, destroy, switches, uses an item. Or when something blows up or burns.
+
+Towny uses these events internally, to determine the outcome of plot permissions during war time, but it also fires these events so that plugins using the Towny API can override Towny outcomes.
+
+```java
+	@EventHandler
+	public void onDestroy(TownyDestroyEvent event) {
+		if (event.isInWilderness())
+			return;
+		
+		Player player = event.getPlayer();
+		Material mat = event.getMaterial();
+		TownBlockStatus status = plugin.getCache(player).getStatus();
+
+		// Allow destroy for Event War if material is an EditableMaterial, FlagWar also handled here
+		if ((status == TownBlockStatus.WARZONE && FlagWarConfig.isAllowingAttacks()) // Flag War
+				|| (TownyAPI.getInstance().isWarTime() && status == TownBlockStatus.WARZONE && !WarUtil.isPlayerNeutral(player))) { // Event War
+			if (!WarZoneConfig.isEditableMaterialInWarZone(mat)) {
+				event.setCancelled(true);
+				event.setMessage(Translation.of("msg_err_warzone_cannot_edit_material", "destroy", mat.toString().toLowerCase()));
+				return;
+			}
+			event.setCancelled(false);
+		}
+	}
+```
+The above example uses event.isInWilderness(), event.getPlayer(), event.getMaterial(), event.setCancelled() and event.setMessage(). Other available methods include event.hasTownBlock(), event.getTownBlock(), event.getBlock(), event.isCancelled().
+
+Of note: event.setMessage() will use Towny's internal messaging to send your cancellation message instead of Towny's default cancellation message.
+
+[Check out the javadoc for more information.](https://javadoc.jitpack.io/com/github/TownyAdvanced/Towny/0.96.4.0/javadoc/com/palmergames/bukkit/towny/event/actions/package-summary.html)
+
 
 ## Of use to Shop Plugin developers:
 
