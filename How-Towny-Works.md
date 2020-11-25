@@ -122,6 +122,8 @@ Outlaws can be jailed if they die in the town where they are considered to be an
 
 A town member can view their town's outlaw list using `/town outlawlist`. Anyone can view any town's outlawlist using `/town outlawlist {townname}`
 
+As of Towny 0.96.4.0 you can optionally have outlaws teleport away from the towns they're not allowed in. When `allow_outlaws_to_enter_town` is set to false in the Towny [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) outlaws will be teleported away. The `outlaw_teleport_warmup` setting will determine how quickly this will happen, when set to 0 it will be instant or it can be any number of seconds.
+
 []()Nations
 -----------
 
@@ -323,13 +325,17 @@ You change the townblock size in [config.yml](https://github.com/TownyAdvanced/T
 
 ### []()Claiming Townblocks
 
-Towns' residents can claim townblocks for the town as long as they have the right permission nodes. By default this is restricted to Mayors and people with the Assistant rank. The player uses `/town claim` or `/town claim #` or `/town claim rect|circ #` or `/town claim auto` to claim townblocks for their town. 
+Towns' residents can claim townblocks for the town as long as they have the right permission nodes. By default this is restricted to Mayors and people with the Assistant rank. The player uses `/town claim` or `/town claim #` or `/town claim rect|circle #|auto` or `/town claim auto` to claim townblocks for their town. 
 
-- `/town claim` - will claim one plot, where the player is standing.
-- `/town claim #` - will claim a square with a radius equal to the given #.
-- `/town claim rect #` - will claim a square with a radius equal to the given #.
-- `/town claim circ #` - will claim a circle with a radius equal to the given #.
-- `/town claim auto` - will claim all possible townblocks in a square shape.
+|command | result|
+|:----:|:----|
+|`/town claim`| Claims one plot, where the player is standing.|
+|`/town claim #` | Claims a square with a radius equal to the given #, sometimes down-sizing the radius to make a perfect square, surrounding the command user.|
+|`/town claim rect #` | Claims a square with a radius equal to the given #, sometimes down-sizing the radius to make a perfect square, surrounding the command user.|
+|`/town claim rect auto` | Claims all possible townblocks in a square shape, centered around the command user.|
+|`/town claim circle #` | Claims a circle with a radius equal to the given #, sometimes down-sizing the radius to make a perfect circle, surrounding the command user. | 
+|`/town claim circle auto` | Claims all possible townblocks in a circle shape, centered around the command user. | 
+|`/town claim auto` | Claims all possible townblocks in a square shape centered around the command user.|
 
 Using the `/town` command will list how many townblocks are available to be claimed. 
 
@@ -387,7 +393,12 @@ Embassy plots are designated with `/plot set embassy`. A mayor can use `/town se
 
 ### []()Wilds Plots
 
-Wilds plots are designated with `/plot set wilds`. A wilds plot allows residents to destroy the blocks found on the wild ignore ID list. This includes ores, trees, flowers, mushrooms and other harvestable blocks by default. It does not include stone, dirt, grass and other terrain blocks. It is useful for creating tree farms, and protecting the terrain around a town, while still allowing residents to cut trees and explore caves. Setting up wilds plots can be slightly complex, here are instructions.
+Wilds plots are designated with `/plot set wilds`. A wilds plot allows residents to destroy the blocks found on the wild ignore ID list. This includes ores, trees, flowers, mushrooms and other harvestable blocks by default. 
+It does not include stone, dirt, grass and other terrain blocks. It is useful for creating tree farms, and protecting the terrain around a town, while still allowing residents to cut trees and explore caves. 
+
+A player can use `/towny wildsblocks` to see a server's allowed wilds plots blocks.
+
+Setting up wilds plots can be slightly complex, here are instructions.
 
 <blockquote>
 
@@ -436,11 +447,14 @@ In addition:
 
 Farm plots are designated with `/plot set farm`. A Farm plot players to only build/destroy blocks designated in the Towny [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `global_town_settings.farm_plot_allow_blocks`. By default this list includes: ```BAMBOO,BAMBOO_SAPLING,JUNGLE_LOG,JUNGLE_SAPLING,JUNGLE_LEAVES,OAK_LOG,OAK_SAPLING,OAK_LEAVES,BIRCH_LOG,BIRCH_SAPLING,BIRCH_LEAVES,ACACIA_LOG,ACACIA_SAPLING,ACACIA_LEAVES,DARK_OAK_LOG,DARK_OAK_SAPLING,DARK_OAK_LEAVES,SPRUCE_LOG,SPRUCE_SAPLING,SPRUCE_LEAVES,BEETROOTS,COCOA,CHORUS_PLANT,CHORUS_FLOWER,SWEET_BERRY_BUSH,KELP,SEAGRASS,TALL_SEAGRASS,GRASS,TALL_GRASS,FERN,LARGE_FERN,CARROTS,WHEAT,POTATOES,PUMPKIN,PUMPKIN_STEM,ATTACHED_PUMPKIN_STEM,NETHER_WART,COCOA,VINE,MELON,MELON_STEM,ATTACHED_MELON_STEM,SUGAR_CANE,CACTUS,ALLIUM,AZURE_BLUET,BLUE_ORCHID,CORNFLOWER,DANDELION,LILAC,LILY_OF_THE_VALLEY,ORANGE_TULIP,OXEYE_DAISY,PEONY,PINK_TULIP,POPPY,RED_TULIP,ROSE_BUSH,SUNFLOWER,WHITE_TULIP,WITHER_ROSE,CRIMSON_FUNGUS,CRIMSON_STEM,CRIMSON_HYPHAE,CRIMSON_ROOTS,MUSHROOM_STEM,NETHER_WART_BLOCK,BROWN_MUSHROOM,BROWN_MUSHROOM_BLOCK,RED_MUSHROOM,RED_MUSHROOM_BLOCK,SHROOMLIGHT,WARPED_FUNGUS,WARPED_HYPHAE,WARPED_ROOTS,WARPED_STEM,WARPED_WART_BLOCK,WEEPING_VINES_PLANT,WEEPING_VINES,NETHER_SPROUTS``` 
 
+Players can use `/towny farmblocks` to see a list of a server's farmblocks.
+
 Who can build/destroy these blocks is still determined by the plot's perm line seen in the `/plot perm` screen. This means that if B=rnao, anyone can plant/place the allowed blocks in the plot. If the B=r--- then only town residents can plant/place the allowed blocks. 
 
 If admins want, they can add FARMLAND to the allowed blocks list, which will allow anyone allowed via the perm line to also make farmland with a hoe. By default FARMLAND is not included and only admins/mayors/assistants will be able to create farmland with a hoe. Towny already protects farmland from being stomped into grass, so farmland will only return to dirt if it is not irrigated. 
 
 Farm plots also allow player to kill animals in the plot. In order to kill the configured animals list the player must be able to break wheat blocks on the plot. The list of animals is set in the config at `global_town_settings.farm_animals`. By default this list includes `PIG,COW,CHICKEN,SHEEP,MOOSHROOM`.
+
 
 ### []()Bank Plots
 
@@ -528,7 +542,9 @@ You can configure the list of Material names to be removed on a per-world basis.
 
 A feature available only to Town Mayors on public town land: `/plot clear`. This command is meant to be used after a plot was personally owned by a resident, who either moved to another plot or left town. By default this list includes only signs, useful for mayors to remove sign-protection on doors, chests, furnaces, dispensers and trapdoors given via Lockette or Deadbolt.
 
->-   Disabling this feature is done in the in the towny\data\worlds\worldname.txt @ `usingPlotManagementMayorDelete=false`
+A player can use `/towny plotclearblocks` to see which blocks will be removed when /plot clear is used.
+
+>-   Disabling this feature is done in the in the towny\data\worlds\worldname.txt @ `usingPlotManagementMayorDelete=false` or via the `/tw toggle plotcleardelete` command, in the applicable world.
 >-   Disabling this feature for new worlds is done in the config at `new_world_settings.plot_management.mayor_plotblock_delete.enabled`
 
 You configure the list of Material names to be removed when this command is used.
@@ -583,47 +599,62 @@ The first concept you need to digest are the 4 perm-types and 4 groups.
 
 There are 4 permission-type values, which can be set for personal plots and for town plots as well (town permissions can be set by the mayor and affect plots who are not owned by any player.) The basic command for this is either `/resident set perm` or `/town set perm` followed by the proper flags for each permission. 
 
+Players can see the server's switch blocks by using the `towny switches` command.
+
+Players can see the server's item_use items by using the `towny itemuse` command.
+
 ### []()Perm-Types
 
 The 4 permission-types available are Build, Destroy, Switch and Itemuse.
 
 -   Build allows players to add blocks in your town/plot.
 
--   Destroy allows players to remove blocks in your town/plot.
+-   Destroy allows players to remove blocks in your town/plot, or in some cases alter the states of existing blocks (think changing redstone repeater settings.)
 
 -   Switch covers the use of:
-    -   dispensers,
-    -   noteblocks,
-    -   chests,
-    -   furnaces,
-    -   wooden and iron doors,
-    -   levers,
-    -   gold, iron, stone and wood pressure plates,
-    -   stone buttons,
-    -   trapdoors,
-    -   jukeboxes,
-    -   redstone repeaters,
-    -   gates,
-    -   trapped chests,
-    -   redstone comparators,
-    -   beacon blocks,
-    -   hoppers,
-    -   droppers,
-    -   item frames,
-    -   Accessing minecart hoppers, minecart chests, minecart furnaces.
-    -   Shulker boxes
-    -   .... or any other type of block which is clicked on in some manner.
+    -   CHEST,
+    -   SHULKER_BOXES, 
+    -   TRAPPED_CHEST,
+    -   FURNACE,
+    -   BLAST_FURNACE,
+    -   DISPENSER,
+    -   HOPPER,
+    -   DROPPER,
+    -   JUKEBOX, 
+    -   STONECUTTER,
+    -   SMITHING_TABLE,
+    -   FLETCHING_TABLE,
+    -   SMOKER,
+    -   LOOM,
+    -   GRINDSTONE,
+    -   COMPOSTER,
+    -   CARTOGRAPHY_TABLE,
+    -   BELL,
+    -   BARREL,
+    -   BREWING_STAND,
+    -   LEVER,
+    -   PRESSURE_PLATES,
+    -   BUTTONS,
+    -   WOOD_DOORS,
+    -   FENCE_GATES,
+    -   TRAPDOORS,
+    -   MINECARTS,
+    -   LODESTONE,
+    -   RESPAWN_ANCHOR,
+    -   TARGET
+    -   .... or any other type of block which is clicked on.
 
 -   Itemuse covers the use of:
-    -   water and lava buckets,
-    -   empty buckets,
-    -   lighters,
-    -   bonemeal and other dyes,
-    -   enderpearls,
-    -   placing/destroying all minecart types,
-    -   firecharges,
-    -   using bottles.
+    -   MINECARTS,
+    -   BOATS,
+    -   ENDER_PEARL,
+    -   FIREBALL,
+    -   CHORUS_FRUIT,
+    -   LEAD
     -   .... or any other type of item which is used in some manner.
+
+- ItemUse and Switch lists have the follow pre-configured catch-all groups you can add to them: BOATS,MINECARTS,WOOD_DOORS,PRESSURE_PLATES,FENCE_GATES,TRAPDOORS,SHULKER_BOXES,BUTTONS.
+- Note: Vehicles like MINECARTS and BOATS can be added to the switch_ids. If you want to treat other rideable mobs like switches add SADDLE to protect HORSES, DONKEYS, MULES, PIGS, STRIDERS (This is not recommended, unless you want players to not be able to re-mount their animals in towns they cannot switch in.)
 
 ### []()Perm-Groups
 
@@ -1046,18 +1077,24 @@ Towny has mutliworld support. Each world has a datafile located at \plugins\town
 
 Towny can be turned off in a world in-game. While standing in a world type `/townyworld toggle usingtowny`. Other toggles:
 
+-   usingtowny - Turns towny off in a world.
 -   claimable - Whether townblocks can be claimed by mayors in this world.
 -   pvp - Whether PVP is on in the world.
 -   forcepvp - Used to force pvp on in towns.
 -   friendlyfire - Used to turn friendlyfire on or off.
--   explosion - Used to force explosions on in towns.
--   fire - Used to force firespread on in towns.
--   townmobs - Used to turn off mobremoval in all towns. Restricted mobs are listed in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml).
--   worldmobs - Toggles mobremoval in the wilderness. Restricted mobs are listed in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml).
--   usingtowny - Turns towny off in a world.
+-   explosion - Used to toggle explosions off/on in the wilderness.
+-   forceexplsion - Used to force explosions on in towns.
+-   fire - Used to toggle fire off/on in the wilderness.
+-   forcefire - Used to force firespread on in towns.
+-   townmobs - Used to turn off mobremoval in all towns. Restricted mobs are listed in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `town_mob_removal_entities`.
+-   worldmobs - Toggles mobremoval over the entire world. Restricted mobs are listed in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `world_mob_removal_entities`.
+-   wildernessmobs - Toggles mobremoval in the wilderness. Restricted mobs are listed in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `wilderness_mob_removal_entities`.
+
 -   revertunclaim - toggles the revert-on-unclaim setting for that world.
 -   revertentityexpl - toggles the revert-on-explosion (caused by entity explosions) in the wilderness setting for that world.
 -   revertblockexpl - toggles the revert-on-explosion (caused by block explosions) in the wilderness setting for that world.
+-   plotcleardelete - toggles the ability of players to use `/plot clear` in plots they own.
+-   warallowed - toggles whether event war is allowed in the world.
 
 ------------------------------------------------------------------------
 
@@ -1120,6 +1157,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 -   Open the \towny\settings\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
 -   Navigate to the sql: section.
 -   Configure towny with your mysql database hostname/port/username and password.
+-   Set the desired mysql flags in the flags section.
 -   Save the config and read below for conversion instructions.
 
 ### []()H2
