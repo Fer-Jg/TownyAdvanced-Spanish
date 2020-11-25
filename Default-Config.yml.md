@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.96.3.0
+  version: 0.96.4.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.96.3.0
+  last_run_version: 0.96.4.0
 # The language file you wish to use
 language: english.yml
  
@@ -346,6 +346,9 @@ new_world_settings:
     # Do new worlds have world_monsters_on enabled by default?
     world_monsters_on: 'true'
  
+    # Do new worlds have wilderness_monsters_on enabled by default?
+    wilderness_monsters_on: 'true'
+ 
     # Do new worlds have force_town_monsters_on enabled by default?
     # This setting overrides a towns' setting.
     force_town_monsters_on: 'false'
@@ -528,6 +531,27 @@ global_town_settings:
   # If false it will make it harder for enemies to find the home block during a war
   show_town_notifications: 'true'
  
+  # Can outlaws roam freely on the towns they are outlawed in?
+  # If false, outlaws will be teleported away if they spend too long in the towns they are outlawed in.
+  # The time is set below in the outlaw_teleport_warmup.
+  allow_outlaws_to_enter_town: 'true'
+ 
+  # Should towns be warned in case an outlaw roams the town?
+  # Warning: Outlaws can use this feature to spam residents with warnings!
+  # It is recommended to set this to true only if you're using outlaw teleporting with a warmup of 0 seconds.
+  warn_town_on_outlaw: 'false'
+ 
+  # How many seconds are required for outlaws to be teleported away?
+  # You can set this to 0 to instantly teleport the outlaw from town.
+  # This will not have any effect if allow_outlaws_to_enter_town is enabled.
+  outlaw_teleport_warmup: '5'
+ 
+  # What world do you want the outlaw teleported to if they aren't part of a town
+  # and don't have a bedspawn outside of the town they are outlawed in.
+  # They will go to the listed world's spawn. 
+  # If blank, they will go to the spawnpoint of the world the town is in.
+  outlaw_teleport_world: ''
+ 
   # When set above zero this is the largest number of residents a town can support before they join/create a nation.
   # Do not set this value to an amount less than the required_number_residents_join_nation below.
   # Do not set this value to an amount less than the required_number_residents_create_nation below.
@@ -701,7 +725,7 @@ plugin:
       table_prefix: towny_
       username: root
       password: ''
-      ssl: 'false'
+      flags: ?verifyServerCertificate=false&useSSL=false&useUnicode=true&characterEncoding=utf-8
  
     # Flatfile backup settings.
     daily_backups: 'true'
@@ -813,15 +837,20 @@ protection:
   # Items that can be blocked within towns via town/plot flags.
   # These items will be the ones restricted by a town/resident/plot's item_use setting.
   # A list of items, that are held in the hand, which can be protected against.
+  # Group names you can use in this list: BOATS, MINECARTS
   # A full list of proper names can be found here https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html 
-  item_use_ids: BONE_MEAL,FLINT_AND_STEEL,BUCKET,WATER_BUCKET,LAVA_BUCKET,MINECART,STORAGE_MINECART,INK_SACK,SHEARS,ENDER_PEARL,GLASS_BOTTLE,FIREBALL,ARMOR_STAND,SKULL_ITEM,BIRCH_BOAT,ACACIA_BOAT,DARK_OAK_BOAT,JUNGLE_BOAT,OAK_BOAT,SPRUCE_BOAT,END_CRYSTAL,POWERED_MINECART,COMMAND_MINECART,EXPLOSIVE_MINECART,HOPPER_MINECART,CHORUS_FRUIT,BLACK_DYE,BLUE_DYE,BROWN_DYE,CYAN_DYE,GRAY_DYE,GREEN_DYE,LIGHT_BLUE_DYE,LIGHT_GRAY_DYE,LIME_DYE,MAGENTA_DYE,ORANGE_DYE,PINK_DYE,PURPLE_DYE,RED_DYE,WHITE_DYE,YELLOW_DYE,DIAMOND_AXE,GOLDEN_AXE,IRON_AXE,WOODEN_AXE,STONE_AXE,NETHERITE_AXE
+  item_use_ids: MINECARTS,BOATS,ENDER_PEARL,FIREBALL,CHORUS_FRUIT,LEAD
  
   # Blocks that are protected via town/plot flags.
   # These are blocks in the world that will be protected by a town/resident/plot's switch setting.
   # Switches are blocks, that are in the world, which get right-clicked.
   # Towny will tell you the proper name to use in this list if you hit the block while holding a clay brick item in your hand.
+  # Group names you can use in this list: BOATS,MINECARTS,WOOD_DOORS,PRESSURE_PLATES,FENCE_GATES,TRAPDOORS,SHULKER_BOXES,BUTTONS.
+  # Note: Vehicles like MINECARTS and BOATS can be added here. If you want to treat other rideable mobs like switches add SADDLE
+  #       to protect HORSES, DONKEYS, MULES, PIGS, STRIDERS (This is not recommended, unless you want players to not be able to
+  #       re-mount their animals in towns they cannot switch in.)
   # A full list of proper names can be found here https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html 
-  switch_ids: JUKEBOX,NOTE_BLOCK,BEACON,CHEST,TRAPPED_CHEST,FURNACE,DISPENSER,HOPPER,DROPPER,LEVER,COMPARATOR,REPEATER,STONE_PRESSURE_PLATE,ACACIA_PRESSURE_PLATE,BIRCH_PRESSURE_PLATE,DARK_OAK_PRESSURE_PLATE,JUNGLE_PRESSURE_PLATE,OAK_PRESSURE_PLATE,SPRUCE_PRESSURE_PLATE,HEAVY_WEIGHTED_PRESSURE_PLATE,LIGHT_WEIGHTED_PRESSURE_PLATE,STONE_BUTTON,ACACIA_BUTTON,BIRCH_BUTTON,DARK_OAK_BUTTON,JUNGLE_BUTTON,OAK_BUTTON,SPRUCE_BUTTON,ACACIA_DOOR,BIRCH_DOOR,DARK_OAK_DOOR,JUNGLE_DOOR,OAK_DOOR,SPRUCE_DOOR,ACACIA_FENCE_GATE,BIRCH_FENCE_GATE,DARK_OAK_FENCE_GATE,OAK_FENCE_GATE,JUNGLE_FENCE_GATE,SPRUCE_FENCE_GATE,ACACIA_TRAPDOOR,BIRCH_TRAPDOOR,DARK_OAK_TRAPDOOR,JUNGLE_TRAPDOOR,OAK_TRAPDOOR,SPRUCE_TRAPDOOR,MINECART,COMMAND_BLOCK_MINECART,CHEST_MINECART,FURNACE_MINECART,HOPPER_MINECART,TNT_MINECART,SHULKER_BOX,WHITE_SHULKER_BOX,ORANGE_SHULKER_BOX,MAGENTA_SHULKER_BOX,LIGHT_BLUE_SHULKER_BOX,LIGHT_GRAY_SHULKER_BOX,YELLOW_SHULKER_BOX,LIME_SHULKER_BOX,PINK_SHULKER_BOX,GRAY_SHULKER_BOX,CYAN_SHULKER_BOX,PURPLE_SHULKER_BOX,BLUE_SHULKER_BOX,BROWN_SHULKER_BOX,GREEN_SHULKER_BOX,RED_SHULKER_BOX,BLACK_SHULKER_BOX,CARROT_STICK,DAYLIGHT_DETECTOR,STONECUTTER,SMITHING_TABLE,FLETCHING_TABLE,SMOKER,LOOM,GRINDSTONE,COMPOSTER,CARTOGRAPHY_TABLE,BLAST_FURNACE,BELL,BARREL,DRAGON_EGG,ITEM_FRAME,POTTED_ACACIA_SAPLING,POTTED_ALLIUM,POTTED_AZURE_BLUET,POTTED_BAMBOO,POTTED_BIRCH_SAPLING,POTTED_BLUE_ORCHID,POTTED_BROWN_MUSHROOM,POTTED_CACTUS,POTTED_CORNFLOWER,POTTED_DANDELION,POTTED_DARK_OAK_SAPLING,POTTED_DEAD_BUSH,POTTED_FERN,POTTED_JUNGLE_SAPLING,POTTED_LILY_OF_THE_VALLEY,POTTED_OAK_SAPLING,POTTED_ORANGE_TULIP,POTTED_OXEYE_DAISY,POTTED_PINK_TULIP,POTTED_POPPY,POTTED_RED_MUSHROOM,POTTED_RED_TULIP,POTTED_SPRUCE_SAPLING,POTTED_WHITE_TULIP,POTTED_WITHER_ROSE,BARREL,BREWING_STAND,LEAD,SWEET_BERRY_BUSH,CRIMSON_PRESSURE_PLATE,WARPED_PRESSURE_PLATE,POLISHED_BLACKSTONE_PRESSURE_PLATE,CRIMSON_BUTTON,WARPED_BUTTON,POLISHED_BLACKSTONE_BUTTON,CRIMSON_DOOR,WARPED_DOOR,CRIMSON_FENCE_GATE,WARPED_FENCE_GATE,CRIMSON_TRAPDOOR,WARPED_TRAPDOOR,LODESTONE,RESPAWN_ANCHOR,TARGET
+  switch_ids: CHEST,SHULKER_BOXES,TRAPPED_CHEST,FURNACE,BLAST_FURNACE,DISPENSER,HOPPER,DROPPER,JUKEBOX,STONECUTTER,SMITHING_TABLE,FLETCHING_TABLE,SMOKER,LOOM,GRINDSTONE,COMPOSTER,CARTOGRAPHY_TABLE,BELL,BARREL,BREWING_STAND,LEVER,PRESSURE_PLATES,BUTTONS,WOOD_DOORS,FENCE_GATES,TRAPDOORS,MINECARTS,LODESTONE,RESPAWN_ANCHOR,TARGET
  
   # Materials which can be lit on fire even when firespread is disabled.
   # Still requires the use of the flint and steel.
@@ -844,7 +873,10 @@ protection:
   # Disable creatures triggering stone pressure plates
   disable_creature_pressureplate_stone: 'true'
  
-  # Globally remove living entities in all worlds that have their flag set.
+  # Remove living entities in the wilderness in all worlds that have wildernessmobs turned off.
+  wilderness_mob_removal_entities: Monster,Flying,Slime,Shulker,SkeletonHorse,ZombieHorse
+ 
+  # Globally remove living entities in all worlds that have worldmmobs turned off
   world_mob_removal_entities: Monster,Flying,Slime,Shulker,SkeletonHorse,ZombieHorse
  
   # Prevent the spawning of villager babies in the world.
