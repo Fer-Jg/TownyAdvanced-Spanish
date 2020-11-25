@@ -26,8 +26,12 @@
 -   /towny
     -   - Shows basic towny commands.
     -   ? - Shows more towny commands.
+    -   farmblocks - Shows the blocks usable in farm plots.
+    -   itemuse - Shows the items in the item_use_ids list.
     -   map - Shows the towny map.
+    -   plotclearblocks - Shows the blocks deleted using `/plot clear`
     -   prices - Shows taxes/costs associated with running a town.
+    -   switches - Shows the blocks in the switch_ids list.
     -   time - Shows time until next new-day (tax/upkeep collection.)
     -   top
         -   residents {all/town/nation} - Shows top residents.
@@ -41,6 +45,7 @@
         -   scores
         -   hud
         -   participants {page #}
+    -   wildsblocks - Shows the blocks that are usable in wilds plots, and which are allowed to be farmed in the wilderness.
 
 []()/plot
 ---------
@@ -419,10 +424,12 @@
         -   forcefire - Force firespread on in that world.
         -   townmobs - Turn on/off hostile mobspawning in towns in the world.
         -   worldmobs - Turn on/off the mobs listed in the world mobs in the world.
+        -   wildernessmobs - Turn on/off the mobs listed in the wilderness mobs in the wilderness.
         -   revertunclaim - Turn on/off the revert on unclaim feature for that world.
         -   revertentityexpl - Turn on/off the reverting of explosions by entities in the wilderness feature for that world.
         -   revertblockexpl - Turn on/off the reverting of explosions by blocks in the wilderness feature for that world.
         -   warallowed - Turn on/off whether EventWar affects the world.
+        -   plotcleardelete - Turn on/off whether the `/plot clear` command can be used.
     -   set
         -   wildname {name} - Sets name of the wilderness.
         -   wildperm {perm} .. {perm} - Deprecated.
