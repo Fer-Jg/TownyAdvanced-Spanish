@@ -21,6 +21,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 
 -   towny.admin: User is able to use /townyadmin, as well as the ability to build/destroy anywhere.
 -   towny.admin.nation_zone : Made so that mods who dont have towny.admin can bypass the nation zone protection. Child node of towny.admin.
+-   towny.admin.outlaw.teleport_bypass: User is unaffected by the outlaw-teleport feature, able to enter towns in which they are outlawed.
 -   towny.admin.spawn: User is able to bypass the costs, warmups and cooldowns for spawning.
     - towny.admin.spawn.nocharge: User will not be charged to spawn to towns.
     - towny.admin.spawn.nocooldown: User will not have to wait to use the spawn commands after spawning.
@@ -270,7 +271,6 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	    -   towny.command.nation.set.surname
 	    -   towny.command.nation.set.tag
 	    -   towny.command.nation.set.mapcolor
-	    -   towny.command.nation.set.board
 	-   towny.command.nation.toggle.*
 	    -   towny.command.nation.toggle.neutral
 	    -   towny.command.nation.toggle.open
