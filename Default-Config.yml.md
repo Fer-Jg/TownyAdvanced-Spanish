@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.96.4.0
+  version: 0.96.5.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.96.4.0
+  last_run_version: 0.96.5.0
 # The language file you wish to use
 language: english.yml
  
@@ -761,6 +761,16 @@ plugin:
  
     # Whether towns with no claimed townblocks should be deleted when the new day is run.
     delete_0_plot_towns: 'false'
+  hour_timer:
+    # The number of minutes in each "day".
+    # Default is 60m.
+    hour_interval: 60m
+    # The time each "hour", when the hourly timer ticks.
+    # MUST be less than hour_interval. Default is 30m.
+    new_hour_time: 30m
+    # The interval of each "short" timer tick
+    # Default is 20s.
+    short_interval: 20s
  
   # Lots of messages to tell you what's going on in the server with time taken for events.
   debug_mode: 'false'
