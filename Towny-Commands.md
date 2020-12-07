@@ -359,8 +359,8 @@
     -   {oldnation} merge {newnation}
         - Command to forcefully merge the oldnation into the newnation.
     -   kick [towns...] - Admin command to remove towns from a nation.
-    -   deposit [amount] - Deposit money into a town's bank.
-    -   withdraw [amount] - Withdraw money from a town's bank.
+    -   deposit [amount] - Deposit money into a nation's bank.
+    -   withdraw [amount] - Withdraw money from a nation's bank.
 
   - reset - resets the towny config.yml to its current default.
 
