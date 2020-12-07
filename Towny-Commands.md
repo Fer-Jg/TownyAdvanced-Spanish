@@ -347,6 +347,8 @@
         - [add|remove] [key] - Adds or removes a metadata.
     -   outlaw [add|remove] [name] - Admin command to add/remove outlaws from a town.
     -   leavenation - Admin command to make a town leave their nation.
+    -   deposit [amount] - Deposit money into a town's bank.
+    -   withdraw [amount] - Withdraw money from a town's bank.
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
@@ -357,6 +359,8 @@
     -   {oldnation} merge {newnation}
         - Command to forcefully merge the oldnation into the newnation.
     -   kick [towns...] - Admin command to remove towns from a nation.
+    -   deposit [amount] - Deposit money into a town's bank.
+    -   withdraw [amount] - Withdraw money from a town's bank.
 
   - reset - resets the towny config.yml to its current default.
 
