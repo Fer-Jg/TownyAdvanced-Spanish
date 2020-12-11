@@ -4,6 +4,14 @@ A: Read the [opening paragraphs of the nodes page.](https://github.com/TownyAdva
 
 ----
 
+Q: When towns fall or unclaim land all the blocks start to disappear back into wilderness. How do I stop this?
+
+A: Using `/tw toggle revertunclaim` in each world. 
+
+> - The New World Settings section of the [config](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) is only default settings for new worlds, it's explained in the config section comments, the [install guide](https://github.com/TownyAdvanced/Towny/wiki/Installation#configuring-existing-worlds) and the [how towny works](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#reverting-unclaimed-townblocks-to-their-original-state-on-unclaim) page. You need to be using the /tw toggle commands or manually setting the worldname.txt file.
+
+----
+
 Q: My TNE is acting really slow since updating to 0.96.3.0, how come?
 
 A: Try out the [preview of an upcoming version of TNE](https://cdn.discordapp.com/attachments/267902896970924036/772478178135638036/TNE-0.1.1.12.jar) which has the fix.
