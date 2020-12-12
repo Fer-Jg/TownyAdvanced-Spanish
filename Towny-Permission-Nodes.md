@@ -302,6 +302,7 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 	-   towny.command.nation.townlist
         -   towny.command.nation.allylist
         -   towny.command.nation.enemylist
+        -   towny.command.nation.merge
 
 ## /Towny Nodes
 
