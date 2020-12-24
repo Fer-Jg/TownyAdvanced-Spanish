@@ -17,6 +17,11 @@ The only other permission node that isn't already given out is `towny.wild.*`. G
 * One option is to put it in the nomad section of the townyperms.yml file, which will enable all players server-wide to use the wilderness.
 * The other option is to give it in your permission plugin, to whichever rank you want to use the wilderness.
 
+_**Again because so many people seem to have trouble reading the above 2 paragraphs, you add exactly this node:**_
+
+<h2 align=center>towny.wild.*</h2>
+<br><br>
+
 ## Admin/Moderator Nodes
 
 -   towny.admin: User is able to use /townyadmin, as well as the ability to build/destroy anywhere.
