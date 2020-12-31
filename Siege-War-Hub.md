@@ -1,5 +1,6 @@
 * [Siege War User Guide](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-User-Guide)
 * [Siege War FAQ](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-FAQ)
+* [Siege War Project including Downloads](https://github.com/TownyAdvanced/Towny/projects/10)
 
 Goosius' Original Pre-amble follows:
 
