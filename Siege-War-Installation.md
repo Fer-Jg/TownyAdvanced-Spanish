@@ -1,5 +1,16 @@
 ### This guide is for the new SiegeWar.jar versions of SiegeWar. If you are still using the older SiegeWar which was bundled into special builds of Towny.jar, see the [SiegeWar User Guide](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-User-Guide) for the older installation guide.
 
+<p align=center>
+If you want to test out the SiegeWar.jar beta, join the [Discord's #siegewar-testers channel](https://discord.gg/2zsJRwaEUp) and ask for it.</p>
+
+<table align=center>
+<th> If you are upgrading from an older copy of SiegeWar that was bundled with Towny.jar, a note:</th>
+<tr><td>
+<br>The SiegeWar.jar version uses metadata instead of the old sieges.txt and sieges folder in the towny database.<br><br> By switching to the new SiegeWar any existing sieges and old siege war settings in Towns will vanish.<br><br> It is recommended to use a batch-text-editor to edit the townname.txt files in the towny\data\towns\ folder, changing the `peaceful=` setting to `neutral=`.</td></tr>
+</table>
+
+----
+
 #### Required: Towny 0.96.5.11 or newer.
 
 #### Required townyperms.yml edits:
