@@ -15,12 +15,11 @@
 ---
 
 ### [**Support**](https://github.com/TownyAdvanced/Towny/wiki/Support)
-- [**IRC Support Channel**](http://webchat.esper.net/?channels=towny)
 - [**Troubleshooting**](https://github.com/TownyAdvanced/Towny/wiki/Troubleshooting)
 - [**Github Tickets**](https://github.com/TownyAdvanced/Towny/issues)
   - [**Bug Report**](https://github.com/TownyAdvanced/Towny/issues/new?assignees=&labels=&template=bug_report.md&title=)
   - [**Feature Request**](https://github.com/TownyAdvanced/Towny/issues/new?assignees=&labels=&template=feature_request.md&title=Suggestion%3A+)
-  - [**Ask a Question**](https://github.com/TownyAdvanced/Towny/issues/new?assignees=&labels=&template=question.md&title=Question%3A)
+  - [**Ask a Question**](https://github.com/TownyAdvanced/Towny/discussions/new?category=Q-A)
 - [**Sponsor Towny**](https://github.com/sponsors/LlmDl) - Support your developer.
 
 ---
