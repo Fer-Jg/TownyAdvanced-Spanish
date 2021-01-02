@@ -1,3 +1,5 @@
+### This guide is for the new SiegeWar.jar versions of SiegeWar. If you are still using the older SiegeWar which was bundled into special builds of Towny.jar, see the [SiegeWar User Guide](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-User-Guide) for the older installation guide.
+
 #### Required: Towny 0.96.5.11 or newer.
 
 #### Required townyperms.yml edits:
