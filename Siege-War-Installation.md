@@ -1,7 +1,8 @@
-### This guide is for the new SiegeWar.jar versions of SiegeWar. If you are still using the older SiegeWar which was bundled into special builds of Towny.jar, see the [SiegeWar User Guide](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-User-Guide) for the older installation guide.
+### This guide is for the new SiegeWar.jar versions of SiegeWar. 
+#### If you are still using the older SiegeWar which was bundled into special builds of Towny.jar, see the [SiegeWar User Guide](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-User-Guide) for the older installation guide.
 
 <p align=center>
-If you want to test out the SiegeWar.jar beta, join the [Discord's #siegewar-testers channel](https://discord.gg/2zsJRwaEUp) and ask for it.</p>
+If you want to test out the SiegeWar.jar beta, join the <a href=https://discord.gg/2zsJRwaEUp>Discord's #siegewar-testers channel</a> and ask for it.</p>
 
 <table align=center>
 <th> If you are upgrading from an older copy of SiegeWar that was bundled with Towny.jar, a note:</th>
