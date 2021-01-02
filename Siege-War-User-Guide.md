@@ -97,6 +97,9 @@ towny.siege.war.immune.to.war.nausea (for server staff)
 towny.siege.war.immune.to.battle.fatigue (for server staff)
 ```
 
+### The below installation guide is for older versions of SiegeWar which were included inside of special Towny.jar's.
+### If you're using the new SiegeWar.jar file you will want to see the new [SiegeWar.jar installation guide.](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-Installation)
+
 --- INSTALLATION GUIDE ---
 
 1. Backup all Towny data & config files
