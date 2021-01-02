@@ -28,3 +28,9 @@ and then create the following nation ranks:
         general:
             - towny.nation.siege.*
 ```
+
+For your server staff add:
+```
+towny.siege.war.immune.to.war.nausea 
+towny.siege.war.immune.to.battle.fatigue 
+```
