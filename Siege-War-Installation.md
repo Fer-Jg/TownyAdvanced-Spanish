@@ -12,7 +12,7 @@ If you want to test out the SiegeWar.jar beta, join the <a href=https://discord.
 
 ----
 
-#### Required: Towny 0.96.5.11 or newer.
+#### Required: Towny 0.96.5.12 or newer.
 
 #### Required townyperms.yml edits:
 
