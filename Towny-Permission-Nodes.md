@@ -266,6 +266,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
 	-   towny.command.nation.say
 	-   towny.command.nation.join
 	-   towny.command.nation.set.*
+            -   towny.command.nation.set.board
 	    -   towny.command.nation.set.spawncost
 	    -   towny.command.nation.set.spawn
 	    -   towny.command.nation.set.king
