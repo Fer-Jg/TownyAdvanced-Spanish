@@ -14,7 +14,7 @@ A: Using `/tw toggle revertunclaim` in each world.
 
 Q: My TNE is acting really slow since updating to 0.96.3.0, how come?
 
-A: Try out the [preview of an upcoming version of TNE](https://cdn.discordapp.com/attachments/267902896970924036/772478178135638036/TNE-0.1.1.12.jar) which has the fix.
+A: There are newer builds of TNE available on the [TNE discord](https://discord.gg/WNdwzpy).
 
 ----
 
