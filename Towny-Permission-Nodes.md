@@ -152,6 +152,11 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         -   towny.command.resident.toggle.explosion
         -   towny.command.resident.toggle.fire
         -   towny.command.resident.toggle.mobs
+        -   towny.command.resident.toggle.townclaim
+        -   towny.command.resident.toggle.plotborder
+        -   towny.command.resident.toggle.constantplotborder
+        -   towny.command.resident.toggle.ignoreplots
+        -   towny.command.resident.toggle.map
     -   towny.command.resident.friend
 
 ## /Town Nodes
