@@ -19,7 +19,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Plot Groups](#plot-groups)
     -   [Plot Types](#plot-types)
     -   [Outposts](#outposts)
-    -   [Selling Land](#selling-land)
+    -   [Buying and Selling Land](#buying-and-selling-land)
     -   [Using the Maps](#using-the-maps)
     -   [Plot Regeneration & Unclaimed Plots](#plot-regeneration--unclaimed-plots)
 -   [How Towny Lets Players Protect Their Blocks](#how-towny-lets-players-protect-their-blocks)
@@ -486,7 +486,7 @@ You can also configure how close an outpost can get to any other town's plots us
 
 You can also set the cost of claiming an outpost in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `price_outpost: 500.0`. 
 
-[]()Selling Land
+[]()Buying and Selling Land
 ----------------
 
 Land is sold by Mayors to Residents that are a part of their town. `using_economy: true` must be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in order for costs to be applied. Mayors have a command used in game to set the cost of all the plots that are set for sale hence-forth.
@@ -498,6 +498,8 @@ Land is sold by Mayors to Residents that are a part of their town. `using_econom
     -   If it is not set, the plots will cost $0 by default.
 </blockquote>
 To put a plot up for sale a mayor, while standing in the plot, type `/plot forsale {optional cost}`. The resident would then type `/plot claim` (while standing in the plot,) to buy it.
+
+[![Click here for Major Graft's Plot Claiming Video](https://img.youtube.com/vi/kiOb2dxu0Zw/0.jpg)](https://www.youtube.com/watch?v=kiOb2dxu0Zw)
 
 []()Using the Maps
 ------------------
