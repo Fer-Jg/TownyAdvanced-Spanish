@@ -129,14 +129,14 @@
         -   spy - Admins can turn on chat-channel spying.
         -   ignoreplots - Turns on/off plot notifications in town.
         -   reset - This turns off all modes that are active.
--   set
-    -   perm
-        -   {on/off} - Edits the perm line on the resident screen. [See here for details.](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms)
-        -   {friend/ally/outsider} {on/off}
-        -   {build/destroy/switch/itemuse} {on/off}
-        -   {friend/ally/outsider} {build/destroy/switch/itemuse} {on/off}
-        -   reset - This takes the perm line seen in the /resident screen and applies it to all plots personally owned by the player typing it.
--   tax - Shows taxes a player pays.
+    -   set
+        -   perm
+            -   {on/off} - Edits the perm line on the resident screen. [See here for details.](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#towny-plot-perms)
+            -   {friend/ally/outsider} {on/off}
+            -   {build/destroy/switch/itemuse} {on/off}
+            -   {friend/ally/outsider} {build/destroy/switch/itemuse} {on/off}
+            -   reset - This takes the perm line seen in the /resident screen and applies it to all plots personally owned by the player typing it.
+    -   tax - Shows taxes a player pays.
 
 []()/town
 ---------
