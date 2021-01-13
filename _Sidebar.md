@@ -44,4 +44,4 @@
 
 ### Misc
 - [**Plugins using the Towny API**](https://github.com/TownyAdvanced/Towny/wiki/Plugins-using-the-Towny-API)
-- [**Siege War Hub**](https://github.com/TownyAdvanced/Towny/wiki/Siege-War-Hub)
+- [**Siege War Wiki**](https://github.com/TownyAdvanced/SiegeWar/wiki)
