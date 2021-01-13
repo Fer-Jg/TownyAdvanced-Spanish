@@ -70,7 +70,7 @@ Residents have their permission nodes configurable via [TownyPerms](https://gith
 
 []()Towns
 ---------
-
+<p><a href="https://www.youtube.com/watch?v=A8DD8050SUI"><img alt="Click here for Major Graft's Towns & Nations Video" src="https://img.youtube.com/vi/A8DD8050SUI/0.jpg" align=right height="200"></a>
 A town is a collection of residents (or just one resident) with one resident as the mayor. A town also has a bank which the mayor can withdraw from. A mayor can also have assistants who have the same powers as him/herself. Towns can have taxes that will be taken at the end of each day interval. 
 
 Towns usually grow outwards from their home block, the townblock the mayor stood in during town creation. Townblocks need to be claimed beside other townblocks, unless the mayor claims an outpost in the wilderness using `/t claim outpost`. Towns can be limited to a number of residents using the config option `global_town_settings.max_residents_per_town`, by default this is not limited. All of the towns on a server can be seen in a list using `/town list`.
@@ -126,7 +126,7 @@ As of Towny 0.96.4.0 you can optionally have outlaws teleport away from the town
 
 []()Nations
 -----------
-
+<p><a href="https://www.youtube.com/watch?v=A8DD8050SUI"><img alt="Click here for Major Graft's Towns & Nations Video" src="https://img.youtube.com/vi/A8DD8050SUI/0.jpg" align=right height="200"></a>
 A nation is a collection of towns (or just one town) with one town as the capital. The mayor of that capital is the king. A nation can join the war event, as well as ally other nations. A nation also has it's own bank. It can also tax the towns that belong to it. 
 
 Nations can also have a spawn reached using `/nation spawn` which if the nation is considered 'Public' can be reached by nearly any non-enemy players. The nation spawn can be restricted to the capital in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `global_nation_settings.capital_spawn` otherwise the spawn point can be anywhere in the nation. 
@@ -147,8 +147,6 @@ Nations can grant many perks to their towns which can increase as the nation pop
 -   Cheaper town upkeep costs.
 -   Larger surrounding NationZones.
 -   An increased outpost limit.
-
-[![Click here for Major Graft's Towns & Nations Video](https://img.youtube.com/vi/A8DD8050SUI/0.jpg)](https://www.youtube.com/watch?v=A8DD8050SUI)
 
 []()Kings
 ---------
@@ -368,7 +366,7 @@ Most of the other commands used to manipulate plots are the same with one except
 
 []()Plot Types
 --------------
-
+<p><a href="https://www.youtube.com/watch?v=7nB8kUDkV-A"><img alt="Click here for Major Graft's Video about Plot Types" src="https://img.youtube.com/vi/7nB8kUDkV-A/0.jpg" align=right height="200"></a>
 Players can use `/town plots {townname}` to view the counts of various plot types in a town. Towny post-0.75 has added plot types besides the default. This is to give mayors more control over their towns. 
 
 As of Towny 0.95.1.0 you can configure costs to set plot types at `plot_type_costs` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml).
@@ -460,8 +458,6 @@ Farm plots also allow player to kill animals in the plot. In order to kill the c
 
 Bank plots are designated with `/plot set bank`. Bank plots can be used to limit town and nation bank depositing/withdrawing. By default this setting is off but can be turned on at `bank.is_banking_limited_to_bank_plots ` in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) Bank plots are more useful for other plugins which would want to limit their banking features to within Towny bank plots.
 
-[![Click here for Major Graft's Video about Plot Types](https://img.youtube.com/vi/7nB8kUDkV-A/0.jpg)](https://www.youtube.com/watch?v=7nB8kUDkV-A)
-
 []()Outposts
 ------------
 
@@ -488,7 +484,7 @@ You can also set the cost of claiming an outpost in the [config.yml](https://git
 
 []()Buying and Selling Land
 ----------------
-
+<p><a href="https://www.youtube.com/watch?v=kiOb2dxu0Zw"><img alt="Click here for Major Graft's Plot Claiming Video" src="https://img.youtube.com/vi/kiOb2dxu0Zw/0.jpg" align=right height="200"></a>
 Land is sold by Mayors to Residents that are a part of their town. `using_economy: true` must be set in [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in order for costs to be applied. Mayors have a command used in game to set the cost of all the plots that are set for sale hence-forth.
 
 <blockquote>
@@ -498,8 +494,6 @@ Land is sold by Mayors to Residents that are a part of their town. `using_econom
     -   If it is not set, the plots will cost $0 by default.
 </blockquote>
 To put a plot up for sale a mayor, while standing in the plot, type `/plot forsale {optional cost}`. The resident would then type `/plot claim` (while standing in the plot,) to buy it.
-
-[![Click here for Major Graft's Plot Claiming Video](https://img.youtube.com/vi/kiOb2dxu0Zw/0.jpg)](https://www.youtube.com/watch?v=kiOb2dxu0Zw)
 
 []()Using the Maps
 ------------------
@@ -686,7 +680,7 @@ The other groups are:
 [All commands are found on the Wiki's Commands page.](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands)
 
 ### []()Setting perms in-game with commands
-
+<p><a href="https://www.youtube.com/watch?v=wvshFTv3l6A"><img alt="Click here for Major Graft's Plot Permission Video" src="https://img.youtube.com/vi/wvshFTv3l6A/0.jpg" align=right height="200"></a>
 Setting perms for your town's public land or your personal plots is easy! There are two distinct levels of protection provided by towns. First are the town blocks, protected because they are part of a town and not owned by anyone. When you enter one of these plots from the wilderness or an owned plot the notification will show "~ Unowned". Mayors are able to set the permission for unowned plots using the the `/town set perm` command. A full list of commands is on the [commands](https://github.com/TownyAdvanced/Towny/wiki/Towny-Commands) page, here are some examples:
 
 -   `/town set perm {on/off}` - This turns on or off all permissions for all perm-types and all perm-groups.
@@ -726,8 +720,6 @@ Explosion and fire toggles are overridden by a mayor's town toggles. The precedi
 -   `/res set perm reset` - Propagates the perm line in `/res` to ALL plots owned by that resident.
 -   `/town set perm reset` - Propagates the perm line in `/town` to ALL town-owned plots owned by that town.
 -   These commands also affect the `/town toggle` and `/plot toggle` settings.
-
-[![Click here for Major Graft's Plot Permission Video](https://img.youtube.com/vi/wvshFTv3l6A/0.jpg)](https://www.youtube.com/watch?v=wvshFTv3l6A)
 
 []()Protection Additions Found in Towny Advanced
 ------------------------------------------------
