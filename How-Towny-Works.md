@@ -40,8 +40,6 @@ Use this page to learn how Towny works, how various settings affect the gameplay
 -   [Multiworld](#multiworld)
     -   [World Toggles](#world-toggles)
 -   [Towny War](#towny-war)
-    -   [/ta toggle war (Event War)](#ta-toggle-war-event-war))
-    -   [flag-war mode](#flag-war-mode)
 -   [Using SQL instead of Flatfile](#using-sql-instead-of-flatfile)
     -   [Configuring SQL](#configuring-sql)
     -   [Converting Flatfile to SQL](#converting-flatfile-to-sql)
@@ -1095,44 +1093,7 @@ Towny can be turned off in a world in-game. While standing in a world type `/tow
 []()Towny War
 =============
 
-There are two distinct Towny war modes. Flag war is no longer supported by the team but Pull Requests are welcome.
-
-[]()/ta toggle war (Event War)
-------------------------------
-
-Towny war is activated by a server admin using `/townyadmin toggle war`, there is a configurable 30 second countdown and then War begins. `Using_economy` must be set to true in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) for an event war to begin. 
-
-During war Nations fight each other. Towns without a nation are not included, cannot score points and cannot have their townblocks griefed. The config has the option `towns_are_neutral: 'true'` if you would like nation-less towns to still be able to fight and be attacked (but still not score points.) Nations can also pay a daily Neutrality cost to avoid taking part in a war. The cost of neutrality is set in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) using `price_nation_neutrality: 100.0`. In this example, a nation would pay 100 dollars from its nationbank each 'Towny Day'. `/n toggle neutral` will set the status.
-
-Useful during war is the `/towny war hud` command which will make a scoreboard appear for the player, which details points and properties of the townblock they are standing in. 
-
-Also useful is the `/towny war participants {page #}` command. It shows a list of towns and their nation who are in the war event.The list highlights enemies, allies and capital towns. While war is in effect, each competing town has a health points property attached to it. 
-
-Normal townblocks have an HP of 60 while Home Blocks have 120 points by default. This can be changed in the config. By default, only townblocks on the edge of the wilderness can be attacked first, this is optional in the config. A townblock loses HP by enemy-nation residents standing within the townblock. Townblocks can be healed by allied-nation and nation residents standing within the townblock (when this is enabled in the config.) When a townblock has lost all HP and fallen the town which the attacker belongs to gains one townblock and points to their War Score. When a townblock is under attack, fireworks appear above. Red for damage, red creeperhead for a won townblock, and green when a townblock is being healed by a defender. Fireworks can be turned off in the config at `war.event.plots.firework_on_attacked`. 
-
-As of Towny 0.92.0.0 when players are killed in a town where they are considered to be enemies in the war, they may be sent to the town's Jail. This is configurable at `jail.is_jailing_attacking_enemies: 'false'`. If the jail plot is attacked and has its HP reduced to 0, any prisoners-of-war imprisoned there will be let free in a 'jailbreak'. POWs are also freed if the town they are kept in falls out of the war. 
-
-As of Towny 0.95.1.0 you can make it so Townblocks which are conquered in war are transfered over permanently to the victor, set `war.event.winner_takes_ownership_of_townblocks` to true in your config to make towns lose townblocks.
-
-As of Towny 0.96.0.0 you can make it so that conquered Towns are removed from their Nation and placed under the control of the conquering Nation, using the `war.event.winner_takes_ownership_of_town` setting. The losing town will enter a conquered state and be unable to leave the nation until the conquered time has passed. A town's conqueredDays will decrease each Towny new day. The number of days a town remains conquered is set in the config at `war.event.conquer_time` and defaults to 7 days.
-
-War allows for a great deal of customizability when it comes to griefing. The config's `WarzoneBlockPermissions EditableMaterials` section can be used for Event war as of Towny 0.92.0.0. This means you may set which blocks can be placed and broken by players in the war. By default that list includes: `tnt,fence,ladder,wood_door,iron_door,fire`. Switch, Item_use, Fire and Explosion protections can be overriden during Event War as well. `explosions_regen_blocks: 'true'` will determine whether the explosion-griefing is permanent. 
-
-If you would like to bybass the WarzoneBlockPermissions fine-grained approach and allow anyone to do anything during war you can set the the config's `war.event.allow_block_griefing` option to true. 
-
-A Town can be knocked out of a war when their Home Block falls or if their Mayor is killed. A Nation can be knocked out of a war if its capital city is knocked out of the war, or if the King is killed. Points in war given for the following:
-
--   A enemy killed: 1
--   A townblock stolen: 1
--   A town knocked out of the war: 10
--   A nation knocked out of the war: 100
-
-Towny war ends when there is only one nation who's Home Block has not been conquered or when the admin toggles war off. Although the townblocks are restored at the end of war, the damage from any griefing is permanent.
-
-[]()flag-war mode
------------------
-
-Developed on the side by Shadeness, the original author of Towny. See his explanation [here.](https://web.archive.org/web/20140912091755/http://xshade.ca/projects/towny/tutorial/war/)
+There are a number of war systems which are both built-in and available as add-ons to Towny, check them out at the [War Hub.](https://townyadvanced.github.io/wars.html)
 
 ------------------------------------------------------------------------
 
