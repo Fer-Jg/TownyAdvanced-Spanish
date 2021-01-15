@@ -50,6 +50,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         -   towny.command.townyadmin.town.kick
         -   towny.command.townyadmin.town.delete
         -   towny.command.townyadmin.town.rename
+        -   towny.command.townyadmin.town.bankhistory
         -   towny.admin.spawn
             -   towny.command.townyadmin.town.spawn.freecharge
     -   towny.command.townyadmin.nation.* - Allows a player to use '/ta nation add/kick'
@@ -57,6 +58,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         -   towny.command.townyadmin.nation.add
         -   towny.command.townyadmin.nation.delete
         -   towny.command.townyadmin.nation.rename
+        -   towny.command.townyadmin.nation.bankhistory
     -   towny.command.townyadmin.toggle.* - Allows use of '/ta toggle ...'
         -   towny.command.townyadmin.toggle.war
         -   towny.command.townyadmin.toggle.neutral
@@ -172,17 +174,21 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
 
 - towny.command.town.*
     - towny.command.town.here
-    - towny.command.town.list
+    - towny.command.town.list.*
         - towny.command.town.list.residents
         - towny.command.town.list.open
         - towny.command.town.list.balance
         - towny.command.town.list.name
         - towny.command.town.list.townblocks
         - towny.command.town.list.online
+        - towny.command.town.list.public
+        - towny.command.town.list.ruined
+        - towny.command.town.list.bankrupt
     - towny.command.town.new : Required to create a town.
     - towny.command.town.leave
     - towny.command.town.withdraw
     - towny.command.town.deposit
+    - towny.command.town.bankhistory
     - towny.command.town.rank.*
     - towny.command.town.reslist
     - towny.command.town.outlaw : Allows outlawing players in your town.
@@ -260,11 +266,13 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
 	    -   towny.command.nation.list.name
 	    -   towny.command.nation.list.townblocks
 	    -   towny.command.nation.list.online
+	    -   towny.command.nation.list.public
 	-   towny.command.nation.new
 	-   towny.command.nation.leave
 	-   towny.command.nation.withdraw
 	-   towny.command.nation.deposit
 	-   towny.command.nation.deposit.other
+	-   towny.command.nation.bankhistory
 	-   towny.command.nation.rank.*
 	-   towny.command.nation.king
 	-   towny.command.nation.othernation
