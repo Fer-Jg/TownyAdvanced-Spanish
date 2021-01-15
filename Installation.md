@@ -8,10 +8,10 @@ Read the steps here carefully and you'll save yourself a lot of head-scratching 
 1. Stop your server completely.
 2. Download either of the following:
    * Latest release build from the [Releases tab](https://github.com/TownyAdvanced/Towny/releases).
-     * Includes **Towny.jar**, **TownyChat.jar**, and **TownyNameUpdater.jar**.
+     * Includes **Towny.jar** and **TownyChat.jar**.
    * Latest pre-release/development build from the [Releases tab](https://github.com/TownyAdvanced/Towny/releases).
      * Includes **Towny.jar**.
-     * TownyChat and TownyNameUpdater's latest files can be gotten from their Releases tabs [here](https://github.com/TownyAdvanced/TownyChat/releases) and [here](https://github.com/TownyAdvanced/TownyNameUpdater/releases).
+     * TownyChat's latest files can be gotten from their Releases tabs [here](https://github.com/TownyAdvanced/TownyChat/releases).
      * The documentation on the wiki does not get updated until a Release build is out. You will need to read the [changelog](https://github.com/TownyAdvanced/Towny/blob/master/resources/ChangeLog.txt) to learn what's been added/removed/fixed since the last Release.
    * You can consult the [Readme](https://github.com/TownyAdvanced/Towny#current-recommended-versions) to see which version you should use for older Minecrafts.
 3. Copy the contents to your _Plugins_ folder.
@@ -20,7 +20,6 @@ Read the steps here carefully and you'll save yourself a lot of head-scratching 
      * Adding prefixes and suffixes from your permissions plugin to chat
      * Adding town, nation-related tags to chat.
      * Adding general/local/town/nation/mod/admin to chat channels.
-   * **TownyNameUpdater.jar** is required if you want to keep Towny residents' names updated if they change their Minecraft name.
    * [Vault.jar](https://www.spigotmc.org/resources/vault.34315/) **or** [Reserve.jar](https://www.spigotmc.org/resources/reserve.50739/) (separate downloads) is required if you use an economy plugin.
 4. Start your server.
 5. Stop your server.
