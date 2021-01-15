@@ -1,10 +1,11 @@
 ```
  
+ 
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: '0.83'
+  version: '0.85'
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: '0.83'
+  last_run_version: '0.85'
  
 ############################################################
 # +------------------------------------------------------+ #
