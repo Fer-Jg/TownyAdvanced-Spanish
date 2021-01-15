@@ -30,6 +30,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Taxes and Upkeep](#taxes-and-upkeep)
     -   [Town and Nation Banks](#town-and-nation-banks)
     -   [Town Bankruptcy](#town-bankruptcy)
+-   [Town Ruins](#town-ruins)
 -   [Chat](#chat)
     -   [PlaceholderAPI Support](#placeholderapi-support)
     -   [Townychat.jar](#townychatjar)
@@ -856,6 +857,15 @@ Towns and Nations both have banks, to which any resident can deposit money but o
 
 As of Towny 0.82.0.0 and on-wards the cap on banks is a hard cap and does not allow any money to be added to the town/nation banks if it would put the bank over the limit. This does not remove money from town/nation banks which are already over the limit.
 
+As of Towny 0.96.6.0 there are bank history commands which open book GUIs showing transactions made to and from the town and nation banks:
+```
+  - /town bankhistory {pages}
+  - /nation bankhistory {pages}
+  - /ta town {townname} bankhistory {pages}
+  - /ta nation {nationname} bankhistory {pages}
+```
+
+
 []()Town Bankruptcy
 -------------------
 
@@ -891,6 +901,27 @@ When `economy.bankruptcy.nation_tax.do_bankrupt_towns_pay_nation_tax` is set to 
 
 When `economy.bankruptcy.nation_tax.kick_towns_that_reach_debt_cap` is true a Town that has hit their debt cap will be kicked from the nation for not being able to pay their tax.
 
+------------------------------------------------------------------------
+
+[]()Town Ruins
+=========
+
+Added in Towny 0.96.6.0, the Town Ruins feature enables deleted Towns to enter into a pseudo-deleted state. It is enabled in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) in the Town Ruining section. Simply put: when a town would be deleted, be it from not paying the upkeep, or someone using the delete command, the town becomes Ruined. After the configured amount of time set at `town_ruining.town_ruins.max_duration_hours` the town will become fully deleted.
+
+While ruined a town is subject to the following:
+  - The townblocks cannot be claimed by other towns (they are still claimed by the town,)
+  - The town will be placed under the control of an NPC mayor,
+  - The town can be griefed,
+  - The town's residents will not be able to execute most /town commands and no /plot commands,
+    - /town, /town reclaim|list|leave are allowed.
+
+Town ruining is a useful method of preventing conquered towns from escaping their Nation by deleting their town and immediately and reclaiming their land under a new town. Town ruining was originally developed by Goosius for [SiegeWar](https://github.com/TownyAdvanced/SiegeWar).
+
+### Town Reclaiming
+Town reclaiming is enabled in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `town_ruining.town_ruins.reclaim_enabled`. When enabled any town member will be able to use the `/town reclaim` command in order to become the town's new mayor. This command will cost money, which is configured at `economy.new_expand.price_reclaim_ruined_town` and can be seen in the `/towny prices` screen.
+
+Town reclamation can be limited to only be allowed after an amount of time has passed, configured at `town_ruining.town_ruins.min_duration_hours` which by default is set to 4 hours.
+  
 
 
 ------------------------------------------------------------------------
@@ -1102,12 +1133,8 @@ There are a number of war systems which are both built-in and available as add-o
 
 As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfile.
 
-[]()Configuring SQL
+[]()Configuring MySQL
 -------------------
-
-3 Data base types are supported:
-
-### []()MySQL
 
 -   Open the \towny\settings\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
 -   Navigate to the sql: section.
@@ -1115,14 +1142,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 -   Set the desired mysql flags in the flags section.
 -   Save the config and read below for conversion instructions.
 
-### []()H2
 
--   Download [h2.jar](http://palmergames.com/file-repo/libs/h2.jar) and place it in the lib folder in your server's root folder.
--   Read below for conversion instructions.
-
-### []()sqlite
-
--   Follow the same instructions as H2
 
 []()Converting Flatfile to SQL
 ------------------------------
