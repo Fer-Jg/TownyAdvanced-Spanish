@@ -1,4 +1,5 @@
-```# This file contains custom permission sets which will be assigned to your players
+```
+# This file contains custom permission sets which will be assigned to your players
 # depending on their current status.
 #
 # This is all managed by towny and pushed directly to CraftBukkits SuperPerms.
@@ -21,9 +22,10 @@ nomad:
     - towny.command.town.here
     - towny.command.town.new
     - towny.command.town.join
-    - towny.command.town.list
+    - towny.command.town.list.*
+    - towny.command.town.reslist
     - towny.command.plot.perm
-    - towny.command.nation.list
+    - towny.command.nation.list.*
     - towny.command.nation.townlist  
     - towny.command.nation.allylist
     - towny.command.nation.enemylist
