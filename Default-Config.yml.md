@@ -1,9 +1,9 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.96.5.0
+  version: 0.96.6.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.96.5.0
+  last_run_version: 0.96.6.0
 # The language file you wish to use
 language: english.yml
  
@@ -212,13 +212,16 @@ town:
   # Default Open status of the town (are new towns open and joinable by anyone at creation?)
   default_open: 'false'
  
+  # Default neutral status of the town (are new towns neutral by default?)
+  default_neutral: 'false'
+ 
   # Default town board
   default_board: /town set board [msg]
  
   # Default tax settings for new towns.
   default_taxes:
  
-    # Default amount of tax of a new town. This must be lower than the economy.daily_taxes.max_tax_percent setting.
+    # Default amount of tax of a new town. This must be lower than the economy.daily_taxes.max_town_tax_amount setting.
     tax: '0.0'
  
     # Default amount of shop tax of a new town.
@@ -575,7 +578,7 @@ global_town_settings:
  
   # List of blocks which can be modified on farm plots, as long as player is also allowed in the plot's '/plot perm' line.
   # Not included by default but some servers add GRASS_BLOCK,FARMLAND,DIRT,NETHERRACK,CRIMSON_NYLIUM,WARPED_NYLIUM to their list.
-  farm_plot_allow_blocks: BAMBOO,BAMBOO_SAPLING,JUNGLE_LOG,JUNGLE_SAPLING,JUNGLE_LEAVES,OAK_LOG,OAK_SAPLING,OAK_LEAVES,BIRCH_LOG,BIRCH_SAPLING,BIRCH_LEAVES,ACACIA_LOG,ACACIA_SAPLING,ACACIA_LEAVES,DARK_OAK_LOG,DARK_OAK_SAPLING,DARK_OAK_LEAVES,SPRUCE_LOG,SPRUCE_SAPLING,SPRUCE_LEAVES,BEETROOTS,COCOA,CHORUS_PLANT,CHORUS_FLOWER,SWEET_BERRY_BUSH,KELP,SEAGRASS,TALL_SEAGRASS,GRASS,TALL_GRASS,FERN,LARGE_FERN,CARROTS,WHEAT,POTATOES,PUMPKIN,PUMPKIN_STEM,ATTACHED_PUMPKIN_STEM,NETHER_WART,COCOA,VINE,MELON,MELON_STEM,ATTACHED_MELON_STEM,SUGAR_CANE,CACTUS,ALLIUM,AZURE_BLUET,BLUE_ORCHID,CORNFLOWER,DANDELION,LILAC,LILY_OF_THE_VALLEY,ORANGE_TULIP,OXEYE_DAISY,PEONY,PINK_TULIP,POPPY,RED_TULIP,ROSE_BUSH,SUNFLOWER,WHITE_TULIP,WITHER_ROSE,CRIMSON_FUNGUS,CRIMSON_STEM,CRIMSON_HYPHAE,CRIMSON_ROOTS,MUSHROOM_STEM,NETHER_WART_BLOCK,BROWN_MUSHROOM,BROWN_MUSHROOM_BLOCK,RED_MUSHROOM,RED_MUSHROOM_BLOCK,SHROOMLIGHT,WARPED_FUNGUS,WARPED_HYPHAE,WARPED_ROOTS,WARPED_STEM,WARPED_WART_BLOCK,WEEPING_VINES_PLANT,WEEPING_VINES,NETHER_SPROUTS
+  farm_plot_allow_blocks: BAMBOO,BAMBOO_SAPLING,JUNGLE_LOG,JUNGLE_SAPLING,JUNGLE_LEAVES,OAK_LOG,OAK_SAPLING,OAK_LEAVES,BIRCH_LOG,BIRCH_SAPLING,BIRCH_LEAVES,ACACIA_LOG,ACACIA_SAPLING,ACACIA_LEAVES,DARK_OAK_LOG,DARK_OAK_SAPLING,DARK_OAK_LEAVES,SPRUCE_LOG,SPRUCE_SAPLING,SPRUCE_LEAVES,BEETROOTS,COCOA,CHORUS_PLANT,CHORUS_FLOWER,SWEET_BERRY_BUSH,KELP,SEAGRASS,TALL_SEAGRASS,GRASS,TALL_GRASS,FERN,LARGE_FERN,CARROTS,WHEAT,POTATOES,PUMPKIN,PUMPKIN_STEM,ATTACHED_PUMPKIN_STEM,NETHER_WART,COCOA,VINE,MELON,MELON_STEM,ATTACHED_MELON_STEM,SUGAR_CANE,CACTUS,ALLIUM,AZURE_BLUET,BLUE_ORCHID,CORNFLOWER,DANDELION,LILAC,LILY_OF_THE_VALLEY,ORANGE_TULIP,OXEYE_DAISY,PEONY,PINK_TULIP,POPPY,RED_TULIP,ROSE_BUSH,SUNFLOWER,WHITE_TULIP,WITHER_ROSE,CRIMSON_FUNGUS,CRIMSON_STEM,CRIMSON_HYPHAE,CRIMSON_ROOTS,MUSHROOM_STEM,NETHER_WART_BLOCK,BROWN_MUSHROOM,BROWN_MUSHROOM_BLOCK,RED_MUSHROOM,RED_MUSHROOM_BLOCK,SHROOMLIGHT,WARPED_FUNGUS,WARPED_HYPHAE,WARPED_ROOTS,WARPED_STEM,WARPED_WART_BLOCK,WEEPING_VINES_PLANT,WEEPING_VINES,NETHER_SPROUTS,SHEARS
  
   # List of animals which can be killed on farm plots by town residents.
   farm_animals: PIG,COW,CHICKEN,SHEEP,MOOSHROOM
@@ -708,7 +711,7 @@ global_nation_settings:
  
 plugin:
  
-  # Valid load and save types are: flatfile, mysql, h2.
+  # Valid load and save types are: flatfile and mysql.
   database:
     database_load: flatfile
     database_save: flatfile
@@ -726,6 +729,14 @@ plugin:
       username: root
       password: ''
       flags: ?verifyServerCertificate=false&useSSL=false&useUnicode=true&characterEncoding=utf-8
+ 
+      # Modifiable settings to control the connection pooling.
+      # Unless you actually know what you're doing and how Towny uses its mysql connection,
+      # it is strongly recommended you do not change these settings.
+      pooling:
+        max_pool_size: '5'
+        max_lifetime: '180000'
+        connection_timeout: '5000'
  
     # Flatfile backup settings.
     daily_backups: 'true'
@@ -788,6 +799,9 @@ plugin:
  
   # If true this will cause the log to be wiped at every startup.
   reset_log_on_boot: 'true'
+ 
+  # Sets the default size that /towny top commands display.
+  towny_top_size: '10'
  
  
   ############################################################
@@ -986,6 +1000,7 @@ notification:
     homeblock: '&b[Home]'
     outpostblock: '&b[Outpost]'
     forsale: '&e[For Sale: %s]'
+    notforsale: '&e[Not For Sale]'
     type: '&6[%s]'
  
   # When set to true, town's names are the long form (townprefix)(name)(townpostfix) configured in the town_level section.
@@ -1135,6 +1150,11 @@ invite_system:
   # a player's first log in and when they can be invited to a town.
   cooldowntime: 0m
  
+  # When set for more than 0m, the amount of time until an invite is considered
+  # expired and is removed. Invites are checked for expiration once every hour.
+  # Valid values would include: 30s, 30m, 24h, 2d, etc.
+  expirationtime: 0m
+ 
   # Max invites for Town & Nations, which they can send. Invites are capped to decrease load on large servers.
   # You can increase these limits but it is not recommended. Invites/requests are not saved between server reloads/stops.
   maximum_invites_sent:
@@ -1210,6 +1230,11 @@ economy:
   # Rarely set to false. Set to false if you get concurrent modification errors on timers for daily tax collections.
   use_async: 'true'
  
+  # The time that the town and nation bank accounts' balances are cached for, in seconds.
+  # Default of 600s is equal to ten minutes. Requires the server to be stopped and started if you want to change this.
+  # Cached balances are used for PlaceholderAPI placeholders, town and nation lists.
+  bank_account_cache_timeout: 600s
+ 
   # Prefix to apply to all town economy accounts.
   town_prefix: town-
  
@@ -1221,9 +1246,6 @@ economy:
  
   # The cost of renaming a nation.
   nation_rename_cost: '0'
- 
-  # The debt prefix for the debt eco account
-  debt_prefix: '[DEBT]-'
  
   spawn_travel:
  
@@ -1254,6 +1276,9 @@ economy:
  
     # How much it costs to start a town.
     price_new_town: '250.0'
+    # How much it costs to reclaim a ruined town.
+    # This is only applicable if the town-ruins & town-reclaim features are enabled.
+    price_reclaim_ruined_town: '500.0'
  
     # How much it costs to make an outpost. An outpost isn't limited to being on the edge of town.
     price_outpost: '500.0'
@@ -1444,6 +1469,9 @@ economy:
       # reach their debtcap, are they kicked from the nation?
       kick_towns_that_reach_debt_cap: 'false'
  
+      # Does a conquered town which cannot pay the nation tax get deleted?
+      does_nation_tax_delete_conquered_towns_that_cannot_pay: 'false'
+ 
   plot_type_costs:
  
     # Cost to use /plot set shop to change a normal plot to a shop plot.
@@ -1487,6 +1515,9 @@ jail:
   #Requires town_respawn to be true in order to work.
   is_jailing_attacking_outlaws: 'false'
  
+  #How many days an attacking outlaw will be jailed for.
+  outlaw_jail_days: '1'
+ 
   #If true jailed players can use Ender Pearls but are still barred from using other methods of teleporting.
   jail_allows_ender_pearls: 'false'
  
@@ -1523,6 +1554,35 @@ bank:
   # If true players will only be able to use /t deposit, /t withdraw, /n deposit & /n withdraw while inside bank plots belonging to the town or nation capital respectively.
   # Home plots will also allow deposit and withdraw commands.
   is_banking_limited_to_bank_plots: 'false'
+ 
+ 
+  ############################################################
+  # +------------------------------------------------------+ #
+  # |               Town Ruining Settings                  | #
+  # +------------------------------------------------------+ #
+  ############################################################
+ 
+town_ruining:
+  town_ruins:
+ 
+    # If this is true, then if a town falls, it remains in a 'ruined' state for a time.
+    # In this state, the town cannot be claimed, but can be looted.
+    # The feature prevents mayors from escaping attack/occupation, 
+    # by deleting then quickly recreating their town.
+    enabled: 'false'
+ 
+    # This value determines the maximum duration in which a town can lie in ruins
+    # After this time is reached, the town will be completely deleted.
+    # Does not accept values greater than 1000.
+    max_duration_hours: '72'
+ 
+    # This value determines the minimum duration in which a town must lie in ruins,
+    # before it can be reclaimed by a resident.
+    min_duration_hours: '4'
+ 
+    # If this is true, then after a town has been ruined for the minimum configured time,
+    # it can then be reclaimed by any resident who runs /t reclaim, and pays the required price. (price is configured in the eco section)
+    reclaim_enabled: 'true'
  
  
   ############################################################
