@@ -153,7 +153,10 @@
         - by balance {page #} - order by town with the highest nation bank balance.
         - by townblocks {page #} - order towns by how many townblocks they have claimed.
         - by online {page #} - order by how many players are online at that moment.
-        - by open {page #} - lists only open towns, in order of most residents to least residents.
+        - by open {page #} - lists open towns first, in order of most residents to least residents.
+        - by public {page #} - lists public towns first, in order of most residents to least residents.
+        - by ruined {page #} - lists ruined towns first, in order of most residents to least residents.
+        - by bankrupt {page #} - lists bankrupt towns first, in order of most residents to least residents.
     -   online - Shows players in your town which are online.
     -   plots {townname} - Shows a helpful list of plots and their types/revenue which are owned by the town.
     -   new {townname} - Creates a new town.
@@ -177,6 +180,7 @@
         -   outpost - Used to unclaim glitched outposts on MySQL Towny servers pre-0.92.0.0
     -   withdraw {$} - Removes money from town bank.
     -   deposit {$} - Adds money from player to the town bank.
+    -   bankhistory {#} - Opens a book GUI with # number of transactions listed, showing the town bank history.
     -   buy
         -   bonus {amount} - Buys available bonus townblocks.
     -   delete {town name} - Admin/Mayor command to delete a town from towny's data folder's files.
@@ -187,6 +191,7 @@
         -   {list} - lists your town's outposts.
     -   ranklist - Displays residents and their ranks.
     -   rank {add|remove} {playername} {rankname} - Grants or removes a rank to a resident of the town.
+    -   reclaim - allows a resident to reclaim their ruined town.
     -   reslist {townname} - See a FULL list of all residents in a town.
     -   say {msg} - Broadcast a message to online town members.
     -   set
@@ -244,11 +249,14 @@
         - by towns {page #} - order by nation with the most towns.
         - by townblocks {page #} - order nations by how many townblocks their towns have collectively claimed.
         - by online {page #} - order by how many players are online at that moment.
+        - by open {page #} - ordered by open first, number of residents second.
+        - by public {page #} - order by public first, number of residents second.
     -   online - Shows players in your nation which are online.
     -   {nation} - Shows a player the /nation screen of another nation.
     -   leave - Mayor command to leave the nation they are a part of.
     -   withdraw {$} - King command to remove money from the nation bank.
     -   deposit {$} - King command to add money to the nation bank.
+    -   bankhistory {#} - Opens a book GUI with # number of transactions listed, showing the nation bank history.
     -   deposit {$} {townname} - King command to add money to the bank of a town who is in the nation.
     -   new
         -   {nationname} - Mayor command to create a nation.
@@ -349,6 +357,7 @@
     -   leavenation - Admin command to make a town leave their nation.
     -   deposit [amount] - Deposit money into a town's bank.
     -   withdraw [amount] - Withdraw money from a town's bank.
+    -   bankhistory {#} - Opens a book GUI with # number of transactions listed, showing the town bank history.
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
@@ -361,7 +370,8 @@
     -   kick [towns...] - Admin command to remove towns from a nation.
     -   deposit [amount] - Deposit money into a nation's bank.
     -   withdraw [amount] - Withdraw money from a nation's bank.
-
+    -   bankhistory {#} - Opens a book GUI with # number of transactions listed, showing the nation bank history.
+    
   - reset - resets the towny config.yml to its current default.
 
   - toggle
