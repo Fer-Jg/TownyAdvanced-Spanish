@@ -70,6 +70,14 @@ _Introduced as of v0.96.3.0_
 - `%townyadvanced_daily_town_tax%` - Displays the daily tax charged by the town on the residents.
 - `%townyadvanced_daily_nation_tax%` - Displays the daily tax charged by the nation on the towns.
 
+_Introduced as of v0.96.6.0_
+- `%townyadvanced_player_location_town_or_wildname%` - Displays either the townname at the location or the wilderness name.
+- `%townyadvanced_player_location_formattedtown_or_wildname%` - Displays either the formatted townname at the location or the wilderness name.
+- `%townyadvanced_player_location_town_prefix%` - Displays the town's prefix or blank.
+- `%townyadvanced_player_location_town_postfix%` - Displays the town's postfix or blank.
+- `%townyadvanced_player_location_pvp%` - Displays (PVP) or blank, depending on pvp status of the location.
+- `%townyadvanced_nation_map_color_hex%` - Returns the hex colour code of the nation's mapcolor set with /t set mapcolor (seen in dynmap-towny.)
+
 </details>
 
 <details>
@@ -112,12 +120,6 @@ _Introduced as of v0.96.3.0_
 - `%townyadvanced_has_nation%` - Returns true or false whether the resident has a nation.
 - `%townyadvanced_player_jailed%` - Display true is the player is jailed, otherwise false.
 
-
-#### Plot:
-- `%townyadvanced_player_plot_type%` - Display the townblock's type at the resident's location (ex: shop), or "" if none.
-- `%townyadvanced_player_plot_owner%` - Display true if the resident is owning the townblock at his location.
-
-
 #### Town:
 - `%townyadvanced_town_residents_amount%` - Number of residents in a town.
 - `%townyadvanced_town_residents_online%` - Number of residents in a town that are currently online.
@@ -138,7 +140,7 @@ _Introduced as of v0.96.3.0_
 - `%townyadvanced_nation_capital%` - Name of a resident's nation's capital.
 - `%townyadvanced_nation_prefix%` - Display the config-defined prefix of the player's town (ex: lands, realms, ...)
 - `%townyadvanced_nation_postfix%` - Display the config-defined postfix of the player's nation (ex: lands, realms, ...)
-
+- `%townyadvanced_nation_map_color_hex%` - Returns the hex colour code of the nation's mapcolor set with /t set mapcolor (seen in dynmap-towny.)
 
 #### Money:
 - `%townyadvanced_town_balance%` - Displays town bank value.
@@ -147,5 +149,15 @@ _Introduced as of v0.96.3.0_
 - `%townyadvanced_daily_nation_upkeep%` - Shows nation's upkeep cost.
 - `%townyadvanced_daily_town_tax%` - Displays the daily tax charged by the town on the residents.
 - `%townyadvanced_daily_nation_tax%` - Displays the daily tax charged by the nation on the towns.
+
+#### Location:
+- `%townyadvanced_player_plot_type%` - Display the townblock's type at the resident's location (ex: shop), or "" if none.
+- `%townyadvanced_player_plot_owner%` - Display true if the resident is owning the townblock at his location.
+- `%townyadvanced_player_location_town_or_wildname%` - Displays either the townname at the location or the wilderness name.
+- `%townyadvanced_player_location_formattedtown_or_wildname%` - Displays either the formatted townname at the location or the wilderness name.
+- `%townyadvanced_player_location_town_prefix%` - Displays the town's prefix or blank.
+- `%townyadvanced_player_location_town_postfix%` - Displays the town's postfix or blank.
+- `%townyadvanced_player_location_pvp%` - Displays (PVP) or blank, depending on pvp status of the location.
+
 
 </summary>
