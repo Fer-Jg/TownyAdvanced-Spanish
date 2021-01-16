@@ -12,9 +12,9 @@ A: Using `/tw toggle revertunclaim` in each world.
 
 ----
 
-Q: My TNE is acting really slow since updating to 0.96.3.0, how come?
+Q: Why cant people see each other's chat since updating to Towny 0.96.6.0 and TownyChat 0.85?
 
-A: There are newer builds of TNE available on the [TNE discord](https://discord.gg/WNdwzpy).
+A: TownyChat 0.86 fixes this. [Get it here.](https://github.com/TownyAdvanced/TownyChat/releases/tag/0.86)
 
 ----
 
