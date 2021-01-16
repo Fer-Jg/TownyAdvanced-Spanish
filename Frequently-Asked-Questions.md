@@ -18,7 +18,7 @@ A: TownyChat 0.86 fixes this. [Get it here.](https://github.com/TownyAdvanced/To
 
 ----
 
-Q: Which economy plugins do you recommend Towny?
+Q: Which economy plugins do you recommend using with Towny?
 
 A: You have lots of options
 
@@ -29,8 +29,8 @@ A: You have lots of options
 >    - **[HellConomy](https://www.spigotmc.org/resources/hellconomy.67355/)**
 >    - **[iConomy5](https://github.com/iconomy5legacy/iConomy "May not receive future updates")**
 >  - Just about every economy plugin will work. You will still need either Vault or Reserve for Towny to be able to communicate with your economy plugin of choice.
->  - Plugins known to not work: aConomy, EssentialsEconomy.
-
+>  - Plugins known to not work: aConomy, EssentialsEconomy, Gringotts.
+>  - Plugins which may not work: UltimateEconomy.
 
 ----
 
