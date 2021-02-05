@@ -142,16 +142,26 @@ You've probably want to know how to get the resident so that you can use the abo
 
 ### Getting a Resident from a Player
 
-Most of the time getting the resident object of a player is something you'll need quite often. Here is how you do it:
+Most of the time getting the resident object of a player is something you'll need quite often. 
+This can be done in several ways:
+
 ```java
 import com.palmergames.bukkit.towny.object.Resident;
 
-Resident resident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
+//By a Player's UUID
+Resident resident = TownyUniverse.getInstance().getResident(player.getUniqueID());
+
+//or, by the Player's name.
+resident = TownyUniverse.getInstance().getResident(player.getName());
+
+//Or, you can use this deprecated method - but you really shouldn't...
+resident = TownyAPI.getInstance().getDataSource().getResident(player.getName());
 ```
 
 ### Getting a Player from a Resident
 
-If you have a Resident object and you want to get the Bukkit Player object it is done this way;
+If you have a Resident object and you want to get the Bukkit Player object it is done in one of the following ways;
+
 ```java
 Player player = Bukkit.getServer().getPlayer(resident.getName());
 ```
