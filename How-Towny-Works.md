@@ -654,6 +654,8 @@ The 4 permission-types available are Build, Destroy, Switch and Itemuse.
 
 ### []()Perm-Groups
 
+<a href="https://www.youtube.com/watch?v=xeam2H-wEz8"><img alt="Click here for Major Graft's Towns & Nations Video" src="https://img.youtube.com/vi/xeam2H-wEz8/0.jpg" align=right height="200"></a>
+
 Each permission-type has 4 perm-groups to which the pemissions can be set for. 
 
 The four perm-groups are:
