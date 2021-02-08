@@ -41,6 +41,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
 -   [Multiworld](#multiworld)
     -   [World Toggles](#world-toggles)
 -   [Towny War](#towny-war)
+-   [Towny Regex Settings](#towny-regex-settings)
 -   [Using SQL instead of Flatfile](#using-sql-instead-of-flatfile)
     -   [Configuring SQL](#configuring-sql)
     -   [Converting Flatfile to SQL](#converting-flatfile-to-sql)
@@ -1128,6 +1129,32 @@ Towny can be turned off in a world in-game. While standing in a world type `/tow
 =============
 
 There are a number of war systems which are both built-in and available as add-ons to Towny, check them out at the [War Hub.](https://townyadvanced.github.io/wars.html)
+
+------------------------------------------------------------------------
+
+[]()Towny Regex Settings
+=============
+
+Towny controls which characters are allowed to be used in town and nation names via the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) regex_settings.
+
+The default settings are:
+```
+  regex:
+    name_filter_regex: '[\\\/]'
+    name_check_regex: ^[\p{L}a-zA-Z0-9._\[\]-]*$
+    string_check_regex: ^[a-zA-Z0-9 \s._\[\]\#\?\!\@\$\%\^\&\*\-\,\*\(\)\{\}]*$
+    name_remove_regex: '[^\P{M}a-zA-Z0-9\&._\[\]-]'
+```
+and allows for [unicode](https://en.wikipedia.org/wiki/List_of_Unicode_characters) (non-English) characters to be used. 
+
+There are some servers whose economy plugins cannot use unicode characters, or some times the server host's operating system will not let you save to the flatfile database with unicode characters. Or the server admin just doesn't want to have unicode characters in their town and nation names. These servers should use these regex settings instead:
+```
+  regex:
+    name_filter_regex: '[\\\/]'
+    name_check_regex: ^[a-zA-Z0-9._\[\]-]*$
+    string_check_regex: ^[a-zA-Z0-9 \s._\[\]\#\?\!\@\$\%\^\&\*\-\,\*\(\)\{\}]*$
+    name_remove_regex: '[^a-zA-Z0-9\&._\[\]-]'
+```
 
 ------------------------------------------------------------------------
 
