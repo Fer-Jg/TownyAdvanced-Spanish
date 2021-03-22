@@ -217,6 +217,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     - towny.command.town.othertown
     - towny.command.town.plots : Use of the /town {name} plots
     - towny.command.town.say
+    - towny.command.town.merge : Use of the /town merge {other-town-name}
     - towny.command.town.toggle.* : User has access to all town toggle commands (if a mayor or assistant, residents can toggle on their personal land.)
         -   towny.command.town.toggle.pvp
         -   towny.command.town.toggle.public
