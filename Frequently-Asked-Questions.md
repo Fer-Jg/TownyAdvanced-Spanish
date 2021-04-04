@@ -30,7 +30,7 @@ A: You have lots of options
 >    - **[iConomy5](https://github.com/iconomy5legacy/iConomy "May not receive future updates")**
 >  - Just about every economy plugin will work. You will still need either Vault or Reserve for Towny to be able to communicate with your economy plugin of choice.
 >  - Plugins known to not work: aConomy, EssentialsEconomy, Gringotts.
->  - Plugins which may not work: UltimateEconomy.
+>  - Plugins which may not work: UltimateEconomy, Economy.
 
 ----
 
