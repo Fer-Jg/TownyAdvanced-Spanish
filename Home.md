@@ -22,7 +22,7 @@ Towny includes a wide variety of features to offer instant enhancements to your 
     -   Players join towns and purchase plots of land.
     -   Players decide who can build, destroy, use "switchs" and use items on every plot they control.
     -   Towns can join together into nations, further structuring a server into teams.
-    -   Towns grant protection from monsters, pvp, fire, explosions and greifing.
+    -   Towns grant protection from monsters, pvp, fire, explosions and griefing.
 -   Wilderness Rules (Optional)
     -   Area between towns is wilderness, with its own build permissions.
     -   Limit players' interaction with the wild to just harvest-able blocks, keeping the wild pristine.
