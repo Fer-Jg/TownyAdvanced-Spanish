@@ -25,6 +25,7 @@ nomad:
     - towny.command.town.list.*
     - towny.command.town.reslist
     - towny.command.plot.perm
+    - towny.command.plot.perm.hud
     - towny.command.nation.list.*
     - towny.command.nation.townlist  
     - towny.command.nation.allylist
@@ -49,6 +50,7 @@ towns:
         - towny.command.town.online
         - towny.command.town.leave
         - towny.command.town.deposit
+        - towny.command.town.reclaim
         - towny.town.spawn.town
         - towny.chat.town
     mayor:
