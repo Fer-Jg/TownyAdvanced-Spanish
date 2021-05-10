@@ -26,17 +26,17 @@ Read the steps here carefully and you'll save yourself a lot of head-scratching 
 6. Continue reading below, do not skip the Configuring Existing Worlds section of this guide.
 
 ## Configuring Existing Worlds
-Towny has a config section called Default New World Settings. When you started the server it took the default Default Settings and applied it to all your existing worlds. This includes the revert-on-unclaim and explosion-revert settings for each world. You must configure your worlds' settings. _Many admins wonder why the revert-on-unclaim feature is rolling back towns when they cannot pay their upkeep and fall to ruin, when they've turned the revert-on-unclaim off in the config; **it is because they skipped this step of the installation.**_
-1. Navigate to the newly-created _plugins/Towny/data/worlds_ folder.
-2. Open each **worldname.txt**.
-3. Edit each file accordingly.
+Towny has a config section called Default New World Settings. When you started the server it took the default Default Settings and applied it to all your existing worlds. This includes the revert-on-unclaim and explosion-revert settings for each world.
+
+By default player cannot build/break in the wilderness, if you want to enable this use `/ta toggle wildernessuse`
+
+By default Towny will regenerate explosions in the wilderness, and when towns unclaim land their blocks will disappear and return to their pre-claim appearance. If you want to disable this use `/ta toggle regernations`.
 
 ## Configuring config.yml
 1. Navigate to _plugins/Towny/Settings_
 2. Open **config.yml**
 3. Carefully edit **config.yml** to your liking, including:
    * Townblock size defaulting at 16x16 (CANNOT BE CHANGED LATER!).
-   * Settings for future worlds (Settings for future **worldname.txt** files).
    * Settings for new towns and nations.
 4. Change the economy settings:
    * If you do not use an economy plugin, set `using_economy: false`.
@@ -61,7 +61,7 @@ Towny has a config section called Default New World Settings. When you started t
 ## Configuring townyperms.yml (semi-optional)
 Some admins make the mistake of placing Towny permission nodes into their permission plugin. The only permission nodes you must give in your permission plugin is `towny.admin.*` to your admin group(s).
 
-The only other permission node that isn't already given out is `towny.wild.*`. Giving this node will grant full build/destroy/switch/itemuse rights to players in the wilderness. You must decide if you want to give this out, and how.
+The only other permission node that isn't already given out is `towny.wild.*`. Giving this node will grant full build/destroy/switch/itemuse rights to players in the wilderness. You must decide if you want to give this out, and how. This is not required if you've use the `/ta toggle wildernessuse` command.
 
 * One option is to put it in the nomad section of the **townyperms.yml** file, which will enable all players server-wide to use the wilderness.
 * The other option is to give it in your permission plugin, to whichever rank you want to use the wilderness.
