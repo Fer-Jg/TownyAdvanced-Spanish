@@ -78,6 +78,13 @@ _Introduced as of v0.96.6.0_
 - `%townyadvanced_player_location_pvp%` - Displays (PVP) or blank, depending on pvp status of the location.
 - `%townyadvanced_nation_map_color_hex%` - Returns the hex colour code of the nation's mapcolor set with /t set mapcolor (seen in dynmap-towny.)
 
+_Introduced as of v0.96.8.0_
+- `%townyadvanced_is_nation_peaceful%` - If the player has a nation which is peaceful the language string "status_town_title_peaceful" will be shown: "&b(Peaceful)".
+- `%townyadvanced_is_town_peaceful%` - If the player has a town which is peaceful the language string "status_town_title_peaceful" will be shown: "&b(Peaceful)".
+- `%townyadvanced_player_location_plot_name%` - Displays a plot's name if it has one.
+- RELATIONAL placeholder: `%rel_townyadvanced_color%`
+  - Applies the colour codes set in the config.yml's new papi_relational_formatting section.
+  - Used in TAB and other plugins which can do Relational placeholders.
 </details>
 
 <details>
@@ -131,6 +138,7 @@ _Introduced as of v0.96.6.0_
 - `%townyadvanced_town_mayor%` - A resident's town's mayor's name.
 - `%townyadvanced_town_prefix%` - Display the config-defined prefix of the player's town (ex: ruins, settlement, ...)
 - `%townyadvanced_town_postfix%` - Display the config-defined postfix of the player's nation (ex: ruins, settlement, ...)
+- `%townyadvanced_is_town_peaceful%` - If the player has a town which is peaceful the language string "status_town_title_peaceful" will be shown: "&b(Peaceful)".
 
 
 #### Nation:
@@ -141,6 +149,8 @@ _Introduced as of v0.96.6.0_
 - `%townyadvanced_nation_prefix%` - Display the config-defined prefix of the player's town (ex: lands, realms, ...)
 - `%townyadvanced_nation_postfix%` - Display the config-defined postfix of the player's nation (ex: lands, realms, ...)
 - `%townyadvanced_nation_map_color_hex%` - Returns the hex colour code of the nation's mapcolor set with /t set mapcolor (seen in dynmap-towny.)
+- `%townyadvanced_is_nation_peaceful%` - If the player has a nation which is peaceful the language string "status_town_title_peaceful" will be shown: "&b(Peaceful)".
+
 
 #### Money:
 - `%townyadvanced_town_balance%` - Displays town bank value.
@@ -158,6 +168,9 @@ _Introduced as of v0.96.6.0_
 - `%townyadvanced_player_location_town_prefix%` - Displays the town's prefix or blank.
 - `%townyadvanced_player_location_town_postfix%` - Displays the town's postfix or blank.
 - `%townyadvanced_player_location_pvp%` - Displays (PVP) or blank, depending on pvp status of the location.
+- `%townyadvanced_player_location_plot_name%` - Displays a plot's name if it has one.
 
+#### Relational:
+- `%rel_townyadvanced_color%` - Applies the colour codes set in the config.yml's new papi_relational_formatting section, used in TAB and other plugins which can do Relational placeholders.
 
 </summary>
