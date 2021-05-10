@@ -184,6 +184,7 @@
     -   buy
         -   bonus {amount} - Buys available bonus townblocks.
     -   delete {town name} - Admin/Mayor command to delete a town from towny's data folder's files.
+    -   merge {town name} - {town name} is the town which will be merged into the town owned by the mayor using the command.
     -   outlawlist {town} - Displays a list of outlaws for a town.
     -   outlaw {add/remove} {name} - Adds or removes an outlaw from a town's outlaw list
     -   outpost
@@ -358,6 +359,7 @@
     -   deposit [amount] - Deposit money into a town's bank.
     -   withdraw [amount] - Withdraw money from a town's bank.
     -   bankhistory {#} - Opens a book GUI with # number of transactions listed, showing the town bank history.
+    -   unruin - Un-ruins a ruined town.
 
   - nation {nationname}
     -   add {town} - Admin command to invite/add a town to a nation.
@@ -371,6 +373,8 @@
     -   deposit [amount] - Deposit money into a nation's bank.
     -   withdraw [amount] - Withdraw money from a nation's bank.
     -   bankhistory {#} - Opens a book GUI with # number of transactions listed, showing the nation bank history.
+    -   ally [add|remove] {nationname} - Adds/Remove an ally for a nation.
+    -   enemy [add|remove] {nationname} - Adds/Remove an enemy for a nation.
     
   - reset - resets the towny config.yml to its current default.
 
@@ -381,6 +385,8 @@
     -   debug - Turns on/off debug mode.
     -   devmode - Turns on/off special devmode for when towny's devs join your server to find a bug.
     -   withdraw - Turns on/off town/nation's ability to withdraw money from their town/nation banks.
+    -  /ta toggle wildernessuse (on|off) - Turns on/off the build/destroy/switch/itemuse properties of all worlds.
+    -  /ta toggle regenerations (on|off) - Toggles explosion regen and unclaimed revert in the wilderness of each world off or on.
 
   - set
     - plot {town} - Sets a plot to a town.
@@ -414,8 +420,9 @@
     - Optional townless flag will limit purge to only residents who are not part of a town.
   - mysqldump
     - When your config has save & load set to mysql you can use this command to dump the mysql database to flatfile.
-  - database [save|load]
-    - Saves or loads the database.
+  - database 
+    - [save|load] - Saves or loads the database.
+    - remove titles - Removes all titles and surnames from all residents.
 
 
 []()/townyworld
