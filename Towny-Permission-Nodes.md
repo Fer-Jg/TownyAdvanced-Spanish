@@ -25,12 +25,13 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
 ## Admin/Moderator Nodes
 
 -   towny.admin: User is able to use /townyadmin, as well as the ability to build/destroy anywhere.
--   towny.admin.nation_zone : Made so that mods who dont have towny.admin can bypass the nation zone protection. Child node of towny.admin.
--   towny.admin.outlaw.teleport_bypass: User is unaffected by the outlaw-teleport feature, able to enter towns in which they are outlawed.
--   towny.admin.spawn: User is able to bypass the costs, warmups and cooldowns for spawning.
-    - towny.admin.spawn.nocharge: User will not be charged to spawn to towns.
-    - towny.admin.spawn.nocooldown: User will not have to wait to use the spawn commands after spawning.
-    - towny.admin.spawn.nowarmup: User will not have to wait to spawn after using the spawn commands.
+    -   towny.admin.nation_zone : Made so that mods who dont have towny.admin can bypass the nation zone protection. Child node of towny.admin.
+    -   towny.admin.outlaw.teleport_bypass: User is unaffected by the outlaw-teleport feature, able to enter towns in which they are outlawed.
+    -   towny.admin.town_commands.blacklist_bypass: Allows admins to not be restricted by either command-blocking lists.
+    -   towny.admin.spawn: User is able to bypass the costs, warmups and cooldowns for spawning.
+        - towny.admin.spawn.nocharge: User will not be charged to spawn to towns.
+        - towny.admin.spawn.nocooldown: User will not have to wait to use the spawn commands after spawning.
+        - towny.admin.spawn.nowarmup: User will not have to wait to spawn after using the spawn commands.
 
 -   towny.command.townyadmin.*
     -   towny.command.townyadmin
@@ -59,6 +60,8 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         -   towny.command.townyadmin.nation.delete
         -   towny.command.townyadmin.nation.rename
         -   towny.command.townyadmin.nation.bankhistory
+        -   towny.command.townyadmin.nation.enemy
+        -   towny.command.townyadmin.nation.add
     -   towny.command.townyadmin.toggle.* - Allows use of '/ta toggle ...'
         -   towny.command.townyadmin.toggle.war
         -   towny.command.townyadmin.toggle.neutral
@@ -191,6 +194,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     - towny.command.town.bankhistory
     - towny.command.town.rank.*
     - towny.command.town.reslist
+    - towny.command.town.merge
     - towny.command.town.outlaw : Allows outlawing players in your town.
     - towny.command.town.outpost.list : Child node of towny.town.spawn.town
     - towny.command.town.set.*
@@ -482,3 +486,4 @@ town_extraplots: {number}
 -   Giving these extra plots, allows them to claim their maxplot amount plus the extra plot amount
 
 
+ 
