@@ -8,6 +8,7 @@
     * [Getting a Nation](#getting-a-nation)
     * [Checking if a player can build/destroy somewhere](#checking-if-a-player-can-builddestroy-somewhere)
     * [Checking if Towny would prevent PVP damage](#checking-if-towny-would-prevent-pvp-damage)
+    * [Adding your own subcommands](#adding-your-own-subcommands)
  * [Some useful events](#some-useful-events)
  * [Towny Action Events](#towny-action-events)
  * [Of use to Shop Plugin developers](#of-use-to-shop-plugin-developers)
@@ -222,6 +223,42 @@ private void playerPVPEvent (EntityDamageByEntityEvent event) {
 }
 ```
 The preventDamageCall will return True if Towny would stop the damage from happening.
+
+### Adding your own subcommands
+
+As of version 0.97.0.1, custom subcommands can now be added to Towny's commands using the command addon API.
+
+To add your own subcommand, first you'll need to make your command class that implements CommandExecutor like normal commands.
+
+```java
+public class CustomCommand implements CommandExecutor {
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        sender.sendMessage("My custom command!");
+        return true;
+    }
+}
+```
+And then to add your custom command:
+
+```java
+TownyCommandAddonAPI.addSubCommand(CommandType.TOWN, "mycommand", new CustomCommand());
+```
+
+<details>
+<summary>List of currently available CommandTypes:</summary>
+RESIDENT, RESIDENT_SET, RESIDENT_TOGGLE, NATION, NATION_SET, NATION_TOGGLE, TOWN, TOWN_SET, TOWN_TOGGLE, PLOT, PLOT_SET, PLOT_TOGGLE, TOWNY, TOWNYADMIN, TOWNYADMIN_SET, TOWNYADMIN_TOGGLE, TOWNYWORLD, TOWNYWORLD_SET, TOWNYWORLD_TOGGLE
+</details>
+
+Adding your own tab completions is possible too:
+
+```java
+AddonCommand myCommand = new AddonCommand(CommandType.TOWN, "mycommand", new CustomCommand());
+myCommand.setTabCompletion(0, Arrays.asList("suggestions", "for", "first", "argument"));
+myCommand.setTabCompletion(1, Arrays.asList("suggestions", "for", "second", "argument"));
+TownyCommandAddonAPI.addSubCommand(myCommand);
+```
 
 ## Some useful events
 
