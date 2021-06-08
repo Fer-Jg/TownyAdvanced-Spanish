@@ -10,7 +10,7 @@
 -   [Miscellaneous Nodes](#miscellaneous-nodes)
 -   [Info/Option/Meta Nodes](#infooptionmeta-nodes)
 
-Towny has many permission nodes with which you can customize your server and it's separate worlds. By default Towny has already given out the correct permission nodes for a standard install in the townyperms.yml. Towny will read nodes from the townyperms.yml always, but it will also read permission nodes given by your (optional) permission plugin ie, GroupManager, LuckPerms. **Some admins make the mistake of placing Towny permission nodes into their permission plugin.** The only permission nodes you must give in your permission plugin is `towny.admin.*` to your admin group(s).
+Towny has many permission nodes with which you can customize your server and it's separate worlds. By default Towny has already given out the correct permission nodes for a standard install in the townyperms.yml. Towny will read nodes from the townyperms.yml always, but it will also read permission nodes given by your (optional) permission plugin ie, GroupManager, LuckPerms. **Some admins make the mistake of placing Towny permission nodes into their permission plugin.** The only permission nodes you must give in your permission plugin is `towny.admin` to your admin group(s).
 
 The only other permission node that isn't already given out is `towny.wild.*`. Giving this node will grant full build/destroy/switch/itemuse rights to players in the wilderness. You must decide if you want to give this out, and how:
 
