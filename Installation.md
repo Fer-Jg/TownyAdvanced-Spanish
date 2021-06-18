@@ -30,7 +30,7 @@ Towny has a config section called Default New World Settings. When you started t
 
 By default player cannot build/break in the wilderness, if you want to enable this use `/ta toggle wildernessuse`
 
-By default Towny will regenerate explosions in the wilderness, and when towns unclaim land their blocks will disappear and return to their pre-claim appearance. If you want to disable this use `/ta toggle regernations`.
+By default Towny will regenerate explosions in the wilderness, and when towns unclaim land their blocks will disappear and return to their pre-claim appearance. If you want to disable this use `/ta toggle regenerations`.
 
 ## Configuring config.yml
 1. Navigate to _plugins/Towny/Settings_
