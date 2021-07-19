@@ -40,7 +40,7 @@ You may enter the text below into your pom.xml file:
 	<dependency>
 	    <groupId>com.github.TownyAdvanced</groupId>
 	    <artifactId>Towny</artifactId>
-	    <version>0.96.7.0</version>
+	    <version>0.97.0.0</version>
 	    <scope>provided</scope>
 	</dependency>
   </dependencies>  
