@@ -40,6 +40,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[TownyBlue](https://www.spigotmc.org/resources/townyblue.85916/)** - Get Towny on your [BlueMap](https://www.spigotmc.org/resources/bluemap.83557/)!
 
+**[TownyMissions](https://www.spigotmc.org/resources/townymission-a-must-have-addition-to-towny-servers.94472/)** - Get a Missions plugin to get some good friendly competition going on your server.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
