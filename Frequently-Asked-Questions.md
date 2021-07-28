@@ -4,17 +4,17 @@ A: Use `/ta toggle wildernessuse`.
 
 ----
 
+Q: Where did the notifications for entering/exiting towns and the wilderness go?
+
+A: If you are on MC 1.17.* you have to update your Towny to the [latest pre-release version](https://github.com/TownyAdvanced/Towny/releases).
+
+----
+
 Q: When towns fall or unclaim land all the blocks start to disappear back into wilderness. How do I stop this?
 
 A: Using `/tw toggle revertunclaim` in each world. 
 
 > - The New World Settings section of the [config](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) is only default settings for new worlds, it's explained in the config section comments, the [install guide](https://github.com/TownyAdvanced/Towny/wiki/Installation#configuring-existing-worlds) and the [how towny works](https://github.com/TownyAdvanced/Towny/wiki/How-Towny-Works#reverting-unclaimed-townblocks-to-their-original-state-on-unclaim) page. You need to be using the /tw toggle commands or manually setting the worldname.txt file.
-
-----
-
-Q: Why cant people see each other's chat since updating to Towny 0.96.6.0 and TownyChat 0.85?
-
-A: TownyChat 0.86 fixes this. [Get it here.](https://github.com/TownyAdvanced/TownyChat/releases/tag/0.86)
 
 ----
 
