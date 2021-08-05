@@ -42,6 +42,8 @@ The following plugins have used the Towny API to use their features according to
 
 **[TownyMissions](https://www.spigotmc.org/resources/townymission-a-must-have-addition-to-towny-servers.94472/)** - Get a Missions plugin to get some good friendly competition going on your server.
 
+**[Towny-Info](https://github.com/honnisha/towny-info)** - Sign-based Town and Nation leaderboards with teleportation and more, by Honnisha.
+
 ## Plugins using Metadata
 
 **[Floristics](https://github.com/JayAvery/floristics)** - A plugin that applies natural plant growth to Minecraft 
