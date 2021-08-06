@@ -22,6 +22,9 @@ The API uses a data field system for storing metadata, which essentially works a
 
 Each of the data fields hold a specific type of data that is properly deserialized when Towny loads.
 
+### Custom Data Fields
+In the case that none of the Towny-provided data fields satisfy your use case, you can create a custom data field class detailed on [this page](https://github.com/TownyAdvanced/Towny/wiki/Creating-Custom-Metadata-Types).
+
 ### Parts of a `DataField`
 Each data field will essentially have three member variables: key, value, and label.
 * Key: A unique non-empty string that identifies metadata property. Metadata is not shared between towny objects, so keys only need to be unique against other metadata keys for that specific towny object. However, a good general key should prefix the plugin name before the keyname e.g. `towny_explosion`.
