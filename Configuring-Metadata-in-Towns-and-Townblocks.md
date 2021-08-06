@@ -10,17 +10,17 @@ The Towny API has a list of properties already hooked to towny objects that are 
 Check out [Plugins using Metadata](https://github.com/TownyAdvanced/Towny/wiki/Plugins-using-the-Towny-API#plugins-using-metadata)
 
 ### How to use the Metadata within the TownyAPI
-The API uses a data field system for storing metadata, which essentially works a key-value storage. Plugins will create their own unique keys, and store a persistent primitive value.
+The API uses a data field system for storing metadata, which essentially works a key-value storage. Plugins will create their own unique keys, and store a persistent value. Towny comes equipped with several primitive data fields already that work out of the box. However, Towny also provides an API to create and store custom data fields that allow storing more than just primitive values.
 
-#### Anatomy of Data Fields
-- `CustomDataField`
+#### List of Towny-Provided Data Fields
+- `CustomDataField` (Base Class)
   - `IntegerDataField`
   - `StringDataField`
   - `BooleanDataField`
   - `DecimalDataField`
   - `LongDataField`
 
-Each of the data field hold a specific type of data that can be properly deserialized when towny loads.
+Each of the data fields hold a specific type of data that is properly deserialized when Towny loads.
 
 ### Parts of a `DataField`
 Each data field will essentially have three member variables: key, value, and label.
@@ -42,23 +42,25 @@ The metadata will be registered on load.
 
 ```java
 public class Plugin extends JavaPlugin {
-
+    // Parts of a datafield
     private static String keyname = "plugin_intfield"; // This key must be unique to your plugin.
     private static int defaultVal = 0; // This is the default value your data field will have whenever its added to an object.
     private static String label = "Super Duper Int Field"; // Label that will be displayed when the towny object's status is shown.
+    // Use those parts to create a new data field to store an integer
     private static IntegerDataField myCustomIntegerField = new IntegerDataField(keyname, defaultVal, label);
 
     // Called when the plugin first loads.
     @Override
     public void onLoad() {
-        // Try to register the data field.
+        // (Optional) Try to globally register the data field.
+        // Globally registering data fields allow them to be modified in-game by administrators.
         try {
             TownyAPI.getInstance().registerCustomDataField(myCustomIntegerField);
         } catch (KeyAlreadyRegisteredException e) {
             getLogger().warning(e.getMessage()); // A flag with the same key name already exists try again
         }
 
-        getLogger().info("Flag successfully registered!");
+        getLogger().info("Custom data field successfully registered!");
     }
     
     public static IntegerDataField getMyCustomIntegerField() {
@@ -67,8 +69,9 @@ public class Plugin extends JavaPlugin {
 }
 ```
      
-### Attaching metadata to towny objects
+### Attaching metadata to Towny objects
 ```java
+// Create a new instance of the data-field passing in a unique key, and a default value.
 IntegerDataField idf = new IntegerDataField("plugin_intfield", 10);
 
 // For townblock objects
@@ -80,7 +83,7 @@ town.addMetaData(idf);
 // For nation objects
 nation.addMetaData(idf);
 
-// Same for the rest of the towny objects
+// Same for the rest of the Towny objects
 ```
 
 Alternatively, if you want your metadata available to all towns by default you could loop through all of the objects on initialization and add the custom data.
@@ -94,6 +97,8 @@ public void manipulateData(TownBlock townBlock) {
     // Check if the townblock has metadata matching they key.
     if (townBlock.hasMeta(idf.getKey())) {
         // Get the generic data field from the townblock.
+        // In later versions, this process can be simplified via TownyObject#getMeta(key, IntegerDataField.class) 
+        // which will fetch the data field matching the key as an IntegerDataField.
         CustomDataField cdf = townBlock.getMeta(idf.getKey());
         // Make sure that the datafield is an integer data field which is what 'idf' is.
         if (cdf instanceof IntegerDataField) {
