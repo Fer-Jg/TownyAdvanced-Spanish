@@ -46,6 +46,8 @@ Ruins can optionally be preserved from build/destroy actions.
 
 Ruins display an actionbar message when they are entered into. 
 
+Ruins appear on Towny's ASCII map.
+
 Ruins' townblocks which are claimed by a town are removed from the ruin. If a ruin's homeblock is claimed by a town the ruin is removed entirely.
 
 Note: this plugin somewhat assumes you have the revert-on-unclaim feature deactivated. This is not a hard-restriction, but future features will likely mean restoring the ruin would be detrimental.
