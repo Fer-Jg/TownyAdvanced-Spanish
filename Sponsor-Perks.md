@@ -15,7 +15,9 @@ Camps are limited to the min-distance-from-townblocks Towny setting, so player c
 
 Players that own the Camp can make a town at that location.
 
-Camps are protected from Build/Destroy/Switch/Itemuse/Explosion and Burning actions.
+Camps are protected from Build/Destroy/Switch/Itemuse. Camp owners can allow their friendlist to interact based on the owners perm line.
+
+Explosion and Burning actions are always protected.
 
 Chunk Notifications are shown when players enter and exit Camps.
 
