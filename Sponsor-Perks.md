@@ -1,6 +1,7 @@
 Folks that [sponsor me on GitHub](https://github.com/sponsors/LlmDl) will gain access to some exclusive plugins, which are available on the [Discord](https://discord.gg/gnpVs5m) in private channels. Below is a summary of what you get access to when you choose to support my work on Towny and the TownyAdvanced suite of plugins. If you've become a sponsor drop into the discord and give me an @ letting me know!
 
 Your developer,
+
 LlmDl
 
 ## TownyCamps
