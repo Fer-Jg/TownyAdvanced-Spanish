@@ -21,6 +21,8 @@ Explosion and Burning actions are always protected.
 
 Chunk Notifications are shown when players enter and exit Camps.
 
+Camps appear in-game on Towny's ASCII map.
+
 Camps are removed when:
 - the campfire is broken,
 - the campfire duration passes (defaults to 24 hours, is configurable,)
