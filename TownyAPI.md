@@ -40,7 +40,7 @@ You may enter the text below into your pom.xml file:
 	<dependency>
 	    <groupId>com.github.TownyAdvanced</groupId>
 	    <artifactId>Towny</artifactId>
-	    <version>0.97.0.0</version>
+	    <version>0.97.1.0</version>
 	    <scope>provided</scope>
 	</dependency>
   </dependencies>  
@@ -177,9 +177,16 @@ import com.palmergames.bukkit.towny.object.Town;
 if (resident.hasTown())
    Town town = TownyAPI.getInstance().getDataSource().getTown(resident.getTown()); 
 
+// Or if you want to bypass the possible NotRegisteredException thrown by Resident#GetTown() use:
+Town town = resident.getTownOrNull();
+// Just remember to use resident.hasTown() or test that town isn't null.
+
 //When you've already got a townblock.
 if (townblock.hasTown())
    Town town = TownyAPI.getInstance().getDataSource().getTown(townblock.getTown());
+
+// Or use:
+Town town = townblock.getTownOrNull();
 ```
 You can skip the .hasTown() checks if you want to surround your code with a Try/Catch block.
 
@@ -195,6 +202,10 @@ if (town.hasNation())
 //When you've already got a resident.
 if (resident.hasTown() && resident.getTown().hasNation())
     Nation nation = TownyAPI.getInstance().getDataSource().getNation(resident.getTown().getNation());
+// Or:
+Nation nation = town.getNationOrNull();
+// Or
+Nation nation = resident.getNationOrNull();
 ```
 You can skip the .hasNation() checks if you want to surround your code with a Try/Catch block.
 
