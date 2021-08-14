@@ -180,6 +180,8 @@ Some ranks are assigned by Mayors or Kings, and supplement the ranks the players
 
 A resident of a town can see the ranks within their town using `/town ranklist`. A mayor can use `/town rank {add|remove} {playername} {rankname}` to give a player a new rank within their town. A king can use `/nation rank {add|remove} {playername} {rankname}` to give a player a new rank within their nation.
 
+As of Towny 0.97.1.0 admins are able to edit the townyperms.yml ingame using the `/ta townyperms` command. See `/ta townyperms ?` for commands and information.
+
 []()Configuring Mayor and King Titles, Town and Nation Names
 ------------------------------------------------------------
 
@@ -422,9 +424,13 @@ Inn plot allows anyone to use a bed to set their `/res spawn` and spawn on death
 Jail plots are designated with `/plot set jail`.
 
 Players can become jailed if:
--   The player's mayor/sheriffs send them to jail using the `/t toggle jail [jailnumber] [residentname] {days}` command.
--   An attacker who attacks a town which considers him an Enemy (Nation-relationship) dies in that Town. He is sent to the first available Jail plot of the defending town.
--   An attacker who attacks a town which considers him an Outlaw dies in that Town by a player with the `towny.outlaw.jailer` permission node. He is sent to the first available Jail plot of the defending town. In the config `jail.is_jailing_attacking_outlaws` must be true.
+-   The player's mayor/sheriffs send them to jail using one of the following commands:
+    - `/town jail [name]` - Jails the given player for 1 hour, must be a resident of your own town.
+    - `/town jail [name] {hours}` - Jails the given player for the given hours.
+    - `/town jail [name] {hours} {jail}` - Jails the given player for the given hours, in the given jail plot (which is a number.)
+    - `/town jail [name] {hours} {jail} {cell}` - Jails the given player for the given hours, in the given jail plot and jail cell (which are both numbers.)
+-   An attacker who attacks a town which considers him an Enemy (Nation-relationship) dies in that Town. He is sent to the defending town's primaryjail.
+-   An attacker who attacks a town which considers him an Outlaw dies in that Town by a player with the `towny.outlaw.jailer` permission node. He is sent to the defending town's primaryjail. In the config `jail.is_jailing_attacking_outlaws` must be true.
 
 Jailed players become unjailed if:
 -   they leave their town and become a nomad,
@@ -434,12 +440,25 @@ Jailed players become unjailed if:
 
 In addition:
 -   Jailed players cannot teleport.
--   Jailed players cannot use Ender Pearls unless enabled in the config.
+-   Jailed players cannot use Ender Pearls or Chorus Fruit unless enabled in the config.
 -   Jailed players who die are sent back to their prescribed jail plot.
 -   Jailed players do not give monetary payouts when they are killed.
 -   Jailed players show their jailed status in the `/res [playername]` screen, along with the town they are jailed in.
 -   It is suggested you make a new town rank in the townyperms.yml called Sheriff, and give that rank the `towny.command.town.toggle.jail` node. Newly generated townyperms.yml files will contain this rank by default.
 -   There is a list in the config at `jail.blacklisted_commands` where you can set a list of commands which jailed players cannot use.
+
+Also:
+-   Optionally in the config: newly-jailed players who log out before they can be teleported to their cell will be killed.
+    - The player is warned to prevent surprises.
+    - Works similar to many combat-logging plugins.
+-   Optional new-player jail immunity
+    - Set in the config, how long a new player to the server is protected from being jailed.
+  
+Jail plots can have multiple jail cells in them. Jail cells are made using `/plot jailcell add` and removed using `/plot jailcell remove`. Jail cells' spawn locations are marked ingame using a ring of particles.
+
+A town can see a list of their jails using `/town jail list`. A town sets their primaryjail using `/town set primaryjail` while standing in a jail plot. Their first jail will automatically become the primaryjail.
+
+Players which are jailed will receive a nice book explaining to them how they can get out of jail, with information pulled from the the server's config file.
 
 ### []()Farm Plots
 <p><a href="https://www.youtube.com/watch?v=gJihLaYeWR4"><img alt="Click here for Major Graft's Video about Plot Types" src="https://img.youtube.com/vi/gJihLaYeWR4/0.jpg" align=right height="200"></a></p>
@@ -505,6 +524,8 @@ The map in towny displays the grid system of plots. The map can be viewed once u
 
 A larger version of the map can be seen using `/towny map big`.
 
+A hud version of the map can be seen using `/towny map hud`.
+
 []()Plot Regeneration & Unclaimed Plots
 ---------------------------------------
 
@@ -522,6 +543,12 @@ You can configure certain block types you don't want restored to prevent players
 
 >-   Block types to not restore are configured in `plotManagementIgnoreIds` in the world's txt file towny\data\worlds\worldname.txt.
 >-   Defaults for new worlds are set in the config at `new_world_settings.plot_management.revert_on_unclaim.block_ignore`
+
+Alternatively, you can use a whitelist to only restore blocks on the list:
+
+>-   The whitelist is set in the world's PlotManagementWildRegenBlockWhitelist="" line.
+>    - When this is empty the whitelist does not function and the plotManagementIgnoreIds list is used instead.
+>-   Defaults for new worlds are set in the config at `new_world_settings.plot_management.wild_revert_on_explosion_block_whitelist`.
 
 ### []()Deleting pre-defined blocks on unclaim
 
@@ -723,6 +750,17 @@ Explosion and fire toggles are overridden by a mayor's town toggles. The precedi
 -   `/res set perm reset` - Propagates the perm line in `/res` to ALL plots owned by that resident.
 -   `/town set perm reset` - Propagates the perm line in `/town` to ALL town-owned plots owned by that town.
 -   These commands also affect the `/town toggle` and `/plot toggle` settings.
+
+### []()Setting trusted lists and plot perm overrides
+
+As of Towny 0.97.1.0 there are Trusted lists for plots and towns, and plot's can have very fine-grained overrides set up. These features allow players to let other players work in towns and plots while not having to be restricted by the Friend/Resident/Town/Nation/Ally/Outsider plotgroups.
+
+Towns may add a player as a trusted person in their town using `/town trust add {name}`, and remove them from the trusted list using `/town trust remove {name}`. Trusted players are treated similar to the mayor in all of the town's plots, able to do any build/destroy/switch/itemuse action.
+
+A player may add or remove another player as trusted in their plots using `/plot trust add|remove {name}`. While a player is trusted in a plot, they have the same plot permissions as the plot owner, able to do any build/destroy/switch/itemuse action.
+
+Plot perm overrides lets a player make very specific changes to how specific players are able to use plots. To begin a player is added or removed from a plot's perm overrides using `/plot perm add|remove {name}`. After a player is on this list, the plot owner can use `/plot perm gui` to open a GUI showing an inventory of player heads (the players who've been added to the plot perm override with `/plot perm add {name}.`) When a head is clicked on, a new inventory will display the options for Build/Destroy/Switch/ItemUse and a clickable book which explains how the rest of the system works. Players on the perm overrides list will have specific build/destroy/switch/itemuse permissions in the plot, overriding any other plot perm settings.
+
 
 []()Protection Additions Found in Towny Advanced
 ------------------------------------------------
@@ -1121,6 +1159,7 @@ Towny can be turned off in a world in-game. While standing in a world type `/tow
 -   revertentityexpl - toggles the revert-on-explosion (caused by entity explosions) in the wilderness setting for that world.
 -   revertblockexpl - toggles the revert-on-explosion (caused by block explosions) in the wilderness setting for that world.
 -   plotcleardelete - toggles the ability of players to use `/plot clear` in plots they own.
+-   unclaimblockdelete {on|off} - Turns on/off the delete-blocks-on-unclaim feature in the world.
 -   warallowed - toggles whether event war is allowed in the world.
 
 ------------------------------------------------------------------------
@@ -1166,7 +1205,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 []()Configuring MySQL
 -------------------
 
--   Open the \towny\settings\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
+-   Open the \towny\settings\\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
 -   Navigate to the sql: section.
 -   Configure towny with your mysql database hostname/port/username and password.
 -   Set the desired mysql flags in the flags section.
@@ -1178,7 +1217,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 ------------------------------
 
 1.  Stop your server
-2.  Open the \towny\settings\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
+2.  Open the \towny\settings\\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
 3.  Find the `database_load`, make sure it's set to flatfile.
 4.  Find the `database_save`, set it to either mysql, sqlite or h2.
 5.  Save the config and start your server.
@@ -1193,7 +1232,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 ------------------------------
 
 1.  Stop your server
-2.  Open the \towny\settings\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
+2.  Open the \towny\settings\\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
 3.  Find the `database_load`, make sure it's set to your database type (mysql, sqlite or h2.
 4.  Find the `database_save`, set it to flatfile
 5.  Save the config and start your server.
