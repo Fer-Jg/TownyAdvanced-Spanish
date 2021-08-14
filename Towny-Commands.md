@@ -29,6 +29,7 @@
     -   farmblocks - Shows the blocks usable in farm plots.
     -   itemuse - Shows the items in the item_use_ids list.
     -   map - Shows the towny map.
+        - hud - Activates the map in the player's scoreboard.
     -   plotclearblocks - Shows the blocks deleted using `/plot clear`
     -   prices - Shows taxes/costs associated with running a town.
     -   switches - Shows the blocks in the switch_ids list.
@@ -67,7 +68,13 @@
         -   circle/rect - Set a shape.
             -   {# (radius around current position)} - Radius of the area to set notforsale.
     -   evict - Used to remove a plot from a plot owner, usually by the mayor or assistant.
+    -   trust
+        - add {name} - Adds a player as Trusted on the plot.
+        - remove {name} - Removes a player from being Trusted on the plot.
     -   perm - Shows the perm line of the plot in which the player stands.
+        - gui - opens the GUI to configure the plot perm override.
+        - add {name} - Adds a player to the plot perm override.
+        - remove {name} - Removes a player from the plot perm override.
     -   perm hud - Toggles on/off the plot perm hud scoreboard which shows the perm line of the plot in which the player stands along with more useful plot info.
     -   set
         -   reset - Sets a shop/embassy/arena/wilds plot back to a normal plot.
@@ -97,12 +104,23 @@
     -   group
         -   add|new|create {groupname} - Creates a plot group where a player is standing, also adds plots to an existing group.
         -   remove - Removes the plot stood in from its plot group.
+        -   delete - Deletes a plot group entirely.
         -   rename {newname} - Renames a plot group.
         -   set {plottype} - Sets the group to a specified plot type. Not able to be used for Jail plots.
         -   set perm ... - Used to set the perm line of the group you are standing in. See above section for /plot set perm for remainder of commands.
         -   toggle ... - Used to toggle plot settings. See above section for /plot set toggle for remainder of commands.
         -   forsale|fs {price} - Set the group for sale at the set price.
         -   notforsale|nfs - Set the group not for sale.
+        -   trust
+            - add {name} - Adds a player as Trusted on the plot group.
+            - remove {name} - Removes a player from being Trusted on the plot group.
+        -   perm
+            - gui - Opens the GUI to edit the plot perm override.
+            - add {name} - Adds a player to the plot perm override.
+            - remove {name} - Removes a player from the plot perm override.
+    -   jailcell
+        -   add - Adds a jail cell to a jail plot, where the player is stood.
+        -   remove - Removes a jail cell from a jail plot, where the player is stood.
 
 []()/resident
 -------------
@@ -157,6 +175,7 @@
         - by public {page #} - lists public towns first, in order of most residents to least residents.
         - by ruined {page #} - lists ruined towns first, in order of most residents to least residents.
         - by bankrupt {page #} - lists bankrupt towns first, in order of most residents to least residents.
+        - by founded {page #} - order by founded date, oldest first.
     -   online - Shows players in your town which are online.
     -   plots {townname} - Shows a helpful list of plots and their types/revenue which are owned by the town.
     -   new {townname} - Creates a new town.
@@ -190,6 +209,8 @@
     -   outpost
         -   {# (where # equals the corresponding outpost's number)} - Teleports to an outpost.
         -   {list} - lists your town's outposts.
+    -   plotgrouplist {townname} {page #} - Lists a town's plotgroups with forsale and price indicated.
+    -   purge {days} - Kicks residents from the town who have been inactive for the given number of days, exempts npcs and mayors.
     -   ranklist - Displays residents and their ranks.
     -   rank {add|remove} {playername} {rankname} - Grants or removes a rank to a resident of the town.
     -   reclaim - allows a resident to reclaim their ruined town.
@@ -203,6 +224,7 @@
         -   homeblock - Sets the homeblock and spawn of your town.
         -   spawn - Sets the town spawn, must be done inside the homeblock.
         -   spawncost - Set the cost of spawning to a public town. Doesn't affect town residents, nation members and nation-allies.
+        -   mapcolor {color} - Sets a town's mapcolor seen in the dynmap.
         -   name {name} - Change your town's name.
         -   outpost - Resets the outpost's spawn point to the player location. Must be used in an existing outpost plot.
         -   jail - Resets a jail plot's spawn to current position within a jail plot.
@@ -224,6 +246,7 @@
         -   embassytax {$} - Set taxes collected from each resident daily, per embassy plot that they own.
         -   title {name} {titlegoeshere} - Mayor command to add a Title to a member of the town.
         -   surname {name} {surnamegoeshere} - Mayor command to add a Suffix to a member of the town.
+        -   primaryjail - Sets your town's primary jail.
 
     -   toggle
         -   explosion - Turn on/off explosions in town.
@@ -233,9 +256,18 @@
         -   pvp - Turn on/off pvp in town.
         -   taxpercent - Turn on/off taxing by percent/flatrate.
         -   open - Turn on/off public joining to your town.
-        -   jail {number} {residentname} - Sends a resident of your town to the jail spawn number specified. Same command unjails a player.
-        -   jail {number} {residentname} {days} - Sends a resident of your town to the jail spawn number specified, for the number of Towny days specified.
     -   join {townname} - Command to join a town that doesn't require invites.
+    -   jail
+        -   list - Shows jail number, name, coord, cellcount and which jail is the primary jail.
+        -   {name} - Jails the given player for 1 hour, must be a resident of your own town.
+        -   {name} {hours} - Jails the given player for the given hours.
+        -   {name} {hours} {jail} - Jails the given player for the given hours, in the given jail plot (which is a number.)
+        -   {name} {hours} {jail} {cell} - Jails the given player for the given hours, in the given jail plot and jail cell (which are both numbers.)
+    -   unjail {name} - Unjails someone in your town's jail.
+    -   trust 
+        -   add {name} - Adds a player as Trusted to the entire town.
+        -   remove {name} - Removes a player from being Trusted by the entire town.
+
 
 []()/nation
 -----------
@@ -252,6 +284,7 @@
         - by online {page #} - order by how many players are online at that moment.
         - by open {page #} - ordered by open first, number of residents second.
         - by public {page #} - order by public first, number of residents second.
+        - by founded {page #} - order by founded date, oldest first.
     -   online - Shows players in your nation which are online.
     -   {nation} - Shows a player the /nation screen of another nation.
     -   leave - Mayor command to leave the nation they are a part of.
@@ -330,6 +363,7 @@
     - meta - used to view a plot's metadata.
         - set [key] [value] - Sets a metadata.
         - [add|remove] [key] - Adds or removes a metadata.
+    - claimedat - Shows when the plot was claimed.
   - resident 
     -   {oldname} rename {newname} - Admin command to manually rename a resident to a new name. Not need if TownyNameUpdater.jar is present.
     -   {residentname} friend [add|remove|clear|list] - Allows admins to manipulate a resident's friends list.
@@ -385,8 +419,8 @@
     -   debug - Turns on/off debug mode.
     -   devmode - Turns on/off special devmode for when towny's devs join your server to find a bug.
     -   withdraw - Turns on/off town/nation's ability to withdraw money from their town/nation banks.
-    -  /ta toggle wildernessuse (on|off) - Turns on/off the build/destroy/switch/itemuse properties of all worlds.
-    -  /ta toggle regenerations (on|off) - Toggles explosion regen and unclaimed revert in the wilderness of each world off or on.
+    -   wildernessuse (on|off) - Turns on/off the build/destroy/switch/itemuse properties of all worlds.
+    -   regenerations (on|off) - Toggles explosion regen and unclaimed revert in the wilderness of each world off or on.
 
   - set
     - plot {town} - Sets a plot to a town.
@@ -423,6 +457,12 @@
   - database 
     - [save|load] - Saves or loads the database.
     - remove titles - Removes all titles and surnames from all residents.
+  - townyperms
+    - grouplist - Lists all the groups in the townyperms.yml
+    - group [groupname] : lists the nodes held by a group.
+    - group [groupname] addperm|removeperm [node] : adds or removes a node to/from a group.
+    - townrank addrank|removerank [rank] : adds or removes a town rank.
+    - nationrank addrank|removerank [rank] : adds or removes a nation rank.
 
 
 []()/townyworld
@@ -451,6 +491,7 @@
         -   revertblockexpl - Turn on/off the reverting of explosions by blocks in the wilderness feature for that world.
         -   warallowed - Turn on/off whether EventWar affects the world.
         -   plotcleardelete - Turn on/off whether the `/plot clear` command can be used.
+        -   unclaimblockdelete {on|off} - Turns on/off the delete-blocks-on-unclaim feature in the world.
     -   set
         -   wildname {name} - Sets name of the wilderness.
         -   wildperm {perm} .. {perm} - Deprecated.
