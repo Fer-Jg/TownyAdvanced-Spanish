@@ -28,6 +28,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     -   towny.admin.nation_zone : Made so that mods who dont have towny.admin can bypass the nation zone protection. Child node of towny.admin.
     -   towny.admin.outlaw.teleport_bypass: User is unaffected by the outlaw-teleport feature, able to enter towns in which they are outlawed.
     -   towny.admin.town_commands.blacklist_bypass: Allows admins to not be restricted by either command-blocking lists.
+    -   towny.admin.updatealerts: Determins if an admin sees update notifications.
     -   towny.admin.spawn: User is able to bypass the costs, warmups and cooldowns for spawning.
         - towny.admin.spawn.nocharge: User will not be charged to spawn to towns.
         - towny.admin.spawn.nocooldown: User will not have to wait to use the spawn commands after spawning.
@@ -73,6 +74,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     -   towny.command.townyadmin.givebonus - Allows use of '/ta givebonus...'
     -   towny.command.townyadmin.reload - Allows use of '/ta reload'
     -   towny.command.townyadmin.reset - Generate a fresh config.yml and perform a full reload of Towny.
+    -   towny.command.townyadmin.townyperms - Allows for ingame editing of the townyperms.yml.
     -   towny.command.townyadmin.backup - Perform a backup
     -   towny.command.townyadmin.newday - Run a new day event for taxes.
     -   towny.command.townyadmin.purge - Remove old resident files 'ta purge 30'
@@ -114,13 +116,19 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     -   towny.command.plot.notforsale
     -   towny.command.plot.forsale
     -   towny.command.plot.evict
+    -   towny.command.plot.jailcell
     -   towny.command.plot.perm
+        - towny.command.plot.perm.*
+        - towny.command.plot.perm.gui
+        - towny.command.plot.perm.add
+        - towny.command.plot.perm.remove
         - towny.command.plot.perm.hud
     -   towny.command.plot.toggle.*
         -   towny.command.plot.toggle.pvp
         -   towny.command.plot.toggle.explosion
         -   towny.command.plot.toggle.fire
         -   towny.command.plot.toggle.mobs
+    -   towny.command.plot.trust
     -   towny.command.plot.set.*
         -   towny.command.plot.set.perm
         -   towny.command.plot.set.reset
@@ -135,11 +143,14 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     -   towny.command.plot.group.*
         - towny.command.plot.group.add
         - towny.command.plot.group.remove
+        - towny.command.plot.group.delete
         - towny.command.plot.group.rename
         - towny.command.plot.group.set
         - towny.command.plot.group.toggle
         - towny.command.plot.group.forsale
         - towny.command.plot.group.notforsale
+        - towny.command.plot.group.trust
+        - towny.command.plot.group.perm
 
 ## /Resident Nodes
 
@@ -187,6 +198,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         - towny.command.town.list.public
         - towny.command.town.list.ruined
         - towny.command.town.list.bankrupt
+        - towny.command.town.list.founded
     - towny.command.town.new : Required to create a town.
     - towny.command.town.leave
     - towny.command.town.withdraw
@@ -194,9 +206,14 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
     - towny.command.town.bankhistory
     - towny.command.town.rank.*
     - towny.command.town.reslist
+    - towny.command.town.jail
+    - towny.command.town.jail.list
+    - towny.command.town.unjail
     - towny.command.town.merge
     - towny.command.town.outlaw : Allows outlawing players in your town.
     - towny.command.town.outpost.list : Child node of towny.town.spawn.town
+    - towny.command.town.plotgrouplist
+    - towny.command.town.purge
     - towny.command.town.set.*
         -   towny.command.town.set.board
         -   towny.command.town.set.mayor
@@ -212,7 +229,9 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         -   towny.command.town.set.plotprice
         -   towny.command.town.set.shopprice
         -   towny.command.town.set.embassyprice
+        -   towny.command.town.set.mapcolor
         -   towny.command.town.set.name : player can rename their town
+        -   towny.command.town.set.primaryjail
         -   towny.command.town.set.tag
         -   towny.command.town.set.taxpercentcap
         -   towny.command.town.set.title
@@ -230,7 +249,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
         -   towny.command.town.toggle.mobs
         -   towny.command.town.toggle.taxpercent
         -   towny.command.town.toggle.open
-        -   towny.command.town.toggle.jail
+    - towny.command.town.trust
     - towny.command.town.mayor
     - towny.command.town.delete : player can delete their town
     - towny.command.town.join : a player can join an open town
@@ -272,6 +291,7 @@ _**Again because so many people seem to have trouble reading the above 2 paragra
 	    -   towny.command.nation.list.townblocks
 	    -   towny.command.nation.list.online
 	    -   towny.command.nation.list.public
+	    -   towny.command.nation.list.founded
 	-   towny.command.nation.new
 	-   towny.command.nation.leave
 	-   towny.command.nation.withdraw
