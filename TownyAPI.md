@@ -46,6 +46,20 @@ You may enter the text below into your pom.xml file:
   </dependencies>  
 ```
 
+Alternatively, if you are using Gradle, you may copy the text below into your gradle.build file:
+```groovy
+repositories {
+    maven { 
+     url = 'https://jitpack.io' 
+    }
+}
+
+dependencies {
+    compileOnly 'com.github.TownyAdvanced:Towny:0.97.1.0'
+}
+
+```
+
 <details>
 <summary>For versions before 0.96.1.11 you will have to use the Github Packages which has a fair bit more setup required:</summary>
 
