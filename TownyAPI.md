@@ -49,9 +49,7 @@ You may enter the text below into your pom.xml file:
 Alternatively, if you are using Gradle, you may copy the text below into your gradle.build file:
 ```groovy
 repositories {
-    maven { 
-     url = 'https://jitpack.io' 
-    }
+    maven { url = 'https://jitpack.io' }
 }
 
 dependencies {
