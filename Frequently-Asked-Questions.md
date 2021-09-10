@@ -29,7 +29,7 @@ A: You have lots of options
 >    - **[HellConomy](https://www.spigotmc.org/resources/hellconomy.67355/)**
 >    - **[iConomy5](https://github.com/iconomy5legacy/iConomy "May not receive future updates")**
 >  - Just about every economy plugin will work. You will still need either Vault or Reserve for Towny to be able to communicate with your economy plugin of choice.
->  - Plugins known to not work: aConomy, XConomy, Gringotts. EssentialsEconomy can work only if you use their dev builds. (2.19+)
+>  - Plugins known to not work: aConomy, XConomy, Gringotts, Economy by Scruffyboy12.  EssentialsEconomy can work only if you use their dev builds. (2.19+)
 >  - Plugins which may not work: UltimateEconomy, Economy.
 
 ----
