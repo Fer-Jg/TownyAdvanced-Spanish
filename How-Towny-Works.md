@@ -986,18 +986,8 @@ If you want Towny’s variables in chat, or the town/nation channels, you must d
 
 To use Towny and another Chat plugin follow these instructions:
 
--   Go into the Towny [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml and locate: `modify_chat.enable:` and be sure to set it to true like this: `modify_chat.enable: 'true'`
--   Now add Towny’s chat variables to your chat plugins config. The variables can be found in the comments of the [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml
--   Make sure that no players have the towny.chat.general node or they'll be talking in the towny channel and not your other chat plugins default chat channel. You might need to negate the permission node for your admins if they have the `'*'` in their permission nodes.
-
-Examples:
-
--   iChat:
-    -   ingame-format: '[+prefix+group+suffix&f]{townytag} {townycolor}{townyprefix}+displayname{townypostfix}'
--   mChat:
-    -   mchat-message-format: '{townytag} +p{townycolor}{townyprefix}+dn{townypostfix}+s&f: +m'
--   RoyalChat:
-    -   [Guide on configuring towny prefixes in RoyalChat](http://dev.bukkit.org/server-mods/royalchat/pages/configuration/)
+-   Go into the Towny [ChatConfig](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml).yml and locate: `modify_chat.enable:` and be sure to set it to false like this: `modify_chat.enable: 'false'`
+-   This will make it so that any GLOBAL type channel in the channels.yml is not modified by Towny, leaving it up to another chat plugin to modify its appearance.
 
 ### []()Using TownyChat Without Another Chat Plugin
 
