@@ -20,6 +20,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Plot Types](#plot-types)
     -   [Outposts](#outposts)
     -   [Buying and Selling Land](#buying-and-selling-land)
+    -   [Preventing areas from being claimed](Preventing-areas-from-being-claimed)
     -   [Using the Maps](#using-the-maps)
     -   [Plot Regeneration & Unclaimed Plots](#plot-regeneration--unclaimed-plots)
 -   [How Towny Lets Players Protect Their Blocks](#how-towny-lets-players-protect-their-blocks)
@@ -514,6 +515,18 @@ Land is sold by Mayors to Residents that are a part of their town. `using_econom
     -   If it is not set, the plots will cost $0 by default.
 </blockquote>
 To put a plot up for sale a mayor, while standing in the plot, type `/plot forsale {optional cost}`. The resident would then type `/plot claim` (while standing in the plot,) to buy it.
+
+[]()Preventing areas from being claimed
+------------------
+
+There are three ways to prevent people from claiming land.
+
+1. The first is to make an entire world unable to be claimed: while in the world use `/tw toggle claimable`. This will prevent anyone from making a town and claiming land (including outposts.)
+
+2. The second method is to make your own town at the location, no one can claim something that has already been claimed:
+    >If you already have a town use `/ta set mayor TOWNNAME npc`. Then use `/t leave`. Then start your town at the location you don't want to have claimed. If you need more townblocks, as an admin you can use `/ta givebonus YOURNAME 100` to give your town more townblocks to claim with. When you're finished claiming simply use `/ta set mayor TOWNNAME npc` and then `/t leave`. Your newly-made NPC town will not have to pay any upkeep and will be a permanent town on your server. To rejoin your previous town use `/ta town TOWNNAME add YOURNAME` and then `/ta set mayor YOURTOWN YOURNAME`.
+
+3. The third method is to use [WorldGuard-Towny](https://github.com/TownyAdvanced/WorldGuard-Towny). When this plugin is installed on your server, any WorldGuard region which [has had the town-creation flag added to it](https://github.com/TownyAdvanced/WorldGuard-Towny/wiki/Preventing-Town-creation-in-a-region-via-Region-Flag) will not allow for any Towny claim to be made.
 
 []()Using the Maps
 ------------------
