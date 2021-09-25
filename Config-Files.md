@@ -1,4 +1,5 @@
   - [**Config.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml)
+  - [**Database.yml**](https://github.com/TownyAdvanced/Towny/wiki/Database.yml)
   - [**Townyperms.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Townyperms.yml)
   - [**ChatConfig.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-ChatConfig.yml)
   - [**Channels.yml**](https://github.com/TownyAdvanced/Towny/wiki/Default-Channels.yml)
