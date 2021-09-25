@@ -41,6 +41,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Spying on chat channels](#spying-on-chat-channels)
 -   [Multiworld](#multiworld)
     -   [World Toggles](#world-toggles)
+-   [Multi Language](#multi-language)
 -   [Towny War](#towny-war)
 -   [Towny Regex Settings](#towny-regex-settings)
 -   [Using SQL instead of Flatfile](#using-sql-instead-of-flatfile)
@@ -896,7 +897,7 @@ Upkeep collection can be set on towns and on nations separately. Upkeep money is
 -   `price_town_upkeep: 10.0`
     -   The server's daily charge on each town. If a town fails to pay this upkeep, all of it's residents are kicked and the town is removed.
 
-Upkeep can be modified in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) to affect different-sized towns differently. There are two ways to calculate the upkeep using the upkeep modifier found in the town_level and nation_level lines. By default the town_level and nation_level lines use the resident-count to determine upkeep via the upkeep modifier. The other option is to base it off plot-count rather than resident count. If you would like to set it based on plot-count set `town_plotbased_upkeep:true` in your [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml). More information on the townLevel line and how to configure it is [here.](#configuring-town_level-and-nation_level)
+Upkeep can be modified in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) to affect different-sized towns differently. There are two ways to calculate the upkeep using the upkeep modifier found in the town_level and nation_level lines. By default the town_level and nation_level lines use the resident-count to determine upkeep via the upkeep modifier. The other option is to base it off plot-count rather than resident count. If you would like to set it based on plot-count set `town_plotbased_upkeep:true` in your [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml). When plotbased_upkeep is used you can set minimum and maximum amounts that will be charged. More information on the townLevel line and how to configure it is [here.](#configuring-town_level-and-nation_level)
 
 As of 0.95.0.0 you may now charge nations upkeep per-town at `economy.daily_taxes.nation_pertown_upkeep`. Uses total number of towns in the nation to determine upkeep instead of nation level (Number of Residents), calculated by (`number of towns in nation` X `price_nation_upkeep`). If `economy.daily_taxes.nation_pertown_upkeep_affected_by_nation_level_modifier` is true, the nation levels upkeep modifier will have an affect.
 
@@ -1167,6 +1168,25 @@ Towny can be turned off in a world in-game. While standing in a world type `/tow
 
 ------------------------------------------------------------------------
 
+[]()Multi Language
+==============
+
+Towny has support multi-language support. Languages available [can be found on the Crowdin page for TownyAdvanced.](https://crowdin.com/project/townyadvanced) If you don't see your language available ask for it on the discord or in an issue ticket.
+
+Towny uses the Minecraft game client's locale to determine which language Towny's messages will appear in, as long as it is one of the languages on our Crowdin page.
+
+The server admin can select the default language in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml)'s `language:` setting. This is the language that most console messages will appear in, as well as the language for players whose language is not natively supported.
+
+Server admins can override the default language files in a number of ways:
+
+1. The `towny\settings\lang\override\` folder contains one file by default, the `global.yml`. This file can have any of the Towny language strings added to it, and it will override every language. This is very useful for changing the Towny prefix, or the colours of the status screens. 
+
+2. By moving files from the `towny\settings\lang\reference\` folder into the `towny\settings\lang\override\` folder an admin can override a single language at a time.
+
+Important: Making any changes to the files in the `towny\settings\lang\reference\` folder will have no effect in-game.
+
+------------------------------------------------------------------------
+
 []()Towny War
 =============
 
@@ -1198,6 +1218,8 @@ There are some servers whose economy plugins cannot use unicode characters, or s
     name_remove_regex: '[^a-zA-Z0-9\&._\[\]-]'
 ```
 
+As of Towny 0.97.2.0, Towny will automatically rename towns and nations which have characters which are not allowed by the regex. This solves the issue of your operating system not supporting characters when the town and nation files are saved. The renamed towns and nations are given very generic names.
+
 ------------------------------------------------------------------------
 
 []()Using SQL instead of Flatfile
@@ -1208,7 +1230,7 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 []()Configuring MySQL
 -------------------
 
--   Open the \towny\settings\\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
+-   Open the \towny\settings\\database.yml.
 -   Navigate to the sql: section.
 -   Configure towny with your mysql database hostname/port/username and password.
 -   Set the desired mysql flags in the flags section.
@@ -1220,12 +1242,12 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 ------------------------------
 
 1.  Stop your server
-2.  Open the \towny\settings\\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
+2   Open the \towny\settings\\database.yml.
 3.  Find the `database_load`, make sure it's set to flatfile.
-4.  Find the `database_save`, set it to either mysql, sqlite or h2.
+4.  Find the `database_save`, set it to mysql.
 5.  Save the config and start your server.
 6.  While your server is running:
-    -   Set the database_load to mysql, sqlite or h2.
+    -   Set the database_load to mysql.
     -   Type `/ta reload all` ingame.
 
 7.  Open the Towny\Data\ folder and remove all but the plot-block-data folder. This folder contains the plot-snapshots used in the revert-on-unclaim feature. If you do not use that feature you may delete the entire Towny\data\ folder.
@@ -1235,8 +1257,8 @@ As of Towny 0.80.0.0 admins can choose to use an SQL database instead of flatfil
 ------------------------------
 
 1.  Stop your server
-2.  Open the \towny\settings\\[config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) and find the Plugin Interfacing section.
-3.  Find the `database_load`, make sure it's set to your database type (mysql, sqlite or h2.
+2   Open the \towny\settings\\database.yml.
+3.  Find the `database_load`, make sure it's set to mysql.
 4.  Find the `database_save`, set it to flatfile
 5.  Save the config and start your server.
 6.  While your server is running:
