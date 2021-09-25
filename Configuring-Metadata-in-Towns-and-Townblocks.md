@@ -22,6 +22,8 @@ The API uses a data field system for storing metadata, which essentially works a
 
 Each of the data fields hold a specific type of data that is properly deserialized when Towny loads.
 
+Towny provides a MetaDataUtil which can save you a bit of time with getting and setting metadata for these basic types.
+
 ### Custom Data Fields
 In the case that none of the Towny-provided data fields satisfy your use case, you can create a custom data field class detailed on [this page](https://github.com/TownyAdvanced/Towny/wiki/Creating-Custom-Metadata-Types).
 
