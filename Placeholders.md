@@ -89,6 +89,12 @@ _Introduced as of v0.96.7.0_
 _Introduced as of v0.97.1.0_
 - `%townyadvanced_player_location_plot_owner_name%` - Displays the name of the resident who owns the plot, or blank if no one personally owns it.
 - `%townyadvanced_town_map_color_hex%` - Returns the colour set by the town.
+
+_Introduced as of v0.97.2.0_
+- `%townyadvanced_player_location_town_resident_count%` - If there is a town present where the player stands, it will return the number representing the number of residents that town has.
+- `%townyadvanced_player_location_town_mayor_name%` - If there is a town present where the player stands, it will return the name of that town's mayor.
+- `%townyadvanced_player_location_town_nation_name%` - If there is a town present where the player stands, it will return the name of the nation, if the town has one.
+
 </details>
 
 <details>
@@ -172,9 +178,12 @@ _Introduced as of v0.97.1.0_
 - `%townyadvanced_player_location_formattedtown_or_wildname%` - Displays either the formatted townname at the location or the wilderness name.
 - `%townyadvanced_player_location_town_prefix%` - Displays the town's prefix or blank.
 - `%townyadvanced_player_location_town_postfix%` - Displays the town's postfix or blank.
-- `%townyadvanced_player_location_pvp%` - Displays (PVP) or blank, depending on pvp status of the location.
+- `%townyadvanced_player_location_pvp%` - Displays (PVP) or (No PVP), depending on pvp status of the location.
 - `%townyadvanced_player_location_plot_name%` - Displays a plot's name if it has one.
 - `%townyadvanced_player_location_plot_owner_name%` - Displays the name of the resident who owns the plot, or blank if no one personally owns it.
+- `%townyadvanced_player_location_town_resident_count%` - If there is a town present where the player stands, it will return the number representing the number of residents that town has.
+- `%townyadvanced_player_location_town_mayor_name%` - If there is a town present where the player stands, it will return the name of that town's mayor.
+- `%townyadvanced_player_location_town_nation_name%` - If there is a town present where the player stands, it will return the name of the nation, if the town has one.
 
 #### Relational:
 - `%rel_townyadvanced_color%` - Applies the colour codes set in the config.yml's new papi_relational_formatting section, used in TAB and other plugins which can do Relational placeholders.
