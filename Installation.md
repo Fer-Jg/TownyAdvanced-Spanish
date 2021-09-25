@@ -25,6 +25,19 @@ Read the steps here carefully and you'll save yourself a lot of head-scratching 
 5. Stop your server.
 6. Continue reading below, do not skip the Configuring Existing Worlds section of this guide.
 
+## In-game installation command:
+
+As of Towny 0.97.2.0 you can take advantage of the `/ta install` command.
+
+Using the command will prompt the admin who ran it to answer how they want the following settings configured. If you use this command you will not have to run the individual commands found later in this install guide.
+
+- Whether the wilderness should be usable.
+- Whether the revert-on-unclaim feature should be active.
+- How many townblocks/plots a town should get per-resident.
+- How much a new town will cost.
+- How much a new nation will cost.
+- How much claiming a townblock will cost.
+
 ## Configuring Existing Worlds
 Towny has a config section called Default New World Settings. When you started the server it took the default Default Settings and applied it to all your existing worlds. This includes the revert-on-unclaim and explosion-revert settings for each world.
 
@@ -61,7 +74,7 @@ By default Towny will regenerate explosions in the wilderness, and when towns un
 ## Configuring townyperms.yml (semi-optional)
 Some admins make the mistake of placing Towny permission nodes into their permission plugin. The only permission nodes you must give in your permission plugin is `towny.admin.*` to your admin group(s).
 
-The only other permission node that isn't already given out is `towny.wild.*`. Giving this node will grant full build/destroy/switch/itemuse rights to players in the wilderness. You must decide if you want to give this out, and how. This is not required if you've use the `/ta toggle wildernessuse` command.
+The only other permission node that isn't already given out is `towny.wild.*`. Giving this node will grant full build/destroy/switch/itemuse rights to players in the wilderness. You must decide if you want to give this out, and how. This is not required if you've use the `/ta toggle wildernessuse` command or if you had previously run the `/ta install` command.
 
 * One option is to put it in the nomad section of the **townyperms.yml** file, which will enable all players server-wide to use the wilderness.
 * The other option is to give it in your permission plugin, to whichever rank you want to use the wilderness.
