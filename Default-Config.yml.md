@@ -1,13 +1,14 @@
 ```
 version:
   # This is the current version of Towny.  Please do not edit.
-  version: 0.97.1.0
+  version: 0.97.2.0
   # This is for showing the changelog on updates.  Please do not edit.
-  last_run_version: 0.97.1.0
+  last_run_version: 0.97.2.0
 # The language file you wish to use
 # Available languages: da-DK.yml, en-US.yml, es-419.yml, es-ES.yml, fr-FR.yml,
-# de-DE.yml, id-ID.yml, it-IT.yml, ko-KR.yml, nl-NL.yml, no-NO.yml, pl-PL.yml,
-# pt-BR.yml, ro-RO.yml, ru-RU.yml, sv-SE.yml, tr-TR.yml, zh-CN.yml, zh-TW.yml
+# de-DE.yml, he-IL.yml, id-ID.yml, it-IT.yml, ko-KR.yml, nl-NL.yml, no-NO.yml,
+# pl-PL.yml, pt-BR.yml, ro-RO.yml, ru-RU.yml, sv-SE.yml, tr-TR.yml, vi-VN.yml,
+# zh-CN.yml, zh-TW.yml
 language: en-US.yml
  
  
@@ -551,8 +552,8 @@ global_town_settings:
   town_respawn_same_world_only: 'false'
  
   # Prevent players from using /town spawn while within unclaimed areas and/or enemy/neutral towns.
-  # Allowed options: unclaimed,enemy,neutral
-  prevent_town_spawn_in: enemy
+  # Allowed options: unclaimed,enemy,neutral,outlaw
+  prevent_town_spawn_in: enemy,outlaw
  
   # When this is true, players will respawn to respawn anchors on death rather than their own town. 1.16+ only.
   respawn_anchor_higher_precendence: 'true'
@@ -805,33 +806,12 @@ global_nation_settings:
 ############################################################
  
 plugin:
- 
-  # Valid load and save types are: flatfile and mysql.
+  # See database.yml file for flatfile/mysql settings.
   database:
-    database_load: flatfile
-    database_save: flatfile
  
     # When true Towny will use a background task to gather UUIDs for residents who do not have UUIDs.
     # This process will greatly improve your database's ability to convert from playernames to UUIDs in the future.
     gather_resident_uuids: 'true'
- 
-    # SQL database connection details (IF set to use SQL).
-    sql:
-      hostname: localhost
-      port: '3306'
-      dbname: towny
-      table_prefix: towny_
-      username: root
-      password: ''
-      flags: ?verifyServerCertificate=false&useSSL=false&useUnicode=true&characterEncoding=utf-8
- 
-      # Modifiable settings to control the connection pooling.
-      # Unless you actually know what you're doing and how Towny uses its mysql connection,
-      # it is strongly recommended you do not change these settings.
-      pooling:
-        max_pool_size: '5'
-        max_lifetime: '180000'
-        connection_timeout: '5000'
  
     # Flatfile backup settings.
     daily_backups: 'true'
@@ -857,7 +837,7 @@ plugin:
  
     # If enabled, Towny contexts will be available in LuckPerms.
     # https://luckperms.net/wiki/Context
-    luckperms_contexts: 'true'
+    luckperms_contexts: 'false'
  
   day_timer:
  
@@ -1154,6 +1134,7 @@ notification:
   # {town_motd} - Shows the townboard message.
   # {town_residents} - Shows the number of residents in the town.
   # {town_residents_online} - Shows the number of residents online currently.
+  # The notification.town_names_are_verbose setting will affect the {townname} placeholder.
   titles:
  
     # Entering Town Upper Title Line
@@ -1568,6 +1549,9 @@ economy:
     # If set to any amount over zero, if a town's plot-based upkeep totals less than this value, the town will pay the minimum instead.
     town_plotbased_upkeep_minimum_amount: '0.0'
  
+    # If set to any amount over zero, if a town's plot-based upkeep totals more than this value, the town will pay the maximum instead.
+    town_plotbased_upkeep_maximum_amount: '0.0'
+ 
     # The server's daily charge on a town which has claimed more townblocks than it is allowed.
     price_town_overclaimed_upkeep_penalty: '0.0'
  
@@ -1679,7 +1663,7 @@ bank_history:
 
     Reason: {reason}
 
-    Balance: {amount}
+    Balance: {balance}
  
  
 ############################################################
