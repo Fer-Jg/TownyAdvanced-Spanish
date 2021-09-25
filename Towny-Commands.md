@@ -154,7 +154,7 @@
             -   {build/destroy/switch/itemuse} {on/off}
             -   {friend/ally/outsider} {build/destroy/switch/itemuse} {on/off}
             -   reset - This takes the perm line seen in the /resident screen and applies it to all plots personally owned by the player typing it.
-    -   tax - Shows taxes a player pays.
+    -   tax {resname} - Shows taxes a player pays.
 
 []()/town
 ---------
@@ -211,7 +211,7 @@
         -   {list} - lists your town's outposts.
     -   plotgrouplist {townname} {page #} - Lists a town's plotgroups with forsale and price indicated.
     -   purge {days} - Kicks residents from the town who have been inactive for the given number of days, exempts npcs and mayors.
-    -   ranklist - Displays residents and their ranks.
+    -   ranklist {townname} - Displays residents and their ranks, optional townname to view another town's rank list.
     -   rank {add|remove} {playername} {rankname} - Grants or removes a rank to a resident of the town.
     -   reclaim - allows a resident to reclaim their ruined town.
     -   reslist {townname} - See a FULL list of all residents in a town.
@@ -339,6 +339,7 @@
         -   Can only be used by the nation king, and requires the king of the other nation to be online to accept the merger.
         -   The soon-to-be-ex-king will receive a confirmation message asking if they will accept the dissolution of their nation.
         -   If accepted the towns of the nation transfer to the remaining nation. The nation's bank money is also transferred.
+    -   ranklist {nationname} - Displays residents and their ranks, optional nationname to view another nation's rank list.        
     -   townlist (nation)
         -   (nation) is optional, to show townlist of a nation you aren't a part of.
         -   lists all towns in a nation.
@@ -452,6 +453,8 @@
     -   rect {radius} - Admin command to unclaim an area.
   - purge {# as in days} (townless) - Deletes old residents.
     - Optional townless flag will limit purge to only residents who are not part of a town.
+  - purge {# as in days} {townname} - Deletes old residents.
+    - Optional townname flag will limit purge to only residents who are a part of that town.
   - mysqldump
     - When your config has save & load set to mysql you can use this command to dump the mysql database to flatfile.
   - database 
