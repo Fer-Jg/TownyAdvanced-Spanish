@@ -13,7 +13,7 @@ Use this page to learn how Towny works, how various settings affect the gameplay
     -   [Configuring town_level and nation_level](#configuring-town_level-and-nation_level)
 -   [How Towns Grow](#how-towns-grow)
     -   [Starting a Town](#starting-a-town)
-    -   [Joining Towns](#joining-yowns)
+    -   [Joining Towns](#joining-towns)
 -   [Plot System of Land Ownership](#plot-system-of-land-ownership)
     -   [Town Blocks](#town-blocks)
     -   [Plot Groups](#plot-groups)
