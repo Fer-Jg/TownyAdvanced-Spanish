@@ -353,7 +353,7 @@ You can change how many town blocks a town gets to claim. This is done in two pl
 
 ### []()Buying Townblocks
 
-Mayors can buy townblocks using `/town buy bonus {amount}`. There are two methods you can limit how many townblocks can be purchased by a town:
+Normally Towny limits a town's townblocks to a number based on resident count or town_level. Towny allows towns to purchase additional townblocks that the town can then claim, using `/town buy bonus {amount}`. There are two methods you can limit how many townblocks can be purchased by a town:
 
 1. If `town.max_purchased_blocks_uses_town_levels` is set to false: the max is set in the [config.yml](https://github.com/TownyAdvanced/Towny/wiki/Default-Config.yml) at `max_purchased_blocks: '0'`.
 2. If `town.max_purchased_blocks_uses_town_levels` is set to true: the max is dictated via the town_level's `townBlockBuyBonusLimit` setting, allowing towns with more residents to purchase more townblocks.
