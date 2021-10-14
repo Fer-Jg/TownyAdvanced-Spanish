@@ -21,6 +21,8 @@ Explosion and Burning actions are always protected.
 
 Chunk Notifications are shown when players enter and exit Camps.
 
+Camp-owners can use LWCx in their camp. LWCx protections are removed when a camp is removed.
+
 Camps appear in-game on Towny's ASCII map.
 
 Camps are removed when:
