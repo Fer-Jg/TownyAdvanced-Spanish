@@ -53,7 +53,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'com.github.TownyAdvanced:Towny:0.97.1.0'
+    compileOnly 'com.github.TownyAdvanced:Towny:0.97.2.0'
 }
 
 ```
