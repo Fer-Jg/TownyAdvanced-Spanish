@@ -17,7 +17,7 @@ Players that own the Camp can make a town at that location.
 
 Camps are protected from Build/Destroy/Switch/Itemuse. Camp owners can allow their friendlist to interact based on the owners perm line.
 
-Explosion and Burning actions are always protected.
+PVP, Explosion and Burning actions are optionally protected (via the config.)
 
 Chunk Notifications are shown when players enter and exit Camps.
 
@@ -32,7 +32,11 @@ Camps are removed when:
 
 It uses Towny resident metadata so there's no database, it has a lang file and a config that updates itself just like Towny's.
 
-Camps appear will appear on your server's Dynmap.
+Camp information can appear on your /res status screen (via the config.)
+
+Camps appear will appear on your server's Dynmap, (optional via the config.)
+
+Camp have an optional (via the config,) cooldown setting, preventing players from making new Camps until x hours have passed.
 </details>
 
 ## TownyHistories
