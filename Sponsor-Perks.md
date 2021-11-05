@@ -58,3 +58,9 @@ Ruins' townblocks which are claimed by a town are removed from the ruin. If a ru
 
 Note: this plugin somewhat assumes you have the revert-on-unclaim feature deactivated. This is not a hard-restriction, but future features will likely mean restoring the ruin would be detrimental.
 </details>
+
+## EventWar Beta
+
+I've spent about a year re-doing Towny's EventWar into a whole new plugin with a ton of new features and solutions to old EventWar problems.
+
+My sponsors are getting early access to EventWar.
