@@ -7,4 +7,4 @@
 
 ### Este repositorio es un trabajo en obras, por lo que puede haber poco o mucho texto no traducido ni/o implementado en la wiki.
 
-## [Click aquí para ver mi Wiki de Towny en Español](https://github.com/TownyAdvanced/Towny/wiki/)
+## [Click aquí para ver mi Wiki de Towny en Español](https://github.com/Fer-Jgu/TownyAdvanced-Spanish/wiki)
