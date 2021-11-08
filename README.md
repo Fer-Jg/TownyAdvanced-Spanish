@@ -3,4 +3,8 @@
 #### This is a work in progress with the purpose of translating [Towny's original wiki](https://github.com/TownyAdvanced/Towny/wiki/) as accurately as I am able to, there is no code in here since the only purpose of this is to help spanish speaking users through their Towny experience (wiki-related). If this repository means any issues, please let me know opening an issue and I will answer ASAP. As mentioned before, this is a spanish speakers directed repository so from now on, most of the text here will be found in spanish.
 
 ## ¿Qué es esto? (Español)
-### Este es un trabajo en progreso con el propósito de traducir [la wiki original de Towny](https://github.com/TownyAdvanced/Towny/wiki/), aquí no hay código dado que el único propósito de esto es ayudar a hispanohablantes a través de su experiencia con Towny.
+### Este es un trabajo en progreso con el propósito de traducir la [wiki original de Towny](https://github.com/TownyAdvanced/Towny/wiki/), aquí no hay código dado que el único propósito de esto es ayudar a hispanohablantes a través de su experiencia con Towny.
+
+### Este repositorio es un trabajo en obras, por lo que puede haber poco o mucho texto no traducido ni/o implementado en la wiki.
+
+## [Click aquí para ver mi Wiki de Towny en Español](https://github.com/TownyAdvanced/Towny/wiki/)
